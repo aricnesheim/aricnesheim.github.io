@@ -413,6 +413,26 @@ a { color: var(--accent); text-underline-offset: 3px; }
   border: 0;
 }
 
+/* ---------- document cards (PDF readers) ---------- */
+
+.doc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.doc-title { margin: 0; font-weight: 600; }
+
+.doc-meta {
+  margin: 0.15rem 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.doc-actions { display: flex; gap: 0.5rem; }
+
 /* ---------- footer ---------- */
 
 footer {
