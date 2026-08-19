@@ -433,6 +433,10 @@ a { color: var(--accent); text-underline-offset: 3px; }
 
 .doc-actions { display: flex; gap: 0.5rem; }
 
+/* document buttons: the music note belongs to choir scores only */
+.doc-actions .score-btn::before { content: ""; margin-right: 0; }
+.doc-actions a[download]::before { content: "↓ "; margin-right: 0.3rem; color: var(--accent); }
+
 /* ---------- footer ---------- */
 
 footer {
