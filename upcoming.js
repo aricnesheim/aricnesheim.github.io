@@ -71,13 +71,17 @@
       if (!first.length) return;
 
       /* render first + rest together so unit headers stay correct, then
-         hide the tail behind a button */
+         hide the tail behind a Show more / Show less toggle */
       mount.innerHTML = render(first.concat(rest));
       const allRows = mount.querySelectorAll(".up-row, .part-group-label");
-      let seen = 0, cut = null;
+      const tailEls = [];
+      let seen = 0;
       allRows.forEach((el) => {
         if (el.classList.contains("up-row")) seen += 1;
-        if (seen > first.length) el.hidden = true;
+        if (seen > first.length) {
+          el.hidden = true;
+          tailEls.push(el);
+        }
       });
 
       if (rest.length) {
@@ -85,8 +89,12 @@
         btn.className = "score-btn up-more";
         btn.textContent = "Show more";
         btn.addEventListener("click", () => {
-          allRows.forEach((el) => { el.hidden = false; });
-          btn.remove();
+          const collapsing = btn.textContent === "Show less";
+          tailEls.forEach((el) => { el.hidden = collapsing; });
+          btn.textContent = collapsing ? "Show more" : "Show less";
+          if (collapsing) {
+            card.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         });
         mount.appendChild(btn);
       }
