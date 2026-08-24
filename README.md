@@ -9,6 +9,15 @@ This folder IS the website. Five pages, one stylesheet, one script:
 - `audio/` — practice recordings
 - `scores/` — score PDFs
 
+## The Road Ahead cards
+
+`data/upcoming.json` is exported from the four Scope & Sequence builds by
+`Planning/_tools/website-upcoming-export.py` (outside this repo). Each class
+page's "Road ahead" card renders the next stretch of meetings from it,
+filtered by today's date in the browser, so it advances on its own. After any
+schedule re-flow: re-run the exporter, commit, push (Schedule Change Protocol
+step 6).
+
 ## How updates work
 
 Aric tells Claude the week's homework, notes, or new links in chat; Claude edits
