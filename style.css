@@ -428,6 +428,30 @@ body[data-page="choir"] .part-actions .score-btn::before {
 
 .doc-actions a[download]::before { content: "↓ "; margin-right: 0.3rem; color: var(--accent); }
 
+/* ---------- homework at a glance (home) ---------- */
+
+.hw-row {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.hw-row:last-of-type { border-bottom: 0; padding-bottom: 0; }
+
+.hw-class { margin: 0 0 0.15rem; }
+
+.hw-class a {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.hw-row.history a    { color: #b45309; }
+.hw-row.theology a   { color: #1d4ed8; }
+.hw-row.literature a { color: #15803d; }
+.hw-row.choir a      { color: #7e22ce; }
+
+.hw-item { margin: 0.15rem 0 0; font-size: 0.95rem; }
+
 /* ---------- "the road ahead" loose calendar ---------- */
 
 .up-note {
