@@ -1,10 +1,12 @@
 # aricnesheim.com — class resources site
 
-This folder IS the website. Five pages, one stylesheet, one script:
+This folder IS the website. The main pages are:
 
 - `index.html` — landing page (weekly notes + links to each class)
 - `history.html`, `theology.html`, `literature.html`, `choir.html` — one page per class
+- `year.html` — interactive four-course calendar for students and families
 - `style.css` — all the design (Fraunces + Inter, one accent color per class)
+- `year.css`, `year.js` — layout and interaction for the year map
 - `player.js` — the choir practice player and score viewer
 - `audio/` — practice recordings
 - `scores/` — score PDFs
@@ -23,6 +25,16 @@ step 6).
 `files/history/shared-era-timeline.html` is Codex/GPT work product (from
 Aric's `output/html/` folder), hosted here unmodified at Aric's request.
 Source: Codex/GPT. Do not fold it into Claude-authored material.
+
+`year.html`, `year.css`, and `year.js`, plus the homepage calendar feature,
+are Codex/GPT work product created August 25, 2026. The page reads the shared
+`data/upcoming.json` schedule when available and retains audited fallback dates.
+Do not represent this feature as Claude-authored material.
+
+Calendar copy should sound like Mr. Nesheim speaking in class: state the
+classes, dates, and connection directly. Avoid slogans, marketing language,
+grand claims, and decorative metaphors. Student and family questions should be
+short, specific, and answerable from the courses.
 
 ## How updates work
 

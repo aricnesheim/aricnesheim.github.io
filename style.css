@@ -424,6 +424,25 @@ body[data-page="choir"] .part-actions .score-btn::before {
 
 .doc-actions a[download]::before { content: "↓ "; margin-right: 0.3rem; color: var(--accent); }
 
+.year-teaser {
+  position: relative;
+  overflow: hidden;
+}
+
+.year-teaser::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #b45309 0 25%, #1d4ed8 25% 50%, #15803d 50% 75%, #7e22ce 75% 100%);
+}
+
+.year-teaser .eyebrow { margin-bottom: 0.35rem; }
+.year-teaser h2 { margin-bottom: 0.3rem; }
+.year-teaser .doc-meta { max-width: 35rem; }
+
 /* ---------- homework at a glance (home) ---------- */
 
 .hw-row {

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive Calendar · Mr. Nesheim</title>
+<meta name="description" content="An interactive 2026–27 calendar showing connections among History, Scripture, literature, and song.">
+<meta property="og:title" content="Interactive Calendar · Mr. Nesheim">
+<meta property="og:description" content="Use the 2026–27 calendar to find connections among History, Scripture, literature, and song.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aricnesheim.com/year.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234338ca'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="year.css?v=20260825-2">
+</head>
+<body data-page="year">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Mr. Nesheim</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="history.html">History<span class="nav-tail"> 11</span></a>
+      <a href="theology.html">Theology<span class="nav-tail"> 10</span></a>
+      <a href="literature.html"><span class="nav-long">Literature 11</span><span class="nav-short">Lit</span></a>
+      <a href="choir.html">Choir</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <header class="band page-head year-head">
+    <p class="eyebrow">2026–27 school year</p>
+    <h1>Course Connections</h1>
+    <p class="lead">History, Scripture, literature and song are all connected. Use the calendar below to make connections!</p>
+    <p class="meta">Click a diamond to see the related classes and dates.</p>
+  </header>
+
+  <section class="card year-map-card" aria-labelledby="map-title">
+    <div class="year-card-head">
+      <div>
+        <h2 id="map-title">Interactive Calendar</h2>
+        <p class="up-note">The calendar runs from August through June. The colored bars show what each class is studying. Click a diamond to see a connection.</p>
+      </div>
+      <p class="year-updated" id="year-updated">2026–27 schedule</p>
+    </div>
+
+    <div class="thread-legend" aria-label="Calendar legend">
+      <span><span class="legend-line history" aria-hidden="true"></span>History</span>
+      <span><span class="legend-line theology" aria-hidden="true"></span>Theology</span>
+      <span><span class="legend-line literature" aria-hidden="true"></span>Literature</span>
+      <span><span class="legend-line choir" aria-hidden="true"></span>Choir</span>
+      <span><span class="legend-knot" aria-hidden="true"></span>Connection</span>
+    </div>
+
+    <div id="thread-map" class="thread-map" aria-label="Interactive calendar for the four courses from August 2026 through June 2027">
+      <div id="year-axis" class="year-axis" aria-hidden="true"></div>
+      <svg id="thread-links" class="thread-links" aria-hidden="true"></svg>
+      <div id="thread-lanes" class="thread-lanes"></div>
+    </div>
+    <noscript><p>Turn on JavaScript to use the calendar. The course summaries are still listed below.</p></noscript>
+  </section>
+
+  <section class="card thread-detail" id="thread-detail" aria-live="polite" aria-atomic="true">
+    <div class="detail-heading">
+      <div>
+        <p class="detail-type" id="detail-type">Course crossover</p>
+        <h2 id="detail-title">Dante in Literature and History</h2>
+      </div>
+      <p class="detail-date" id="detail-date">December</p>
+    </div>
+    <p class="detail-summary" id="detail-summary">Literature finishes Dante’s <em>Comedy</em> on December 1. History studies Dante, Petrarch, and Boccaccio on December 11 during the Renaissance unit.</p>
+    <div class="connected-moments" id="connected-moments" aria-label="Connected course moments"></div>
+    <div class="prompt-grid">
+      <div class="prompt student-prompt">
+        <p class="prompt-label">Student question</p>
+        <p id="student-prompt">What does History help you understand about Dante’s <em>Comedy</em>?</p>
+      </div>
+      <div class="prompt family-prompt">
+        <p class="prompt-label">Family question</p>
+        <p id="family-prompt">What did you learn about Dante from each class?</p>
+      </div>
+    </div>
+    <a class="detail-link" id="detail-link" href="files/history/shared-era-timeline.html" target="_blank" rel="noopener">Open the historical timeline</a>
+  </section>
+
+  <section aria-labelledby="arcs-title">
+    <h2 id="arcs-title">What each course covers</h2>
+    <div class="arc-grid">
+      <article class="arc history">
+        <p class="arc-course">History 11</p>
+        <h3>Medieval Europe to Lepanto</h3>
+        <p>The High Middle Ages, the Renaissance, the Reformations, and the Battle of Lepanto.</p>
+      </article>
+      <article class="arc theology">
+        <p class="arc-course">Theology 10</p>
+        <h3>Matthew to Revelation</h3>
+        <p>The Gospels, Acts, the New Testament letters, and Revelation.</p>
+      </article>
+      <article class="arc literature">
+        <p class="arc-course">Literature 11</p>
+        <h3>Dante to Aquinas</h3>
+        <p>Dante, Shakespeare, Cervantes, Robert Bolt, and Chesterton.</p>
+      </article>
+      <article class="arc choir">
+        <p class="arc-course">Choir</p>
+        <h3>Rehearsals and performances</h3>
+        <p>Vision Dinner, the Advent concerts, Spring Festival, and Graduation Mass.</p>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Mr. Nesheim · aricnesheim.com</span>
+    <span>2026–27 interactive calendar</span>
+  </div>
+</footer>
+
+<script src="year.js?v=20260825-5" defer></script>
+</body>
+</html>
