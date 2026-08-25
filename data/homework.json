@@ -1,0 +1,51 @@
+{
+  "updated": "2026-08-25",
+  "classes": {
+    "history": {
+      "name": "History 11",
+      "page": [
+        {"label": "Due Monday, August 31",
+         "text": "Read and annotate the Clari reading (binder pp. 4–8): Five Ws plus your own questions, and bring one written discussion question. Read the St. Francis and St. Dominic sources (binder pp. 10–18)."},
+        {"label": "Tuesday, September 1",
+         "text": "Map quiz on modern Europe at the start of class: twenty countries plus four bonus, ten to fifteen minutes. Ten minutes with the practice map tonight beats an hour at midnight. The printable map is in the Maps section below."}
+      ],
+      "glance": [
+        {"strong": "Due Mon, Aug 31", "text": "Clari reading annotated (binder pp. 4–8) plus one written discussion question; Francis and Dominic sources read (pp. 10–18)."},
+        {"strong": "Tue, Sep 1", "text": "map quiz on modern Europe. Practice map is on the History page."}
+      ]
+    },
+    "theology": {
+      "name": "Theology 10",
+      "page": [
+        {"label": "For Wednesday, August 26",
+         "text": "Bring your Bible and your annotations of Matthew 1:1–17, with one written question."},
+        {"label": "Due Tuesday, September 1",
+         "text": "Read Matthew 1:18–4:25. Annotate 1:18–25 only. Bring your Bible, your annotations, and one written question. You have six days; there is no class Friday."}
+      ],
+      "glance": [
+        {"strong": "For Wed, Aug 26", "text": "Bible and your annotations of Matthew 1:1–17, with one written question."},
+        {"strong": "Due Tue, Sep 1", "text": "read Matthew 1:18–4:25; annotate 1:18–25 only."}
+      ]
+    },
+    "literature": {
+      "name": "Literature 11",
+      "page": [
+        {"label": "Due Thursday, August 27",
+         "text": "One practice discussion question on Esolen's introduction to the Inferno, on my desk at the start of class. Observation first, then your question, two sentences. Nothing else is due Wednesday."},
+        {"label": "Looking ahead",
+         "text": "The first full assignment arrives Thursday: Cantos II through VI with one discussion question, due Monday, August 31. There is no class Friday."}
+      ],
+      "glance": [
+        {"strong": "Due Thu, Aug 27", "text": "one practice discussion question on Esolen's introduction, on my desk at the start of class."},
+        {"strong": "Coming", "text": "Cantos II–VI with one discussion question, due Mon, Aug 31."}
+      ]
+    },
+    "choir": {
+      "name": "Choir",
+      "page": [],
+      "glance": [
+        {"strong": "", "text": "Nothing assigned yet. Practice recordings will appear on the Choir page as we begin pieces."}
+      ]
+    }
+  }
+}

@@ -29,6 +29,12 @@ Source: Codex/GPT. Do not fold it into Claude-authored material.
 Aric tells Claude the week's homework, notes, or new links in chat; Claude edits
 these files and publishes. Nothing here needs to be edited by hand.
 
+Homework specifically is single-sourced: edit `data/homework.json`, run
+`Planning/_tools/website-homework-build.py` (outside this repo), and it renders
+the same data into every class page's Homework card and the home page's
+"Homework at a glance" card (between the `hw:` marker comments), then stamps
+the footer dates. Never edit between the markers by hand.
+
 ## Adding a choir piece
 
 Every piece gets ONE slug: the title in lowercase with hyphens
