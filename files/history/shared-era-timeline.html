@@ -1,0 +1,1946 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Shared Era Timeline</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" referrerpolicy="no-referrer" title="Shared Era Timeline" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Shared Era Timeline&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress {
+  display: flex;
+  height: 6px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 6px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;casm-shared-era&quot;&gt;
+  &lt;header class=&quot;viz-heading&quot;&gt;
+    &lt;h1&gt;The World We Study: 1100–1616&lt;/h1&gt;
+    &lt;p class=&quot;text-muted&quot;&gt;History 11’s 1100–1571 spine, plus the early-modern coda shared with Literature&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&quot;viz-row era-legend&quot; aria-label=&quot;Timeline legend&quot;&gt;
+    &lt;span&gt;&lt;span class=&quot;legend-shape legend-event&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Historical event&lt;/span&gt;
+    &lt;span&gt;&lt;span class=&quot;legend-shape legend-life&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Lifespan&lt;/span&gt;
+    &lt;span&gt;&lt;span class=&quot;legend-shape legend-work&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Literary work&lt;/span&gt;
+    &lt;span&gt;&lt;span class=&quot;legend-shape legend-bridge&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Direct bridge&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;section aria-labelledby=&quot;era-chart-title&quot;&gt;
+    &lt;h2 id=&quot;era-chart-title&quot; class=&quot;sr-only&quot;&gt;Historical era timeline&lt;/h2&gt;
+    &lt;div class=&quot;desktop-era chart-wrap&quot;&gt;
+      &lt;svg id=&quot;era-chart&quot; role=&quot;img&quot; aria-labelledby=&quot;era-chart-svg-title era-chart-svg-desc&quot;&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;mobile-era&quot; class=&quot;mobile-era&quot; role=&quot;list&quot; aria-label=&quot;Chronological timeline&quot;&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;div class=&quot;card selected-detail&quot; id=&quot;timeline-detail&quot; aria-live=&quot;polite&quot;&gt;
+    &lt;div class=&quot;detail-date text-muted&quot; id=&quot;detail-date&quot;&gt;1265–1321 · c. 1307–1321&lt;/div&gt;
+    &lt;div class=&quot;detail-title&quot; id=&quot;detail-title&quot;&gt;Dante and the Divine Comedy&lt;/div&gt;
+    &lt;div id=&quot;detail-copy&quot;&gt;Literature reads all 100 cantos; History meets Dante again with Petrarch and Boccaccio. The poem’s journey is set in 1300.&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;section class=&quot;later-section&quot; aria-labelledby=&quot;later-title&quot;&gt;
+    &lt;h2 id=&quot;later-title&quot;&gt;Later writers looking back&lt;/h2&gt;
+    &lt;p class=&quot;text-muted&quot;&gt;These works were written centuries after the people and events they portray.&lt;/p&gt;
+    &lt;div class=&quot;chart-wrap&quot;&gt;
+      &lt;svg id=&quot;later-chart&quot; role=&quot;img&quot; aria-labelledby=&quot;later-svg-title later-svg-desc&quot;&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;later-mobile&quot; class=&quot;later-mobile&quot; role=&quot;list&quot; aria-label=&quot;Later works and the earlier subjects they revisit&quot;&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;course-section&quot; aria-labelledby=&quot;course-title&quot;&gt;
+    &lt;h2 id=&quot;course-title&quot;&gt;When the two classes meet the same world&lt;/h2&gt;
+    &lt;div class=&quot;chart-wrap&quot;&gt;
+      &lt;svg id=&quot;course-chart&quot; role=&quot;img&quot; aria-labelledby=&quot;course-svg-title course-svg-desc&quot;&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;bridge-grid&quot; aria-label=&quot;Cross-course meeting points&quot;&gt;
+      &lt;div class=&quot;bridge-row&quot;&gt;&lt;span class=&quot;bridge-number&quot;&gt;1&lt;/span&gt;&lt;span&gt;&lt;strong&gt;Dante&lt;/strong&gt;&lt;br&gt;&lt;span class=&quot;text-muted&quot;&gt;Literature finishes Dec. 1; History studies Dante Dec. 11.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;bridge-row&quot;&gt;&lt;span class=&quot;bridge-number&quot;&gt;2&lt;/span&gt;&lt;span&gt;&lt;strong&gt;Shakespeare + Renaissance&lt;/strong&gt;&lt;br&gt;&lt;span class=&quot;text-muted&quot;&gt;&lt;em&gt;Much Ado&lt;/em&gt; runs while History studies Renaissance Italy.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;bridge-row&quot;&gt;&lt;span class=&quot;bridge-number&quot;&gt;3&lt;/span&gt;&lt;span&gt;&lt;strong&gt;Cervantes + Spain&lt;/strong&gt;&lt;br&gt;&lt;span class=&quot;text-muted&quot;&gt;&lt;em&gt;Don Quixote&lt;/em&gt; overlaps Spain and the Habsburg–Ottoman world.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;bridge-row&quot;&gt;&lt;span class=&quot;bridge-number&quot;&gt;4&lt;/span&gt;&lt;span&gt;&lt;strong&gt;Lepanto&lt;/strong&gt;&lt;br&gt;&lt;span class=&quot;text-muted&quot;&gt;Literature closes the poem Mar. 11; History teaches the battle Mar. 12.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;bridge-row&quot;&gt;&lt;span class=&quot;bridge-number&quot;&gt;5&lt;/span&gt;&lt;span&gt;&lt;strong&gt;Thomas More&lt;/strong&gt;&lt;br&gt;&lt;span class=&quot;text-muted&quot;&gt;Bolt ends Apr. 8; History reaches More and the English break Apr. 13.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;bridge-row&quot;&gt;&lt;span class=&quot;bridge-number&quot;&gt;6&lt;/span&gt;&lt;span&gt;&lt;strong&gt;&lt;em&gt;Hamlet&lt;/em&gt; + Reformations&lt;/strong&gt;&lt;br&gt;&lt;span class=&quot;text-muted&quot;&gt;The play runs alongside the English and Catholic Reformations.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;p class=&quot;timeline-note text-small text-muted&quot;&gt;&lt;strong&gt;Reading key:&lt;/strong&gt; c. = circa; uncertain dates stay approximate. Period boundaries overlap. Work dates mean composition or first publication unless noted.&lt;/p&gt;
+  &lt;details class=&quot;source-notes&quot;&gt;
+    &lt;summary&gt;Date notes and sources&lt;/summary&gt;
+    &lt;div class=&quot;text-small text-muted&quot;&gt;
+      &lt;p&gt;Course timing comes from the adopted CASM 2026–27 History 11 schedule and Literature 11 Rhythm B schedule.&lt;/p&gt;
+      &lt;p&gt;Historical dates checked against the &lt;a href=&quot;https://www.nationalarchives.gov.uk/explore-the-collection/explore-by-time-period/medieval/magna-carta/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;UK National Archives&lt;/a&gt;, &lt;a href=&quot;https://royalarmouries.org/objects-and-stories/stories/the-hundred-years-war-1337-1453&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Royal Armouries&lt;/a&gt;, &lt;a href=&quot;https://www.parliament.uk/about/living-heritage/transformingsociety/private-lives/religion/collections/common-prayer/act-of-supremacy/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;UK Parliament&lt;/a&gt;, and &lt;a href=&quot;https://www.cultura.gob.es/museocasacervantes/en/coleccion/seleccion-piezas/batalla-lepanto.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Museo Casa de Cervantes&lt;/a&gt;.&lt;/p&gt;
+      &lt;p&gt;Literary dates checked against &lt;a href=&quot;https://ahc.leeds.ac.uk/discover-dante/doc/introducing-dante/page/12&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Leeds Dante&lt;/a&gt;, &lt;a href=&quot;https://folgerpedia.folger.edu/Much_Ado_About_Nothing&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Folger on &lt;em&gt;Much Ado&lt;/em&gt;&lt;/a&gt;, &lt;a href=&quot;https://folgerpedia.folger.edu/Hamlet&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Folger on &lt;em&gt;Hamlet&lt;/em&gt;&lt;/a&gt;, &lt;a href=&quot;https://cervantes.bne.es/es/cronologia/biografia-miguel-cervantes-bne&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Biblioteca Nacional de España&lt;/a&gt;, &lt;a href=&quot;https://www.chesterton.org/lepanto/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;the Chesterton Society&lt;/a&gt;, and &lt;a href=&quot;https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100602.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;the Vatican biography of Aquinas&lt;/a&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  #casm-shared-era {
+    width: 100%;
+    color: var(--foreground);
+  }
+
+  #casm-shared-era .viz-heading {
+    margin-bottom: 0.75rem;
+  }
+
+  #casm-shared-era .viz-heading h1,
+  #casm-shared-era h2 {
+    margin-bottom: 0.25rem;
+  }
+
+  #casm-shared-era .viz-heading p,
+  #casm-shared-era .later-section &gt; p {
+    margin-top: 0;
+  }
+
+  #casm-shared-era .era-legend {
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  #casm-shared-era .era-legend &gt; span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  #casm-shared-era .legend-shape {
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+
+  #casm-shared-era .legend-event {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: var(--viz-series-1);
+  }
+
+  #casm-shared-era .legend-life {
+    width: 1.4rem;
+    height: 0.35rem;
+    background: var(--viz-series-3);
+  }
+
+  #casm-shared-era .legend-work {
+    width: 0.7rem;
+    height: 0.7rem;
+    background: var(--viz-series-2);
+    transform: rotate(45deg);
+  }
+
+  #casm-shared-era .legend-bridge {
+    width: 0.7rem;
+    height: 0.7rem;
+    background: var(--viz-series-3);
+    transform: rotate(45deg);
+  }
+
+  #casm-shared-era .chart-wrap {
+    width: 100%;
+  }
+
+  #casm-shared-era .chart-wrap svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  #casm-shared-era .selected-detail {
+    display: grid;
+    gap: 0.2rem;
+    margin-top: 0.75rem;
+  }
+
+  #casm-shared-era .detail-date {
+    font-variant-numeric: tabular-nums;
+  }
+
+  #casm-shared-era .detail-title {
+    font-weight: 500;
+  }
+
+  #casm-shared-era .later-section,
+  #casm-shared-era .course-section {
+    margin-top: 1.5rem;
+  }
+
+  #casm-shared-era .bridge-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem 1.25rem;
+    margin-top: 0.8rem;
+  }
+
+  #casm-shared-era .bridge-row {
+    display: grid;
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+    gap: 0.55rem;
+    align-items: start;
+  }
+
+  #casm-shared-era .bridge-number {
+    display: inline-grid;
+    place-items: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    color: var(--foreground);
+    background: var(--viz-series-3);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    font-variant-numeric: tabular-nums;
+  }
+
+  #casm-shared-era .timeline-note {
+    margin-top: 1.25rem;
+  }
+
+  #casm-shared-era .source-notes {
+    margin-top: 0.75rem;
+  }
+
+  #casm-shared-era .source-notes p {
+    margin-bottom: 0.55rem;
+  }
+
+  #casm-shared-era .mobile-era {
+    display: none;
+  }
+
+  #casm-shared-era .later-mobile {
+    display: none;
+  }
+
+  #casm-shared-era .mobile-period {
+    margin-bottom: 1rem;
+  }
+
+  #casm-shared-era .mobile-row {
+    display: grid;
+    grid-template-columns: 5.6rem 0.9rem minmax(0, 1fr);
+    gap: 0.45rem;
+    align-items: center;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  #casm-shared-era .mobile-row time {
+    font-variant-numeric: tabular-nums;
+  }
+
+  #casm-shared-era .mobile-mark {
+    width: 0.65rem;
+    height: 0.65rem;
+    background: var(--viz-series-1);
+    border-radius: 50%;
+  }
+
+  #casm-shared-era .mobile-mark.life {
+    width: 0.85rem;
+    height: 0.3rem;
+    border-radius: 0;
+    background: var(--viz-series-3);
+  }
+
+  #casm-shared-era .mobile-mark.work {
+    background: var(--viz-series-2);
+    border-radius: 0;
+    transform: rotate(45deg);
+  }
+
+  #casm-shared-era .mobile-mark.shared {
+    background: var(--viz-series-3);
+    border-radius: 0;
+    transform: rotate(45deg);
+  }
+
+  @media (max-width: 559px) {
+    #casm-shared-era .desktop-era {
+      display: none;
+    }
+
+    #casm-shared-era .mobile-era {
+      display: block;
+    }
+
+    #casm-shared-era .later-section &gt; .chart-wrap {
+      display: none;
+    }
+
+    #casm-shared-era .later-mobile {
+      display: block;
+    }
+
+    #casm-shared-era .bridge-grid {
+      grid-template-columns: 1fr;
+    }
+
+    #casm-shared-era .era-legend {
+      gap: 0.65rem;
+    }
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+(() =&gt; {
+  const root = document.getElementById(&#x27;casm-shared-era&#x27;);
+  const NS = &#x27;http://www.w3.org/2000/svg&#x27;;
+  const domain = [1100, 1620];
+
+  const events = [
+    { id: &#x27;worms&#x27;, start: 1122, date: &#x27;1122&#x27;, title: &#x27;Concordat of Worms&#x27;, core: true, summary: &#x27;The Investiture struggle reaches a settlement. History studies investiture, empire, and papacy as the medieval political world takes shape.&#x27; },
+    { id: &#x27;fourth-crusade&#x27;, start: 1202, end: 1204, date: &#x27;1202–1204&#x27;, title: &#x27;Fourth Crusade&#x27;, core: true, summary: &#x27;History reads Robert of Clari and studies the 1204 sack of Constantinople, a fracture in the Christian world Dante later inherits.&#x27; },
+    { id: &#x27;mongols&#x27;, start: 1206, date: &#x27;1206&#x27;, title: &#x27;Mongol Empire begins&#x27;, core: false, summary: &#x27;Temüjin is proclaimed Chinggis Khan. History follows the Mongol world and its later empire.&#x27; },
+    { id: &#x27;navas&#x27;, start: 1212, date: &#x27;1212&#x27;, title: &#x27;Las Navas de Tolosa&#x27;, core: false, summary: &#x27;A decisive Christian victory in Iberia, taught in the course’s early Spain sequence.&#x27; },
+    { id: &#x27;1215&#x27;, start: 1215, date: &#x27;1215&#x27;, title: &#x27;Magna Carta + Lateran IV&#x27;, core: true, summary: &#x27;Two different kinds of medieval institution stand side by side: Magna Carta in England and the Fourth Lateran Council in the Church.&#x27; },
+    { id: &#x27;avignon&#x27;, start: 1309, end: 1377, date: &#x27;1309–1377&#x27;, title: &#x27;Avignon Papacy&#x27;, core: false, summary: &#x27;The papacy resides at Avignon. The crisis begins just after Dante’s world and shapes the fourteenth century.&#x27; },
+    { id: &#x27;hundred-years&#x27;, start: 1337, end: 1453, date: &#x27;1337–1453&#x27;, title: &#x27;Hundred Years’ War&#x27;, core: false, summary: &#x27;An intermittent dynastic war reshapes England and France from the late medieval world to the edge of the Renaissance.&#x27; },
+    { id: &#x27;black-death&#x27;, start: 1347, end: 1351, date: &#x27;1347–1351&#x27;, title: &#x27;Black Death in Europe&#x27;, core: true, summary: &#x27;The first great European wave of plague transforms population, labor, belief, and social life.&#x27; },
+    { id: &#x27;western-schism&#x27;, start: 1378, end: 1417, date: &#x27;1378–1417&#x27;, title: &#x27;Great Western Schism&#x27;, core: false, summary: &#x27;Rival papal claimants deepen the crisis of authority in Western Christendom.&#x27; },
+    { id: &#x27;constantinople&#x27;, start: 1453, date: &#x27;1453&#x27;, title: &#x27;Constantinople falls&#x27;, core: true, summary: &#x27;Mehmed II captures Constantinople. The same year conventionally closes the Hundred Years’ War.&#x27; },
+    { id: &#x27;roses&#x27;, start: 1455, end: 1487, date: &#x27;1455–1487&#x27;, title: &#x27;Wars of the Roses&#x27;, core: false, summary: &#x27;The English dynastic wars end with the Tudor settlement; History later puts Richard III on trial.&#x27; },
+    { id: &#x27;1492&#x27;, start: 1492, date: &#x27;1492&#x27;, title: &#x27;Spain’s hinge year&#x27;, core: true, summary: &#x27;Granada falls, the expulsion decree is issued, and Columbus’s Atlantic voyage begins a new imperial age.&#x27; },
+    { id: &#x27;theses&#x27;, start: 1517, date: &#x27;1517&#x27;, title: &#x27;Ninety-five Theses&#x27;, core: true, summary: &#x27;Luther’s theses become a conventional marker for the Protestant Reformation; the famous church-door posting remains debated.&#x27; },
+    { id: &#x27;rhodes&#x27;, start: 1522, date: &#x27;1522&#x27;, title: &#x27;Ottomans take Rhodes&#x27;, core: false, summary: &#x27;Suleiman’s forces take Rhodes after a long siege; the Knights of St. John later establish themselves on Malta.&#x27; },
+    { id: &#x27;supremacy&#x27;, start: 1534, date: &#x27;1534&#x27;, title: &#x27;Act of Supremacy&#x27;, core: true, shared: true, summary: &#x27;England’s break with Rome frames Thomas More’s conflict with Henry VIII and the historical world of A Man for All Seasons.&#x27; },
+    { id: &#x27;trent&#x27;, start: 1545, end: 1563, date: &#x27;1545–1563&#x27;, title: &#x27;Council of Trent&#x27;, core: false, summary: &#x27;The Catholic Reformation council meets in three interrupted periods.&#x27; },
+    { id: &#x27;malta&#x27;, start: 1565, date: &#x27;1565&#x27;, title: &#x27;Great Siege of Malta&#x27;, core: false, summary: &#x27;The Knights of St. John withstand the Ottoman siege, setting the strategic stage for the Mediterranean struggle that culminates at Lepanto.&#x27; },
+    { id: &#x27;lepanto&#x27;, start: 1571, date: &#x27;7 Oct. 1571&#x27;, title: &#x27;Battle of Lepanto&#x27;, core: true, shared: true, summary: &#x27;The strongest exact bridge: History studies and reenacts the battle; Literature reads Chesterton’s poem; Cervantes fought there.&#x27; },
+    { id: &#x27;armada&#x27;, start: 1588, date: &#x27;1588&#x27;, title: &#x27;Spanish Armada&#x27;, core: false, summary: &#x27;A short post-1571 coda in History extends the English Reformation story beyond the course’s stated 1100–1571 spine.&#x27; }
+  ];
+
+  const people = [
+    { id: &#x27;genghis&#x27;, start: 1162, end: 1227, date: &#x27;c. 1162–1227&#x27;, title: &#x27;Genghis Khan&#x27;, type: &#x27;history&#x27;, summary: &#x27;His birth year is disputed. History studies Temüjin, Mongol society, conquest, and the later empire.&#x27; },
+    { id: &#x27;dominic&#x27;, start: 1170, end: 1221, date: &#x27;c. 1170–1221&#x27;, title: &#x27;St. Dominic&#x27;, type: &#x27;shared&#x27;, summary: &#x27;History reads a source on Dominic; Dante pairs the Dominican and Franciscan missions in Paradiso XI–XII.&#x27; },
+    { id: &#x27;francis&#x27;, start: 1182, end: 1226, date: &#x27;1181/82–1226&#x27;, title: &#x27;St. Francis&#x27;, type: &#x27;shared&#x27;, summary: &#x27;History reads a source on Francis; Dante’s Paradiso presents his marriage to Lady Poverty.&#x27; },
+    { id: &#x27;louis&#x27;, start: 1214, end: 1270, date: &#x27;1214–1270&#x27;, title: &#x27;St. Louis IX&#x27;, type: &#x27;history&#x27;, summary: &#x27;History studies Louis IX as Capetian king, crusader, and saint.&#x27; },
+    { id: &#x27;aquinas&#x27;, start: 1225, end: 1274, date: &#x27;1224/25–1274&#x27;, title: &#x27;St. Thomas Aquinas&#x27;, type: &#x27;shared&#x27;, summary: &#x27;History uses Aquinas’s Prayer Before Study; Literature closes the year with Chesterton’s 1933 biography.&#x27; },
+    { id: &#x27;dante&#x27;, start: 1265, end: 1321, date: &#x27;1265–1321&#x27;, title: &#x27;Dante Alighieri&#x27;, type: &#x27;shared&#x27;, summary: &#x27;Literature reads the complete Divine Comedy; History studies Dante with Petrarch and Boccaccio on Dec. 11.&#x27; },
+    { id: &#x27;joan&#x27;, start: 1412, end: 1431, date: &#x27;c. 1412–1431&#x27;, title: &#x27;St. Joan of Arc&#x27;, type: &#x27;history&#x27;, summary: &#x27;History follows Joan’s intervention in the Hundred Years’ War and her execution in 1431.&#x27; },
+    { id: &#x27;mehmed&#x27;, start: 1432, end: 1481, date: &#x27;1432–1481&#x27;, title: &#x27;Mehmed II&#x27;, type: &#x27;history&#x27;, summary: &#x27;The Ottoman sultan captures Constantinople in 1453 and reshapes the eastern Mediterranean.&#x27; },
+    { id: &#x27;isabella&#x27;, start: 1451, end: 1504, date: &#x27;1451–1504&#x27;, title: &#x27;Isabella I&#x27;, type: &#x27;history&#x27;, summary: &#x27;History studies Isabella, the Catholic Monarchs, the completion of Granada, the expulsion decree, and Atlantic expansion.&#x27; },
+    { id: &#x27;richard&#x27;, start: 1452, end: 1485, date: &#x27;1452–1485&#x27;, title: &#x27;Richard III&#x27;, type: &#x27;history&#x27;, summary: &#x27;History’s Wars of the Roses sequence culminates in a mock trial of Richard III.&#x27; },
+    { id: &#x27;more&#x27;, start: 1478, end: 1535, date: &#x27;1478–1535&#x27;, title: &#x27;St. Thomas More&#x27;, type: &#x27;shared&#x27;, summary: &#x27;History studies More, Wolsey, Cromwell, and the 1534 Act; Literature reads Bolt’s play about More’s conscience and execution.&#x27; },
+    { id: &#x27;luther&#x27;, start: 1483, end: 1546, date: &#x27;1483–1546&#x27;, title: &#x27;Martin Luther&#x27;, type: &#x27;history&#x27;, summary: &#x27;History devotes three meetings to Luther, including the Ninety-five Theses and later writings.&#x27; },
+    { id: &#x27;henry&#x27;, start: 1491, end: 1547, date: &#x27;1491–1547&#x27;, title: &#x27;Henry VIII&#x27;, type: &#x27;history&#x27;, summary: &#x27;Henry’s marriage crisis and royal supremacy drive the English Reformation and Bolt’s dramatic conflict.&#x27; },
+    { id: &#x27;suleiman&#x27;, start: 1495, end: 1566, date: &#x27;1494/95–1566&#x27;, title: &#x27;Suleiman I&#x27;, type: &#x27;history&#x27;, summary: &#x27;History studies Suleiman, Rhodes, Malta, and the Ottoman pressure that precedes Lepanto.&#x27; },
+    { id: &#x27;charles&#x27;, start: 1500, end: 1558, date: &#x27;1500–1558&#x27;, title: &#x27;Charles V&#x27;, type: &#x27;history&#x27;, summary: &#x27;Charles V links Habsburg strategy, the first global empire, Mediterranean conflict, and the Reformation.&#x27; },
+    { id: &#x27;cervantes&#x27;, start: 1547, end: 1616, date: &#x27;1547–1616&#x27;, title: &#x27;Miguel de Cervantes&#x27;, type: &#x27;shared&#x27;, summary: &#x27;Cervantes fought at Lepanto in 1571 and later published Don Quixote in 1605 and 1615.&#x27; },
+    { id: &#x27;shakespeare&#x27;, start: 1564, end: 1616, date: &#x27;1564–1616&#x27;, title: &#x27;William Shakespeare&#x27;, type: &#x27;literature&#x27;, summary: &#x27;Literature reads Much Ado and Hamlet, both composed around 1600 in the early-modern world just beyond History’s main endpoint.&#x27; }
+  ];
+
+  const works = [
+    { id: &#x27;comedy&#x27;, start: 1307, end: 1321, setting: 1300, date: &#x27;journey: 1300 · composed c. 1307–1321&#x27;, title: &#x27;Divine Comedy&#x27;, summary: &#x27;Dante sets the journey at Easter in the Jubilee year 1300 and composes the poem over the final years of his life.&#x27; },
+    { id: &#x27;much-ado&#x27;, start: 1598, end: 1599, date: &#x27;c. 1598–1599&#x27;, title: &#x27;Much Ado About Nothing&#x27;, summary: &#x27;Probably composed in 1598–99 and first printed in 1600. Its Renaissance Mediterranean setting is fictional, not a dated historical episode.&#x27; },
+    { id: &#x27;hamlet&#x27;, start: 1599, end: 1601, date: &#x27;c. 1599–1601&#x27;, title: &#x27;Hamlet&#x27;, summary: &#x27;Probably composed around 1599–1601. Its Denmark is legendary and undated, with both medieval and Reformation-era features.&#x27; },
+    { id: &#x27;quixote&#x27;, start: 1605, end: 1615, points: [1605, 1615], date: &#x27;Parts I–II: 1605 / 1615&#x27;, title: &#x27;Don Quixote&#x27;, summary: &#x27;Published in two parts, ten years apart. The novel belongs to Cervantes’s own early-modern Spain, after his service at Lepanto.&#x27; }
+  ];
+
+  const laterItems = [
+    { id: &#x27;chesterton&#x27;, start: 1874, end: 1936, date: &#x27;1874–1936&#x27;, title: &#x27;G. K. Chesterton&#x27;, summary: &#x27;A modern writer looking back: this course reads his poem on Lepanto and his biography of Aquinas.&#x27; },
+    { id: &#x27;lepanto-poem&#x27;, year: 1911, date: &#x27;1911 ↩ 1571&#x27;, title: &#x27;“Lepanto”&#x27;, summary: &#x27;Chesterton’s poem first appeared in 1911 and looks back to the battle of 7 October 1571.&#x27; },
+    { id: &#x27;aquinas-book&#x27;, year: 1933, date: &#x27;1933 ↩ 1224/25–1274&#x27;, title: &#x27;Chesterton’s St. Thomas Aquinas&#x27;, summary: &#x27;Chesterton’s biography was published in 1933 and looks back to Aquinas’s thirteenth-century life.&#x27; },
+    { id: &#x27;bolt&#x27;, start: 1924, end: 1995, date: &#x27;1924–1995&#x27;, title: &#x27;Robert Bolt&#x27;, summary: &#x27;Bolt retells Thomas More’s sixteenth-century conflict for a twentieth-century audience.&#x27; },
+    { id: &#x27;man-for-all-seasons&#x27;, year: 1960, date: &#x27;stage play 1960 ↩ c. 1528–1535&#x27;, title: &#x27;A Man for All Seasons&#x27;, summary: &#x27;The radio form dates to 1954; the rewritten stage version was first produced and published in 1960.&#x27; }
+  ];
+
+  const allItems = [...events, ...people, ...works, ...laterItems];
+  const byId = new Map(allItems.map(d =&gt; [d.id, d]));
+
+  function svgEl(name, attrs = {}, text = &#x27;&#x27;) {
+    const el = document.createElementNS(NS, name);
+    Object.entries(attrs).forEach(([key, value]) =&gt; el.setAttribute(key, String(value)));
+    if (text) el.textContent = text;
+    return el;
+  }
+
+  function clear(svg) {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+  }
+
+  function scaleLinear(value, d0, d1, r0, r1) {
+    return r0 + ((value - d0) / (d1 - d0)) * (r1 - r0);
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function estimateLabel(label, min = 72, max = 140) {
+    return clamp(label.length * 6.15, min, max);
+  }
+
+  function pack(items, xAccessor, widthAccessor, left, right, gap = 8) {
+    const rows = [];
+    const placed = [];
+    [...items].sort((a, b) =&gt; xAccessor(a) - xAccessor(b)).forEach(item =&gt; {
+      const width = widthAccessor(item);
+      const center = clamp(xAccessor(item), left + width / 2, right - width / 2);
+      const start = center - width / 2;
+      const end = center + width / 2;
+      let row = rows.findIndex(last =&gt; start &gt; last + gap);
+      if (row &lt; 0) {
+        row = rows.length;
+        rows.push(end);
+      } else {
+        rows[row] = end;
+      }
+      placed.push({ item, row, center, width });
+    });
+    return { placed, count: rows.length };
+  }
+
+  function itemColor(item) {
+    if (item.shared || item.type === &#x27;shared&#x27;) return &#x27;var(--viz-series-3)&#x27;;
+    if (item.type === &#x27;literature&#x27; || works.includes(item) || item.year) return &#x27;var(--viz-series-2)&#x27;;
+    return &#x27;var(--viz-series-1)&#x27;;
+  }
+
+  function diamondPath(x, y, radius) {
+    return `M ${x} ${y - radius} L ${x + radius} ${y} L ${x} ${y + radius} L ${x - radius} ${y} Z`;
+  }
+
+  function selectable(parent, item, label) {
+    const link = svgEl(&#x27;a&#x27;, {
+      href: &#x27;#timeline-detail&#x27;,
+      &#x27;data-select-id&#x27;: item.id,
+      &#x27;data-tooltip&#x27;: `${item.date} · ${item.title}`,
+      &#x27;aria-label&#x27;: label || `${item.date}: ${item.title}`
+    });
+    parent.appendChild(link);
+    return link;
+  }
+
+  function drawEra() {
+    const svg = document.getElementById(&#x27;era-chart&#x27;);
+    const width = Math.max(560, Math.round(svg.parentElement.getBoundingClientRect().width || 736));
+    const left = 20;
+    const right = width - 20;
+    const x = year =&gt; scaleLinear(year, domain[0], domain[1], left, right);
+
+    const coreEvents = events.filter(d =&gt; d.core);
+    const eventPack = pack(coreEvents, d =&gt; x((d.start + (d.end || d.start)) / 2), d =&gt; estimateLabel(d.title), left, right, 10);
+    const peoplePack = pack(people, d =&gt; x((d.start + d.end) / 2), d =&gt; Math.max(estimateLabel(`${d.title} · ${d.date}`, 92, 182), x(d.end) - x(d.start)), left, right, 14);
+    const workPack = pack(works, d =&gt; x((d.start + d.end) / 2), d =&gt; Math.max(estimateLabel(d.title, 78, 142), estimateLabel(d.date, 90, 176)), left, right, 12);
+
+    const eraY = 8;
+    const eraH = 27;
+    const ticksY = 53;
+    const eventTop = 82;
+    const eventAxisY = eventTop + eventPack.count * 37 + 12;
+    const peopleTop = eventAxisY + 54;
+    const peopleBottom = peopleTop + peoplePack.count * 35 + 12;
+    const worksTop = peopleBottom + 47;
+    const worksBottom = worksTop + workPack.count * 38 + 20;
+    const height = worksBottom + 31;
+
+    clear(svg);
+    svg.setAttribute(&#x27;viewBox&#x27;, `0 0 ${width} ${height}`);
+    svg.setAttribute(&#x27;height&#x27;, height);
+
+    const title = svgEl(&#x27;title&#x27;, { id: &#x27;era-chart-svg-title&#x27; }, &#x27;The World We Study, 1100 to 1616&#x27;);
+    const desc = svgEl(&#x27;desc&#x27;, { id: &#x27;era-chart-svg-desc&#x27; }, &#x27;A proportional timeline aligning core historical events, important lifespans, and the composition dates of the major Literature 11 works. Select any labeled mark for a concise cross-course explanation.&#x27;);
+    svg.append(title, desc);
+
+    svg.appendChild(svgEl(&#x27;rect&#x27;, {
+      x: left,
+      y: eraY,
+      width: right - left,
+      height: height - eraY - 18,
+      fill: &#x27;none&#x27;,
+      stroke: &#x27;var(--border)&#x27;,
+      &#x27;stroke-width&#x27;: 1,
+      &#x27;data-chart-frame&#x27;: &#x27;&#x27;
+    }));
+
+    const eras = [
+      { start: 1100, end: 1300, label: &#x27;High Middle Ages · c. 1100–1300&#x27;, color: &#x27;var(--viz-series-1)&#x27; },
+      { start: 1300, end: 1450, label: &#x27;Crisis &amp; transition · c. 1300–1450&#x27;, color: &#x27;var(--viz-series-3)&#x27; },
+      { start: 1450, end: 1620, label: &#x27;Renaissance &amp; Reformations · c. 1450–1620&#x27;, color: &#x27;var(--viz-series-2)&#x27; }
+    ];
+
+    eras.forEach(era =&gt; {
+      svg.appendChild(svgEl(&#x27;rect&#x27;, {
+        x: x(era.start), y: eraY, width: x(era.end) - x(era.start), height: eraH,
+        fill: era.color, opacity: 0.12
+      }));
+      const center = (x(era.start) + x(era.end)) / 2;
+      const fits = x(era.end) - x(era.start) &gt; 170;
+      svg.appendChild(svgEl(&#x27;text&#x27;, {
+        x: center, y: eraY + 18, &#x27;text-anchor&#x27;: &#x27;middle&#x27;, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12, &#x27;font-weight&#x27;: 500
+      }, fits ? era.label : era.label.split(&#x27; · &#x27;)[0]));
+    });
+
+    [1100, 1200, 1300, 1400, 1500, 1600].forEach(year =&gt; {
+      svg.appendChild(svgEl(&#x27;line&#x27;, {
+        x1: x(year), y1: eraY + eraH, x2: x(year), y2: height - 18,
+        stroke: &#x27;var(--border)&#x27;, &#x27;stroke-width&#x27;: 1, opacity: 0.62
+      }));
+      svg.appendChild(svgEl(&#x27;text&#x27;, {
+        x: x(year), y: ticksY, &#x27;text-anchor&#x27;: year === 1100 ? &#x27;start&#x27; : &#x27;middle&#x27;,
+        fill: &#x27;var(--muted-foreground)&#x27;, &#x27;font-size&#x27;: 12
+      }, String(year)));
+    });
+
+    svg.appendChild(svgEl(&#x27;text&#x27;, { x: left, y: eventTop - 13, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12, &#x27;font-weight&#x27;: 500 }, &#x27;HISTORY · events&#x27;));
+    svg.appendChild(svgEl(&#x27;line&#x27;, { x1: left, y1: eventAxisY, x2: right, y2: eventAxisY, stroke: &#x27;var(--border)&#x27;, &#x27;stroke-width&#x27;: 2 }));
+
+    events.filter(d =&gt; !d.core).forEach(item =&gt; {
+      const mid = x((item.start + (item.end || item.start)) / 2);
+      const link = selectable(svg, item);
+      if (item.end) {
+        link.appendChild(svgEl(&#x27;line&#x27;, { x1: x(item.start), y1: eventAxisY, x2: x(item.end), y2: eventAxisY, stroke: &#x27;var(--viz-series-1)&#x27;, &#x27;stroke-width&#x27;: 5, opacity: 0.48 }));
+      }
+      link.appendChild(svgEl(&#x27;circle&#x27;, { cx: mid, cy: eventAxisY, r: 4.5, fill: &#x27;var(--viz-series-1)&#x27;, opacity: 0.72 }));
+    });
+
+    eventPack.placed.forEach(({ item, row, center }) =&gt; {
+      const markX = x((item.start + (item.end || item.start)) / 2);
+      const labelY = eventTop + row * 37;
+      const color = itemColor(item);
+      const link = selectable(svg, item);
+      link.appendChild(svgEl(&#x27;path&#x27;, {
+        d: `M ${markX} ${eventAxisY - 7} L ${markX} ${labelY + 26} L ${center} ${labelY + 26}`,
+        fill: &#x27;none&#x27;, stroke: &#x27;var(--border)&#x27;, &#x27;stroke-width&#x27;: 1
+      }));
+      if (item.end) {
+        link.appendChild(svgEl(&#x27;line&#x27;, { x1: x(item.start), y1: eventAxisY, x2: x(item.end), y2: eventAxisY, stroke: color, &#x27;stroke-width&#x27;: 7 }));
+      }
+      if (item.shared) {
+        link.appendChild(svgEl(&#x27;path&#x27;, { d: diamondPath(markX, eventAxisY, 6), fill: color, &#x27;data-mark-id&#x27;: item.id }));
+      } else {
+        link.appendChild(svgEl(&#x27;circle&#x27;, { cx: markX, cy: eventAxisY, r: 6, fill: color, &#x27;data-mark-id&#x27;: item.id }));
+      }
+      const text = svgEl(&#x27;text&#x27;, { x: center, y: labelY + 10, &#x27;text-anchor&#x27;: &#x27;middle&#x27;, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12 });
+      text.appendChild(svgEl(&#x27;tspan&#x27;, { x: center, dy: 0, fill: &#x27;var(--muted-foreground)&#x27; }, item.date));
+      text.appendChild(svgEl(&#x27;tspan&#x27;, { x: center, dy: 15, &#x27;font-weight&#x27;: 500 }, item.title));
+      link.appendChild(text);
+    });
+
+    svg.appendChild(svgEl(&#x27;text&#x27;, { x: left, y: peopleTop - 14, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12, &#x27;font-weight&#x27;: 500 }, &#x27;PEOPLE · figures and authors&#x27;));
+    peoplePack.placed.forEach(({ item, row, center }) =&gt; {
+      const y = peopleTop + row * 35 + 18;
+      const color = itemColor(item);
+      const link = selectable(svg, item);
+      link.appendChild(svgEl(&#x27;line&#x27;, { x1: x(item.start), y1: y, x2: x(item.end), y2: y, stroke: color, &#x27;stroke-width&#x27;: 7, &#x27;data-mark-id&#x27;: item.id }));
+      link.appendChild(svgEl(&#x27;circle&#x27;, { cx: x(item.start), cy: y, r: 3.5, fill: color }));
+      link.appendChild(svgEl(&#x27;circle&#x27;, { cx: x(item.end), cy: y, r: 3.5, fill: color }));
+      const text = svgEl(&#x27;text&#x27;, { x: center, y: y - 8, &#x27;text-anchor&#x27;: &#x27;middle&#x27;, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12 });
+      text.appendChild(svgEl(&#x27;tspan&#x27;, { &#x27;font-weight&#x27;: 500 }, item.title));
+      text.appendChild(svgEl(&#x27;tspan&#x27;, { fill: &#x27;var(--muted-foreground)&#x27; }, ` · ${item.date}`));
+      link.appendChild(text);
+    });
+
+    svg.appendChild(svgEl(&#x27;text&#x27;, { x: left, y: worksTop - 14, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12, &#x27;font-weight&#x27;: 500 }, &#x27;LITERATURE · when the works entered the world&#x27;));
+    workPack.placed.forEach(({ item, row, center }) =&gt; {
+      const y = worksTop + row * 38 + 18;
+      const link = selectable(svg, item);
+      link.appendChild(svgEl(&#x27;line&#x27;, { x1: x(item.start), y1: y, x2: x(item.end), y2: y, stroke: &#x27;var(--viz-series-2)&#x27;, &#x27;stroke-width&#x27;: 6, &#x27;data-mark-id&#x27;: item.id }));
+      const points = item.points || [item.setting || (item.start + item.end) / 2];
+      points.forEach(point =&gt; link.appendChild(svgEl(&#x27;path&#x27;, { d: diamondPath(x(point), y, 5.5), fill: item.id === &#x27;comedy&#x27; ? &#x27;var(--viz-series-3)&#x27; : &#x27;var(--viz-series-2)&#x27; })));
+      const text = svgEl(&#x27;text&#x27;, { x: center, y: y - 8, &#x27;text-anchor&#x27;: &#x27;middle&#x27;, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12 });
+      text.appendChild(svgEl(&#x27;tspan&#x27;, { &#x27;font-weight&#x27;: 500 }, item.title));
+      text.appendChild(svgEl(&#x27;tspan&#x27;, { x: center, dy: 14, fill: &#x27;var(--muted-foreground)&#x27; }, item.date));
+      link.appendChild(text);
+    });
+
+    svg.appendChild(svgEl(&#x27;text&#x27;, {
+      class: &#x27;axis-title&#x27;, &#x27;data-axis&#x27;: &#x27;x&#x27;, x: right, y: height - 4, &#x27;text-anchor&#x27;: &#x27;end&#x27;, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12
+    }, &#x27;Years (CE)&#x27;));
+  }
+
+  function drawLater() {
+    const svg = document.getElementById(&#x27;later-chart&#x27;);
+    const width = Math.max(320, Math.round(svg.parentElement.getBoundingClientRect().width || 736));
+    const height = 188;
+    const left = 20;
+    const right = width - 20;
+    const x = year =&gt; scaleLinear(year, 1870, 2000, left, right);
+    clear(svg);
+    svg.setAttribute(&#x27;viewBox&#x27;, `0 0 ${width} ${height}`);
+    svg.setAttribute(&#x27;height&#x27;, height);
+    svg.append(svgEl(&#x27;title&#x27;, { id: &#x27;later-svg-title&#x27; }, &#x27;Later writers looking back&#x27;), svgEl(&#x27;desc&#x27;, { id: &#x27;later-svg-desc&#x27; }, &#x27;A separate modern axis for Chesterton and Bolt, with their works pointing back to Aquinas, More, and Lepanto.&#x27;));
+
+    svg.appendChild(svgEl(&#x27;rect&#x27;, { x: left, y: 8, width: right - left, height: 162, fill: &#x27;none&#x27;, stroke: &#x27;var(--border)&#x27;, &#x27;stroke-width&#x27;: 1, &#x27;data-chart-frame&#x27;: &#x27;&#x27; }));
+    [1875, 1900, 1925, 1950, 1975, 2000].forEach(year =&gt; {
+      svg.appendChild(svgEl(&#x27;line&#x27;, { x1: x(year), y1: 8, x2: x(year), y2: 170, stroke: &#x27;var(--border)&#x27;, &#x27;stroke-width&#x27;: 1, opacity: 0.6 }));
+      svg.appendChild(svgEl(&#x27;text&#x27;, { x: x(year), y: 184, &#x27;text-anchor&#x27;: year === 2000 ? &#x27;end&#x27; : &#x27;middle&#x27;, fill: &#x27;var(--muted-foreground)&#x27;, &#x27;font-size&#x27;: 12 }, String(year)));
+    });
+
+    const chesterton = byId.get(&#x27;chesterton&#x27;);
+    const bolt = byId.get(&#x27;bolt&#x27;);
+    [[chesterton, 58], [bolt, 128]].forEach(([item, y]) =&gt; {
+      const link = selectable(svg, item);
+      link.appendChild(svgEl(&#x27;line&#x27;, { x1: x(item.start), y1: y, x2: x(item.end), y2: y, stroke: &#x27;var(--viz-series-2)&#x27;, &#x27;stroke-width&#x27;: 7, &#x27;data-mark-id&#x27;: item.id }));
+      const labelX = item.id === &#x27;bolt&#x27; ? x(item.end) : x(item.start);
+      const labelAnchor = item.id === &#x27;bolt&#x27; ? &#x27;end&#x27; : &#x27;start&#x27;;
+      link.appendChild(svgEl(&#x27;text&#x27;, { x: labelX, y: y - 18, &#x27;text-anchor&#x27;: labelAnchor, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12, &#x27;font-weight&#x27;: 500 }, `${item.title} · ${item.date}`));
+    });
+
+    const laterMarks = [
+      { item: byId.get(&#x27;lepanto-poem&#x27;), y: 58, labelY: 82, anchor: &#x27;end&#x27;, short: &#x27;“Lepanto” · 1911 ↩ 1571&#x27; },
+      { item: byId.get(&#x27;aquinas-book&#x27;), y: 58, labelY: 82, anchor: &#x27;start&#x27;, short: &#x27;Aquinas · 1933 ↩ 13th c.&#x27; },
+      { item: byId.get(&#x27;man-for-all-seasons&#x27;), y: 128, labelY: 157, anchor: &#x27;middle&#x27;, short: &#x27;A Man for All Seasons · 1960 ↩ 1528–35&#x27; }
+    ];
+    laterMarks.forEach(({ item, y, labelY, anchor, short }) =&gt; {
+      const link = selectable(svg, item);
+      link.appendChild(svgEl(&#x27;path&#x27;, { d: diamondPath(x(item.year), y, 6), fill: &#x27;var(--viz-series-3)&#x27;, &#x27;data-mark-id&#x27;: item.id }));
+      const label = short;
+      link.appendChild(svgEl(&#x27;text&#x27;, { x: x(item.year), y: labelY, &#x27;text-anchor&#x27;: anchor, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12, &#x27;font-weight&#x27;: 500 }, label));
+    });
+    svg.appendChild(svgEl(&#x27;text&#x27;, { class: &#x27;axis-title&#x27;, &#x27;data-axis&#x27;: &#x27;x&#x27;, x: right, y: 184, &#x27;text-anchor&#x27;: &#x27;end&#x27;, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12 }, &#x27;Years (CE)&#x27;));
+  }
+
+  function dateMs(value) {
+    return Date.parse(`${value}T00:00:00Z`);
+  }
+
+  function drawCourse() {
+    const svg = document.getElementById(&#x27;course-chart&#x27;);
+    const width = Math.max(320, Math.round(svg.parentElement.getBoundingClientRect().width || 736));
+    const height = 178;
+    const left = 20;
+    const right = width - 20;
+    const start = dateMs(&#x27;2026-08-25&#x27;);
+    const end = dateMs(&#x27;2027-06-04&#x27;);
+    const x = date =&gt; scaleLinear(dateMs(date), start, end, left, right);
+    clear(svg);
+    svg.setAttribute(&#x27;viewBox&#x27;, `0 0 ${width} ${height}`);
+    svg.setAttribute(&#x27;height&#x27;, height);
+    svg.append(svgEl(&#x27;title&#x27;, { id: &#x27;course-svg-title&#x27; }, &#x27;Course-year alignment, 2026–27&#x27;), svgEl(&#x27;desc&#x27;, { id: &#x27;course-svg-desc&#x27; }, &#x27;Broad History and Literature unit bands across the school year, with numbered diamonds marking six important cross-course meetings.&#x27;));
+
+    svg.appendChild(svgEl(&#x27;rect&#x27;, { x: left, y: 8, width: right - left, height: 151, fill: &#x27;none&#x27;, stroke: &#x27;var(--border)&#x27;, &#x27;stroke-width&#x27;: 1, &#x27;data-chart-frame&#x27;: &#x27;&#x27; }));
+    const months = [
+      [&#x27;2026-09-01&#x27;, &#x27;Sep&#x27;], [&#x27;2026-11-01&#x27;, &#x27;Nov&#x27;], [&#x27;2027-01-01&#x27;, &#x27;Jan&#x27;],
+      [&#x27;2027-03-01&#x27;, &#x27;Mar&#x27;], [&#x27;2027-05-01&#x27;, &#x27;May&#x27;], [&#x27;2027-06-04&#x27;, &#x27;Jun&#x27;]
+    ];
+    months.forEach(([date, label]) =&gt; {
+      svg.appendChild(svgEl(&#x27;line&#x27;, { x1: x(date), y1: 8, x2: x(date), y2: 159, stroke: &#x27;var(--border)&#x27;, &#x27;stroke-width&#x27;: 1, opacity: 0.62 }));
+      svg.appendChild(svgEl(&#x27;text&#x27;, { x: x(date), y: 173, &#x27;text-anchor&#x27;: label === &#x27;Jun&#x27; ? &#x27;end&#x27; : &#x27;middle&#x27;, fill: &#x27;var(--muted-foreground)&#x27;, &#x27;font-size&#x27;: 12 }, label));
+    });
+
+    const historySegments = [
+      [&#x27;2026-08-25&#x27;, &#x27;2026-12-07&#x27;, &#x27;Medieval worlds&#x27;],
+      [&#x27;2026-12-08&#x27;, &#x27;2027-01-22&#x27;, &#x27;Renaissance&#x27;],
+      [&#x27;2027-01-25&#x27;, &#x27;2027-03-16&#x27;, &#x27;Dynasties &amp; empires&#x27;],
+      [&#x27;2027-03-19&#x27;, &#x27;2027-05-04&#x27;, &#x27;Reformations&#x27;],
+      [&#x27;2027-05-07&#x27;, &#x27;2027-06-04&#x27;, &#x27;Lepanto &amp; synthesis&#x27;]
+    ];
+    const literatureSegments = [
+      [&#x27;2026-08-26&#x27;, &#x27;2026-12-01&#x27;, &#x27;Dante&#x27;],
+      [&#x27;2026-12-02&#x27;, &#x27;2027-01-05&#x27;, &#x27;Much Ado&#x27;],
+      [&#x27;2027-01-04&#x27;, &#x27;2027-03-02&#x27;, &#x27;Don Quixote&#x27;],
+      [&#x27;2027-03-03&#x27;, &#x27;2027-03-11&#x27;, &#x27;Lep.&#x27;],
+      [&#x27;2027-03-12&#x27;, &#x27;2027-04-08&#x27;, &#x27;More&#x27;],
+      [&#x27;2027-04-09&#x27;, &#x27;2027-05-12&#x27;, &#x27;Hamlet&#x27;],
+      [&#x27;2027-05-13&#x27;, &#x27;2027-06-04&#x27;, &#x27;Aquinas&#x27;]
+    ];
+
+    function drawSegments(segments, y, color, lane) {
+      svg.appendChild(svgEl(&#x27;text&#x27;, { x: left, y: y - 9, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12, &#x27;font-weight&#x27;: 500 }, lane));
+      segments.forEach(([s, e, label]) =&gt; {
+        const sx = x(s);
+        const ex = x(e);
+        svg.appendChild(svgEl(&#x27;rect&#x27;, { x: sx, y, width: Math.max(2, ex - sx), height: 22, fill: color, opacity: 0.22 }));
+        if (width &gt;= 560 &amp;&amp; ex - sx &gt; 37) {
+          svg.appendChild(svgEl(&#x27;text&#x27;, { x: (sx + ex) / 2, y: y + 15, &#x27;text-anchor&#x27;: &#x27;middle&#x27;, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12 }, label));
+        }
+      });
+    }
+
+    drawSegments(historySegments, 41, &#x27;var(--viz-series-1)&#x27;, &#x27;HISTORY 11&#x27;);
+    drawSegments(literatureSegments, 110, &#x27;var(--viz-series-2)&#x27;, &#x27;LITERATURE 11&#x27;);
+
+    const bridges = [
+      [&#x27;2026-12-11&#x27;, &#x27;1&#x27;], [&#x27;2026-12-16&#x27;, &#x27;2&#x27;], [&#x27;2027-02-16&#x27;, &#x27;3&#x27;],
+      [&#x27;2027-03-12&#x27;, &#x27;4&#x27;], [&#x27;2027-04-13&#x27;, &#x27;5&#x27;], [&#x27;2027-04-26&#x27;, &#x27;6&#x27;]
+    ];
+    bridges.forEach(([date, number]) =&gt; {
+      const px = x(date);
+      svg.appendChild(svgEl(&#x27;line&#x27;, { x1: px, y1: 64, x2: px, y2: 109, stroke: &#x27;var(--viz-series-3)&#x27;, &#x27;stroke-width&#x27;: 2 }));
+      svg.appendChild(svgEl(&#x27;path&#x27;, { d: diamondPath(px, 86, 9), fill: &#x27;var(--viz-series-3)&#x27; }));
+      svg.appendChild(svgEl(&#x27;text&#x27;, { x: px, y: 90, &#x27;text-anchor&#x27;: &#x27;middle&#x27;, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 11, &#x27;font-weight&#x27;: 500 }, number));
+    });
+
+    const now = new Date();
+    const nowMs = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    if (nowMs &gt;= start &amp;&amp; nowMs &lt;= end) {
+      const todayX = scaleLinear(nowMs, start, end, left, right);
+      svg.appendChild(svgEl(&#x27;line&#x27;, { x1: todayX, y1: 18, x2: todayX, y2: 151, stroke: &#x27;var(--foreground)&#x27;, &#x27;stroke-width&#x27;: 2 }));
+      svg.appendChild(svgEl(&#x27;text&#x27;, { x: clamp(todayX + 4, left + 4, right - 35), y: 27, fill: &#x27;var(--foreground)&#x27;, &#x27;font-size&#x27;: 12, &#x27;font-weight&#x27;: 500 }, &#x27;Today&#x27;));
+    }
+  }
+
+  function mobileKind(item) {
+    if (works.includes(item)) return item.id === &#x27;comedy&#x27; ? &#x27;shared&#x27; : &#x27;work&#x27;;
+    if (people.includes(item)) return item.type === &#x27;shared&#x27; ? &#x27;shared&#x27; : &#x27;life&#x27;;
+    return item.shared ? &#x27;shared&#x27; : &#x27;&#x27;;
+  }
+
+  function buildMobile() {
+    const container = document.getElementById(&#x27;mobile-era&#x27;);
+    const anchors = [...events.filter(d =&gt; d.core), ...people, ...works];
+    const periods = [
+      { title: &#x27;High Middle Ages · c. 1100–1300&#x27;, start: 1100, end: 1299 },
+      { title: &#x27;Crisis &amp; transition · c. 1300–1450&#x27;, start: 1300, end: 1449 },
+      { title: &#x27;Renaissance &amp; Reformations · c. 1450–1620&#x27;, start: 1450, end: 1620 }
+    ];
+    periods.forEach(period =&gt; {
+      const section = document.createElement(&#x27;section&#x27;);
+      section.className = &#x27;mobile-period&#x27;;
+      const heading = document.createElement(&#x27;h3&#x27;);
+      heading.textContent = period.title;
+      section.appendChild(heading);
+      anchors
+        .filter(item =&gt; item.start &gt;= period.start &amp;&amp; item.start &lt;= period.end)
+        .sort((a, b) =&gt; a.start - b.start)
+        .forEach(item =&gt; {
+          const row = document.createElement(&#x27;div&#x27;);
+          row.className = &#x27;mobile-row&#x27;;
+          row.setAttribute(&#x27;role&#x27;, &#x27;listitem&#x27;);
+          const time = document.createElement(&#x27;time&#x27;);
+          time.className = &#x27;text-small text-muted&#x27;;
+          time.textContent = item.date;
+          const mark = document.createElement(&#x27;span&#x27;);
+          mark.className = `mobile-mark ${mobileKind(item)}`;
+          mark.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+          const button = document.createElement(&#x27;button&#x27;);
+          button.type = &#x27;button&#x27;;
+          button.className = &#x27;btn btn-ghost&#x27;;
+          button.dataset.selectId = item.id;
+          button.textContent = item.title;
+          row.append(time, mark, button);
+          section.appendChild(row);
+        });
+      container.appendChild(section);
+    });
+  }
+
+  function buildLaterMobile() {
+    const container = document.getElementById(&#x27;later-mobile&#x27;);
+    [
+      { date: &#x27;1911&#x27;, title: &#x27;“Lepanto”&#x27;, note: &#x27;Chesterton (1874–1936) ↩ battle of 1571&#x27; },
+      { date: &#x27;1933&#x27;, title: &#x27;St. Thomas Aquinas&#x27;, note: &#x27;Chesterton ↩ Aquinas, 1224/25–1274&#x27; },
+      { date: &#x27;1960&#x27;, title: &#x27;A Man for All Seasons&#x27;, note: &#x27;Bolt (1924–1995) ↩ c. 1528–1535&#x27; }
+    ].forEach(entry =&gt; {
+      const row = document.createElement(&#x27;div&#x27;);
+      row.className = &#x27;mobile-row&#x27;;
+      row.setAttribute(&#x27;role&#x27;, &#x27;listitem&#x27;);
+      const time = document.createElement(&#x27;time&#x27;);
+      time.className = &#x27;text-small text-muted&#x27;;
+      time.textContent = entry.date;
+      const mark = document.createElement(&#x27;span&#x27;);
+      mark.className = &#x27;mobile-mark shared&#x27;;
+      mark.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+      const copy = document.createElement(&#x27;span&#x27;);
+      const title = document.createElement(&#x27;strong&#x27;);
+      title.textContent = entry.title;
+      const br = document.createElement(&#x27;br&#x27;);
+      const note = document.createElement(&#x27;span&#x27;);
+      note.className = &#x27;text-muted&#x27;;
+      note.textContent = entry.note;
+      copy.append(title, br, note);
+      row.append(time, mark, copy);
+      container.appendChild(row);
+    });
+  }
+
+  function selectItem(id) {
+    const item = byId.get(id);
+    if (!item) return;
+    selectedId = id;
+    document.getElementById(&#x27;detail-date&#x27;).textContent = item.date;
+    document.getElementById(&#x27;detail-title&#x27;).textContent = item.title;
+    document.getElementById(&#x27;detail-copy&#x27;).textContent = item.summary;
+    root.querySelectorAll(&#x27;[data-mark-id]&#x27;).forEach(mark =&gt; {
+      const selected = mark.getAttribute(&#x27;data-mark-id&#x27;) === id;
+      mark.setAttribute(&#x27;stroke&#x27;, selected ? &#x27;var(--foreground)&#x27; : &#x27;none&#x27;);
+      mark.setAttribute(&#x27;stroke-width&#x27;, selected ? &#x27;2&#x27; : &#x27;0&#x27;);
+    });
+  }
+
+  root.addEventListener(&#x27;click&#x27;, event =&gt; {
+    const target = event.target.closest(&#x27;[data-select-id]&#x27;);
+    if (!target) return;
+    event.preventDefault();
+    selectItem(target.getAttribute(&#x27;data-select-id&#x27;));
+  });
+
+  let selectedId = &#x27;dante&#x27;;
+  buildMobile();
+  buildLaterMobile();
+  drawEra();
+  drawLater();
+  drawCourse();
+  selectItem(&#x27;dante&#x27;);
+
+  const observer = new ResizeObserver(() =&gt; {
+    drawEra();
+    drawLater();
+    drawCourse();
+    selectItem(selectedId);
+  });
+  observer.observe(root);
+})();
+&lt;/script&gt;
+
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+<script>
+(() => {
+  const frame = document.querySelector("iframe");
+  if (!frame) return;
+
+  const fitToContent = () => {
+    const doc = frame.contentDocument;
+    if (!doc) return;
+    const height = Math.max(doc.documentElement.scrollHeight, doc.body?.scrollHeight || 0);
+    frame.style.height = `${height}px`;
+  };
+
+  const beginWatching = () => {
+    fitToContent();
+    const doc = frame.contentDocument;
+    if (doc && "ResizeObserver" in window) {
+      new ResizeObserver(fitToContent).observe(doc.documentElement);
+    }
+    window.addEventListener("resize", fitToContent, { passive: true });
+  };
+
+  frame.addEventListener("load", beginWatching, { once: true });
+  if (frame.contentDocument?.readyState === "complete") beginWatching();
+})();
+</script>
+</body>
+</html>

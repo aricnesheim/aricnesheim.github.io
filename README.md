@@ -18,6 +18,12 @@ filtered by today's date in the browser, so it advances on its own. After any
 schedule re-flow: re-run the exporter, commit, push (Schedule Change Protocol
 step 6).
 
+## Provenance note
+
+`files/history/shared-era-timeline.html` is Codex/GPT work product (from
+Aric's `output/html/` folder), hosted here unmodified at Aric's request.
+Source: Codex/GPT. Do not fold it into Claude-authored material.
+
 ## How updates work
 
 Aric tells Claude the week's homework, notes, or new links in chat; Claude edits
