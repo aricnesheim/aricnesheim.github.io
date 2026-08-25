@@ -69,8 +69,6 @@ h1, h2, h3, .brand {
   text-decoration: none;
 }
 
-.brand .dot { color: var(--accent); }
-
 .nav-links {
   display: flex;
   gap: 0.25rem;
@@ -130,8 +128,6 @@ h1 {
   line-height: 1.08;
   margin: 0 0 0.6rem;
 }
-
-h1 .dot { color: var(--accent); }
 
 .lead {
   font-size: 1.12rem;
