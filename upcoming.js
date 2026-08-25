@@ -77,8 +77,14 @@
       const tailEls = [];
       let seen = 0;
       allRows.forEach((el) => {
-        if (el.classList.contains("up-row")) seen += 1;
-        if (seen > first.length) {
+        if (el.classList.contains("up-row")) {
+          seen += 1;
+          if (seen > first.length) {
+            el.hidden = true;
+            tailEls.push(el);
+          }
+        } else if (seen >= first.length) {
+          /* a unit header whose rows all sit in the hidden tail */
           el.hidden = true;
           tailEls.push(el);
         }

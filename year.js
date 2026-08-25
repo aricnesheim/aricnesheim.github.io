@@ -227,7 +227,7 @@
       course: "choir",
       key: "advent",
       label: "Advent concerts",
-      moment: "Festival of Lights and Carols",
+      moment: "Festival of Lessons and Carols",
       match: /PERFORMANCES Wed & Thu evenings, Dec 16–17/i,
       fallback: "2026-12-16",
       dateOverride: "2026-12-16",
@@ -276,7 +276,7 @@
     advent: {
       type: "Same time of year",
       title: "John’s Prologue and the Advent concerts",
-      summary: "Theology begins John with John 1:1–18 on November 24. Choir prepares the Festival of Lights and Carols during the same weeks.",
+      summary: "Theology begins John with John 1:1–18 on November 24. Choir prepares the Festival of Lessons and Carols during the same weeks.",
       student: "Find one idea from John 1:1–18 that also appears in an Advent song.",
       family: "Did anything in the concert remind you of John’s Gospel?",
       historical: false

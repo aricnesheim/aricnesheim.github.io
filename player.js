@@ -6,6 +6,11 @@
 (function () {
   const audio = new Audio();
   audio.preload = "auto";
+  if ("preservesPitch" in audio) audio.preservesPitch = true;
+  else if ("webkitPreservesPitch" in audio) audio.webkitPreservesPitch = true;
+
+  const RATES = [1, 0.8, 0.6];
+  let rateIndex = 0;
 
   let currentBtn = null;
   let currentPiece = null;
@@ -66,8 +71,6 @@
     piece.querySelectorAll(".part").forEach((btn) => {
       btn.setAttribute("aria-pressed", "false");
       btn.addEventListener("click", () => {
-        if (btn.classList.contains("unavailable")) return;
-
         if (currentBtn === btn) {
           if (audio.paused) audio.play().catch(() => {});
           else audio.pause();
@@ -86,6 +89,7 @@
         bar.classList.add("active");
         if (nowPlaying) nowPlaying.textContent = partName(btn);
         audio.src = btn.dataset.src;
+        audio.playbackRate = RATES[rateIndex];
         audio.play().catch(() => {});
       });
     });
@@ -128,10 +132,35 @@
     if (closeBtn) closeBtn.addEventListener("click", () => closeViewer(piece));
   });
 
+  /* ----- playback speed (shared across pieces) ----- */
+
+  function applyRate() {
+    const rate = RATES[rateIndex];
+    audio.playbackRate = rate;
+    audio.defaultPlaybackRate = rate;
+    document.querySelectorAll(".speed").forEach((b) => {
+      b.textContent = rate + "×";
+      b.classList.toggle("slowed", rate !== 1);
+    });
+  }
+
+  document.querySelectorAll(".speed").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      rateIndex = (rateIndex + 1) % RATES.length;
+      applyRate();
+    });
+  });
+
   /* ----- shared audio events ----- */
 
   audio.addEventListener("play", () => {
     if (currentBtn) setState(currentBtn, "playing");
+  });
+
+  /* playback actually started, so the file exists: clear any stale
+     "not posted yet" state from an earlier failed attempt */
+  audio.addEventListener("playing", () => {
+    if (currentBtn) currentBtn.classList.remove("unavailable");
   });
 
   audio.addEventListener("pause", () => {
