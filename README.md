@@ -5,6 +5,7 @@ This folder IS the website. The main pages are:
 - `index.html` — landing page (weekly notes + links to each class)
 - `history.html`, `theology.html`, `literature.html`, `choir.html` — one page per class
 - `year.html` — interactive four-course calendar for students and families
+- `contact.html`, `contact.js` — the Contact page and its email composer
 - `style.css` — all the design (Fraunces + Inter, one accent color per class)
 - `year.css`, `year.js` — layout and interaction for the year map
 - `player.js` — the choir practice player and score viewer
@@ -46,6 +47,23 @@ Homework specifically is single-sourced: edit `data/homework.json`, run
 the same data into every class page's Homework card and the home page's
 "Homework at a glance" card (between the `hw:` marker comments), then stamps
 the footer dates. Never edit between the markers by hand.
+
+## The Contact page
+
+`contact.html` sends nothing itself. The boxes are assembled by `contact.js`
+into a `mailto:` link, so the visitor's own email app opens with the message
+written and they send it from their own address to Aric's work address. That
+means no third-party form service, no account, no vendor holding student
+messages, and no new channel outside the school's own mail.
+
+A form that POSTs to `mailto:` is unreliable in modern browsers, which is why
+this is done in script. Where a device has no email app registered the button
+does nothing, so the address is also printed on the page with a copy button.
+Messages long enough to risk truncation in a `mailto:` URL are refused with a
+note pointing at that address instead.
+
+The address lives in one place: the `#address` span in `contact.html`.
+`contact.js` reads it from there, so changing it in the markup is enough.
 
 ## Adding a choir piece
 

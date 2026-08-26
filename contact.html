@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Mr. Nesheim</title>
+<meta name="description" content="Send Mr. Nesheim an email about class, the choir recordings, or anything on this site.">
+<meta property="og:title" content="Contact · Chesterton Classes">
+<meta property="og:description" content="Send Mr. Nesheim an email about class, the choir recordings, or anything on this site.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aricnesheim.com/contact.html">
+<meta property="og:image" content="https://aricnesheim.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234338ca'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Mr. Nesheim</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="history.html">History<span class="nav-tail"> 11</span></a>
+      <a href="theology.html">Theology<span class="nav-tail"> 10</span></a>
+      <a href="literature.html"><span class="nav-long">Literature 11</span><span class="nav-short">Lit</span></a>
+      <a href="choir.html">Choir</a>
+      <a href="year.html">Calendar</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <header class="band page-head">
+    <p class="eyebrow">Mr. Nesheim · 2026–27</p>
+    <h1>Contact</h1>
+    <p class="lead">Send me a note about class, the recordings, or anything on this site.</p>
+  </header>
+
+  <section class="card">
+    <h2>Email me</h2>
+    <p class="up-note">Fill in the boxes and press the button. Your own email app opens with the message already written, and you send it from there. Nothing goes anywhere until you press send in your email app.</p>
+
+    <form id="contact-form" novalidate>
+      <div class="field">
+        <label for="from-name">Your name</label>
+        <input type="text" id="from-name" name="from-name" autocomplete="name" enterkeyhint="next">
+      </div>
+
+      <div class="field">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required aria-required="true" aria-describedby="subject-error" enterkeyhint="next">
+        <p class="field-error" id="subject-error" hidden></p>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="7" required aria-required="true" aria-describedby="message-error"></textarea>
+        <p class="field-error" id="message-error" hidden></p>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="send-btn">Open in your email app</button>
+      </div>
+
+      <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>If the button does nothing</h2>
+    <p>Some computers and Chromebooks have no email app set up, so the button has nothing to open. Write to me directly at this address instead.</p>
+    <div class="address-row">
+      <span class="address" id="address">aric.nesheim@chestertonstmichael.org</span>
+      <button type="button" class="score-btn" id="copy-address">Copy address</button>
+    </div>
+  </section>
+
+  <section class="card note-card">
+    <h2>Before you write</h2>
+    <p>Homework, grades, and anything official still live in Educate. That is the first place to look.</p>
+    <p>If a student will be absent, the office needs to hear from a parent by 7:15 AM at officemanager@chestertonstmichael.org. Email to me does not count as reporting an absence.</p>
+    <p>I read school email during the school day, so a note sent at night will reach me the next morning. If something is urgent, call the school office.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Mr. Nesheim · aricnesheim.com</span>
+    <span></span>
+  </div>
+</footer>
+
+<script src="contact.js" defer></script>
+</body>
+</html>
