@@ -25,22 +25,24 @@
     ["2027-06-01", "2027-06-04", "Jun"]
   ];
 
+  /* Optional fourth entry: a short label used when the full one cannot fit
+     inside the bar (fitSegmentLabels measures after render). */
   const SEGMENTS = {
     history: [
       ["2026-08-25", "2026-12-07", "High Middle Ages"],
       ["2026-12-08", "2027-01-22", "Renaissance"],
-      ["2027-01-25", "2027-03-16", "Dynasties and empires"],
+      ["2027-01-25", "2027-03-16", "Dynasties and empires", "Dynasties"],
       ["2027-03-19", "2027-05-04", "Reformations"],
-      ["2027-05-07", "2027-06-04", "Lepanto and review"]
+      ["2027-05-07", "2027-06-04", "Lepanto and review", "Lepanto"]
     ],
     theology: [
       ["2026-08-25", "2026-09-23", "Matthew"],
-      ["2026-09-25", "2026-10-21", "Orthodoxy and Mark"],
+      ["2026-09-25", "2026-10-21", "Orthodoxy and Mark", "Mark"],
       ["2026-10-27", "2026-11-20", "Luke"],
       ["2026-11-24", "2027-01-06", "John"],
       ["2027-01-08", "2027-01-22", "Acts"],
       ["2027-01-26", "2027-05-11", "The letters"],
-      ["2027-05-12", "2027-06-02", "Apocalypse and capstone"]
+      ["2027-05-12", "2027-06-02", "Apocalypse and capstone", "Apocalypse"]
     ],
     literature: [
       ["2026-08-26", "2026-12-01", "Dante"],
@@ -55,9 +57,9 @@
       ["2026-08-24", "2026-09-11", "Formation"],
       ["2026-09-14", "2026-11-07", "Vision Dinner"],
       ["2026-11-09", "2026-12-17", "Advent"],
-      ["2027-01-04", "2027-01-15", "January review"],
+      ["2027-01-04", "2027-01-15", "January review", "Review"],
       ["2027-01-19", "2027-04-29", "Spring Festival"],
-      ["2027-05-03", "2027-06-02", "Graduation Mass"]
+      ["2027-05-03", "2027-06-02", "Graduation Mass", "Graduation"]
     ]
   };
 
@@ -448,7 +450,7 @@
         track.appendChild(tick);
       });
 
-      SEGMENTS[course].forEach(([start, end, name]) => {
+      SEGMENTS[course].forEach(([start, end, name, short]) => {
         const segment = document.createElement("span");
         const left = pct(start);
         const width = Math.max(0.6, pct(end) - left);
@@ -457,7 +459,9 @@
         segment.style.width = `${width}%`;
         segment.title = `${name}: ${formatDate(start)}–${formatDate(end)}`;
         segment.setAttribute("aria-label", segment.title);
-        if (width >= 5.8) segment.textContent = name;
+        segment.dataset.full = name;
+        if (short) segment.dataset.short = short;
+        segment.appendChild(document.createElement("span"));
         track.appendChild(segment);
       });
 
@@ -485,6 +489,23 @@
 
       lane.append(label, track);
       lanes.appendChild(lane);
+    });
+  }
+
+  /* A centered label wider than its bar gets clipped on both ends, so give
+     each bar the longest label that actually fits: full name, then the short
+     name, then none (the hover title always carries the full name). */
+  function fitSegmentLabels() {
+    document.querySelectorAll(".lane-segment").forEach((segment) => {
+      const label = segment.firstElementChild;
+      const overflows = () => segment.scrollWidth > segment.clientWidth + 1;
+      label.textContent = segment.dataset.full;
+      if (!overflows()) return;
+      if (segment.dataset.short) {
+        label.textContent = segment.dataset.short;
+        if (!overflows()) return;
+      }
+      label.textContent = "";
     });
   }
 
@@ -599,15 +620,20 @@
     anchors = resolveAnchors(schedule);
     renderAxis();
     renderLanes();
+    fitSegmentLabels();
 
     const requestedKey = window.location.hash.slice(1);
     const requested = anchors.find((item) => item.key === requestedKey);
     selectAnchor(requested?.id || selectedId);
 
+    const onResize = () => {
+      fitSegmentLabels();
+      drawConnections();
+    };
     if ("ResizeObserver" in window) {
-      new ResizeObserver(() => requestAnimationFrame(drawConnections)).observe(map);
+      new ResizeObserver(() => requestAnimationFrame(onResize)).observe(map);
     } else {
-      window.addEventListener("resize", drawConnections, { passive: true });
+      window.addEventListener("resize", onResize, { passive: true });
     }
   }
 

@@ -191,7 +191,7 @@ body[data-page="year"] {
   align-items: center;
   justify-content: center;
   min-width: 2px;
-  padding: 0 0.45rem;
+  padding: 0 0.3rem;
   overflow: hidden;
   color: var(--course);
   background: var(--course-soft);
