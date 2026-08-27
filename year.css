@@ -134,7 +134,7 @@ body[data-page="year"] {
   --course-soft: var(--accent-soft);
   display: grid;
   grid-template-columns: 106px minmax(0, 1fr);
-  min-height: 108px;
+  min-height: 117px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -171,7 +171,7 @@ body[data-page="year"] {
 .lane-track {
   position: relative;
   min-width: 0;
-  min-height: 107px;
+  min-height: 116px;
 }
 
 .month-tick {
@@ -185,7 +185,7 @@ body[data-page="year"] {
 
 .lane-segment {
   position: absolute;
-  top: 13px;
+  top: 22px;
   height: 28px;
   display: flex;
   align-items: center;
@@ -203,9 +203,26 @@ body[data-page="year"] {
   text-overflow: ellipsis;
 }
 
+/* Name for a bar too narrow to hold its own text: sits above the bar so
+   every unit on the calendar is named. Placed by placeTags() in year.js. */
+.segment-tag {
+  position: absolute;
+  top: 3px;
+  z-index: 1;
+  transform: translateX(-50%);
+  color: var(--course);
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.segment-tag[hidden] { display: none; }
+
 .thread-anchor {
   position: absolute;
-  top: 58px;
+  top: 64px;
   width: 34px;
   height: 34px;
   padding: 0;
@@ -461,6 +478,7 @@ body[data-page="year"] {
   .year-axis,
   .thread-links,
   .lane-segment,
+  .segment-tag,
   .month-tick {
     display: none;
   }

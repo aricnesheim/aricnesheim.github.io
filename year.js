@@ -57,7 +57,7 @@
       ["2026-08-24", "2026-09-11", "Formation"],
       ["2026-09-14", "2026-11-07", "Vision Dinner"],
       ["2026-11-09", "2026-12-17", "Advent"],
-      ["2027-01-04", "2027-01-15", "January review", "Review"],
+      ["2027-01-04", "2027-01-15", "January review"],
       ["2027-01-19", "2027-04-29", "Spring Festival"],
       ["2027-05-03", "2027-06-02", "Graduation Mass", "Graduation"]
     ]
@@ -352,6 +352,7 @@
   const startMs = parseDate(SCHOOL_START);
   const endMs = parseDate(SCHOOL_END);
   let anchors = [];
+  let segmentTags = [];
   let selectedId = "lit-dante";
 
   function parseDate(value) {
@@ -425,6 +426,7 @@
 
   function renderLanes() {
     lanes.textContent = "";
+    segmentTags = [];
     Object.entries(COURSES).forEach(([course, courseInfo]) => {
       const lane = document.createElement("section");
       lane.className = `thread-lane ${course}`;
@@ -463,6 +465,14 @@
         if (short) segment.dataset.short = short;
         segment.appendChild(document.createElement("span"));
         track.appendChild(segment);
+
+        const tag = document.createElement("span");
+        tag.className = "segment-tag";
+        tag.textContent = short || name;
+        tag.dataset.center = String(left + width / 2);
+        tag.hidden = true;
+        track.appendChild(tag);
+        segmentTags.push({ segment, tag });
       });
 
       anchors
@@ -496,16 +506,64 @@
      each bar the longest label that actually fits: full name, then the short
      name, then none (the hover title always carries the full name). */
   function fitSegmentLabels() {
-    document.querySelectorAll(".lane-segment").forEach((segment) => {
+    segmentTags.forEach(({ segment, tag }) => {
       const label = segment.firstElementChild;
       const overflows = () => segment.scrollWidth > segment.clientWidth + 1;
+      tag.hidden = true;
       label.textContent = segment.dataset.full;
       if (!overflows()) return;
       if (segment.dataset.short) {
         label.textContent = segment.dataset.short;
         if (!overflows()) return;
       }
+      /* Nothing fits inside the bar, so name it above the bar instead.
+         Every unit stays readable no matter how short it is. */
       label.textContent = "";
+      tag.hidden = false;
+    });
+    placeTags();
+  }
+
+  /* Centre each visible tag over its bar, then keep the tags off each other
+     and inside the track. */
+  function placeTags() {
+    document.querySelectorAll(".lane-track").forEach((track) => {
+      const width = track.getBoundingClientRect().width;
+      if (!width) return;
+
+      const placed = [];
+      track.querySelectorAll(".segment-tag").forEach((tag) => {
+        tag.style.left = `${tag.dataset.center}%`;
+        if (tag.hidden) return;
+        placed.push({
+          tag,
+          w: tag.getBoundingClientRect().width,
+          center: (Number(tag.dataset.center) / 100) * width,
+        });
+      });
+      if (!placed.length) return;
+      placed.sort((a, b) => a.center - b.center);
+
+      const GAP = 8;
+      placed.forEach((item, i) => {
+        if (!i) return;
+        const prev = placed[i - 1];
+        const min = prev.center + prev.w / 2 + GAP + item.w / 2;
+        if (item.center < min) item.center = min;
+      });
+      for (let i = placed.length - 1; i >= 0; i -= 1) {
+        const item = placed[i];
+        item.center = Math.min(item.center, width - item.w / 2);
+        item.center = Math.max(item.center, item.w / 2);
+        if (!i) break;
+        const prev = placed[i - 1];
+        const max = item.center - item.w / 2 - GAP - prev.w / 2;
+        if (prev.center > max) prev.center = max;
+      }
+
+      placed.forEach((item) => {
+        item.tag.style.left = `${(item.center / width) * 100}%`;
+      });
     });
   }
 
