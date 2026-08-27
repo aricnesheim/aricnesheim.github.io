@@ -1,4 +1,4 @@
-/* Theology 10 Reading Companion — Codex/GPT work product, Aug. 26, 2026. */
+/* Theology 10 Reading Companion — Codex/GPT work product, updated Aug. 27, 2026. */
 
 :root {
   --companion-ink: #14213b;
@@ -26,7 +26,8 @@
 .companion-page section + section { margin-top: 0; }
 
 .companion-page button:focus-visible,
-.companion-page a:focus-visible {
+.companion-page a:focus-visible,
+.companion-page select:focus-visible {
   outline: 3px solid #eda62e;
   outline-offset: 3px;
 }
@@ -126,6 +127,20 @@
 .companion-map { padding: 1rem; }
 
 .companion-note p { margin: 0.35rem 0 0; }
+
+.companion-guide-picker label { display: block; }
+
+.companion-guide-picker select {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 0.55rem;
+  border: 1px solid #b8c4dc;
+  border-radius: 11px;
+  padding: 0.6rem 2.2rem 0.6rem 0.7rem;
+  color: var(--companion-ink);
+  background: #fff;
+  font: 700 0.84rem/1.35 "Inter", sans-serif;
+}
 
 .companion-muted {
   color: var(--companion-muted);
@@ -486,6 +501,7 @@ kbd {
 @media print {
   .companion-header,
   .companion-sidebar,
+  .companion-guide-picker,
   .read-first,
   .commentary-tabs,
   .scene-controls,

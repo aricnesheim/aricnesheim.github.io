@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reading Companion · Theology 10</title>
-<meta name="description" content="A scene-by-scene companion to the unannotated portion of the current Theology 10 reading in Matthew.">
+<title>Catholic Reading Companion · Theology 10</title>
+<meta name="description" content="Catholic, scene-by-scene companions to the portions of the current Theology 10 readings not assigned for annotation.">
 <meta name="theme-color" content="#1d4ed8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4ed8'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="theology-reading-companion.css?v=20260826-1">
+<link rel="stylesheet" href="theology-reading-companion.css?v=20260827-1">
 </head>
 <body data-page="theology" class="companion-page">
 <a class="companion-skip" href="#scene-card">Skip to the current scene</a>
@@ -20,20 +20,25 @@
   <div class="companion-header-inner">
     <a class="companion-back" href="theology.html" aria-label="Back to Theology 10">← Theology 10</a>
     <div>
-      <p class="companion-eyebrow">Matthew 2:1–4:25 · due Tuesday, September 1</p>
-      <h1>Reading Companion</h1>
-      <p class="companion-subtitle">The part you read, but do not annotate verse by verse.</p>
+      <p class="companion-eyebrow" id="companion-eyebrow">Matthew 2:1–4:25 · due Tuesday, September 1</p>
+      <h1>Catholic Reading Companion</h1>
+      <p class="companion-subtitle">The rest of the assigned reading, read with Scripture and the Church.</p>
     </div>
   </div>
 </header>
 
 <main class="companion-layout">
   <aside class="companion-sidebar" aria-label="Reading overview">
+    <section class="companion-note companion-guide-picker">
+      <label class="companion-label" for="guide-select">Choose a reading</label>
+      <select id="guide-select" name="guide"></select>
+    </section>
+
     <section class="companion-note">
       <p class="companion-label">The assignment</p>
-      <p><strong>Read:</strong> Matthew 1:18–4:25</p>
-      <p><strong>Annotate:</strong> Matthew 1:18–25</p>
-      <p class="companion-muted">This companion starts at 2:1. It does not redo the annotated pericope.</p>
+      <p><strong>Read:</strong> <span id="assignment-read">Matthew 1:18–4:25</span></p>
+      <p><strong>Annotate:</strong> <span id="assignment-annotate">Matthew 1:18–25</span></p>
+      <p class="companion-muted" id="assignment-note">This companion begins at Matthew 2:1. It does not redo the annotated pericope.</p>
     </section>
 
     <section class="companion-map" aria-labelledby="scene-map-title">
@@ -67,7 +72,7 @@
       <div class="commentary-tabs" role="tablist" aria-label="Kinds of commentary">
         <button class="commentary-tab" id="tab-summary" type="button" role="tab" aria-selected="true" aria-controls="panel-summary" data-panel="summary">Summary</button>
         <button class="commentary-tab" id="tab-pericope" type="button" role="tab" aria-selected="false" aria-controls="panel-pericope" data-panel="pericope" tabindex="-1">Back to 1:18–25</button>
-        <button class="commentary-tab" id="tab-connections" type="button" role="tab" aria-selected="false" aria-controls="panel-connections" data-panel="connections" tabindex="-1">Other connections</button>
+        <button class="commentary-tab" id="tab-connections" type="button" role="tab" aria-selected="false" aria-controls="panel-connections" data-panel="connections" tabindex="-1">Church &amp; Scripture</button>
       </div>
 
       <div class="commentary-panel" id="panel-summary" role="tabpanel" aria-labelledby="tab-summary">
@@ -83,7 +88,7 @@
       </div>
 
       <div class="commentary-panel" id="panel-connections" role="tabpanel" aria-labelledby="tab-connections" hidden>
-        <p class="panel-kicker">The wider story</p>
+        <p class="panel-kicker">The Church reads with Scripture</p>
         <div class="connection-list" id="connection-list"></div>
       </div>
     </section>
@@ -100,7 +105,7 @@
   <noscript>
     <section class="companion-note companion-noscript">
       <h2>Use this page with JavaScript turned on</h2>
-      <p>The companion reveals one scene at a time. Meanwhile, read Matthew 2:1–4:25 and track these movements: hidden king, threatened king, new exodus, preparation, baptism, testing, and mission.</p>
+      <p>The companion reveals one scene at a time. Meanwhile, keep the assigned passage open and follow the sequence of scenes in Matthew.</p>
     </section>
   </noscript>
 </main>
@@ -110,7 +115,7 @@
   <p>Arrows move between scenes. Keys <kbd>1</kbd>–<kbd>3</kbd> switch commentary views.</p>
 </footer>
 
-<script src="theology-reading-companion-data.js?v=20260826-1" defer></script>
-<script src="theology-reading-companion.js?v=20260826-1" defer></script>
+<script src="theology-reading-companion-data.js?v=20260827-1" defer></script>
+<script src="theology-reading-companion.js?v=20260827-1" defer></script>
 </body>
 </html>

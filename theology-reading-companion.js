@@ -1,12 +1,19 @@
-/* Theology 10 Reading Companion — scene-by-scene commentary.
-   Codex/GPT work product — Aug. 26, 2026. */
+/* Theology 10 Reading Companion — scene-by-scene Catholic commentary.
+   Codex/GPT work product — Aug. 27, 2026. */
 
 (function () {
   "use strict";
 
-  const guide = window.THEOLOGY_READING_COMPANION || { scenes: [] };
-  const scenes = guide.scenes;
+  const registry = window.THEOLOGY_READING_COMPANION_REGISTRY || {};
+  const guides = Array.isArray(registry.guides)
+    ? registry.guides
+    : (window.THEOLOGY_READING_COMPANION ? [window.THEOLOGY_READING_COMPANION] : []);
 
+  const guideSelect = document.getElementById("guide-select");
+  const eyebrow = document.getElementById("companion-eyebrow");
+  const assignmentRead = document.getElementById("assignment-read");
+  const assignmentAnnotate = document.getElementById("assignment-annotate");
+  const assignmentNote = document.getElementById("assignment-note");
   const sceneNav = document.getElementById("scene-nav");
   const mapCount = document.getElementById("scene-map-count");
   const sceneCard = document.getElementById("scene-card");
@@ -22,6 +29,7 @@
   const noticeText = document.getElementById("notice-text");
   const pericopeText = document.getElementById("pericope-text");
   const pericopeReference = document.getElementById("pericope-reference");
+  const pericopeTab = document.getElementById("tab-pericope");
   const connectionList = document.getElementById("connection-list");
   const previousScene = document.getElementById("previous-scene");
   const nextScene = document.getElementById("next-scene");
@@ -30,6 +38,9 @@
   const tabs = Array.from(document.querySelectorAll(".commentary-tab"));
   const panels = Array.from(document.querySelectorAll(".commentary-panel"));
 
+  let guideIndex = 0;
+  let guide = guides[0] || {};
+  let scenes = Array.isArray(guide.scenes) ? guide.scenes : [];
   let sceneIndex = 0;
   let activePanel = "summary";
   let revealed = false;
@@ -37,6 +48,36 @@
   function announce(message) {
     live.textContent = "";
     window.setTimeout(function () { live.textContent = message; }, 10);
+  }
+
+  function renderGuideOptions() {
+    guideSelect.textContent = "";
+    guides.forEach(function (item) {
+      const option = document.createElement("option");
+      option.value = item.id;
+      option.textContent = item.choiceLabel || item.companionReading || item.fullReading;
+      guideSelect.appendChild(option);
+    });
+  }
+
+  function updateGuideCopy() {
+    guideSelect.value = guide.id;
+    eyebrow.textContent = guide.companionReading + " · due " + (guide.dueLabel || guide.dueDate || "see assignment");
+    assignmentRead.textContent = guide.fullReading;
+    assignmentAnnotate.textContent = guide.annotatedFocus;
+    assignmentNote.textContent = guide.companionNote
+      || ("This companion covers " + guide.companionReading + " and does not redo the annotated pericope.");
+    pericopeTab.textContent = "Back to " + guide.annotatedFocus.replace(/^Matthew\s+/, "");
+    document.title = guide.companionReading + " · Catholic Reading Companion · Theology 10";
+  }
+
+  function updateLocation() {
+    const scene = scenes[sceneIndex];
+    if (!guide.id || !scene) return;
+    const url = new URL(window.location.href);
+    url.searchParams.set("guide", guide.id);
+    url.hash = scene.id;
+    window.history.replaceState(null, "", url.href);
   }
 
   function renderNavigation() {
@@ -66,8 +107,9 @@
   }
 
   function renderConnections(scene) {
+    const connections = Array.isArray(scene.connections) ? scene.connections : [];
     connectionList.textContent = "";
-    scene.connections.forEach(function (connection) {
+    connections.forEach(function (connection) {
       const item = document.createElement("article");
       item.className = "connection-item";
       const badge = document.createElement("span");
@@ -101,6 +143,8 @@
 
   function renderScene(focusCard) {
     const scene = scenes[sceneIndex];
+    if (!scene) return;
+
     sceneNumber.textContent = String(sceneIndex + 1);
     sceneReference.textContent = scene.reference;
     sceneTitle.textContent = scene.title;
@@ -124,11 +168,31 @@
     nextScene.disabled = sceneIndex === scenes.length - 1;
     nextScene.textContent = sceneIndex === scenes.length - 1 ? "End of reading" : "Next scene →";
     renderNavigation();
-
-    if (window.location.hash !== "#" + scene.id) {
-      window.history.replaceState(null, "", "#" + scene.id);
-    }
+    updateLocation();
     if (focusCard) sceneCard.focus();
+  }
+
+  function loadGuide(index, initialSceneIndex, focusCard, announceChange) {
+    if (index < 0 || index >= guides.length) return;
+    guideIndex = index;
+    guide = guides[guideIndex];
+    scenes = Array.isArray(guide.scenes) ? guide.scenes : [];
+    sceneIndex = initialSceneIndex >= 0 && initialSceneIndex < scenes.length ? initialSceneIndex : 0;
+    updateGuideCopy();
+
+    if (!scenes.length) {
+      recallPrompt.textContent = "This reading guide could not be loaded.";
+      openCommentary.disabled = true;
+      previousScene.disabled = true;
+      nextScene.disabled = true;
+      return;
+    }
+
+    openCommentary.disabled = false;
+    renderScene(focusCard);
+    if (announceChange) {
+      announce("Loaded " + guide.fullReading + ". Scene 1: " + scenes[0].title + ".");
+    }
   }
 
   function selectScene(index, focusCard) {
@@ -151,6 +215,10 @@
   openCommentary.addEventListener("click", revealCommentary);
   previousScene.addEventListener("click", function () { selectScene(sceneIndex - 1, true); });
   nextScene.addEventListener("click", function () { selectScene(sceneIndex + 1, true); });
+  guideSelect.addEventListener("change", function () {
+    const nextGuideIndex = guides.findIndex(function (item) { return item.id === guideSelect.value; });
+    loadGuide(nextGuideIndex, 0, false, true);
+  });
 
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () { selectPanel(tab.dataset.panel, false); });
@@ -187,17 +255,35 @@
     }
   });
 
-  if (!scenes.length) {
-    document.getElementById("recall-prompt").textContent = "The commentary could not be loaded.";
+  if (!guides.length) {
+    recallPrompt.textContent = "The commentary could not be loaded.";
+    guideSelect.disabled = true;
     openCommentary.disabled = true;
     previousScene.disabled = true;
     nextScene.disabled = true;
     return;
   }
 
-  const hashIndex = scenes.findIndex(function (scene) {
-    return window.location.hash === "#" + scene.id;
-  });
-  sceneIndex = hashIndex >= 0 ? hashIndex : 0;
-  renderScene(false);
+  renderGuideOptions();
+
+  const requestedGuideId = new URLSearchParams(window.location.search).get("guide");
+  const requestedSceneId = window.location.hash.replace(/^#/, "");
+  let initialGuideIndex = guides.findIndex(function (item) { return item.id === requestedGuideId; });
+
+  if (initialGuideIndex < 0 && requestedSceneId) {
+    initialGuideIndex = guides.findIndex(function (item) {
+      const itemScenes = Array.isArray(item.scenes) ? item.scenes : [];
+      return itemScenes.some(function (scene) { return scene.id === requestedSceneId; });
+    });
+  }
+  if (initialGuideIndex < 0) {
+    initialGuideIndex = guides.findIndex(function (item) { return item.id === registry.defaultId; });
+  }
+  if (initialGuideIndex < 0) initialGuideIndex = 0;
+
+  const initialScenes = Array.isArray(guides[initialGuideIndex].scenes)
+    ? guides[initialGuideIndex].scenes
+    : [];
+  const initialSceneIndex = initialScenes.findIndex(function (scene) { return scene.id === requestedSceneId; });
+  loadGuide(initialGuideIndex, initialSceneIndex, false, false);
 })();
