@@ -5,6 +5,7 @@
   "use strict";
 
   const registry = window.THEOLOGY_READING_COMPANION_REGISTRY || {};
+  const sourceCatalog = window.THEOLOGY_READING_COMPANION_SOURCES || { references: {} };
   const guides = Array.isArray(registry.guides)
     ? registry.guides
     : (window.THEOLOGY_READING_COMPANION ? [window.THEOLOGY_READING_COMPANION] : []);
@@ -50,6 +51,52 @@
     window.setTimeout(function () { live.textContent = message; }, 10);
   }
 
+  function sourceLinksFor(reference) {
+    const references = sourceCatalog.references || {};
+    return Array.isArray(references[reference]) ? references[reference] : [];
+  }
+
+  function createSourceLink(source) {
+    const link = document.createElement("a");
+    link.className = "source-link";
+    link.href = source.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = source.label;
+    link.setAttribute("aria-label", source.label + " (opens in a new tab)");
+    return link;
+  }
+
+  function renderLinkedReference(container, reference) {
+    const lookBackPrefix = "Look back: ";
+    const hasLookBackPrefix = reference.indexOf(lookBackPrefix) === 0;
+    const catalogKey = hasLookBackPrefix ? reference.slice(lookBackPrefix.length) : reference;
+    const sources = sourceLinksFor(catalogKey);
+    container.textContent = "";
+
+    if (!sources.length) {
+      container.textContent = reference;
+      return;
+    }
+
+    if (hasLookBackPrefix) {
+      const prefix = document.createElement("span");
+      prefix.textContent = lookBackPrefix;
+      container.appendChild(prefix);
+    }
+
+    sources.forEach(function (source, index) {
+      if (index > 0) {
+        const separator = document.createElement("span");
+        separator.className = "source-separator";
+        separator.setAttribute("aria-hidden", "true");
+        separator.textContent = " · ";
+        container.appendChild(separator);
+      }
+      container.appendChild(createSourceLink(source));
+    });
+  }
+
   function renderGuideOptions() {
     guideSelect.textContent = "";
     guides.forEach(function (item) {
@@ -63,8 +110,8 @@
   function updateGuideCopy() {
     guideSelect.value = guide.id;
     eyebrow.textContent = guide.companionReading + " · due " + (guide.dueLabel || guide.dueDate || "see assignment");
-    assignmentRead.textContent = guide.fullReading;
-    assignmentAnnotate.textContent = guide.annotatedFocus;
+    renderLinkedReference(assignmentRead, guide.fullReading);
+    renderLinkedReference(assignmentAnnotate, guide.annotatedFocus);
     assignmentNote.textContent = guide.companionNote
       || ("This companion covers " + guide.companionReading + " and does not redo the annotated pericope.");
     pericopeTab.textContent = "Back to " + guide.annotatedFocus.replace(/^Matthew\s+/, "");
@@ -121,7 +168,7 @@
       text.textContent = connection.text;
       const reference = document.createElement("p");
       reference.className = "connection-ref";
-      reference.textContent = connection.ref;
+      renderLinkedReference(reference, connection.ref);
       copy.append(text, reference);
       item.append(badge, copy);
       connectionList.appendChild(item);
@@ -146,13 +193,13 @@
     if (!scene) return;
 
     sceneNumber.textContent = String(sceneIndex + 1);
-    sceneReference.textContent = scene.reference;
+    renderLinkedReference(sceneReference, scene.reference);
     sceneTitle.textContent = scene.title;
     recallPrompt.textContent = scene.recall;
     summaryText.textContent = scene.summary;
     noticeText.textContent = scene.notice;
     pericopeText.textContent = scene.pericope;
-    pericopeReference.textContent = scene.pericopeReference;
+    renderLinkedReference(pericopeReference, scene.pericopeReference);
     renderConnections(scene);
 
     revealed = false;

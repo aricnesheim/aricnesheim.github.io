@@ -33,7 +33,7 @@
             {
               kind: "Scripture",
               text: "Bethlehem, the star, and the gifts gather royal and prophetic threads around Jesus. Matthew directly cites Micah; the other passages work as echoes to test.",
-              ref: "Matthew 2:2, 5–6, 11 · Micah 5:2 · Numbers 24:17 · Isaiah 60:1–6 · Psalm 72:10–11"
+              ref: "Matthew 2:2, 5–6, 11 · Micah 5:1 (NABRE; 5:2 in some editions) · Numbers 24:17 · Isaiah 60:1–6 · Psalm 72:10–11"
             },
             {
               kind: "Catechism",
@@ -231,7 +231,7 @@
             {
               kind: "Scripture",
               text: "Matthew presents Jesus' move into Galilee as the dawn promised by Isaiah. Galilee is also where the risen Christ will send his disciples to all nations.",
-              ref: "Isaiah 9:1–2 · Matthew 4:14–16 · 28:16–20"
+              ref: "Isaiah 8:23–9:1 (NABRE; 9:1–2 in some editions) · Matthew 4:14–16 · 28:16–20"
             },
             {
               kind: "Catechism",
@@ -297,7 +297,7 @@
             {
               kind: "Gospel structure",
               text: "Matthew repeats the teaching–proclaiming–healing summary after the Sermon and miracle stories, forming a frame around chapters 5–9.",
-              ref: "Matthew 4:23 · 5–9 · 9:35"
+              ref: "Matthew 4:23 · Matthew 5–9 · Matthew 9:35"
             },
             {
               kind: "Catechism",
@@ -312,7 +312,7 @@
             {
               kind: "Next reading",
               text: "The crowds of 4:25 lead directly into 5:1. Chapters 5–7 unfold Jesus' teaching; chapters 8–9 display his healing works; then 9:35 repeats this summary.",
-              ref: "Matthew 4:25–5:1 · 5–9 · 9:35"
+              ref: "Matthew 4:25–5:1 · Matthew 5–9 · Matthew 9:35"
             }
           ]
         }
@@ -398,7 +398,7 @@
           connections: [
             {
               kind: "Church Father",
-              text: "St. Augustine follows anger as it hardens through consent and expression. The deeper righteousness stops the movement before indignation becomes hatred.",
+              text: "St. Augustine follows anger as it hardens into expression and insult. The deeper righteousness stops the movement before indignation becomes hatred.",
               ref: "Augustine, On the Sermon on the Mount I.9.21–22 · I.10.26–28"
             },
             {
@@ -465,7 +465,7 @@
             {
               kind: "Catechism",
               text: "Forgiveness and prayer for enemies become possible as the Holy Spirit gives Christians the mind and love of Christ.",
-              ref: "Catechism of the Catholic Church 2303, 2844–2845"
+              ref: "Catechism of the Catholic Church 2303, 2843–2845"
             }
           ]
         },
@@ -604,13 +604,13 @@
           connections: [
             {
               kind: "St. Thomas",
-              text: "Aquinas says Jesus forbids inordinate anxiety, not prudent work, necessary planning, or care for people entrusted to us.",
+              text: "Aquinas says Jesus forbids inordinate anxiety about temporal things, not the reasonable care needed to secure them.",
               ref: "Thomas Aquinas, Summa Theologiae I–II, q.108, a.3, ad 5"
             },
             {
               kind: "Church Father",
               text: "St. Augustine notes that responsible provision can be a duty. St. Paul's own hunger also shows that the passage is not a prosperity guarantee.",
-              ref: "Augustine, On the Sermon on the Mount II.15–17, 49–58"
+              ref: "Augustine, On the Sermon on the Mount II.15–17 (§§49–58)"
             },
             {
               kind: "Catechism",
@@ -633,7 +633,7 @@
             {
               kind: "Church Father",
               text: "St. Augustine distinguishes rash claims about hidden motives from recognizing a manifest wrong. Even correction must leave room for repentance.",
-              ref: "Augustine, On the Sermon on the Mount II.18–19, 59–66"
+              ref: "Augustine, On the Sermon on the Mount II.18–19 (§§59–66)"
             },
             {
               kind: "Catechism",
@@ -699,7 +699,7 @@
             {
               kind: "Church Father",
               text: "St. Gregory points to charity and humility, rather than mighty works, as marks of an authentic disciple.",
-              ref: "Gregory the Great in the Catena Aurea on Matthew 7:21–23"
+              ref: "Gregory the Great, Moralia on Job XX.7 · Catena Aurea on Matthew 7:21–23"
             },
             {
               kind: "St. Thomas",

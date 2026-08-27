@@ -68,7 +68,7 @@
   display: inline-flex;
   align-items: center;
   color: var(--companion-blue-dark);
-  font-weight: 750;
+  font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -401,6 +401,33 @@
 .connection-copy p { margin: 0; font-size: 0.94rem; line-height: 1.5; }
 .connection-copy p + p { margin-top: 0.25rem; }
 .connection-ref { color: var(--companion-muted); font-size: 0.8rem !important; font-weight: 700; }
+
+.source-link {
+  color: var(--companion-blue-dark);
+  font-weight: 750;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(29, 78, 216, 0.45);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.source-link::after {
+  content: " ↗";
+  font-size: 0.78em;
+  text-decoration: none;
+}
+
+.source-link:hover {
+  color: var(--companion-blue);
+  text-decoration-color: currentColor;
+}
+
+.source-separator { color: var(--companion-muted); }
+
+.scene-reference .source-link {
+  color: inherit;
+  font-weight: inherit;
+}
 
 .scene-controls {
   margin-top: auto;
