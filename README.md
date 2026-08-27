@@ -32,6 +32,12 @@ are Codex/GPT work product created August 25, 2026. The page reads the shared
 `data/upcoming.json` schedule when available and retains audited fallback dates.
 Do not represent this feature as Claude-authored material.
 
+`theology-reading-companion.html`, its scoped stylesheet, renderer, and content
+data are Codex/GPT work product created August 26, 2026. The first guide covers
+Matthew 2:1–4:25, the portion of the Sept. 1 reading outside the annotated
+pericope. Keep summaries paraphrased, verse references exact, and explicit
+textual links distinct from interpretive patterns and Church teaching.
+
 Calendar copy should sound like Mr. Nesheim speaking in class: state the
 classes, dates, and connection directly. Avoid slogans, marketing language,
 grand claims, and decorative metaphors. Student and family questions should be
