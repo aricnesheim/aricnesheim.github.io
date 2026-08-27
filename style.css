@@ -518,6 +518,16 @@ body[data-page="choir"] .part-actions .score-btn::before {
 .up-due {
   margin: 0.15rem 0 0;
   font-size: 0.92rem;
+  color: #b42318;
+}
+
+.up-due .due-label { font-weight: 700; }
+
+.up-due-none { color: var(--muted); }
+
+.up-notes {
+  margin: 0.15rem 0 0;
+  font-size: 0.92rem;
   color: var(--muted);
 }
 

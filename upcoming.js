@@ -35,7 +35,12 @@
       s += '<div class="up-row"><p class="up-date">' + fmtDate(r.date) +
            (r.half ? " · half day" : "") + "</p>";
       if (r.inclass) s += '<p class="up-what">' + esc(r.inclass) + "</p>";
-      if (r.due) s += '<p class="up-due">' + esc(r.due) + "</p>";
+      if (r.due) {
+        /* red DUE: label, except on "nothing due" days */
+        s += /^nothing( is)? due/i.test(r.due)
+          ? '<p class="up-due up-due-none">' + esc(r.due) + "</p>"
+          : '<p class="up-due"><span class="due-label">DUE:</span> ' + esc(r.due) + "</p>";
+      }
       return s + "</div>";
     }).join("");
   }
@@ -45,7 +50,7 @@
       let s = '<div class="up-row"><p class="up-date">Week ' + r.n + " · " +
               esc(r.dates) + "</p>";
       if (r.focus) s += '<p class="up-what">' + esc(r.focus) + "</p>";
-      if (r.notes) s += '<p class="up-due">' + esc(r.notes) + "</p>";
+      if (r.notes) s += '<p class="up-notes">' + esc(r.notes) + "</p>";
       return s + "</div>";
     }).join("");
   }
