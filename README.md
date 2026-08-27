@@ -21,6 +21,45 @@ filtered by today's date in the browser, so it advances on its own. After any
 schedule re-flow: re-run the exporter, commit, push (Schedule Change Protocol
 step 6).
 
+## The Map of Hell (Literature)
+
+`literature-inferno.html` is the interactive map of Dante's *Inferno*, linked
+from the Literature page. Four files:
+
+- `literature-inferno.html` — the shell and the icon sprite (14 inline SVG
+  icons, one visual language, no image files)
+- `literature-inferno.css` — scoped styling, including the projector view
+- `literature-inferno-data.js` — **all the content**; nothing a student reads
+  lives in the renderer
+- `literature-inferno.js` — draws the funnel from the geometry table and runs
+  the page
+- `files/literature/inferno/` — 19 public domain plates, resized to 1200px and
+  compressed (4.5 MB total). `_credits.json` holds the Commons metadata they
+  were downloaded with.
+
+The funnel is generated SVG, not a scanned picture with hotspots. Every circle
+is a real button, it scales to any screen, and it works with the wifi down.
+Botticelli's *Chart of Hell* and Caetani's 1855 plates are shown at the bottom
+of the page for comparison rather than used as the interface, because their
+labels are tiny and in Italian.
+
+**Content standard.** Each circle carries only what the poem supplies: canto
+numbers, the guardian, the punishment as Dante describes it, the souls he
+names, and one open question. No interpretation and no summary that could
+stand in for the reading. Questions marked `questionOwn: true` are Mr.
+Nesheim's own from the lesson plans. Keep it that way when editing.
+
+**After a schedule re-flow.** The `schedule` array at the bottom of
+`literature-inferno-data.js` maps class dates to the highest canto read by
+that date, taken from the adopted Rhythm B Scope and Sequence. It drives the
+"we are here" marker and the status line. Update it whenever the Literature
+calendar moves (Schedule Change Protocol). Note that
+`05 Sources & Handouts/Dante Reading Schedule (Semester 1).md` is Rhythm A and
+superseded; do not take dates from it.
+
+**Cache busting.** The `?v=` query on the CSS and JS tags must be bumped when
+either file changes, or browsers will keep the old copy.
+
 ## Provenance note
 
 `files/history/shared-era-timeline.html` is Codex/GPT work product (from

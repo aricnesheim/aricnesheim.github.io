@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Map of Hell · Literature 11 · Mr. Nesheim</title>
+<meta name="description" content="An interactive map of Dante's Inferno for Literature 11: every circle, the cantos that cover it, the punishment as Dante describes it, and the souls he names.">
+<meta property="og:title" content="The Map of Hell · Literature 11">
+<meta property="og:description" content="Click through the nine circles of Dante's Inferno, canto by canto.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aricnesheim.com/literature-inferno.html">
+<meta property="og:image" content="https://aricnesheim.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2315803d'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="literature-inferno.css?v=20260827-4">
+</head>
+<body data-page="literature" class="tool-page inferno-page">
+<a class="skip-link" href="#circle-panel">Skip to the circle description</a>
+
+<header class="inf-header">
+  <div class="inf-header-inner">
+    <a class="inf-back" href="literature.html" aria-label="Back to Literature 11">← Literature 11</a>
+    <div class="inf-ident">
+      <p class="inf-eyebrow">Literature 11 · Dante, <em>Inferno</em></p>
+      <h1>The Map of Hell</h1>
+      <p class="inf-status" id="inf-status">Nine circles, thirty-four cantos.</p>
+    </div>
+    <div class="inf-toolbar" aria-label="Map controls">
+      <button class="inf-btn" id="progress-toggle" type="button" aria-pressed="true">Mark our progress</button>
+      <button class="inf-btn" id="present-toggle" type="button" aria-pressed="false">Present</button>
+      <button class="inf-btn inf-btn-quiet" id="help-toggle" type="button" aria-expanded="false" aria-controls="keyboard-help">Keys</button>
+    </div>
+  </div>
+</header>
+
+<main class="inf-main">
+
+  <!-- ------------------------------------------------------------- the map -->
+  <section class="inf-stage" aria-labelledby="map-title">
+    <h2 id="map-title" class="sr-only">The funnel of Hell</h2>
+    <p class="inf-hint" id="inf-hint">Click a circle to open it. Use the arrow keys to walk down.</p>
+    <div class="inf-figure">
+      <div class="inf-svg-wrap" id="inf-svg-wrap"></div>
+    </div>
+    <p class="inf-legend">
+      <span class="inf-key"><span class="inf-swatch inf-swatch-read"></span> read in class</span>
+      <span class="inf-key"><span class="inf-swatch inf-swatch-here"></span> where we are now</span>
+      <span class="inf-key"><span class="inf-swatch inf-swatch-ahead"></span> still ahead</span>
+    </p>
+  </section>
+
+  <!-- ----------------------------------------------------------- the panel -->
+  <section class="inf-panel" id="circle-panel" tabindex="-1" aria-live="polite" aria-labelledby="panel-name">
+    <div class="inf-panel-nav">
+      <button class="inf-btn inf-btn-quiet" id="prev-circle" type="button">← Up</button>
+      <p class="inf-panel-loc" id="panel-loc"></p>
+      <button class="inf-btn inf-btn-quiet" id="next-circle" type="button">Down →</button>
+    </div>
+
+    <header class="inf-panel-head">
+      <span class="inf-panel-icon" id="panel-icon" aria-hidden="true"></span>
+      <div>
+        <p class="inf-panel-roman" id="panel-roman"></p>
+        <h2 id="panel-name">Choose a circle</h2>
+        <p class="inf-panel-italian" id="panel-italian"></p>
+      </div>
+      <p class="inf-panel-cantos" id="panel-cantos"></p>
+    </header>
+
+    <div class="inf-panel-body">
+      <div class="inf-panel-text">
+        <dl class="inf-facts" id="panel-facts"></dl>
+        <div class="inf-block" id="panel-place"></div>
+        <div class="inf-block inf-block-punish" id="panel-punish"></div>
+        <div class="inf-block" id="panel-named"></div>
+        <div class="inf-block inf-block-note" id="panel-note"></div>
+        <div class="inf-block inf-block-q" id="panel-question"></div>
+      </div>
+      <figure class="inf-panel-figure" id="panel-figure">
+        <img id="panel-img" alt="">
+        <figcaption id="panel-credit"></figcaption>
+      </figure>
+    </div>
+
+    <div class="inf-block inf-block-wide" id="panel-sub"></div>
+  </section>
+
+  <!-- ----------------------------------------------------- historical maps -->
+  <section class="inf-plates" aria-labelledby="plates-title">
+    <h2 id="plates-title">How they drew it before us</h2>
+    <p class="inf-plates-lead">Three of the oldest maps of the same place. All three are in the public domain. Click one to open it full size.</p>
+    <div class="inf-plate-grid" id="plate-grid"></div>
+  </section>
+
+  <section class="inf-colophon">
+    <h2>About the pictures</h2>
+    <p>The engravings are Gustave Doré's, made for the 1861 French edition of the <em>Inferno</em>. The whole-Hell maps are by Sandro Botticelli, about 1485, and by Michelangelo Caetani, Duke of Sermoneta, 1855. Every one of them is in the public domain, and each is credited where it appears. The files are hosted here rather than linked, so the map works when the classroom wifi does not.</p>
+    <p>The funnel itself is drawn to the plan Caetani used: Jerusalem above, the circles narrowing, Cocytus frozen at the center of the earth.</p>
+    <p class="inf-colophon-note">Cantos and canto numbers follow the Esolen translation, Modern Library. Reading dates come from our own Scope and Sequence.</p>
+  </section>
+
+</main>
+
+<div class="inf-help" id="keyboard-help" role="dialog" aria-modal="false" aria-labelledby="help-title" hidden>
+  <div class="inf-help-card">
+    <div class="inf-help-heading">
+      <h2 id="help-title">Keyboard controls</h2>
+      <button class="inf-btn inf-btn-quiet" id="help-close" type="button">Close</button>
+    </div>
+    <dl class="inf-key-list">
+      <div><dt><kbd>↓</kbd> or <kbd>J</kbd></dt><dd>Go down one circle</dd></div>
+      <div><dt><kbd>↑</kbd> or <kbd>K</kbd></dt><dd>Go back up one circle</dd></div>
+      <div><dt><kbd>1</kbd>–<kbd>9</kbd></dt><dd>Jump straight to that circle</dd></div>
+      <div><dt><kbd>P</kbd></dt><dd>Enter or leave presentation view</dd></div>
+      <div><dt><kbd>?</kbd></dt><dd>Open this help</dd></div>
+      <div><dt><kbd>Esc</kbd></dt><dd>Close help or leave presentation view</dd></div>
+    </dl>
+  </div>
+</div>
+
+<footer class="inf-footer">
+  <div class="footer-inner">
+    <span>Mr. Nesheim · aricnesheim.com</span>
+    <span><a href="literature.html">Back to Literature 11</a></span>
+  </div>
+</footer>
+
+<!-- ------------------------------------------------------------ icon sprite
+     One visual language: single-weight line, no fill, drawn on a 24 grid.
+     Referenced with <use href="#i-name"> from the map and the panel. -->
+<svg class="inf-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <defs>
+    <g id="i-wood" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 20V15M6 15 3.2 15 6 10.5 3.9 10.5 6 6.4 8.1 10.5 6 10.5 8.8 15 6 15Z"/>
+      <path d="M13.2 20v-3.4M13.2 16.6 10.9 16.6 13.2 12.9 11.4 12.9 13.2 9.5 15 12.9 13.2 12.9 15.5 16.6 13.2 16.6Z"/>
+      <path d="M19.4 20v-2.6M19.4 17.4 17.6 17.4 19.4 14.4 18 14.4 19.4 11.7 20.8 14.4 19.4 14.4 21.2 17.4 19.4 17.4Z"/>
+    </g>
+    <g id="i-gate" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 21V10.5a8 8 0 0 1 16 0V21"/>
+      <path d="M4 21h16"/>
+      <path d="M8 21v-9.5a4 4 0 0 1 8 0V21"/>
+      <path d="M12 5V2.6"/>
+    </g>
+    <g id="i-castle" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 21V8.5h2.6V11h2.6V8.5h2.6V11h2.6V8.5h2.6V11h2.6v10"/>
+      <path d="M2.4 21h19.2"/>
+      <path d="M10.2 21v-5.2a1.8 1.8 0 0 1 3.6 0V21"/>
+    </g>
+    <g id="i-whirlwind" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12.6 11.4c1 0 1 1.5-.2 1.5-1.8 0-2.2-2.3-.4-3 2.7-1 4.9 2 3.6 4.3-1.7 3-6.2 2.4-7.6-.8-1.7-3.9 2.5-8.2 7-7 5.2 1.4 6.5 8.2 2.6 11.8"/>
+    </g>
+    <g id="i-rain" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.6 11.4a4 4 0 0 1 .9-7.9 5.2 5.2 0 0 1 9.8 1.1 3.4 3.4 0 0 1-.5 6.8Z"/>
+      <path d="M7.4 15.2 6 18.4M12 15.2 10.6 18.4M16.6 15.2 15.2 18.4"/>
+      <path d="M9.6 19.9 9 21.4M14.2 19.9 13.6 21.4"/>
+    </g>
+    <g id="i-weight" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="10.6" r="4.6"/>
+      <path d="M2.6 20.4h18.8"/>
+      <path d="M2.8 10.6h3.2M5 8.4 6.6 10.6 5 12.8"/>
+      <path d="M21.2 10.6H18M19 8.4 17.4 10.6 19 12.8"/>
+    </g>
+    <g id="i-marsh" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.5 8.6c1.9-1.6 3.3-1.6 4.8 0s2.9 1.6 4.8 0 3.3-1.6 4.8 0 2.9 1.6 4.6 0"/>
+      <path d="M2.5 13.2c1.9-1.6 3.3-1.6 4.8 0s2.9 1.6 4.8 0 3.3-1.6 4.8 0 2.9 1.6 4.6 0"/>
+      <path d="M2.5 17.8c1.9-1.6 3.3-1.6 4.8 0s2.9 1.6 4.8 0 3.3-1.6 4.8 0 2.9 1.6 4.6 0"/>
+    </g>
+    <g id="i-tomb" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 21v-8.2h16V21"/>
+      <path d="M2.8 21h18.4"/>
+      <path d="M4 12.8 6 10.4h12l2 2.4"/>
+      <path d="M12 8.4c1.9-1.3 2.4-2.9 1.5-4.8 2.4 1.2 3.4 3 2.8 5.2"/>
+      <path d="M12 8.4c-1.4-1-1.7-2.2-1.1-3.6-1.8.9-2.5 2.2-2.1 3.9"/>
+    </g>
+    <g id="i-centaur" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.6 17.4c2-1.7 3.5-1.7 5.1 0s3.1 1.7 5.1 0 3.5-1.7 5.1 0 2.4 1.5 3.5.4"/>
+      <path d="M20.4 3.6 8.8 12.6"/>
+      <path d="M20.4 3.6h-4.1M20.4 3.6v4.1"/>
+      <path d="M5.4 15.2 8.8 12.6l1.9 2.6"/>
+    </g>
+    <g id="i-tree" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21v-6.6"/>
+      <path d="M12 14.4 7.6 10M12 16.6l4.8-4.4"/>
+      <path d="M12 14.4C8.4 13.2 6 10.6 6 7.6 8.6 8 10.6 9 12 10.6c1.4-1.9 3.5-3 6.2-3.2 0 3-2.4 5.6-6.2 7Z"/>
+      <path d="M9.4 21h5.2"/>
+    </g>
+    <g id="i-flamerain" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.6 20.4h18.8"/>
+      <path d="M6.4 3.2c1.2 1.5 1.2 2.7 0 4.2M12 2.4c1.2 1.5 1.2 2.7 0 4.2M17.6 3.2c1.2 1.5 1.2 2.7 0 4.2"/>
+      <path d="M8.8 10.4c1.2 1.5 1.2 2.7 0 4.2M15.2 10.4c1.2 1.5 1.2 2.7 0 4.2"/>
+      <path d="M4.4 16.4c.7.9.7 1.6 0 2.5M19.6 16.4c.7.9.7 1.6 0 2.5"/>
+    </g>
+    <g id="i-ditches" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M1.8 5.4c0 8.4 4.6 15 10.2 15s10.2-6.6 10.2-15"/>
+      <path d="M4.6 5.4c0 6.6 3.3 11.8 7.4 11.8s7.4-5.2 7.4-11.8"/>
+      <path d="M7.4 5.4c0 4.8 2 8.6 4.6 8.6s4.6-3.8 4.6-8.6"/>
+      <path d="M10.2 5.4c0 3 .8 5.4 1.8 5.4s1.8-2.4 1.8-5.4"/>
+    </g>
+    <g id="i-ice" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2.4v19.2M3.7 7.2l16.6 9.6M20.3 7.2 3.7 16.8"/>
+      <path d="M12 6.2 9.8 4M12 6.2 14.2 4M12 17.8l-2.2 2.2M12 17.8l2.2 2.2"/>
+      <path d="M7.1 9.1 4.1 9.9M16.9 14.9l3 -.8M16.9 9.1l3-.8M7.1 14.9l-3 .8"/>
+    </g>
+    <g id="i-stars" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 3.4 8 6.2l2.8 1L8 8.2l-1 2.8-1-2.8-2.8-1 2.8-1Z"/>
+      <path d="M17 8.4 18 11.2l2.8 1-2.8 1-1 2.8-1-2.8-2.8-1 2.8-1Z"/>
+      <path d="M9.6 14.6l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z"/>
+    </g>
+  </defs>
+</svg>
+
+<script src="literature-inferno-data.js?v=20260827-4" defer></script>
+<script src="literature-inferno.js?v=20260827-4" defer></script>
+</body>
+</html>
