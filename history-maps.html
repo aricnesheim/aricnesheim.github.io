@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map Trainer · History 11 · Mr. Nesheim</title>
+<meta name="description" content="Drill for the History 11 map quizzes: modern Europe, Spain, France, Italy, and Europe in 1500. Click where each place goes and the map fills in as you answer.">
+<meta property="og:title" content="Map Trainer · History 11">
+<meta property="og:description" content="Drill for the History 11 map quizzes. Click where each place goes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aricnesheim.com/history-maps.html">
+<meta property="og:image" content="https://aricnesheim.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23b45309'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="history-maps.css?v=20260827-7">
+</head>
+<body data-page="history" class="tool-page maps-page">
+<a class="skip-link" href="#drill">Skip to the drill</a>
+
+<header class="mt-header">
+  <div class="mt-header-inner">
+    <a class="mt-back" href="history.html" aria-label="Back to History 11">← History 11</a>
+    <div class="mt-ident">
+      <p class="mt-eyebrow">History 11 · Map quizzes</p>
+      <h1>Map Trainer</h1>
+      <p class="mt-status" id="mt-status"></p>
+    </div>
+    <div class="mt-toolbar" aria-label="Controls">
+      <button class="mt-btn" id="present-toggle" type="button" aria-pressed="false">Present</button>
+      <button class="mt-btn mt-btn-quiet" id="help-toggle" type="button" aria-expanded="false" aria-controls="keyboard-help">Keys</button>
+    </div>
+  </div>
+</header>
+
+<nav class="mt-rail-wrap" aria-label="Choose a map">
+  <div class="mt-rail" id="map-rail"></div>
+</nav>
+
+<main class="mt-main">
+
+  <section class="mt-stage" aria-label="The map">
+    <div class="mt-stage-top">
+      <div class="mt-modes" role="group" aria-label="What to do">
+        <button class="mt-mode" id="mode-find" type="button" aria-pressed="true">Find it</button>
+        <button class="mt-mode" id="mode-name" type="button" aria-pressed="false">Name it</button>
+        <button class="mt-mode" id="mode-study" type="button" aria-pressed="false">Study</button>
+      </div>
+      <label class="mt-group-pick">
+        <span class="sr-only">Which items</span>
+        <select id="group-pick"></select>
+      </label>
+    </div>
+
+    <div class="mt-figure">
+      <div class="mt-svg-wrap" id="mt-svg-wrap"></div>
+    </div>
+
+    <p class="mt-legend" id="mt-legend"></p>
+  </section>
+
+  <section class="mt-side" id="drill" tabindex="-1">
+
+    <div class="mt-prompt-card" id="prompt-card">
+      <p class="mt-mini-label" id="prompt-kicker">Find it</p>
+      <p class="mt-prompt" id="prompt-text">Choose a map to begin.</p>
+      <div class="mt-choices" id="choices" hidden></div>
+      <p class="mt-feedback" id="feedback" role="status" aria-live="polite"></p>
+      <div class="mt-prompt-actions">
+        <button class="mt-btn mt-btn-quiet" id="skip-btn" type="button">Show me</button>
+        <button class="mt-btn mt-btn-primary" id="next-btn" type="button" hidden>Next</button>
+      </div>
+    </div>
+
+    <div class="mt-progress-card">
+      <div class="mt-progress-head">
+        <p class="mt-mini-label">Progress</p>
+        <p class="mt-progress-count" id="progress-count">0 of 0 learned</p>
+      </div>
+      <div class="mt-bar" aria-hidden="true"><span id="progress-fill"></span></div>
+      <p class="mt-progress-note" id="progress-note"></p>
+      <button class="mt-btn mt-btn-quiet" id="reset-btn" type="button">Start this map over</button>
+    </div>
+
+    <div class="mt-about-card">
+      <p class="mt-mini-label">About this map</p>
+      <p class="mt-about-unit" id="about-unit"></p>
+      <p class="mt-about-note" id="about-note"></p>
+      <p class="mt-about-source" id="about-source"></p>
+    </div>
+
+  </section>
+
+  <section class="mt-pending" aria-labelledby="pending-title">
+    <h2 id="pending-title">Not in the trainer yet</h2>
+    <p class="mt-pending-lead">Three quizzes on the calendar are not here. Use the printable maps on the History page for these.</p>
+    <ul class="mt-pending-list" id="pending-list"></ul>
+  </section>
+
+  <section class="mt-colophon">
+    <h2>Where the maps come from</h2>
+    <p>Borders and coastlines are built from Natural Earth, which is in the public domain. Country outlines are drawn at 1:50 million and the regions inside France, Spain, and Italy at 1:10 million. The regions of France are the old provinces, composed from present-day departments.</p>
+    <p>The Europe in 1500 map uses composed borders carried over from the Europa Atlas. Historical borders are teaching approximations, not survey data.</p>
+    <p class="mt-colophon-note">Item lists follow CSN's own word banks wherever CSN supplies one. The Spain list was built for this course, because CSN gives a blank Spain map without a bank.</p>
+  </section>
+
+</main>
+
+<div class="mt-help" id="keyboard-help" role="dialog" aria-modal="false" aria-labelledby="help-title" hidden>
+  <div class="mt-help-card">
+    <div class="mt-help-heading">
+      <h2 id="help-title">Keyboard controls</h2>
+      <button class="mt-btn mt-btn-quiet" id="help-close" type="button">Close</button>
+    </div>
+    <dl class="mt-key-list">
+      <div><dt><kbd>Enter</kbd></dt><dd>Next item</dd></div>
+      <div><dt><kbd>S</kbd></dt><dd>Show me where it is</dd></div>
+      <div><dt><kbd>1</kbd>–<kbd>4</kbd></dt><dd>Pick an answer in Name it</dd></div>
+      <div><dt><kbd>P</kbd></dt><dd>Enter or leave presentation view</dd></div>
+      <div><dt><kbd>?</kbd></dt><dd>Open this help</dd></div>
+      <div><dt><kbd>Esc</kbd></dt><dd>Close help or leave presentation view</dd></div>
+    </dl>
+  </div>
+</div>
+
+<footer class="mt-footer">
+  <div class="footer-inner">
+    <span>Mr. Nesheim · aricnesheim.com</span>
+    <span><a href="history.html">Back to History 11</a></span>
+  </div>
+</footer>
+
+<script src="history-maps-geo.js?v=20260827-7" defer></script>
+<script src="history-maps-data.js?v=20260827-7" defer></script>
+<script src="history-maps.js?v=20260827-7" defer></script>
+</body>
+</html>

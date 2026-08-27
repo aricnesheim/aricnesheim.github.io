@@ -60,6 +60,49 @@ superseded; do not take dates from it.
 **Cache busting.** The `?v=` query on the CSS and JS tags must be bumped when
 either file changes, or browsers will keep the old copy.
 
+## The Map Trainer (History)
+
+`history-maps.html` drills the History 11 map quizzes, linked from the History
+page. Five files:
+
+- `history-maps.html` — the shell
+- `history-maps.css` — scoped styling, including the projector view
+- `history-maps-data.js` — which items belong to which quiz, the quiz dates,
+  and the three quizzes the trainer does not cover yet
+- `history-maps.js` — draws each map and runs the drill
+- `history-maps-geo.js` — **generated**, do not hand-edit
+
+Five maps: modern Europe, Spain, France, Italy, and Europe in 1500. Three modes:
+Find it (a name is given, the student clicks the place), Name it (a place is
+highlighted, the student picks the name), and Study (every label shown). The map
+fills in as answers come in, the way a paper quiz does.
+
+**The drill** is a small Leitner box. An item is learned after `LEARNED_AT`
+right answers; a wrong answer resets it and re-asks it a few items later. The
+progress bar counts every right answer, not only finished items, so it moves on
+the first pass. Progress is per map in `localStorage` under `h11maps:v1:`.
+
+**Item lists** follow CSN's own word banks in `01 Curriculum (CSN)/Chesterton
+History Discipline Resource Folder (2024)/Maps and Word Banks/`, so the drill
+tests what the quiz tests. Spain is the exception: CSN supplies a blank Spain
+map with no word bank, so that list was built from the course itself and is the
+one list worth Aric's review.
+
+**Regenerating the geometry.** The builder and its source data live outside this
+repo, in `2026-27/History 11/05 Sources & Handouts/Map Trainer/_build/`. See the
+README there. Geometry comes from Natural Earth (public domain); the Europe in
+1500 layer is carried over from the Europa Atlas build.
+
+**Item ids are prefixed by kind** (`rg-`, `co-`, `ct-`, `wa-`, `mi-`) because
+Spain has both a region and a city called Madrid, and another pair called
+Valencia. Without the prefix they collide and the drill double-counts.
+
+**After a schedule re-flow.** Quiz dates live in `history-maps-data.js`. Update
+them there.
+
+**Cache busting.** Bump the `?v=` query on the CSS and JS tags when either
+changes.
+
 ## Provenance note
 
 `files/history/shared-era-timeline.html` is Codex/GPT work product (from
