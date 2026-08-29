@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="year.css?v=20260827-1">
+<link rel="stylesheet" href="year.css?v=20260829-1">
 </head>
 <body data-page="year">
 
@@ -93,6 +93,46 @@
     <a class="detail-link" id="detail-link" href="files/history/shared-era-timeline.html" target="_blank" rel="noopener">Open the historical timeline</a>
   </section>
 
+  <section class="card mcal-card" id="month-cal" aria-labelledby="mcal-title">
+    <div class="year-card-head">
+      <div>
+        <h2 id="mcal-title">Month by month</h2>
+        <p class="up-note">The same year, one month at a time. Every assignment appears twice —
+        on the day it's given and on the day it's due — in its course color.</p>
+      </div>
+      <div class="mcal-nav" role="group" aria-label="Change month">
+        <button type="button" class="mcal-nav-btn" id="mcal-prev" aria-label="Previous month">&#8249;</button>
+        <p class="mcal-month-label" id="mcal-month-label">August 2026</p>
+        <button type="button" class="mcal-nav-btn" id="mcal-next" aria-label="Next month">&#8250;</button>
+        <button type="button" class="mcal-today-btn" id="mcal-today">Today</button>
+      </div>
+    </div>
+
+    <div class="mcal-legend" aria-label="Month calendar legend">
+      <span><span class="mcal-swatch history" aria-hidden="true"></span>History</span>
+      <span><span class="mcal-swatch theology" aria-hidden="true"></span>Theology</span>
+      <span><span class="mcal-swatch literature" aria-hidden="true"></span>Literature</span>
+      <span><span class="mcal-swatch choir" aria-hidden="true"></span>Choir</span>
+      <span class="mcal-legend-gap" aria-hidden="true"></span>
+      <span><span class="mcal-key mcal-key-due" aria-hidden="true">Due</span>due that day</span>
+      <span><span class="mcal-key mcal-key-given" aria-hidden="true">Assigned</span>given that day</span>
+      <span><span class="mcal-key mcal-key-quiz" aria-hidden="true">&#9733; Quiz</span>quiz or test</span>
+      <span><span class="mcal-key mcal-key-event" aria-hidden="true">&#9834; Choir</span>performance</span>
+    </div>
+    <p class="mcal-disclosure">"Assigned" dates are estimated as the course's previous class
+    meeting; quizzes appear only on the day they happen.</p>
+
+    <div class="mcal-grid-wrap">
+      <div class="mcal-weekdays" aria-hidden="true"><!-- 7 spans, JS-filled --></div>
+      <div class="mcal-grid" id="mcal-grid" role="grid" aria-labelledby="mcal-month-label"></div>
+    </div>
+
+    <div class="mcal-detail" id="mcal-detail" aria-live="polite" aria-atomic="true">
+      <p class="mcal-detail-empty">Select a day to see the full assignments.</p>
+    </div>
+    <noscript><p>Turn on JavaScript to use the month calendar.</p></noscript>
+  </section>
+
   <section aria-labelledby="arcs-title">
     <h2 id="arcs-title">What each course covers</h2>
     <div class="arc-grid">
@@ -129,5 +169,6 @@
 </footer>
 
 <script src="year.js?v=20260827-1" defer></script>
+<script src="month-calendar.js?v=20260829-1" defer></script>
 </body>
 </html>

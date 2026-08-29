@@ -579,3 +579,467 @@ body[data-page="year"] {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Month-by-month calendar ===== */
+
+.mcal-card {
+  overflow: hidden;
+}
+
+.mcal-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.mcal-nav-btn {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.mcal-nav-btn:hover { background: var(--accent-soft); }
+
+.mcal-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.mcal-month-label {
+  margin: 0;
+  min-width: 10.5rem;
+  color: var(--text);
+  font-family: Fraunces, Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mcal-today-btn {
+  font: inherit;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mcal-today-btn:hover { text-decoration: underline; }
+
+.mcal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 1rem 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.mcal-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.mcal-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background: var(--course, var(--accent));
+}
+
+.mcal-swatch.history { --course: var(--history); }
+.mcal-swatch.theology { --course: var(--theology); }
+.mcal-swatch.literature { --course: var(--literature); }
+.mcal-swatch.choir { --course: var(--choir); }
+
+.mcal-key {
+  display: inline-block;
+  padding: 2px 6px;
+  background: var(--accent);
+  border-radius: 6px;
+  color: #fff;
+  font: 600 0.68rem/1.2 Inter, system-ui, sans-serif;
+}
+
+.mcal-key-given {
+  padding: 1px 5px;
+  background: var(--accent-soft);
+  border: 1px dashed var(--accent);
+  color: var(--accent);
+}
+
+.mcal-key-quiz { font-weight: 700; }
+
+.mcal-key-event { background: var(--choir); }
+
+.mcal-legend-gap {
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+}
+
+.mcal-disclosure {
+  margin: 0.35rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
+.mcal-grid-wrap {
+  margin-top: 0.9rem;
+}
+
+.mcal-weekdays,
+.mcal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.mcal-weekdays {
+  padding-bottom: 0.35rem;
+}
+
+.mcal-weekdays > span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.mcal-weekday-min { display: none; }
+
+.mcal-week {
+  display: contents;
+}
+
+.mcal-cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  min-height: 92px;
+  padding: 5px 5px 7px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 120ms ease;
+}
+
+.mcal-cell:hover { border-color: var(--accent); }
+
+.mcal-cell:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.mcal-cell--pad {
+  background: transparent;
+  border: 1px dashed var(--border);
+  opacity: 0.5;
+  cursor: default;
+}
+
+.mcal-cell--weekend { background: var(--bg-soft); }
+
+.mcal-cell--weekend .mcal-date { color: var(--muted); }
+
+.mcal-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.mcal-cell--today .mcal-date {
+  background: var(--accent);
+  border-radius: 50%;
+  color: #fff;
+}
+
+.mcal-cell--selected {
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.mcal-cell--choirweek-flag::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--choir);
+  border-radius: 0 0 9px 9px;
+  opacity: 0.55;
+}
+
+.mcal-marks {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+}
+
+.mcal-chip {
+  display: block;
+  overflow: hidden;
+  padding: 2px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  font: 600 0.68rem/1.2 Inter, system-ui, sans-serif;
+}
+
+.mcal-chip.history { --course: var(--history); --course-soft: var(--history-soft); }
+.mcal-chip.theology { --course: var(--theology); --course-soft: var(--theology-soft); }
+.mcal-chip.literature { --course: var(--literature); --course-soft: var(--literature-soft); }
+.mcal-chip.choir { --course: var(--choir); --course-soft: var(--choir-soft); }
+
+.mcal-chip--due {
+  background: var(--course);
+  color: #fff;
+}
+
+.mcal-chip--given {
+  padding: 1px 5px;
+  background: var(--course-soft);
+  border: 1px dashed var(--course);
+  color: var(--course);
+}
+
+.mcal-chip--quiz {
+  background: var(--course);
+  color: #fff;
+  font-weight: 700;
+}
+
+.mcal-chip--event {
+  background: var(--choir);
+  color: #fff;
+}
+
+.mcal-marks--overflow .mcal-chip:nth-child(n+4) {
+  display: none;
+}
+
+.mcal-more {
+  display: block;
+  padding: 1px 6px;
+  color: var(--muted);
+  font: 600 0.66rem/1.2 Inter, system-ui, sans-serif;
+}
+
+.mcal-load-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 1.5rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.mcal-detail {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.mcal-detail-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
+.mcal-detail-date {
+  margin: 0;
+  font-family: Fraunces, Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.mcal-detail-count {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.mcal-detail-item {
+  --course: var(--accent);
+  margin: 0.65rem 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--course);
+}
+
+.mcal-detail-item.history { --course: var(--history); }
+.mcal-detail-item.theology { --course: var(--theology); }
+.mcal-detail-item.literature { --course: var(--literature); }
+.mcal-detail-item.choir { --course: var(--choir); }
+
+.mcal-detail-line1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.mcal-detail-course {
+  color: var(--course);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.mcal-detail-item .mcal-chip {
+  display: inline-block;
+}
+
+.mcal-detail-phrase {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.mcal-detail-text {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.mcal-detail-choirweek,
+.mcal-detail-choirflag {
+  margin: 0.65rem 0 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--choir);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mcal-nav-btn,
+  .mcal-cell {
+    transition: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .mcal-legend-gap {
+    flex-basis: 100%;
+  }
+
+  .mcal-month-label {
+    font-size: 1.05rem;
+  }
+
+  .mcal-cell {
+    min-height: 56px;
+    padding: 4px;
+    border-radius: 8px;
+    gap: 3px;
+  }
+
+  .mcal-date {
+    font-size: 0.7rem;
+  }
+
+  .mcal-marks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+
+  .mcal-chip {
+    width: 9px;
+    height: 9px;
+    flex: none;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .mcal-chip--due {
+    border-radius: 50%;
+  }
+
+  .mcal-chip--given {
+    background: #fff;
+    border: 2px solid var(--course);
+    border-radius: 50%;
+  }
+
+  .mcal-chip--quiz {
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+  }
+
+  .mcal-chip--event {
+    border-radius: 2px;
+  }
+
+  .mcal-marks--overflow .mcal-chip:nth-child(n+4) {
+    display: block;
+  }
+
+  .mcal-more {
+    display: none;
+  }
+
+  .mcal-detail-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .mcal-weekday-full { display: none; }
+  .mcal-weekday-min { display: inline; }
+
+  .mcal-weekdays,
+  .mcal-grid {
+    gap: 2px;
+  }
+
+  .mcal-cell {
+    min-height: 48px;
+  }
+
+  .mcal-date {
+    font-size: 0.68rem;
+  }
+
+  .mcal-cell--today .mcal-date {
+    width: 16px;
+    height: 16px;
+  }
+
+  .mcal-chip {
+    width: 8px;
+    height: 8px;
+  }
+
+  .mcal-chip--quiz {
+    width: 9px;
+    height: 9px;
+  }
+}
