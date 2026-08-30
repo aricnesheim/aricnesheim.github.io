@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Crusades · History 11 · Mr. Nesheim</title>
+<meta name="description" content="A History 11 reference for the Crusades, 1095 to 1291: the dates, the geography, why each one was called, what happened, and who was involved.">
+<meta property="og:title" content="The Crusades · History 11">
+<meta property="og:description" content="Dates, geography, and names for the Crusades, 1095 to 1291.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aricnesheim.com/history-crusades.html">
+<meta property="og:image" content="https://aricnesheim.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23b45309'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ---------- Crusades reference, scoped .cr-* ---------- */
+
+.cr-entry {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0 1.75rem;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--border);
+}
+.cr-entry:first-of-type { border-top: none; padding-top: 0.35rem; }
+
+.cr-rail { padding-top: 0.2rem; }
+
+.cr-num {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1;
+}
+
+.cr-years {
+  font-weight: 800;
+  font-size: 1.22rem;
+  line-height: 1.15;
+  margin-top: 0.25rem;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.cr-name {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.2;
+  margin: 0 0 0.35rem;
+}
+
+.cr-route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.45rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+.cr-route .cr-stop { border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+.cr-route .cr-arrow { color: var(--border); font-weight: 700; }
+.cr-route .cr-end { color: var(--accent); font-weight: 600; border-bottom-color: var(--accent); }
+
+.cr-fields { display: grid; gap: 0.6rem; }
+
+.cr-field {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0 1rem;
+  align-items: baseline;
+}
+
+.cr-label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.3rem;
+}
+
+.cr-field p { margin: 0; font-size: 0.96rem; }
+.cr-field p + p { margin-top: 0.4rem; }
+
+.cr-outcome {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+}
+.cr-outcome::before { content: "Outcome · "; font-weight: 700; letter-spacing: 0.03em; }
+
+/* setup + glossary rows */
+.cr-rows { border-top: 1px solid var(--border); }
+.cr-row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0 1rem;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.cr-row .cr-y {
+  font-weight: 800;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.97rem;
+}
+.cr-row p { margin: 0; font-size: 0.96rem; }
+
+.cr-gloss { border-top: 1px solid var(--border); }
+.cr-gloss div {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.cr-gloss b { color: var(--accent); }
+
+/* date table */
+.cr-table-wrap { overflow-x: auto; }
+.cr-table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+.cr-table th {
+  text-align: left;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1rem 0.45rem 0;
+}
+.cr-table td {
+  padding: 0.5rem 1rem 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: baseline;
+}
+.cr-table td.cr-y {
+  font-weight: 800;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  width: 5rem;
+}
+
+.cr-questions { padding-left: 1.15rem; margin: 0; }
+.cr-questions li { margin: 0.45rem 0; }
+
+.cr-back {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 560px) {
+  .cr-entry { grid-template-columns: 1fr; gap: 0.5rem; }
+  .cr-rail { display: flex; align-items: baseline; gap: 0.6rem; padding-top: 0; }
+  .cr-years { margin-top: 0; }
+  .cr-field, .cr-row { grid-template-columns: 1fr; gap: 0.1rem; }
+  .cr-label { padding-top: 0; }
+}
+
+@media print {
+  .site-header, .cr-back, footer { display: none; }
+  main { max-width: none; padding: 0; }
+  .card, .band { border: none; padding: 0; background: none; }
+  .cr-entry, .cr-row { break-inside: avoid; }
+}
+</style>
+</head>
+<body data-page="history">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Mr. Nesheim</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="history.html" aria-current="page">History<span class="nav-tail"> 11</span></a>
+      <a href="theology.html">Theology<span class="nav-tail"> 10</span></a>
+      <a href="literature.html"><span class="nav-long">Literature 11</span><span class="nav-short">Lit</span></a>
+      <a href="choir.html">Choir</a>
+      <a href="year.html">Calendar</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <a class="cr-back" href="history.html">← History 11</a>
+
+  <header class="band page-head">
+    <p class="eyebrow">History 11 · Reference</p>
+    <h1>The Crusades</h1>
+    <p class="lead">Two hundred years of expeditions to the Holy Land, from the Council of Clermont in 1095 to the fall of Acre in 1291. Here are the dates, the places, and the names.</p>
+    <p class="meta">1095–1291</p>
+  </header>
+
+  <section class="card note-card">
+    <h2>How to use this page</h2>
+    <p>This is a skeleton: dates, geography, and names. It is not a substitute for the sources in your binder, and it will not tell you what to think about any of it. Clari and Villehardouin were there and we read them; this page only helps you keep the order straight while you do.</p>
+    <p>Whether these expeditions were just, whether they worked, and what they cost is what we argue about in class. The questions at the bottom are the ones we will actually take up.</p>
+  </section>
+
+  <section class="card">
+    <h2>Why anyone went</h2>
+    <p>A crusade was an armed pilgrimage. The pope called it, and whoever took the cross (sewed a cross on their clothing and swore the vow) marched east under that vow. Going was ruinously expensive. Many crusaders mortgaged or sold their land to pay for it and never recovered the money. Whatever else was mixed into it, most of them understood the journey as a penance.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><div class="cr-y">638</div><p>Jerusalem passes from Byzantine into Muslim rule. For centuries Christian pilgrims are still permitted to visit.</p></div>
+      <div class="cr-row"><div class="cr-y">1054</div><p>The Great Schism divides East and West. Rome and Constantinople are no longer in communion.</p></div>
+      <div class="cr-row"><div class="cr-y">1071</div><p>Battle of Manzikert, in eastern Anatolia (modern Turkey). The Seljuk Turks destroy the Byzantine army and take most of Anatolia.</p></div>
+      <div class="cr-row"><div class="cr-y">1095</div><p>Emperor Alexios I Komnenos writes west asking for soldiers.</p></div>
+      <div class="cr-row"><div class="cr-y">Nov 1095</div><p>Council of Clermont, in France. Pope Urban II preaches the First Crusade and attaches an indulgence to it. The crowd answers <i>Deus vult</i> (God wills it).</p></div>
+    </div>
+    <p style="margin-top:0.9rem"><b>Worth knowing:</b> the Peace of God and Truce of God movements had spent the previous century trying to stop Christian knights from making war on each other. Clermont pointed that same violence somewhere else. Keep that in view when we ask what the Crusades were for.</p>
+  </section>
+
+  <h2 style="margin:2rem 0 0.9rem">The first four</h2>
+
+  <section class="card">
+    <div class="cr-entry">
+      <div class="cr-rail">
+        <div class="cr-num">I</div>
+        <div class="cr-years">1096–<wbr>1099</div>
+      </div>
+      <div>
+        <p class="cr-name">The First Crusade</p>
+        <div class="cr-route">
+          <span class="cr-stop">France &amp; Germany</span><span class="cr-arrow">›</span>
+          <span class="cr-stop">Constantinople</span><span class="cr-arrow">›</span>
+          <span class="cr-stop">Anatolia</span><span class="cr-arrow">›</span>
+          <span class="cr-stop">Antioch</span><span class="cr-arrow">›</span>
+          <span class="cr-stop cr-end">Jerusalem</span>
+        </div>
+        <div class="cr-fields">
+          <div class="cr-field"><div class="cr-label">Why</div>
+            <p>Urban II's call at Clermont: relieve the Byzantines, reopen the pilgrim roads, and recover Jerusalem.</p></div>
+          <div class="cr-field"><div class="cr-label">What happened</div>
+            <p>An unofficial first wave of peasants under Peter the Hermit left early in 1096 and was destroyed in Anatolia. The armies of the nobles followed.</p>
+            <p>They took Nicaea in 1097, won at Dorylaeum, and besieged Antioch for eight months across 1097 and 1098. They took Jerusalem on <b>July 15, 1099</b>. The sack that followed killed a large part of the city's population, Muslim and Jewish, and the crusaders' own chroniclers describe it without embarrassment.</p>
+            <p>Four Crusader States followed along the coast: Edessa, Antioch, Tripoli, and the Kingdom of Jerusalem. The holy places stayed in Christian hands, and pilgrimage ran, for the next eighty-eight years.</p></div>
+          <div class="cr-field"><div class="cr-label">Who</div>
+            <p>Pope Urban II. Godfrey of Bouillon, who took the city and declined the title of king. His brother Baldwin, who took the crown in 1100. Bohemond of Taranto, who kept Antioch for himself. Raymond of Toulouse. Adhemar of Le Puy, the papal legate, who died at Antioch. Emperor Alexios I, who asked for mercenaries and got something he could not control.</p></div>
+        </div>
+        <span class="cr-outcome">Jerusalem taken, July 15, 1099.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="cr-entry">
+      <div class="cr-rail">
+        <div class="cr-num">II</div>
+        <div class="cr-years">1147–<wbr>1149</div>
+      </div>
+      <div>
+        <p class="cr-name">The Second Crusade</p>
+        <div class="cr-route">
+          <span class="cr-stop">France &amp; Germany</span><span class="cr-arrow">›</span>
+          <span class="cr-stop">Lisbon</span><span class="cr-arrow">›</span>
+          <span class="cr-stop">Anatolia</span><span class="cr-arrow">›</span>
+          <span class="cr-stop">Jerusalem</span><span class="cr-arrow">›</span>
+          <span class="cr-stop cr-end">Damascus</span>
+        </div>
+        <div class="cr-fields">
+          <div class="cr-field"><div class="cr-label">Why</div>
+            <p>Edessa, the northernmost Crusader State, fell to the Turkish commander Zengi in <b>1144</b>. It was the first of the four to go.</p></div>
+          <div class="cr-field"><div class="cr-label">What happened</div>
+            <p>Pope Eugene III called it and <b>St. Bernard of Clairvaux</b> preached it at Vézelay in 1146. Two reigning kings answered, which had not happened before.</p>
+            <p>One fleet stopped in Iberia on the way and helped <b>Afonso Henriques</b>, first king of Portugal, take <b>Lisbon</b> in October 1147. That is the campaign's one lasting gain, and it is the reason the Second Crusade shows up in the story of Portugal.</p>
+            <p>Both main armies were cut to pieces crossing Anatolia. What arrived at Jerusalem then marched on <b>Damascus</b>, a Muslim city that had been on friendly terms with the Kingdom of Jerusalem. The siege lasted four days in July 1148 and the army went home.</p></div>
+          <div class="cr-field"><div class="cr-label">Who</div>
+            <p>St. Bernard of Clairvaux, who preached it and afterward had to answer for it. King Louis VII of France and Queen Eleanor of Aquitaine. King Conrad III of Germany. Zengi, and after him his son Nur al-Din. Afonso Henriques of Portugal.</p></div>
+        </div>
+        <span class="cr-outcome">Failed in the East. Edessa was never recovered. Lisbon taken, 1147.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="cr-entry">
+      <div class="cr-rail">
+        <div class="cr-num">III</div>
+        <div class="cr-years">1189–<wbr>1192</div>
+      </div>
+      <div>
+        <p class="cr-name">The Third Crusade</p>
+        <div class="cr-route">
+          <span class="cr-stop">England, France, Germany</span><span class="cr-arrow">›</span>
+          <span class="cr-stop">Cyprus</span><span class="cr-arrow">›</span>
+          <span class="cr-stop">Acre</span><span class="cr-arrow">›</span>
+          <span class="cr-stop">Arsuf</span><span class="cr-arrow">›</span>
+          <span class="cr-stop cr-end">Jaffa</span>
+        </div>
+        <div class="cr-fields">
+          <div class="cr-field"><div class="cr-label">Why</div>
+            <p><b>Saladin</b>, sultan of Egypt and Syria, destroyed the army of the Kingdom of Jerusalem at the <b>Battle of Hattin, July 4, 1187</b>, and took Jerusalem that October. He allowed the Christian inhabitants to ransom themselves and let the eastern Christians stay.</p></div>
+          <div class="cr-field"><div class="cr-label">What happened</div>
+            <p>Three of the most powerful rulers in Europe went, which is why this one is called the Kings' Crusade. Frederick Barbarossa drowned crossing a river in Cilicia in <b>1190</b> and most of his army turned back. Philip II helped take Acre and sailed home in 1191.</p>
+            <p>That left <b>Richard the Lionheart</b>. He seized Cyprus on the way, finished the siege of Acre in July 1191, and beat Saladin at Arsuf that September. He also had roughly 2,700 prisoners at Acre executed when the ransom talks stalled. He advanced inland toward Jerusalem twice and turned back both times, on the judgment that he could take the city and not hold it.</p>
+            <p>The <b>Treaty of Jaffa, September 1192</b>: the Christians keep the coastal strip, and unarmed pilgrims are readmitted to Jerusalem. Saladin died the following year.</p></div>
+          <div class="cr-field"><div class="cr-label">Who</div>
+            <p>Saladin. Richard I of England. Philip II Augustus of France. Frederick I Barbarossa, Holy Roman Emperor. Guy of Lusignan, the king who lost at Hattin.</p></div>
+        </div>
+        <span class="cr-outcome">Jerusalem stayed Muslim. Pilgrims readmitted, and the coast held.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="cr-entry">
+      <div class="cr-rail">
+        <div class="cr-num">IV</div>
+        <div class="cr-years">1202–<wbr>1204</div>
+      </div>
+      <div>
+        <p class="cr-name">The Fourth Crusade</p>
+        <div class="cr-route">
+          <span class="cr-stop">Venice</span><span class="cr-arrow">›</span>
+          <span class="cr-stop">Zara</span><span class="cr-arrow">›</span>
+          <span class="cr-stop cr-end">Constantinople</span>
+          <span class="cr-arrow">✕</span>
+          <span class="cr-stop">never reached the Holy Land</span>
+        </div>
+        <div class="cr-fields">
+          <div class="cr-field"><div class="cr-label">Why</div>
+            <p>Pope Innocent III called it in 1198. The plan was to strike Egypt first, where the Ayyubid power actually sat, and trade it for Jerusalem.</p></div>
+          <div class="cr-field"><div class="cr-label">What happened</div>
+            <p>The crusaders contracted with <b>Venice</b> for a fleet sized to carry 33,500 men. Roughly a third of that number turned up, so they could not pay what they owed. Venice offered terms: work off the debt.</p>
+            <p>In 1202 they besieged and took <b>Zara</b>, a Catholic city on the Adriatic. Innocent III excommunicated the army for it. Then a Byzantine claimant, Alexios Angelos, offered money and troops if they would restore his family to the throne, and the fleet sailed for Constantinople instead.</p>
+            <p>The payment never came. In <b>April 1204</b> the crusaders stormed and sacked <b>Constantinople</b> over three days, stripping its churches and relics. They installed a Latin emperor there who ruled until 1261. Innocent III condemned what they had done.</p>
+            <p>Two men who were there wrote it down: <b>Robert of Clari</b>, a poor knight, and <b>Geoffrey de Villehardouin</b>, one of the leaders. They do not tell it the same way, which is the point of reading both.</p></div>
+          <div class="cr-field"><div class="cr-label">Who</div>
+            <p>Pope Innocent III, who called it and then condemned it. Doge Enrico Dandolo of Venice, past ninety and blind. Boniface of Montferrat. Alexios IV Angelos, whose bargain turned the fleet north.</p></div>
+        </div>
+        <span class="cr-outcome">Never reached the Holy Land. Constantinople sacked, April 1204.</span>
+      </div>
+    </div>
+  </section>
+
+  <h2 style="margin:2rem 0 0.9rem">The later crusades</h2>
+
+  <section class="card">
+    <div class="cr-entry">
+      <div class="cr-rail"><div class="cr-num">V</div><div class="cr-years">1217–<wbr>1221</div></div>
+      <div>
+        <p class="cr-name">Egypt, and an offer refused</p>
+        <div class="cr-route"><span class="cr-stop">Acre</span><span class="cr-arrow">›</span><span class="cr-stop cr-end">Damietta, on the Nile</span></div>
+        <div class="cr-fields">
+          <div class="cr-field"><div class="cr-label">What happened</div>
+            <p>The Egypt plan again. The crusaders took Damietta in November 1219. Sultan al-Kamil offered to hand over Jerusalem in exchange for it. The papal legate Pelagius refused, marched on Cairo, was caught by the Nile flood, and surrendered Damietta in 1221.</p>
+            <p><b>St. Francis of Assisi</b> crossed the lines at Damietta in 1219 and preached to al-Kamil in person. Both men came away unharmed and, by every account, impressed.</p></div>
+          <div class="cr-field"><div class="cr-label">Who</div>
+            <p>Cardinal Pelagius. John of Brienne. Sultan al-Kamil. St. Francis of Assisi.</p></div>
+        </div>
+        <span class="cr-outcome">Failed. Jerusalem was offered and turned down.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="cr-entry">
+      <div class="cr-rail"><div class="cr-num">VI</div><div class="cr-years">1228–<wbr>1229</div></div>
+      <div>
+        <p class="cr-name">Jerusalem by treaty</p>
+        <div class="cr-route"><span class="cr-stop">Sicily</span><span class="cr-arrow">›</span><span class="cr-stop">Acre</span><span class="cr-arrow">›</span><span class="cr-stop cr-end">Jerusalem</span></div>
+        <div class="cr-fields">
+          <div class="cr-field"><div class="cr-label">What happened</div>
+            <p>Emperor <b>Frederick II</b> took the crusade vow and then delayed for years, so Pope Gregory IX excommunicated him. He sailed anyway, still excommunicated, and in <b>February 1229</b> negotiated Jerusalem, Bethlehem, and Nazareth back from al-Kamil. There was almost no fighting. He crowned himself in the Church of the Holy Sepulchre because no bishop would do it for him.</p>
+            <p>Christians held Jerusalem for the next fifteen years. It was lost for good in <b>1244</b>.</p></div>
+          <div class="cr-field"><div class="cr-label">Who</div>
+            <p>Frederick II, Holy Roman Emperor. Pope Gregory IX. Sultan al-Kamil.</p></div>
+        </div>
+        <span class="cr-outcome">Jerusalem recovered by negotiation. Held 1229 to 1244.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="cr-entry">
+      <div class="cr-rail"><div class="cr-num">VII</div><div class="cr-years">1248–<wbr>1254</div></div>
+      <div>
+        <p class="cr-name">St. Louis in Egypt</p>
+        <div class="cr-route"><span class="cr-stop">France</span><span class="cr-arrow">›</span><span class="cr-stop">Cyprus</span><span class="cr-arrow">›</span><span class="cr-stop">Damietta</span><span class="cr-arrow">›</span><span class="cr-stop cr-end">Mansurah</span></div>
+        <div class="cr-fields">
+          <div class="cr-field"><div class="cr-label">What happened</div>
+            <p>King <b>Louis IX of France</b> went because Jerusalem had fallen in 1244. He took Damietta in 1249, lost at Mansurah in February 1250, and was <b>captured in April 1250</b> and ransomed. He stayed in the Holy Land four more years rebuilding its fortifications. Egypt meanwhile passed to the Mamluks, who become the last and most effective enemy the Crusader States face.</p></div>
+          <div class="cr-field"><div class="cr-label">Who</div>
+            <p>Louis IX of France, canonized in 1297 as St. Louis. His biographer Jean de Joinville, who went with him. The Mamluks.</p></div>
+        </div>
+        <span class="cr-outcome">Failed. The king of France was taken prisoner and ransomed.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="cr-entry">
+      <div class="cr-rail"><div class="cr-num">VIII</div><div class="cr-years">1270</div></div>
+      <div>
+        <p class="cr-name">Tunis</p>
+        <div class="cr-route"><span class="cr-stop">France</span><span class="cr-arrow">›</span><span class="cr-stop cr-end">Tunis, North Africa</span></div>
+        <div class="cr-fields">
+          <div class="cr-field"><div class="cr-label">What happened</div>
+            <p>Louis IX went again, this time to North Africa. Disease swept the camp and he died outside Tunis on <b>August 25, 1270</b>. His brother made terms and withdrew. Prince Edward of England arrived after him and accomplished little in 1271 and 1272, which some books count separately as a Ninth Crusade.</p></div>
+          <div class="cr-field"><div class="cr-label">Who</div>
+            <p>Louis IX. Charles of Anjou, his brother. Prince Edward, later Edward I of England.</p></div>
+        </div>
+        <span class="cr-outcome">Failed. The king died of disease before a battle was fought.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="cr-entry">
+      <div class="cr-rail"><div class="cr-num">✕</div><div class="cr-years">1291</div></div>
+      <div>
+        <p class="cr-name">Acre falls</p>
+        <div class="cr-route"><span class="cr-stop cr-end">Acre, on the coast of the Holy Land</span></div>
+        <div class="cr-fields">
+          <div class="cr-field"><div class="cr-label">What happened</div>
+            <p>The Mamluk sultan al-Ashraf Khalil took <b>Acre</b> in May 1291. It was the last crusader city in the Holy Land. Just under two hundred years after Clermont, the Latin states were finished.</p></div>
+        </div>
+        <span class="cr-outcome">The end of the Crusader States.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Crusades that did not go east</h2>
+    <p>The word covers more than the eight expeditions above, and we will run into these elsewhere in the year. Note where the vow, the indulgence, and the preaching are the same, and where the target is not.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><div class="cr-y">1096–1492</div><p><b>Iberia.</b> The long campaign in Spain and Portugal was granted crusade status at points along the way. It ends at Granada in 1492.</p></div>
+      <div class="cr-row"><div class="cr-y">1147–1400s</div><p><b>The Baltic.</b> Campaigns against the pagan peoples of the Baltic, run largely by the Teutonic Knights, and the source of the forced conversions we will have to weigh.</p></div>
+      <div class="cr-row"><div class="cr-y">1209–1229</div><p><b>The Albigensian Crusade.</b> A crusade preached by Innocent III against the Cathars in southern France, so against baptized Christians in Christian territory. Simon de Montfort commanded it. This one is hard to defend and we will not pretend otherwise.</p></div>
+    </div>
+    <p style="margin-top:0.9rem">Which of these is a crusade, and what makes it one? That is a real question, and historians disagree about the answer.</p>
+  </section>
+
+  <section class="card">
+    <h2>Map words</h2>
+    <div class="cr-gloss">
+      <div><b>Anatolia</b> · modern Turkey. Every overland army had to cross it, and it destroyed several of them.</div>
+      <div><b>The Levant</b> · the eastern Mediterranean coast. Modern Israel, Palestine, Lebanon, and Syria.</div>
+      <div><b>Outremer</b> · French for "overseas." What the crusaders called the four states they founded.</div>
+      <div><b>Constantinople</b> · modern Istanbul. The Byzantine capital, and the assembly point for the land route.</div>
+      <div><b>Acre</b> · the chief crusader port on the coast. Among the first things they held and the last.</div>
+      <div><b>Damietta</b> · Egyptian port at a mouth of the Nile. Two crusades were decided there.</div>
+      <div><b>Edessa, Antioch, Tripoli, Jerusalem</b> · the four Crusader States, listed north to south.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Dates to know</h2>
+    <div class="cr-table-wrap">
+      <table class="cr-table">
+        <thead><tr><th>Year</th><th>Event</th></tr></thead>
+        <tbody>
+          <tr><td class="cr-y">1071</td><td>Manzikert. The Turks break the Byzantine army.</td></tr>
+          <tr><td class="cr-y">1095</td><td>Council of Clermont. Urban II preaches the First Crusade.</td></tr>
+          <tr><td class="cr-y">1099</td><td>Jerusalem taken, July 15, and sacked.</td></tr>
+          <tr><td class="cr-y">1144</td><td>Edessa falls, which sets off the Second Crusade.</td></tr>
+          <tr><td class="cr-y">1147</td><td>Lisbon taken for Afonso Henriques of Portugal.</td></tr>
+          <tr><td class="cr-y">1187</td><td>Hattin, July 4. Saladin takes Jerusalem in October.</td></tr>
+          <tr><td class="cr-y">1192</td><td>Treaty of Jaffa. Pilgrims readmitted to Jerusalem.</td></tr>
+          <tr><td class="cr-y">1204</td><td>Crusaders sack Constantinople.</td></tr>
+          <tr><td class="cr-y">1209</td><td>The Albigensian Crusade begins in southern France.</td></tr>
+          <tr><td class="cr-y">1219</td><td>St. Francis preaches to Sultan al-Kamil at Damietta.</td></tr>
+          <tr><td class="cr-y">1229</td><td>Frederick II recovers Jerusalem by treaty.</td></tr>
+          <tr><td class="cr-y">1244</td><td>Jerusalem lost for good.</td></tr>
+          <tr><td class="cr-y">1250</td><td>Louis IX captured in Egypt.</td></tr>
+          <tr><td class="cr-y">1270</td><td>Louis IX dies at Tunis.</td></tr>
+          <tr><td class="cr-y">1291</td><td>Acre falls. The Crusader States end.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card note-card">
+    <h2>What we will argue about</h2>
+    <p>Come to class with something to say about these. You will not find the answers on this page.</p>
+    <ol class="cr-questions">
+      <li>Were the early Crusades effective? Were they moral? Those are two different questions, and they may have different answers.</li>
+      <li>Hold the massacre at Jerusalem in 1099 and the eighty-eight years of protected pilgrimage that followed it in your head at the same time. What do you do with both?</li>
+      <li>You are a French merchant, a German peasant, a Norman lord. Word comes back that the armies of God have been beaten by Islam, or worse, have sacked a Christian city. What do you conclude, and about whom?</li>
+      <li>Clari and Villehardouin both saw 1204. Where do they differ, and what does each man have reason to leave out?</li>
+      <li>What makes an expedition a crusade? Does the Albigensian Crusade qualify, and does calling it one change how you judge it?</li>
+      <li>Gibbon reads this story one way and Belloc reads it another, and each told you his lens before he started. Where is the neutral view?</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Where this comes from</h2>
+    <p>Primary sources are in your binder: Robert of Clari and Geoffrey de Villehardouin on the Fourth Crusade, and Jean de Joinville on Louis IX. For the shape of the whole thing, Jonathan Riley-Smith's <i>What Were the Crusades?</i> is short and is where much of the modern argument starts.</p>
+    <p>Dates on this page follow the ones we use in class. If you find one that conflicts with your binder or your notes, tell me and we will sort it out.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Mr. Nesheim · aricnesheim.com</span>
+    <span>Updated August 30, 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

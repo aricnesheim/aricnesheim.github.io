@@ -103,6 +103,27 @@ them there.
 **Cache busting.** Bump the `?v=` query on the CSS and JS tags when either
 changes.
 
+## The Crusades reference (History)
+
+`history-crusades.html` is a student-facing reference for the Crusades, linked
+from the History page. One self-contained file: the site shell plus a scoped
+`.cr-*` style block, no JS and no separate stylesheet, so there is no `?v=`
+cache-bust to remember.
+
+**Content standard.** It carries dates, geography, and names only. It states on
+the page that it is not a substitute for the binder sources, and it ends on the
+questions rather than on answers, matching the "No Neutral View" handouts.
+
+It follows the CSN *Course Overview and Note to the Teacher 3.0* directly:
+"confront the difficult things ... wicked crusaders," and the High Middle Ages
+are "not a golden age of the Church." So the massacre at Jerusalem in 1099,
+Richard's execution of the prisoners at Acre, the sack of Zara, the sack of
+Constantinople, and the Albigensian Crusade all stay on the page, alongside the
+eighty-eight years of protected pilgrimage and the Lisbon campaign of 1147.
+The closing questions are CSN's own discussion prompts from the Week 1 lesson
+plans, put into student-facing wording. Keep both halves when editing: cutting
+the hard facts breaks the curriculum guideline, and so does cutting the gains.
+
 ## Provenance note
 
 `files/history/shared-era-timeline.html` is Codex/GPT work product (from
