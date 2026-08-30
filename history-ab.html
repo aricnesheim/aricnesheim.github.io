@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before &amp; After · History 11 · Mr. Nesheim</title>
+<meta name="description" content="Christendom in 1200 and in 1600, on one map. Drag the handle and four hundred years happen under your thumb.">
+<meta property="og:title" content="Before &amp; After · History 11">
+<meta property="og:description" content="Christendom in 1200 and in 1600, on one map. Drag the handle and four hundred years happen under your thumb.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aricnesheim.com/history-ab.html">
+<meta property="og:image" content="https://aricnesheim.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23b45309'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="history-ab.css?v=20260830-1">
+</head>
+<body data-page="history" class="tool-page ab-page">
+<a class="skip-link" href="#stage">Skip to the map</a>
+
+<header class="ab-header">
+  <div class="ab-header-inner">
+    <a class="ab-back" href="history.html" aria-label="Back to History 11">← History 11</a>
+    <div class="ab-ident">
+      <p class="ab-eyebrow">History 11 · Maps</p>
+      <h1>Before &amp; After</h1>
+      <p class="ab-status" id="ab-status"></p>
+    </div>
+    <div class="ab-toolbar">
+      <button class="ab-btn" id="present-toggle" type="button" aria-pressed="false">Present</button>
+    </div>
+  </div>
+</header>
+
+<nav class="ab-rail-wrap" aria-label="Choose an edition">
+  <div class="ab-rail" id="ab-rail"></div>
+</nav>
+
+<main class="ab-main">
+
+  <section class="ab-stage" id="stage" aria-label="The map">
+
+    <div class="ab-stage-top">
+      <div class="ab-modes" role="group" aria-label="How to compare">
+        <button class="ab-mode" id="mode-wipe" type="button" aria-pressed="true">Wipe</button>
+        <button class="ab-mode" id="mode-flip" type="button" aria-pressed="false">Flip</button>
+        <button class="ab-mode" id="mode-pair" type="button" aria-pressed="false">Side by side</button>
+      </div>
+      <div class="ab-years" id="year-group" role="group" aria-label="Which year" hidden>
+        <button class="ab-year" id="year-before" type="button" aria-pressed="true"></button>
+        <button class="ab-year" id="year-after" type="button" aria-pressed="false"></button>
+      </div>
+    </div>
+
+    <p class="ab-warn" id="ab-warn" hidden></p>
+
+    <div class="ab-frame" id="frame" data-mode="wipe" data-year="before" style="--wipe:50%">
+      <div class="ab-single">
+        <img id="img-sizer" alt="" aria-hidden="true">
+        <div class="ab-layer ab-layer-before"><img id="img-before" alt=""></div>
+        <div class="ab-layer ab-layer-after"><img id="img-after" alt=""></div>
+        <span class="ab-stamp ab-stamp-after" id="stamp-after"></span>
+        <div class="ab-handle" id="handle" role="presentation"></div>
+      </div>
+      <div class="ab-pair">
+        <figure><img id="pair-before" alt=""><figcaption id="cap-before"></figcaption></figure>
+        <figure><img id="pair-after" alt=""><figcaption id="cap-after"></figcaption></figure>
+      </div>
+    </div>
+
+    <div class="ab-slider-row">
+      <label for="wipe-range" id="wipe-label-before"></label>
+      <input type="range" id="wipe-range" min="0" max="100" value="50" step="1"
+             aria-label="Wipe position: left of the handle is the earlier map, right is the later one">
+      <span id="wipe-label-after"></span>
+    </div>
+
+    <p class="ab-hint">
+      Drag the handle, or use <kbd>←</kbd> <kbd>→</kbd> to move it. <kbd>Space</kbd> flips between the two years.
+      <kbd>1</kbd> and <kbd>2</kbd> jump to one map or the other. <kbd>P</kbd> presents full screen.
+    </p>
+  </section>
+
+  <aside class="ab-aside">
+    <div class="ab-card">
+      <h2>What you are looking at</h2>
+      <p class="ab-thesis">In 1200 there is one Church and many crowns. In 1600 there are many churches, and the crowns decide which.</p>
+      <p>Everything this course studies happens between these two maps. Watch one country at a time, not the whole continent at once.</p>
+    </div>
+
+    <div class="ab-card">
+      <h2>Seven things that changed</h2>
+      <ul class="ab-changes">
+        <li><b>England</b>Catholic in 1200. By 1600 the established Church of England under Elizabeth I, after the Acts of Supremacy and Uniformity in 1559.</li>
+        <li><b>Scandinavia</b>Denmark and Norway official Lutheran in 1536–37, Sweden confirmed at the Uppsala Synod in 1593.</li>
+        <li><b>The Empire</b>One Church in 1200. After the Peace of Augsburg in 1555 each prince chooses for his own territory, which is why the Empire is drawn in stripes.</li>
+        <li><b>Byzantium</b>Orthodox Constantinople still stands in 1200. Four years later Latin crusaders sack it. By 1600 the whole of it is Ottoman.</li>
+        <li><b>Iberia</b>Almohad al-Andalus holds the south in 1200. By 1600 it is one Catholic Habsburg crown from Lisbon to Barcelona.</li>
+        <li><b>The Baltic</b>Prussia and Lithuania are pagan in 1200, outside Christendom altogether. Ducal Prussia is the first Lutheran state anywhere in 1525; Lithuania converts Catholic in 1387.</li>
+        <li><b>Ireland</b>Under an English Protestant crown by 1600 and still overwhelmingly Catholic. The Reformation was imposed and did not take.</li>
+      </ul>
+    </div>
+
+    <div class="ab-card">
+      <h2>Where these maps come from</h2>
+      <p id="ab-provenance"></p>
+    </div>
+  </aside>
+
+  <p class="ab-colophon">
+    Two editions are offered on purpose. The <strong>published plates</strong> are scans of a printed historical atlas and carry that atlas's authority.
+    The <strong>class renders</strong> are drawn for this course on public-domain base geography; their internal borders are teaching approximations,
+    stated on each map, and every claim painted on them was checked against published references before they were used in class.
+    Where the two disagree, the printed atlas wins.
+    <br><a href="history.html">← Back to History 11</a> · <a href="history-maps.html">Map Trainer</a>
+  </p>
+
+</main>
+
+<button class="ab-btn ab-present-exit" id="present-exit" type="button">Exit</button>
+
+<script src="history-ab.js?v=20260830-1"></script>
+</body>
+</html>
