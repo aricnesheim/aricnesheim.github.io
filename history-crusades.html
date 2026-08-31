@@ -19,170 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-<style>
-/* ---------- Crusades reference, scoped .cr-* ---------- */
-
-.cr-entry {
-  display: grid;
-  grid-template-columns: 7.5rem 1fr;
-  gap: 0 1.75rem;
-  padding: 1.15rem 0;
-  border-top: 1px solid var(--border);
-}
-.cr-entry:first-of-type { border-top: none; padding-top: 0.35rem; }
-
-.cr-rail { padding-top: 0.2rem; }
-
-.cr-num {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--muted);
-  line-height: 1;
-}
-
-.cr-years {
-  font-weight: 800;
-  font-size: 1.22rem;
-  line-height: 1.15;
-  margin-top: 0.25rem;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.01em;
-}
-
-.cr-name {
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 600;
-  font-size: 1.28rem;
-  line-height: 1.2;
-  margin: 0 0 0.35rem;
-}
-
-.cr-route {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.3rem 0.45rem;
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin-bottom: 0.85rem;
-}
-.cr-route .cr-stop { border-bottom: 1px solid var(--border); padding-bottom: 1px; }
-.cr-route .cr-arrow { color: var(--border); font-weight: 700; }
-.cr-route .cr-end { color: var(--accent); font-weight: 600; border-bottom-color: var(--accent); }
-
-.cr-fields { display: grid; gap: 0.6rem; }
-
-.cr-field {
-  display: grid;
-  grid-template-columns: 6.5rem 1fr;
-  gap: 0 1rem;
-  align-items: baseline;
-}
-
-.cr-label {
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding-top: 0.3rem;
-}
-
-.cr-field p { margin: 0; font-size: 0.96rem; }
-.cr-field p + p { margin-top: 0.4rem; }
-
-.cr-outcome {
-  display: inline-block;
-  margin-top: 0.85rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--accent);
-  background: var(--accent-soft);
-  border-radius: 999px;
-  padding: 0.35rem 0.9rem;
-}
-.cr-outcome::before { content: "Outcome · "; font-weight: 700; letter-spacing: 0.03em; }
-
-/* setup + glossary rows */
-.cr-rows { border-top: 1px solid var(--border); }
-.cr-row {
-  display: grid;
-  grid-template-columns: 6.5rem 1fr;
-  gap: 0 1rem;
-  align-items: baseline;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid var(--border);
-}
-.cr-row .cr-y {
-  font-weight: 800;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-  font-size: 0.97rem;
-}
-.cr-row p { margin: 0; font-size: 0.96rem; }
-
-.cr-gloss { border-top: 1px solid var(--border); }
-.cr-gloss div {
-  padding: 0.55rem 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.95rem;
-}
-.cr-gloss b { color: var(--accent); }
-
-/* date table */
-.cr-table-wrap { overflow-x: auto; }
-.cr-table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
-.cr-table th {
-  text-align: left;
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  border-bottom: 1px solid var(--border);
-  padding: 0 1rem 0.45rem 0;
-}
-.cr-table td {
-  padding: 0.5rem 1rem 0.5rem 0;
-  border-bottom: 1px solid var(--border);
-  vertical-align: baseline;
-}
-.cr-table td.cr-y {
-  font-weight: 800;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-  width: 5rem;
-}
-
-.cr-questions { padding-left: 1.15rem; margin: 0; }
-.cr-questions li { margin: 0.45rem 0; }
-
-.cr-back {
-  display: inline-block;
-  margin-bottom: 1.2rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-@media (max-width: 560px) {
-  .cr-entry { grid-template-columns: 1fr; gap: 0.5rem; }
-  .cr-rail { display: flex; align-items: baseline; gap: 0.6rem; padding-top: 0; }
-  .cr-years { margin-top: 0; }
-  .cr-field, .cr-row { grid-template-columns: 1fr; gap: 0.1rem; }
-  .cr-label { padding-top: 0; }
-}
-
-@media print {
-  .site-header, .cr-back, footer { display: none; }
-  main { max-width: none; padding: 0; }
-  .card, .band { border: none; padding: 0; background: none; }
-  .cr-entry, .cr-row { break-inside: avoid; }
-}
-</style>
+<link rel="stylesheet" href="history-crusades.css?v=20260831-1">
 </head>
 <body data-page="history">
 
@@ -211,13 +48,22 @@
     <p class="meta">1095–1291</p>
   </header>
 
+  <nav class="cr-tl" id="cr-timeline-wrap" aria-label="The Crusades in time">
+    <div class="cr-tl-head">
+      <h2>Two hundred years, to scale</h2>
+      <p>Every bar is drawn to length. Click one to jump to it.</p>
+    </div>
+    <div id="cr-timeline"></div>
+    <p class="cr-tl-hint">Scroll the timeline sideways to see all of it.</p>
+  </nav>
+
   <section class="card note-card">
     <h2>How to use this page</h2>
     <p>This is a skeleton: dates, geography, and names. It is not a substitute for the sources in your binder, and it will not tell you what to think about any of it. Clari and Villehardouin were there and we read them; this page only helps you keep the order straight while you do.</p>
     <p>Whether these expeditions were just, whether they worked, and what they cost is what we argue about in class. The questions at the bottom are the ones we will actually take up.</p>
   </section>
 
-  <section class="card">
+  <section id="setup" class="cr-jump card">
     <h2>Why anyone went</h2>
     <p>A crusade was an armed pilgrimage. The pope called it, and whoever took the cross (sewed a cross on their clothing and swore the vow) marched east under that vow. Going was ruinously expensive. Many crusaders mortgaged or sold their land to pay for it and never recovered the money. Whatever else was mixed into it, most of them understood the journey as a penance.</p>
     <div class="cr-rows">
@@ -230,9 +76,26 @@
     <p style="margin-top:0.9rem"><b>Worth knowing:</b> the Peace of God and Truce of God movements had spent the previous century trying to stop Christian knights from making war on each other. Clermont pointed that same violence somewhere else. Keep that in view when we ask what the Crusades were for.</p>
   </section>
 
+  <section class="card">
+    <h2>The ground</h2>
+    <p>Every expedition on this page crosses some part of this map. Two roads went east: overland down the Danube and across Anatolia, or by sea from an Italian port. The four Crusader States are the ring of white markers along the coast, north to south.</p>
+    <figure class="cr-mapfig">
+      <div class="cr-map" data-crusade-map="overview" data-map-alt="The Mediterranean from Cologne and Venice east to Edessa and south to Cairo, showing the overland and sea routes to the Holy Land and the four Crusader States along the coast."></div>
+      <div class="cr-maplegend">
+        <span><i></i> marched</span>
+        <span><i class="sea"></i> sailed</span>
+        <span><i class="weak"></i> the two roads east</span>
+        <span><i class="dot"></i> taken or held</span>
+        <span><i class="dot lost"></i> lost</span>
+        <span><i class="dot goal"></i> aimed at, not reached</span>
+      </div>
+      <figcaption class="cr-mapcap">Coastlines from Natural Earth, public domain. The place names are the ones in the glossary further down; the borders of the states are deliberately not drawn, because they moved every decade.</figcaption>
+    </figure>
+  </section>
+
   <h2 style="margin:2rem 0 0.9rem">The first four</h2>
 
-  <section class="card">
+  <section id="c1" class="cr-jump card">
     <div class="cr-entry">
       <div class="cr-rail">
         <div class="cr-num">I</div>
@@ -247,6 +110,10 @@
           <span class="cr-stop">Antioch</span><span class="cr-arrow">›</span>
           <span class="cr-stop cr-end">Jerusalem</span>
         </div>
+        <figure class="cr-mapfig">
+          <div class="cr-map" data-crusade-map="c1" data-map-alt="Route of the First Crusade: overland from the West through Constantinople and Anatolia to Antioch, then down the coast to Jerusalem."></div>
+          <figcaption class="cr-mapcap">The land road, and the only one of these that ended the way it was meant to. Nicaea, Dorylaeum and Antioch are the fights along the way.</figcaption>
+        </figure>
         <div class="cr-fields">
           <div class="cr-field"><div class="cr-label">Why</div>
             <p>Urban II's call at Clermont: relieve the Byzantines, reopen the pilgrim roads, and recover Jerusalem.</p></div>
@@ -262,7 +129,7 @@
     </div>
   </section>
 
-  <section class="card">
+  <section id="c2" class="cr-jump card">
     <div class="cr-entry">
       <div class="cr-rail">
         <div class="cr-num">II</div>
@@ -277,6 +144,10 @@
           <span class="cr-stop">Jerusalem</span><span class="cr-arrow">›</span>
           <span class="cr-stop cr-end">Damascus</span>
         </div>
+        <figure class="cr-mapfig">
+          <div class="cr-map" data-crusade-map="c2" data-map-alt="Routes of the Second Crusade: a fleet down the Atlantic coast to Lisbon, and armies overland through Anatolia to Jerusalem and Damascus."></div>
+          <figcaption class="cr-mapcap">Two campaigns in one. The fleet that stopped at Lisbon is the part that worked; the overland armies were cut to pieces before they arrived.</figcaption>
+        </figure>
         <div class="cr-fields">
           <div class="cr-field"><div class="cr-label">Why</div>
             <p>Edessa, the northernmost Crusader State, fell to the Turkish commander Zengi in <b>1144</b>. It was the first of the four to go.</p></div>
@@ -292,7 +163,7 @@
     </div>
   </section>
 
-  <section class="card">
+  <section id="c3" class="cr-jump card">
     <div class="cr-entry">
       <div class="cr-rail">
         <div class="cr-num">III</div>
@@ -307,6 +178,10 @@
           <span class="cr-stop">Arsuf</span><span class="cr-arrow">›</span>
           <span class="cr-stop cr-end">Jaffa</span>
         </div>
+        <figure class="cr-mapfig">
+          <div class="cr-map" data-crusade-map="c3" data-map-alt="Routes of the Third Crusade: Barbarossa overland to Cilicia, Richard and Philip by sea through Sicily and Cyprus to Acre, then down the coast."></div>
+          <figcaption class="cr-mapcap">Three kings, and not one of them reached Jerusalem. Richard came within a march of it twice and turned around.</figcaption>
+        </figure>
         <div class="cr-fields">
           <div class="cr-field"><div class="cr-label">Why</div>
             <p><b>Saladin</b>, sultan of Egypt and Syria, destroyed the army of the Kingdom of Jerusalem at the <b>Battle of Hattin, July 4, 1187</b>, and took Jerusalem that October. He allowed the Christian inhabitants to ransom themselves and let the eastern Christians stay.</p></div>
@@ -322,7 +197,7 @@
     </div>
   </section>
 
-  <section class="card">
+  <section id="c4" class="cr-jump card">
     <div class="cr-entry">
       <div class="cr-rail">
         <div class="cr-num">IV</div>
@@ -337,6 +212,10 @@
           <span class="cr-arrow">✕</span>
           <span class="cr-stop">never reached the Holy Land</span>
         </div>
+        <figure class="cr-mapfig">
+          <div class="cr-map" data-crusade-map="c4" data-map-alt="Route of the Fourth Crusade: Venice to Zara, then to Constantinople, with Jerusalem marked unreached."></div>
+          <figcaption class="cr-mapcap">The whole of it. The dotted line is the voyage they had been paid to make.</figcaption>
+        </figure>
         <div class="cr-fields">
           <div class="cr-field"><div class="cr-label">Why</div>
             <p>Pope Innocent III called it in 1198. The plan was to strike Egypt first, where the Ayyubid power actually sat, and trade it for Jerusalem.</p></div>
@@ -355,12 +234,16 @@
 
   <h2 style="margin:2rem 0 0.9rem">The later crusades</h2>
 
-  <section class="card">
+  <section id="c5" class="cr-jump card">
     <div class="cr-entry">
       <div class="cr-rail"><div class="cr-num">V</div><div class="cr-years">1217–<wbr>1221</div></div>
       <div>
         <p class="cr-name">Egypt, and an offer refused</p>
         <div class="cr-route"><span class="cr-stop">Acre</span><span class="cr-arrow">›</span><span class="cr-stop cr-end">Damietta, on the Nile</span></div>
+        <figure class="cr-mapfig">
+          <div class="cr-map" data-crusade-map="c5" data-map-alt="Route of the Fifth Crusade: Acre by sea to Damietta on the Nile, then inland toward Cairo."></div>
+          <figcaption class="cr-mapcap">Egypt, not Jerusalem. The plan was to take the delta and trade it for the holy city, and for a moment that trade was on the table.</figcaption>
+        </figure>
         <div class="cr-fields">
           <div class="cr-field"><div class="cr-label">What happened</div>
             <p>The Egypt plan again. The crusaders took Damietta in November 1219. Sultan al-Kamil offered to hand over Jerusalem in exchange for it. The papal legate Pelagius refused, marched on Cairo, was caught by the Nile flood, and surrendered Damietta in 1221.</p>
@@ -373,12 +256,16 @@
     </div>
   </section>
 
-  <section class="card">
+  <section id="c6" class="cr-jump card">
     <div class="cr-entry">
       <div class="cr-rail"><div class="cr-num">VI</div><div class="cr-years">1228–<wbr>1229</div></div>
       <div>
         <p class="cr-name">Jerusalem by treaty</p>
         <div class="cr-route"><span class="cr-stop">Sicily</span><span class="cr-arrow">›</span><span class="cr-stop">Acre</span><span class="cr-arrow">›</span><span class="cr-stop cr-end">Jerusalem</span></div>
+        <figure class="cr-mapfig">
+          <div class="cr-map" data-crusade-map="c6" data-map-alt="Route of the Sixth Crusade: Brindisi by sea to Acre, then inland to Nazareth, Jerusalem and Bethlehem."></div>
+          <figcaption class="cr-mapcap">The one that got Jerusalem back, and the one with almost no fighting on it.</figcaption>
+        </figure>
         <div class="cr-fields">
           <div class="cr-field"><div class="cr-label">What happened</div>
             <p>Emperor <b>Frederick II</b> took the crusade vow and then delayed for years, so Pope Gregory IX excommunicated him. He sailed anyway, still excommunicated, and in <b>February 1229</b> negotiated Jerusalem, Bethlehem, and Nazareth back from al-Kamil. There was almost no fighting. He crowned himself in the Church of the Holy Sepulchre because no bishop would do it for him.</p>
@@ -391,12 +278,16 @@
     </div>
   </section>
 
-  <section class="card">
+  <section id="c7" class="cr-jump card">
     <div class="cr-entry">
       <div class="cr-rail"><div class="cr-num">VII</div><div class="cr-years">1248–<wbr>1254</div></div>
       <div>
         <p class="cr-name">St. Louis in Egypt</p>
         <div class="cr-route"><span class="cr-stop">France</span><span class="cr-arrow">›</span><span class="cr-stop">Cyprus</span><span class="cr-arrow">›</span><span class="cr-stop">Damietta</span><span class="cr-arrow">›</span><span class="cr-stop cr-end">Mansurah</span></div>
+        <figure class="cr-mapfig">
+          <div class="cr-map" data-crusade-map="c7" data-map-alt="Route of the Seventh Crusade: Aigues-Mortes by sea through Cyprus to Damietta, then up the Nile to Mansurah."></div>
+          <figcaption class="cr-mapcap">The Fifth Crusade run again, down to the same city and the same river.</figcaption>
+        </figure>
         <div class="cr-fields">
           <div class="cr-field"><div class="cr-label">What happened</div>
             <p>King <b>Louis IX of France</b> went because Jerusalem had fallen in 1244. He took Damietta in 1249, lost at Mansurah in February 1250, and was <b>captured in April 1250</b> and ransomed. He stayed in the Holy Land four more years rebuilding its fortifications. Egypt meanwhile passed to the Mamluks, who become the last and most effective enemy the Crusader States face.</p></div>
@@ -408,12 +299,16 @@
     </div>
   </section>
 
-  <section class="card">
+  <section id="c8" class="cr-jump card">
     <div class="cr-entry">
       <div class="cr-rail"><div class="cr-num">VIII</div><div class="cr-years">1270</div></div>
       <div>
         <p class="cr-name">Tunis</p>
         <div class="cr-route"><span class="cr-stop">France</span><span class="cr-arrow">›</span><span class="cr-stop cr-end">Tunis, North Africa</span></div>
+        <figure class="cr-mapfig">
+          <div class="cr-map" data-crusade-map="c8" data-map-alt="Route of the Eighth Crusade: Aigues-Mortes by sea to Tunis, with Jerusalem marked far to the east."></div>
+          <figcaption class="cr-mapcap">The last one. Note how far Tunis is from anywhere the vow was about.</figcaption>
+        </figure>
         <div class="cr-fields">
           <div class="cr-field"><div class="cr-label">What happened</div>
             <p>Louis IX went again, this time to North Africa. Disease swept the camp and he died outside Tunis on <b>August 25, 1270</b>. His brother made terms and withdrew. Prince Edward of England arrived after him and accomplished little in 1271 and 1272, which some books count separately as a Ninth Crusade.</p></div>
@@ -425,12 +320,16 @@
     </div>
   </section>
 
-  <section class="card">
+  <section id="end" class="cr-jump card">
     <div class="cr-entry">
       <div class="cr-rail"><div class="cr-num">✕</div><div class="cr-years">1291</div></div>
       <div>
         <p class="cr-name">Acre falls</p>
         <div class="cr-route"><span class="cr-stop cr-end">Acre, on the coast of the Holy Land</span></div>
+        <figure class="cr-mapfig">
+          <div class="cr-map" data-crusade-map="end" data-map-alt="The four Crusader States along the coast, each marked with the year it was lost, ending at Acre in 1291."></div>
+          <figcaption class="cr-mapcap">The four states, and the order they went. North to south, and 1144 to 1291.</figcaption>
+        </figure>
         <div class="cr-fields">
           <div class="cr-field"><div class="cr-label">What happened</div>
             <p>The Mamluk sultan al-Ashraf Khalil took <b>Acre</b> in May 1291. It was the last crusader city in the Holy Land. Just under two hundred years after Clermont, the Latin states were finished.</p></div>
@@ -516,6 +415,9 @@
     <span>Updated August 30, 2026</span>
   </div>
 </footer>
+
+<script src="history-crusades-geo.js?v=20260831-1" defer></script>
+<script src="history-crusades.js?v=20260831-1" defer></script>
 
 </body>
 </html>

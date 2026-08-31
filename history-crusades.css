@@ -1,0 +1,437 @@
+/* history-crusades.css — the Crusades reference page.
+   Everything here is scoped .cr-*. */
+
+/* ---------- the entries ---------- */
+
+.cr-entry {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0 1.75rem;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--border);
+}
+.cr-entry:first-of-type { border-top: none; padding-top: 0.35rem; }
+
+.cr-rail { padding-top: 0.2rem; }
+
+.cr-num {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1;
+}
+
+.cr-years {
+  font-weight: 800;
+  font-size: 1.22rem;
+  line-height: 1.15;
+  margin-top: 0.25rem;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.cr-name {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.2;
+  margin: 0 0 0.35rem;
+}
+
+.cr-route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.45rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+.cr-route .cr-stop { border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+.cr-route .cr-arrow { color: var(--border); font-weight: 700; }
+.cr-route .cr-end { color: var(--accent); font-weight: 600; border-bottom-color: var(--accent); }
+
+.cr-fields { display: grid; gap: 0.6rem; }
+
+/* The label sits in column 1 and *everything else* stacks down column 2.
+   Without the explicit placement, a field with more than one paragraph lets
+   auto-flow drop the second one into the 6.5rem label column, which is what
+   used to squeeze a paragraph into a thin ribbon and leave the rest of the
+   row empty. */
+.cr-field {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0 1rem;
+  align-items: baseline;
+}
+.cr-field > .cr-label { grid-column: 1; grid-row: 1; }
+.cr-field > :not(.cr-label) { grid-column: 2; }
+
+.cr-label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.3rem;
+}
+
+.cr-field p { margin: 0; font-size: 0.96rem; }
+.cr-field p + p { margin-top: 0.4rem; }
+
+.cr-outcome {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+}
+.cr-outcome::before { content: "Outcome · "; font-weight: 700; letter-spacing: 0.03em; }
+
+/* setup + glossary rows */
+.cr-rows { border-top: 1px solid var(--border); }
+.cr-row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0 1rem;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.cr-row .cr-y {
+  font-weight: 800;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.97rem;
+}
+.cr-row p { margin: 0; font-size: 0.96rem; }
+
+.cr-gloss { border-top: 1px solid var(--border); }
+.cr-gloss div {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.cr-gloss b { color: var(--accent); }
+
+/* date table */
+.cr-table-wrap { overflow-x: auto; }
+.cr-table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+.cr-table th {
+  text-align: left;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1rem 0.45rem 0;
+}
+.cr-table td {
+  padding: 0.5rem 1rem 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: baseline;
+}
+.cr-table td.cr-y {
+  font-weight: 800;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  width: 5rem;
+}
+
+.cr-questions { padding-left: 1.15rem; margin: 0; }
+.cr-questions li { margin: 0.45rem 0; }
+
+.cr-back {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 560px) {
+  .cr-entry { grid-template-columns: 1fr; gap: 0.5rem; }
+  .cr-rail { display: flex; align-items: baseline; gap: 0.6rem; padding-top: 0; }
+  .cr-years { margin-top: 0; }
+  .cr-field, .cr-row { grid-template-columns: 1fr; gap: 0.1rem; }
+  .cr-field > .cr-label,
+  .cr-field > :not(.cr-label) { grid-column: 1; grid-row: auto; }
+  .cr-label { padding-top: 0; }
+}
+
+@media print {
+  .site-header, .cr-back, footer { display: none; }
+  main { max-width: none; padding: 0; }
+  .card, .band { border: none; padding: 0; background: none; }
+  .cr-entry, .cr-row { break-inside: avoid; }
+}
+
+/* ================================================================ timeline ==
+   Drawn to scale from 1070 to 1295, so the gaps between expeditions carry as
+   much weight as the expeditions. Doubles as the page's navigation. */
+
+.cr-tl {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.15rem 0 0.9rem;
+  margin: 0 0 1.5rem;
+}
+
+.cr-tl-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  padding: 0 1.5rem 0.9rem;
+}
+.cr-tl-head h2 { margin: 0; font-size: 1.12rem; }
+.cr-tl-head p { margin: 0; font-size: 0.79rem; color: var(--muted); }
+
+.cr-tl-scroll { overflow-x: auto; padding: 0 1.5rem; }
+.cr-tl-inner { position: relative; min-width: 640px; }
+
+/* -- the bars -- */
+.cr-tl-bars { position: relative; height: 60px; }
+
+.cr-tl-bar {
+  display: block;
+  text-decoration: none;
+  position: absolute;
+  top: 18px;
+  height: 42px;
+  min-width: 5px;
+  padding: 0;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent-soft);
+  cursor: pointer;
+  overflow: visible;
+  transition: background 0.12s;
+}
+.cr-tl-bar:hover, .cr-tl-bar:focus-visible, .cr-tl-bar.is-here { background: var(--accent); }
+.cr-tl-bar:hover .cr-tl-bar-num,
+.cr-tl-bar:focus-visible .cr-tl-bar-num,
+.cr-tl-bar.is-here .cr-tl-bar-num { color: var(--text); }
+
+/* Above the bar, not inside it: the Eighth ran two years and its bar is
+   thinner than the word for it. */
+.cr-tl-bar-num {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 3px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+  pointer-events: none;
+}
+
+/* -- the axis -- */
+.cr-tl-axis {
+  position: relative;
+  height: 21px;
+  margin-top: 5px;
+  border-top: 1px solid var(--border);
+}
+.cr-tl-tick {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 3px;
+  background: var(--border);
+}
+.cr-tl-tick.is-major { height: 6px; background: #cfcabb; }
+.cr-tl-year {
+  position: absolute;
+  top: 7px;
+  transform: translateX(-50%);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* -- event flags, hung from the axis -- */
+.cr-tl-events { position: relative; height: 50px; margin-top: 2px; }
+
+.cr-tl-flag {
+  position: absolute;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: center;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.cr-tl-flag.is-row0 { top: 0; }
+.cr-tl-flag.is-row1 { top: 25px; }
+a.cr-tl-flag { cursor: pointer; text-decoration: none; }
+a.cr-tl-flag:hover, a.cr-tl-flag:focus-visible { color: var(--accent); }
+a.cr-tl-flag:hover .cr-tl-flag-stem { background: var(--accent); }
+
+.cr-tl-flag-stem { width: 1px; height: 6px; background: #cfcabb; }
+.cr-tl-flag.is-row1 .cr-tl-flag-stem { height: 6px; }
+.cr-tl-flag-year {
+  font-size: 0.67rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.cr-tl-flag-text { font-size: 0.64rem; line-height: 1.15; }
+
+/* -- how long the holy places were actually held -- */
+.cr-tl-held { position: relative; height: 36px; margin-top: 8px; }
+.cr-tl-held-key {
+  position: absolute;
+  top: 21px;
+  left: 0;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cr-tl-held-band {
+  position: absolute;
+  top: 0;
+  height: 16px;
+  line-height: 14px;
+  border-radius: 3px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  overflow: visible;
+  white-space: nowrap;
+}
+.cr-tl-hint {
+  display: none;
+  padding: 0.55rem 1.5rem 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+@media (max-width: 700px) { .cr-tl-hint { display: block; } }
+
+/* Anything the timeline jumps to has to clear the sticky header. */
+.cr-jump { scroll-margin-top: 82px; }
+
+
+/* ==================================================================== maps ==
+   One Mediterranean frame, drawn in history-crusades-geo.js from Natural Earth
+   coastlines, cropped per expedition to whatever that expedition touched. */
+
+.cr-mapfig {
+  margin: 0.15rem 0 1.05rem;
+}
+
+.cr-map {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #dde7ee;
+}
+.cr-map-svg { display: block; width: 100%; height: auto; }
+
+.cr-map-sea  { fill: #dde7ee; }
+/* Coastline and label-halo widths are set from JS, not here: the frames are
+   cropped per expedition, so a width in user units would be a hairline on the
+   wide maps and a slab on the tight ones. Line and marker strokes get the same
+   treatment through vector-effect, which shapes honour and text does not. */
+.cr-map-land { fill: #f4f1e8; stroke: #cbc4b3; }
+
+.cr-map-leg {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cr-map-leg.is-sea  { stroke-dasharray: 5 4; }
+.cr-map-leg.is-weak { stroke: #7f8b9b; stroke-width: 1.6; stroke-dasharray: 2 4.5; }
+
+.cr-map-dot { fill: var(--accent); stroke: none; }
+.cr-map-dot.is-start { fill: #fff; stroke: var(--accent); stroke-width: 2; }
+.cr-map-dot.is-stop  { fill: var(--accent); opacity: 0.5; }
+.cr-map-dot.is-end   { fill: var(--accent); stroke: #fff; stroke-width: 2; }
+.cr-map-dot.is-lost  { fill: #334155; stroke: #fff; stroke-width: 1.5; }
+.cr-map-dot.is-fell  { fill: #334155; stroke: #fff; stroke-width: 2.5; }
+.cr-map-dot.is-goal  { fill: none; stroke: #7c8798; stroke-width: 1.5; stroke-dasharray: 3 2.5; }
+.cr-map-dot.is-state { fill: #fff; stroke: var(--accent); stroke-width: 2.5; }
+
+.cr-map-lead { stroke: #9aa2ad; stroke-width: 0.9; fill: none; }
+
+.cr-map-label {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 700;
+  fill: #23262c;
+  stroke: rgba(255, 255, 255, 0.9);
+  paint-order: stroke;
+}
+.cr-map-label .cr-map-sub { font-weight: 500; fill: #4d5461; }
+.cr-map-label.is-region {
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  fill: #98a1ac;
+}
+
+.cr-mapcap {
+  margin: 0.5rem 0 0;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.cr-maplegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.05rem;
+  margin: 0.6rem 0 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.cr-maplegend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.cr-maplegend i {
+  width: 22px;
+  height: 0;
+  border-top: 2px solid var(--accent);
+  display: inline-block;
+}
+.cr-maplegend i.sea  { border-top-style: dashed; }
+.cr-maplegend i.weak { border-top: 2px dotted #8d97a6; }
+.cr-maplegend i.dot {
+  width: 9px; height: 9px; border: 0; border-radius: 50%;
+  background: var(--accent);
+}
+.cr-maplegend i.dot.lost { background: #334155; }
+.cr-maplegend i.dot.goal { background: none; border: 1.5px dashed #7c8798; }
+
+@media (max-width: 560px) {
+  .cr-tl-head, .cr-tl-scroll, .cr-tl-hint { padding-left: 1rem; padding-right: 1rem; }
+}
+
+@media print {
+  .cr-tl { break-inside: avoid; }
+  .cr-tl-bar { transition: none; }
+  .cr-mapfig { break-inside: avoid; }
+}

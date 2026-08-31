@@ -106,9 +106,44 @@ changes.
 ## The Crusades reference (History)
 
 `history-crusades.html` is a student-facing reference for the Crusades, linked
-from the History page. One self-contained file: the site shell plus a scoped
-`.cr-*` style block, no JS and no separate stylesheet, so there is no `?v=`
-cache-bust to remember.
+from the History page. Four files:
+
+- `history-crusades.html` — the shell and all of the prose
+- `history-crusades.css` — scoped `.cr-*` styling for the entries, the timeline
+  and the maps
+- `history-crusades.js` — builds the timeline and draws the route maps
+- `history-crusades-geo.js` — **generated**, do not hand-edit
+
+**The timeline** runs 1060 to 1300 and is drawn to scale, so the forty-eight
+quiet years between the First and Second Crusades take up forty-eight years of
+width. Each bar links to its own section, and the two shaded bands underneath
+are the only stretches when the holy places were in Christian hands: 1099 to
+1187, and 1229 to 1244. Editing the dates means editing `CRUSADES`, `HELD` and
+`EVENTS` at the top of `history-crusades.js`, and keeping them agreeing with
+the prose and the "Dates to know" table.
+
+**The maps** all share one Lambert azimuthal frame over the Mediterranean, and
+each one crops that frame to whatever its own expedition touched, so two
+crusades can be compared by eye. Routes are lists of place ids in the `MAPS`
+table; `land`, `sea` and `weak` (remnants, or a march that never arrived) are
+the three line styles. Place labels are hand-placed per map, because the Levant
+packs six places into a thumb's width and no automatic solver reads better than
+a choice; an `off: [x, y]` label is positioned in display pixels and gets a
+leader line back to its dot.
+
+Sizes are set from JS rather than CSS. Because every map crops the same frame
+differently, a stroke or a type size in user units would be a hairline on the
+wide maps and a slab on the tight ones, so `tune()` recomputes them from the
+width each map actually got, and re-solves the frame against it.
+
+**Regenerating the geometry.** Same builder directory as the Map Trainer,
+`2026-27/History 11/05 Sources & Handouts/Map Trainer/_build/`, script
+`build_crusades_map.py`. Coastlines are Natural Earth (public domain). The
+generated frame carries a wide margin of land past every route on purpose: a
+place label sitting outside the coastline data would be cropped with it.
+
+**Cache busting.** Bump the `?v=` query on the CSS and JS tags when any of them
+changes.
 
 **Content standard.** It carries dates, geography, and names only. It states on
 the page that it is not a substitute for the binder sources, and it ends on the
