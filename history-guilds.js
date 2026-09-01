@@ -145,7 +145,7 @@
     { k: "craft", q: "The bakers of a town fine one of their own for selling an underweight loaf.",
       why: "Craft guild. Artisans making a consumable good, inspecting and policing the quality of their own work." },
     { k: "relig", q: "A group forms in France in direct answer to a faction that had sworn itself to revenge, and devotes itself to almsgiving instead.",
-      why: "Religious guild. This is exactly the origin our lecture notes give: sworn brotherhoods aimed at charity rather than at revenge, persecution, or faction." },
+      why: "Religious guild. Sworn brotherhoods aimed at charity rather than at revenge, persecution, or faction. That is exactly how they began." },
     { k: "trade", q: "The men who own the warehouses lend money to the king and refuse to trade with a city that cheated one of them.",
       why: "Trade guild. Commerce organized as a single body, with enough weight to bargain with kings and other cities." },
     { k: "craft", q: "Chandlers agree that no candle may be sold with a wick that gutters, and inspect one another's shops.",
@@ -327,7 +327,7 @@
     { n: "Padua", y: 1222, d: "Founded by masters and students who walked out of Bologna over their liberties. Notice the pattern: a guild that does not like its terms leaves and founds another one." },
     { n: "Toulouse", y: 1229, d: "Founded as part of the settlement that ended the Albigensian Crusade, with the explicit job of teaching orthodox theology in a region that had been full of heresy." },
     { n: "Prague", y: 1348, d: "The first university in Central Europe." },
-    { n: "Jagiellonian", y: 1364, d: "In Krak&oacute;w. Our lecture notes give it as the first in Eastern Europe. Copernicus studied here." },
+    { n: "Jagiellonian", y: 1364, d: "In Krak&oacute;w. We count it as the first university in Eastern Europe. Copernicus studied here." },
     { n: "Vienna", y: 1365, d: "Founded a year after Krak&oacute;w, and still running." },
     { n: "Heidelberg", y: 1386, d: "The first university in Germany." },
     { n: "St Andrews", y: 1413, d: "In Scotland, and the last stop on our list. Three hundred and twenty-five years after Bologna, the model has crossed the whole of Europe." }

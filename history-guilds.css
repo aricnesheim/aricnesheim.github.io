@@ -550,7 +550,7 @@ h2 .gl-num {
 }
 .gl-dq-card.starred { border-left: 4px solid var(--accent); }
 .gl-dq-card.starred > p::before {
-  content: "From the lesson plan";
+  content: "Bring an answer to this one";
   display: block;
   font-size: 0.7rem;
   font-weight: 700;
@@ -575,6 +575,48 @@ h2 .gl-num {
 .gl-gloss b { font-family: "Fraunces", Georgia, serif; font-size: 1.02rem; }
 .gl-gloss i { color: var(--muted); }
 
+/* ---------- images ---------- */
+
+.gl-fig { margin: 1.2rem 0; }
+
+.gl-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: var(--bg-soft);
+}
+
+.gl-fig figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.55rem;
+  line-height: 1.55;
+}
+.gl-fig figcaption b { color: var(--text); }
+
+.gl-cred {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  opacity: 0.85;
+}
+
+/* portrait plates sit beside their caption */
+.gl-fig.portrait {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+.gl-fig.portrait figcaption { margin-top: 0; }
+
+.gl-fig.wide img { border-radius: 10px; }
+
+/* a plate tucked inside an open guild-type card */
+.gl-type-body .gl-fig { margin: 0.9rem 0 0; }
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 700px) {
@@ -583,6 +625,8 @@ h2 .gl-num {
   .gl-ladder { grid-template-columns: 1fr; }
   .gl-gloss div { grid-template-columns: 1fr; gap: 0.1rem; }
   .gl-scene { padding: 1.15rem 1.2rem; }
+  .gl-fig.portrait { grid-template-columns: 1fr; gap: 0.6rem; }
+  .gl-fig.portrait img { max-width: 320px; margin: 0 auto; }
   .gl-quiz-head { flex-direction: column; gap: 0.2rem; }
 }
 
@@ -596,7 +640,8 @@ h2 .gl-num {
   .gl-dq-more { display: block !important; }
   main { max-width: none; padding: 0; }
   .card, .band { border: none; padding: 0; background: none; }
-  .gl-type, .gl-rule, .gl-dq-card, .gl-built div { break-inside: avoid; }
+  .gl-type, .gl-rule, .gl-dq-card, .gl-built div, .gl-fig { break-inside: avoid; }
+  .gl-fig.portrait { grid-template-columns: 220px 1fr; }
   .gl-scene { background: none !important; color: #000 !important; border: 1px solid #999; }
   .gl-scene .gl-scene-q { color: #000 !important; }
 }
