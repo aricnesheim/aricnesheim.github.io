@@ -1,0 +1,602 @@
+/* history-guilds.css — Guilds: a click-through for History 11, Unit 1 Lesson 5.
+   Sits on top of style.css. Amber history accent, plus one hue per guild type. */
+
+:root {
+  --frith: #475569;
+  --relig: #7c3aed;
+  --trade: #0f766e;
+  --craft: #b45309;
+}
+
+.gl-back {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+main { max-width: 900px; }
+
+h2 .gl-num {
+  display: inline-block;
+  min-width: 1.55rem;
+  height: 1.55rem;
+  line-height: 1.55rem;
+  margin-right: 0.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: 0.12em;
+}
+
+.gl-sub {
+  color: var(--muted);
+  margin: -0.2rem 0 1rem;
+}
+
+/* ---------- inline glossary terms ---------- */
+
+.gl-t {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 600;
+  border-bottom: 2px dotted var(--accent);
+  line-height: inherit;
+}
+.gl-t:hover { color: var(--accent); }
+.gl-t::after {
+  content: "?";
+  font-size: 0.62em;
+  vertical-align: 0.55em;
+  margin-left: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.gl-t[aria-expanded="true"] { color: var(--accent); }
+
+.gl-pop {
+  display: block;
+  margin: 0.5rem 0 0.7rem;
+  padding: 0.6rem 0.85rem;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.94rem;
+}
+.gl-pop b { font-style: italic; }
+
+/* ---------- shared panel behaviour ---------- */
+
+.gl-panel { display: none; }
+.gl-panel.open { display: block; animation: glIn 200ms ease; }
+
+@keyframes glIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.gl-hint {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0.85rem 0 0;
+}
+
+/* ---------- 1. the blacksmith ---------- */
+
+.gl-scene {
+  background: linear-gradient(140deg, #2b2118 0%, #4a3524 100%);
+  color: #f6efe6;
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.1rem;
+}
+.gl-scene p { margin: 0 0 0.7rem; }
+.gl-scene p:last-child { margin-bottom: 0; }
+.gl-scene .gl-scene-q {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.22rem;
+  color: #ffd8a8;
+  margin-top: 1rem;
+}
+
+.gl-opts { display: grid; gap: 0.7rem; }
+
+.gl-opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.85rem 1.05rem;
+  cursor: pointer;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.gl-opt:hover { border-color: var(--accent); }
+.gl-opt .gl-opt-l {
+  display: block;
+  font-weight: 600;
+}
+.gl-opt .gl-opt-out {
+  display: none;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.gl-opt.tried .gl-opt-out { display: block; }
+.gl-opt.tried { background: var(--bg-soft); }
+.gl-opt.tried .gl-opt-l::before {
+  content: "✕ ";
+  color: #b91c1c;
+  font-weight: 700;
+}
+.gl-opt.tried.win { background: var(--accent-soft); border-color: var(--accent); }
+.gl-opt.tried.win .gl-opt-l::before { content: "✓ "; color: #15803d; }
+.gl-opt.tried.win .gl-opt-out { color: var(--text); }
+
+.gl-verdict {
+  margin-top: 1.1rem;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.2rem;
+}
+.gl-verdict h3 { margin: 0 0 0.4rem; font-size: 1.15rem; }
+.gl-verdict p:last-child { margin-bottom: 0; }
+
+/* ---------- 2. definition ---------- */
+
+.gl-def {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.45;
+  border-left: 4px solid var(--accent);
+  padding-left: 1.1rem;
+  margin: 0 0 1.1rem;
+}
+
+.gl-etym {
+  background: var(--bg-soft);
+  border-radius: 12px;
+  padding: 0.95rem 1.15rem;
+  font-size: 0.97rem;
+}
+.gl-etym p { margin: 0 0 0.5rem; }
+.gl-etym p:last-child { margin: 0; }
+
+/* ---------- 3. ancestors ---------- */
+
+.gl-anc { display: grid; gap: 0.9rem; grid-template-columns: 1fr 1fr; }
+
+.gl-card-btn {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  cursor: pointer;
+}
+.gl-card-btn:hover { border-color: var(--accent); }
+.gl-card-btn .gl-cb-k {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.12rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+.gl-card-btn .gl-cb-s { font-size: 0.9rem; color: var(--muted); }
+.gl-card-btn[aria-expanded="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.gl-anc-body {
+  grid-column: 1 / -1;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.05rem 1.25rem;
+  background: #fff;
+}
+.gl-anc-body p:last-child { margin-bottom: 0; }
+
+.gl-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.7rem 0 0; }
+.gl-chip {
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.28rem 0.8rem;
+  cursor: pointer;
+}
+.gl-chip:hover, .gl-chip[aria-expanded="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ---------- 4. the four types ---------- */
+
+.gl-four { display: grid; gap: 0.9rem; grid-template-columns: 1fr 1fr; }
+
+.gl-type {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+  border-top: 4px solid var(--ty);
+}
+.gl-type[data-ty="frith"]  { --ty: var(--frith); }
+.gl-type[data-ty="relig"]  { --ty: var(--relig); }
+.gl-type[data-ty="trade"]  { --ty: var(--trade); }
+.gl-type[data-ty="craft"]  { --ty: var(--craft); }
+
+.gl-type-btn {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  background: none;
+  border: 0;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+}
+.gl-type-btn:hover { background: var(--bg-soft); }
+.gl-type-name {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ty);
+  display: block;
+}
+.gl-type-tag {
+  font-size: 0.88rem;
+  color: var(--muted);
+  display: block;
+  margin-top: 0.1rem;
+}
+.gl-type-more {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ty);
+  display: block;
+  margin-top: 0.6rem;
+}
+.gl-type-btn[aria-expanded="true"] .gl-type-more::after { content: " ▲"; }
+.gl-type-btn[aria-expanded="false"] .gl-type-more::after { content: " ▼"; }
+
+.gl-type-body {
+  padding: 0 1.2rem 1.15rem;
+  font-size: 0.96rem;
+}
+.gl-type-body dl { margin: 0; }
+.gl-type-body dt {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+.gl-type-body dt:first-child { margin-top: 0; }
+.gl-type-body dd { margin: 0.15rem 0 0; }
+.gl-type-body .gl-survives {
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  background: var(--bg-soft);
+  font-size: 0.92rem;
+}
+
+.gl-allbtn { margin-bottom: 0.9rem; }
+
+/* ---------- quiz ---------- */
+
+.gl-quiz {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(160deg, var(--accent-soft) 0%, #fff 60%);
+  padding: 1.2rem 1.35rem;
+  margin-top: 1.1rem;
+}
+.gl-quiz-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+.gl-quiz-head h3 { margin: 0; font-size: 1.2rem; }
+.gl-score { font-size: 0.88rem; font-weight: 600; color: var(--muted); }
+.gl-q {
+  font-size: 1.05rem;
+  margin: 0 0 0.9rem;
+  min-height: 3.2em;
+}
+.gl-answers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+.gl-ans {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.55rem 0.4rem;
+  cursor: pointer;
+}
+.gl-ans:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.gl-ans:disabled { cursor: default; opacity: 0.55; }
+.gl-ans.right { background: #dcfce7; border-color: #15803d; color: #14532d; opacity: 1; }
+.gl-ans.wrong { background: #fee2e2; border-color: #b91c1c; color: #7f1d1d; opacity: 1; }
+.gl-why {
+  margin: 0.9rem 0 0;
+  padding: 0.7rem 0.9rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.gl-quiz-foot { margin-top: 0.9rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+/* ---------- 5. the ladder ---------- */
+
+.gl-ladder { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
+.gl-rung {
+  font: inherit;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  position: relative;
+}
+.gl-rung:hover { border-color: var(--accent); }
+.gl-rung[aria-expanded="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.gl-rung-n {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.gl-rung-t {
+  display: block;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.18rem;
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+.gl-rung-a { display: block; font-size: 0.86rem; color: var(--accent); font-weight: 600; }
+.gl-rung-body {
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.05rem 1.25rem;
+  margin-top: 0.8rem;
+  background: #fff;
+}
+.gl-rung-body p:last-child { margin-bottom: 0; }
+.gl-arrow { text-align: center; color: var(--muted); font-size: 1.2rem; }
+
+/* ---------- 6. protection / price ---------- */
+
+.gl-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; margin-bottom: 1rem; }
+.gl-toggle button {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.92rem;
+  background: #fff;
+  border: 0;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  color: var(--muted);
+}
+.gl-toggle button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+
+.gl-rules { display: grid; gap: 0.6rem; }
+.gl-rule {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+}
+.gl-rule .gl-rule-i { font-size: 1.15rem; line-height: 1.4; }
+.gl-rule b { display: block; }
+.gl-rule span.gl-rule-x { color: var(--muted); font-size: 0.95rem; }
+
+.gl-legend {
+  margin: 0.9rem 0 0;
+  padding: 0.85rem 1.05rem;
+  border-left: 4px solid #a16207;
+  background: #fef9c3;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.95rem;
+}
+.gl-legend p { margin: 0 0 0.5rem; }
+.gl-legend p:last-child { margin: 0; }
+.gl-legend .gl-legend-k {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #854d0e;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* ---------- 7. what guilds built ---------- */
+
+.gl-built { display: grid; gap: 0.8rem; grid-template-columns: repeat(3, 1fr); }
+.gl-built div {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.95rem 1.05rem;
+  background: #fff;
+}
+.gl-built b { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.05rem; margin-bottom: 0.2rem; }
+.gl-built p { margin: 0; font-size: 0.94rem; color: var(--muted); }
+
+.gl-unis { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.9rem 0 0; }
+.gl-uni {
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.gl-uni:hover { border-color: var(--accent); color: var(--accent); }
+.gl-uni[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.gl-uni .gl-uni-y { opacity: 0.7; font-weight: 500; margin-left: 0.3rem; }
+.gl-uni[aria-pressed="true"] .gl-uni-y { opacity: 0.85; }
+.gl-uni-out {
+  margin-top: 0.85rem;
+  padding: 0.85rem 1.05rem;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  font-size: 0.96rem;
+}
+
+/* ---------- 8. union comparison ---------- */
+
+.gl-cmp-qs { display: grid; gap: 0.45rem; margin-bottom: 1rem; }
+.gl-cmp-q {
+  font: inherit;
+  text-align: left;
+  font-size: 0.96rem;
+  font-weight: 600;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+}
+.gl-cmp-q:hover { border-color: var(--accent); }
+.gl-cmp-q[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.gl-cmp-out { display: grid; gap: 0.7rem; grid-template-columns: repeat(3, 1fr); }
+.gl-cmp-col {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  background: #fff;
+}
+.gl-cmp-col .gl-cmp-h {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.gl-cmp-col.is-guild { border-color: var(--accent); background: var(--accent-soft); }
+.gl-cmp-col.is-guild .gl-cmp-h { color: var(--accent); }
+.gl-cmp-col p { margin: 0; font-size: 0.95rem; }
+
+/* ---------- 9. discussion ---------- */
+
+.gl-dq { display: grid; gap: 0.8rem; }
+.gl-dq-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  background: #fff;
+}
+.gl-dq-card > p { margin: 0 0 0.6rem; font-size: 1.04rem; font-weight: 500; }
+.gl-push {
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.gl-push:hover { text-decoration: underline; }
+.gl-dq-more {
+  margin: 0.6rem 0 0;
+  padding: 0.7rem 0.9rem;
+  background: var(--bg-soft);
+  border-radius: 10px;
+  font-size: 0.96rem;
+}
+.gl-dq-card.starred { border-left: 4px solid var(--accent); }
+.gl-dq-card.starred > p::before {
+  content: "From the lesson plan";
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+/* ---------- glossary ---------- */
+
+.gl-gloss { display: grid; gap: 0.55rem; }
+.gl-gloss div {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 0.9rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.96rem;
+}
+.gl-gloss div:last-child { border-bottom: 0; padding-bottom: 0; }
+.gl-gloss b { font-family: "Fraunces", Georgia, serif; font-size: 1.02rem; }
+.gl-gloss i { color: var(--muted); }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 700px) {
+  .gl-anc, .gl-four, .gl-built, .gl-cmp-out { grid-template-columns: 1fr; }
+  .gl-answers { grid-template-columns: 1fr 1fr; }
+  .gl-ladder { grid-template-columns: 1fr; }
+  .gl-gloss div { grid-template-columns: 1fr; gap: 0.1rem; }
+  .gl-scene { padding: 1.15rem 1.2rem; }
+  .gl-quiz-head { flex-direction: column; gap: 0.2rem; }
+}
+
+/* ---------- print ---------- */
+
+@media print {
+  .site-header, .gl-back, footer, .gl-quiz, .gl-toggle,
+  .gl-type-more, .gl-push, .gl-allbtn, .gl-hint { display: none !important; }
+  .gl-panel { display: block !important; }
+  .gl-opt .gl-opt-out { display: block !important; }
+  .gl-dq-more { display: block !important; }
+  main { max-width: none; padding: 0; }
+  .card, .band { border: none; padding: 0; background: none; }
+  .gl-type, .gl-rule, .gl-dq-card, .gl-built div { break-inside: avoid; }
+  .gl-scene { background: none !important; color: #000 !important; border: 1px solid #999; }
+  .gl-scene .gl-scene-q { color: #000 !important; }
+}
