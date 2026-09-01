@@ -316,7 +316,7 @@
   /* ---------------------------------------------------- 7. universities */
 
   var UNIS = [
-    { n: "Bologna", y: 1088, d: "<b>The first university in Western Europe</b>, and formed as a guild <b>of scholars</b>, meaning of students. The students were the corporation. They hired their professors, paid them directly out of their own pockets, and fined them for starting a lecture late, for finishing early, for skipping a difficult passage, or for failing to draw a crowd. Sit with that arrangement for a second." },
+    { n: "Bologna", y: 1088, d: "<b>The first university in Western Europe</b>, and formed as a guild <b>of scholars</b>, meaning of students. The students were the corporation. They hired their professors, paid them directly out of their own pockets, and fined them for starting a lecture late, for finishing early, for skipping a difficult passage, or for failing to draw a crowd. Read that list again." },
     { n: "Paris", y: 1150, d: "A guild <b>of masters</b>, not of students. Here the teachers organized, and the teachers ran it. Paris became the great center of theology in Europe, where Albertus Magnus taught and Aquinas studied." },
     { n: "Oxford", y: 1167, d: "A guild <b>of masters</b>, on the Paris model. It grew quickly after 1167, when English scholars left Paris and came home. Memorize this one alongside Bologna and Paris." },
     { n: "Modena", y: 1175, d: "Northern Italy, following the Bologna model of law teaching." },
@@ -451,7 +451,7 @@
     wrap.innerHTML = DQ.map(function (d, n) {
       return '<div class="gl-dq-card' + (d.star ? " starred" : "") + '">' +
              "<p>" + d.q + "</p>" +
-             '<button class="gl-push" type="button" data-d="' + n + '">Push harder &rarr;</button>' +
+             '<button class="gl-push" type="button" data-d="' + n + '">More</button>' +
              '<p class="gl-dq-more gl-panel" data-more="' + n + '">' + d.p + "</p></div>";
     }).join("");
 
@@ -459,8 +459,8 @@
       btn.addEventListener("click", function () {
         var more = wrap.querySelector('[data-more="' + btn.getAttribute("data-d") + '"]');
         var isOpen = more.classList.contains("open");
-        if (isOpen) { shut(more); btn.innerHTML = "Push harder &rarr;"; }
-        else { open(more); btn.innerHTML = "Hide"; }
+        if (isOpen) { shut(more); btn.innerHTML = "More"; }
+        else { open(more); btn.innerHTML = "Less"; }
       });
     });
   })();
