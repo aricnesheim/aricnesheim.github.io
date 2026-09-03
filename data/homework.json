@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02",
+  "updated": "2026-09-03",
   "classes": {
     "history": {
       "name": "History 11",
@@ -62,6 +62,10 @@
     "literature": {
       "name": "Literature 11",
       "page": [
+        {
+          "label": "Friday, September 4 · half day",
+          "text": "One combined Literature and History period; listen for the announcement. We discuss Cantos VI to VIII. Finish Canto IX if you have not. Nothing new is due."
+        },
         {
           "label": "Due Tuesday, September 8",
           "text": "Finish Canto IX and read Cantos X and XI, annotated (the sin, the contrapasso, the sinners). Tuesday is a reading day: the comprehension questions on X and XI are done in class."
