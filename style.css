@@ -67,6 +67,14 @@ h1, h2, h3, .brand {
   font-weight: 700;
   color: var(--text);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand img {
+  display: block;
+  height: 30px;
+  width: auto;
 }
 
 .nav-links {
