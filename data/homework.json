@@ -1,16 +1,12 @@
 {
-  "updated": "2026-09-03",
+  "updated": "2026-09-04",
   "classes": {
     "history": {
       "name": "History 11",
       "page": [
         {
-          "label": "Friday, September 4 · half day",
-          "text": "One combined Literature and History period; listen for the announcement. Medieval Universities closes Unit 1. Nothing new is due."
-        },
-        {
           "label": "Due Thursday, September 10",
-          "text": "History does not meet Tuesday this week (schedule change: Thursday runs Tuesday's lineup). Reread Aquinas' Prayer Before Study, the handout from the first day. Unit 2 opens Thursday at 7:20: Spain."
+          "text": "History does not meet Tuesday this week (schedule change: Thursday runs Tuesday's lineup). Reread Aquinas' Prayer Before Study, the handout from the first day. Unit 2 opens Thursday at 7:20 in Faustina: Spain."
         },
         {
           "label": "Due Friday, September 11",
@@ -18,17 +14,21 @@
         },
         {
           "label": "Monday, September 21",
-          "text": "Map quiz on Spain. The practice map goes out Thursday; ten minutes with it a few nights a week is the whole plan."
+          "text": "Map quiz on Spain. Start the blank map this week; ten minutes with it a few nights a week is the whole plan."
         }
       ],
       "glance": [
         {
           "strong": "Due Thu, Sep 10",
-          "text": "reread the Aquinas prayer. No History Tuesday; Unit 2 opens Thursday."
+          "text": "reread the Aquinas prayer. No History Tuesday; Unit 2 opens Thursday at 7:20."
         },
         {
           "strong": "Due Fri, Sep 11",
           "text": "The Death of El Cid (binder p. 19), annotated, with two of your own questions."
+        },
+        {
+          "strong": "Mon, Sep 21",
+          "text": "map quiz on Spain."
         }
       ]
     },
@@ -63,12 +63,8 @@
       "name": "Literature 11",
       "page": [
         {
-          "label": "Friday, September 4 · half day",
-          "text": "One combined Literature and History period; listen for the announcement. We discuss Cantos VI to VIII. Finish Canto IX if you have not. Nothing new is due."
-        },
-        {
           "label": "Due Tuesday, September 8",
-          "text": "Finish Canto IX and read Cantos X and XI, annotated (the sin, the contrapasso, the sinners). Tuesday is a reading day: the comprehension questions on X and XI are done in class."
+          "text": "Finish Canto IX and read Cantos X and XI, annotated (the sin, the contrapasso, the sinners). Tuesday is a reading day: the comprehension questions on X and XI are done in class, open book."
         },
         {
           "label": "Due Wednesday, September 9",
@@ -81,12 +77,20 @@
         {
           "label": "Monday, September 14",
           "text": "Quiz on Cantos I to XIII: for every circle, the sin, the contrapasso, the sinners. Look back over your annotations this weekend."
+        },
+        {
+          "label": "Super Simile paragraph 1",
+          "text": "Collected Friday, September 4. If you were absent Thursday, you write it at the start of class Tuesday."
         }
       ],
       "glance": [
         {
           "strong": "Due Tue, Sep 8",
-          "text": "finish Canto IX; read X and XI, annotated."
+          "text": "finish Canto IX; read X and XI, annotated. Questions on X and XI in class."
+        },
+        {
+          "strong": "Due Wed, Sep 9",
+          "text": "one discussion question on Cantos IX to XI."
         },
         {
           "strong": "Mon, Sep 14",
@@ -100,7 +104,7 @@
       "glance": [
         {
           "strong": "",
-          "text": "Sections are announced Tuesday. Friday, September 11 is the first all-school Friday sing; the choir leads it."
+          "text": "No school Monday. Next rehearsal Tuesday, September 8; sections are announced then. Friday, September 11 is the first all-school Friday sing; the choir leads it."
         }
       ]
     }
