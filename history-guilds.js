@@ -313,46 +313,531 @@
     draw();
   })();
 
-  /* ---------------------------------------------------- 7. universities */
+  /* ---------------------------------------------------- 7. universities
+     The list is CSN's (Lecture Notes 3.0, "Medieval Universities"), in its
+     order and with its dates. Naples and Cologne are not on that list; they
+     are on the map because two of the scholar-saints were there. */
+
+  var LATIN = "Latin, like every school on this map. A master licensed in Paris could teach in Oxford or Bologna without learning a word of the local speech.";
 
   var UNIS = [
-    { n: "Bologna", y: 1088, d: "<b>The first university in Western Europe</b>, and formed as a guild <b>of scholars</b>, meaning of students. The students were the corporation. They hired their professors, paid them directly out of their own pockets, and fined them for starting a lecture late, for finishing early, for skipping a difficult passage, or for failing to draw a crowd. Read that list again." },
-    { n: "Paris", y: 1150, d: "A guild <b>of masters</b>, not of students. Here the teachers organized, and the teachers ran it. Paris became the great center of theology in Europe, where Albertus Magnus taught and Aquinas studied." },
-    { n: "Oxford", y: 1167, d: "A guild <b>of masters</b>, on the Paris model. It grew quickly after 1167, when English scholars left Paris and came home. Memorize this one alongside Bologna and Paris." },
-    { n: "Modena", y: 1175, d: "Northern Italy, following the Bologna model of law teaching." },
-    { n: "Palencia", y: 1208, d: "The first university in Spain, founded by the king of Castile. It did not survive long, and Salamanca took its place." },
-    { n: "Cambridge", y: 1209, d: "Founded by masters who fled Oxford after a quarrel between the town and the scholars ended with students hanged. The English universities begin as a guild dispute that turned lethal." },
-    { n: "Salamanca", y: 1218, d: "Spain's enduring university, and one of the oldest in continuous operation anywhere." },
-    { n: "Montpellier", y: 1220, d: "In southern France, and famous above all for medicine." },
-    { n: "Padua", y: 1222, d: "Founded by masters and students who walked out of Bologna over their liberties. Notice the pattern: a guild that does not like its terms leaves and founds another one." },
-    { n: "Toulouse", y: 1229, d: "Founded as part of the settlement that ended the Albigensian Crusade, with the explicit job of teaching orthodox theology in a region that had been full of heresy." },
-    { n: "Prague", y: 1348, d: "The first university in Central Europe." },
-    { n: "Jagiellonian", y: 1364, d: "In Krak&oacute;w. We count it as the first university in Eastern Europe. Copernicus studied here." },
-    { n: "Vienna", y: 1365, d: "Founded a year after Krak&oacute;w, and still running." },
-    { n: "Heidelberg", y: 1386, d: "The first university in Germany." },
-    { n: "St Andrews", y: 1413, d: "In Scotland, and the last stop on our list. Three hundred and twenty-five years after Bologna, the model has crossed the whole of Europe." }
+    { id: "bologna", n: "Bologna", y: 1088, key: true, run: "scholars", field: "law",
+      first: "First university in Western Europe",
+      d: "<b>The first university in Western Europe</b>, and formed as a guild <b>of scholars</b>, meaning of students. The students were the corporation. They hired their professors, paid them directly out of their own pockets, and fined them for starting a lecture late, for finishing early, for skipping a difficult passage, or for failing to draw a crowd. Read that list again.",
+      who: "A guild of students. The students formed two corporations by origin, the Cismontanes from this side of the Alps and the Ultramontanes from beyond them, and each elected its own rector. Emperor Frederick Barbarossa put travelling scholars under his protection in 1155, the first legal privilege ever granted to students as a class.",
+      street: "Italian, in the speech of Bologna and the Romagna. Dante had not yet made Tuscan the standard.",
+      lang: "Italian",
+      known: "Law, above all. Roman civil law was revived here by Irnerius around 1100, and Gratian, a monk of Bologna, compiled the Church's canon law in his <i>Decretum</i> about 1140. Kings and popes both needed lawyers, and Bologna trained them.",
+      names: "Copernicus studied canon law here, 1496 to 1500. Petrarch was sent here to study law and hated it." },
+    { id: "paris", n: "Paris", y: 1150, key: true, run: "masters", field: "theo",
+      first: "The theology school of Europe",
+      d: "A guild <b>of masters</b>, not of students. Here the teachers organized, and the teachers ran it. Paris became the great center of theology in Europe, where Albertus Magnus taught and Aquinas studied.",
+      who: "A guild of masters. The chancellor of Notre-Dame licensed teachers; the masters fought him for control and won, with the pope on their side (statutes of 1215, and the bull <i>Parens scientiarum</i> of 1231). The arts students were sorted into four nations, French, Norman, Picard, and English, and the four nations elected the rector.",
+      street: "French, the langue d'o&iuml;l of the north. The students' quarter on the Left Bank is still called the Latin Quarter, because Latin was the language of its streets for six hundred years.",
+      lang: "French",
+      known: "Theology, and the arts course that led up to it. If you wanted to argue about God in the thirteenth century, you came here.",
+      names: "Abelard drew the crowds in the 1110s and 1130s that made Paris a city of schools. Albertus Magnus taught here from 1245 to 1248 with Aquinas as his student. Aquinas and Bonaventure were made masters of theology on the same day in 1257. Roger Bacon, Duns Scotus, and Nicole Oresme all taught here." },
+    { id: "oxford", n: "Oxford", y: 1167, key: true, run: "masters", field: "arts",
+      first: "Oldest university in the English-speaking world",
+      d: "A guild <b>of masters</b>, on the Paris model. It grew quickly after 1167, when English scholars left Paris and came home. Memorize this one alongside Bologna and Paris.",
+      who: "A guild of masters on the Paris model, under a chancellor. When it fell out with the town in 1209 the masters simply left, and some of them founded Cambridge. A guild can walk.",
+      street: "English, the Middle English of Chaucer's grandparents. French at court and in the law courts. Latin in the hall.",
+      lang: "English",
+      known: "Theology and the arts, and something new: natural philosophy. Grosseteste lectured on optics, astronomy, and geometry, and his student Roger Bacon argued for experiment. The Franciscan school at Oxford is where medieval science is most alive.",
+      names: "Robert Grosseteste taught here and ran the school (about 1224 to 1235). Roger Bacon, Duns Scotus, and William of Ockham all studied and taught here." },
+    { id: "modena", n: "Modena", y: 1175, run: "scholars", field: "law",
+      d: "Northern Italy, following the Bologna model of law teaching.",
+      who: "A law school on the Bologna model, opened when the jurist Pillio da Medicina was hired away from Bologna. Small, and in and out of existence for centuries.",
+      street: "Italian, the same Emilian speech as Bologna, twenty-five miles up the road.",
+      lang: "Italian",
+      known: "Law.",
+      names: "" },
+    { id: "palencia", n: "Palencia", y: 1208, run: "charter", field: "arts",
+      first: "First university in Spain",
+      d: "The first university in Spain, founded by the king of Castile. It did not survive long, and Salamanca took its place.",
+      who: "Founded by King Alfonso VIII of Castile, who brought in masters from France and Italy and paid them out of the royal purse. It faded within a generation.",
+      street: "Castilian, the Spanish of Castile.",
+      lang: "Castilian",
+      known: "Arts and theology, grown out of the cathedral school.",
+      names: "St Dominic studied at the cathedral school here in the 1180s and 1190s, before it was a university. During a famine he sold his books to feed the poor." },
+    { id: "cambridge", n: "Cambridge", y: 1209, run: "masters", field: "arts",
+      d: "Founded by masters who fled Oxford after a quarrel between the town and the scholars ended with students hanged. The English universities begin as a guild dispute that turned lethal.",
+      who: "A guild of masters who walked out of Oxford in 1209 after the townsmen hanged two students. King Henry III took it under his protection in 1231 and the pope recognized it in 1233.",
+      street: "English.",
+      lang: "English",
+      known: "Arts and theology, on the Oxford pattern.",
+      names: "" },
+    { id: "salamanca", n: "Salamanca", y: 1218, run: "charter", field: "law",
+      first: "Spain's enduring university",
+      d: "Spain's enduring university, and one of the oldest in continuous operation anywhere.",
+      who: "Founded by King Alfonso IX of Le&oacute;n in 1218. Alfonso X the Wise gave it statutes in 1254 and Pope Alexander IV confirmed it the next year. A guild of masters and students inside a royal foundation.",
+      street: "Castilian, the Spanish of Le&oacute;n and Castile.",
+      lang: "Castilian",
+      known: "Law, canon and civil, first; theology later. In the 1500s its theologians would argue over whether the peoples of the New World had rights, and answer yes.",
+      names: "" },
+    { id: "montpellier", n: "Montpellier", y: 1220, run: "masters", field: "med",
+      d: "In southern France, and famous above all for medicine.",
+      who: "A guild of masters. Doctors had taught here since the 1100s; in 1220 the pope's legate gave the medical masters their statutes. The medical faculty is the oldest still in operation anywhere.",
+      street: "Occitan, the langue d'oc of the south, the language of the troubadours. Not French.",
+      lang: "Occitan",
+      known: "Medicine. Its doctors read Galen and the Arabic physicians, Avicenna above all, in Latin translations that came north out of Spain.",
+      names: "" },
+    { id: "padua", n: "Padua", y: 1222, run: "scholars", field: "law",
+      d: "Founded by masters and students who walked out of Bologna over their liberties. Notice the pattern: a guild that does not like its terms leaves and founds another one.",
+      who: "A guild of students, like Bologna, which it left. Masters and students walked out of Bologna in 1222 over their liberties and set up here.",
+      street: "Italian, in the Venetian speech of the Veneto.",
+      lang: "Italian",
+      known: "Law first, then medicine and natural philosophy. Copernicus studied medicine here. Galileo taught here for eighteen years. William Harvey, who worked out the circulation of the blood, took his medical degree here in 1602.",
+      names: "Albertus Magnus studied here, and joined the Dominicans here in 1223." },
+    { id: "toulouse", n: "Toulouse", y: 1229, run: "charter", field: "theo",
+      d: "Founded as part of the settlement that ended the Albigensian Crusade, with the explicit job of teaching orthodox theology in a region that had been full of heresy.",
+      who: "Founded by treaty. The Treaty of Paris of 1229, which ended the Albigensian Crusade, obliged Count Raymond VII to pay the salaries of masters for a new university. Pope Gregory IX confirmed it in 1233.",
+      street: "Occitan, like Montpellier. This was the heart of the Cathar country.",
+      lang: "Occitan",
+      known: "Theology, to preach orthodoxy in a region full of Cathar heresy. The Dominican order, founded in this city in 1215, filled its chairs.",
+      names: "" },
+    { id: "prague", n: "Prague", y: 1348, run: "charter", field: "arts",
+      first: "First university in Central Europe",
+      d: "The first university in Central Europe.",
+      who: "Founded by Emperor Charles IV, who was also King of Bohemia, with a bull from Pope Clement VI. Four faculties from the start: arts, theology, law, medicine. Four nations too, Bohemian, Bavarian, Polish, and Saxon, and they fought over which should run the place.",
+      street: "Czech and German, both. The town spoke both.",
+      lang: "Czech, German",
+      known: "All four faculties. It was built as a complete copy of Paris, by an emperor who had studied there.",
+      names: "Jan Hus was its rector in 1409. His burning in 1415 set off the Hussite wars. Remember his name when we reach the Reformation." },
+    { id: "krakow", n: "Jagiellonian", m: "Krak\u00f3w", y: 1364, run: "charter", field: "law",
+      first: "First in Eastern Europe",
+      d: "In Krak&oacute;w. We count it as the first university in Eastern Europe. Copernicus studied here.",
+      who: "Founded by King Casimir III the Great in 1364 with chairs of law, medicine, and the arts, and no theology. Refounded in 1400 by King W&#322;adys&#322;aw Jagie&#322;&#322;o with the jewels Queen Jadwiga left it, which is why it carries the Jagiellonian name.",
+      street: "Polish, with German in the merchant town.",
+      lang: "Polish",
+      known: "Law at the founding. By the 1400s, mathematics and astronomy. Copernicus studied here from 1491 to 1495.",
+      names: "" },
+    { id: "vienna", n: "Vienna", y: 1365, run: "charter", field: "arts",
+      first: "Oldest university in the German-speaking world",
+      d: "Founded a year after Krak&oacute;w, and still running.",
+      who: "Founded by Duke Rudolf IV of Austria on the Paris model. The pope allowed it a theology faculty only in 1384; until then, arts, law, and medicine.",
+      street: "German.",
+      lang: "German",
+      known: "Arts, then theology. In the 1400s its astronomers, Peuerbach and Regiomontanus, prepared the ground Copernicus would stand on.",
+      names: "" },
+    { id: "heidelberg", n: "Heidelberg", y: 1386, run: "charter", field: "arts",
+      first: "First university in Germany",
+      d: "The first university in Germany.",
+      who: "Founded by Rupert I, Elector Palatine, with a bull from Pope Urban VI. The timing is the Great Schism: Paris obeyed the pope at Avignon, so the Empire's masters and students came home and built their own. The first rector came straight from Paris.",
+      street: "German.",
+      lang: "German",
+      known: "Arts and theology, on the Paris pattern.",
+      names: "Luther defended his theses here, in the Heidelberg Disputation of 1518." },
+    { id: "standrews", n: "St Andrews", y: 1413, run: "charter", field: "arts",
+      first: "First university in Scotland",
+      d: "In Scotland, and the last stop on our list. Three hundred and twenty-five years after Bologna, the model has crossed the whole of Europe.",
+      who: "Founded by Bishop Henry Wardlaw between 1411 and 1413, with bulls from Benedict XIII, the pope at Avignon whom Scotland still obeyed. Scots had been studying at Oxford and Paris; the wars with England had made Oxford impossible.",
+      street: "Scots, the northern English of the Lowlands. Gaelic in the Highlands.",
+      lang: "Scots",
+      known: "Arts and theology.",
+      names: "" },
+    /* not on CSN's list */
+    { id: "naples", n: "Naples", y: 1224, also: true, run: "charter", field: "law",
+      d: "Not on our list, but on the map because Aquinas started here.",
+      who: "Founded by Emperor Frederick II by decree, with no pope and no guild, to train officials for his kingdom. The first state university.",
+      street: "Italian, in the Neapolitan speech of the south.",
+      lang: "Italian",
+      known: "Law, for the emperor's civil service.",
+      names: "Thomas Aquinas was sent here at about fourteen, in 1239, and met the Dominicans here. His family locked him in a castle for a year to stop him joining them." },
+    { id: "cologne", n: "Cologne", y: 1248, also: true, run: "charter", field: "theo",
+      d: "Not a university until 1388, and not on our list. On the map because Albertus Magnus taught here with Aquinas beside him.",
+      who: "From 1248 the Dominicans ran a <i>studium generale</i> here, a school of the order open to friars from everywhere. The city got a university of its own in 1388.",
+      street: "German.",
+      lang: "German",
+      known: "Theology, in the Dominican school.",
+      names: "Albertus Magnus taught here from 1248, and Aquinas followed him from Paris and stayed four years. Duns Scotus taught here and died here in 1308." }
   ];
+
+  /* CSN's roster of the scholar-saints, with its dates and its tags.
+     `at` is the road each one travelled, in order. */
+  var SCHOLARS = [
+    { id: "abelard", n: "Peter Abelard", dates: "1079&ndash;1142", tag: "French, secular",
+      at: [ { p: "paris", w: "taught in the schools of Paris in the 1110s and 1130s, before there was a university" } ],
+      line: "Theologian and logician. The crowds he drew are part of why Paris became a university at all. Known too for his affair with H&eacute;lo&iuml;se, which ended badly for everyone." },
+    { id: "grosseteste", n: "Robert Grosseteste", dates: "1168&ndash;1253", tag: "English, diocesan clergy",
+      at: [ { p: "oxford", w: "taught here, ran the school about 1224 to 1235, and was the first lecturer to the Oxford Franciscans" } ],
+      line: "Founder of natural philosophy and early scientific inquiry. Wrote on optics, astronomy, physics, and geometry. Bishop of Lincoln from 1235." },
+    { id: "albertus", n: "St Albertus Magnus", dates: "1193&ndash;1280", tag: "German, Dominican",
+      at: [ { p: "padua", w: "studied here and joined the Dominicans here, 1223" },
+            { p: "paris", w: "taught here 1245 to 1248, with Aquinas as his student" },
+            { p: "cologne", w: "taught in the Dominican school from 1248; Aquinas followed him" } ],
+      line: "Tutor to Aquinas. Brought Greek and Arabic philosophy, Aristotle above all, into the University of Paris. Doctor of the Church." },
+    { id: "bacon", n: "Roger Bacon", dates: "1214&ndash;1294", tag: "English, Franciscan",
+      at: [ { p: "oxford", w: "studied here under Grosseteste" },
+            { p: "paris", w: "taught here in the 1240s" },
+            { p: "oxford", w: "back here from about 1250; joined the Franciscans about 1257" } ],
+      line: "Grosseteste's student. Called the father of the scientific method. Polymath; wrote down a formula for gunpowder about 1267, independently of the Chinese." },
+    { id: "bonaventure", n: "St Bonaventure", dates: "1221&ndash;1274", tag: "Italian, Franciscan",
+      at: [ { p: "paris", w: "studied and taught here; made master of theology in 1257, the same day as Aquinas" } ],
+      line: "Theologian and philosopher. A mystical, Platonic account of God and the world, in contrast with the rationalism of his friend Aquinas. Head of the Franciscans from 1257. Doctor of the Church." },
+    { id: "aquinas", n: "St Thomas Aquinas", dates: "c. 1225&ndash;1274", tag: "Italian, Dominican",
+      at: [ { p: "naples", w: "a student here from about fourteen, 1239 to 1244; joined the Dominicans" },
+            { p: "paris", w: "studied under Albertus Magnus, 1245 to 1248" },
+            { p: "cologne", w: "followed Albertus here, 1248 to 1252" },
+            { p: "paris", w: "taught here 1256 to 1259 and again 1268 to 1272" } ],
+      line: "Son of Italian nobility and a distant relative of King St Louis IX. The greatest apologist and pure rational theologian of all time. Doctor of the Church. The prayer you were handed on Day 1 is his." },
+    { id: "scotus", n: "Bl. John Duns Scotus", dates: "1266&ndash;1308", tag: "Scottish, Franciscan",
+      at: [ { p: "oxford", w: "studied and lectured here" },
+            { p: "paris", w: "taught here, 1302 to 1307" },
+            { p: "cologne", w: "taught here, and died here in 1308" } ],
+      line: "The Subtle Doctor. His realist views contrasted with both Bonaventure's and Aquinas's. Argued for the Immaculate Conception six centuries before it was defined." },
+    { id: "ockham", n: "William of Ockham", dates: "1285&ndash;1350", tag: "English, Franciscan",
+      at: [ { p: "oxford", w: "studied and lectured here in the 1310s and 1320s" } ],
+      line: "Priest, philosopher, theologian. Ockham's Razor: given several valid explanations, choose the simplest. The first to argue for a complete separation of Church and State." },
+    { id: "oresme", n: "Nicole Oresme", dates: "1323&ndash;1382", tag: "French, secular clergy",
+      at: [ { p: "paris", w: "studied and taught here, at the College of Navarre" } ],
+      line: "Physicist and mathematician of genius. Worked out an x-and-y coordinate system without naming it, argued that the earth might turn, and held that God is Time. Bishop of Lisieux." }
+  ];
+
+  var RUN = {
+    scholars: { c: "#b45309", t: "Guild of scholars", x: "the students hired the masters" },
+    masters:  { c: "#0f766e", t: "Guild of masters",  x: "the teachers ran it" },
+    charter:  { c: "#475569", t: "Founded by charter", x: "a king, emperor, duke, or treaty set it up, with a guild of masters inside" }
+  };
+  var FIELD = {
+    law:  { c: "#b45309", t: "Law" },
+    theo: { c: "#7c3aed", t: "Theology" },
+    med:  { c: "#0f766e", t: "Medicine" },
+    arts: { c: "#475569", t: "Arts and theology" }
+  };
+  var LENS_NOTE = {
+    run:   "First the idea grew on its own, as a guild. Then kings and emperors copied it by decree.",
+    field: "What each school was famous for. Most taught everything; this is the thing people travelled for.",
+    lang:  "In every hall: Latin. Under each name: what was spoken outside the door.",
+    who:   "Pick a name. The map shows where he studied and taught, in order. Nearly all of them were friars."
+  };
 
   (function () {
     var wrap = $("#gl-unis"), out = $("#gl-uni-out");
     if (!wrap || !out) return;
 
-    wrap.innerHTML = UNIS.map(function (u, n) {
-      return '<button class="gl-uni" type="button" aria-pressed="false" data-u="' + n + '">' +
+    var byId = {};
+    UNIS.forEach(function (u) { byId[u.id] = u; });
+
+    /* ---- the chip list (CSN's fifteen only) ---- */
+    var listed = UNIS.filter(function (u) { return !u.also; });
+    wrap.innerHTML = listed.map(function (u) {
+      return '<button class="gl-uni" type="button" aria-pressed="false" data-u="' + u.id + '">' +
              u.n + '<span class="gl-uni-y">' + u.y + "</span></button>";
     }).join("");
 
-    $$(".gl-uni", wrap).forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var u = UNIS[parseInt(btn.getAttribute("data-u"), 10)];
-        var was = btn.getAttribute("aria-pressed") === "true";
-        $$(".gl-uni", wrap).forEach(function (o) { o.setAttribute("aria-pressed", "false"); });
-        if (was) { shut(out); return; }
-        btn.setAttribute("aria-pressed", "true");
-        out.innerHTML = "<b>" + u.n + ", " + u.y + ".</b> " + u.d;
-        open(out);
+    var selected = null;
+
+    function facts(u) {
+      var rows = [
+        ["Who ran it", u.who],
+        ["In the hall", LATIN],
+        ["On the street", u.street],
+        ["Known for", u.known],
+        ["Names you know", u.names]
+      ];
+      return '<dl class="gl-uni-facts">' + rows.filter(function (r) { return r[1]; }).map(function (r) {
+        return "<dt>" + r[0] + "</dt><dd>" + r[1] + "</dd>";
+      }).join("") + "</dl>";
+    }
+
+    function select(id) {
+      var u = byId[id];
+      var was = selected === id;
+      selected = was ? null : id;
+
+      $$(".gl-uni", wrap).forEach(function (o) {
+        o.setAttribute("aria-pressed", o.getAttribute("data-u") === selected ? "true" : "false");
       });
+      if (map) map.select(selected);
+
+      if (!selected) { shut(out); return; }
+      out.innerHTML = "<b>" + u.n + ", " + u.y + ".</b>" +
+        (u.first ? '<span class="gl-uni-tag">' + u.first + "</span>" : "") +
+        "<p>" + u.d + "</p>" + facts(u);
+      open(out);
+    }
+
+    $$(".gl-uni", wrap).forEach(function (btn) {
+      btn.addEventListener("click", function () { select(btn.getAttribute("data-u")); });
     });
+
+    /* ---- the map ---- */
+    var map = buildMap();
+
+    function buildMap() {
+      var GEO = window.GUILDS_GEO;
+      var host = $("#gl-map");
+      if (!GEO || !GEO.land || !host) return null;
+
+      var SVGNS = "http://www.w3.org/2000/svg";
+      function svgEl(tag, attrs) {
+        var n = document.createElementNS(SVGNS, tag);
+        for (var k in attrs) n.setAttribute(k, attrs[k]);
+        return n;
+      }
+
+      var GW = Number(GEO.viewBox.split(" ")[2]), GH = Number(GEO.viewBox.split(" ")[3]);
+      var FRAME = [135, 85, 855, 672];        // crop of the generated frame, in its units
+      var FW = FRAME[2] - FRAME[0], FH = FRAME[3] - FRAME[1];
+
+      // Label offsets are in display pixels from the dot. Hand-placed: Modena
+      // sits eleven pixels from Bologna at this width.
+      var OFF = {
+        bologna: [12, 14], modena: [-11, -4], padua: [11, -8],
+        paris: [12, -5], oxford: [-11, 5], cambridge: [11, -7],
+        palencia: [10, -9], salamanca: [10, 15], montpellier: [11, 13], toulouse: [-11, 5],
+        prague: [11, -7], krakow: [11, -7], vienna: [11, 7], heidelberg: [11, 7],
+        standrews: [11, 5], naples: [11, 7], cologne: [-11, -5]
+      };
+
+      var svg = svgEl("svg", { class: "gl-map-svg", role: "img",
+        "aria-label": "Map of Europe with the first universities marked and dated" });
+      svg.setAttribute("viewBox", FRAME[0] + " " + FRAME[1] + " " + FW + " " + FH);
+      svg.appendChild(svgEl("rect", { x: 0, y: 0, width: GW, height: GH, class: "gl-map-sea" }));
+      var land = svgEl("path", { d: GEO.land, class: "gl-map-land" });
+      svg.appendChild(land);
+
+      var route = svgEl("path", { class: "gl-map-route", d: "", "vector-effect": "non-scaling-stroke" });
+      svg.appendChild(route);
+
+      var groups = {};
+      // Draw the "also" markers first so the listed schools sit on top.
+      UNIS.slice().sort(function (a, b) { return (a.also ? 0 : 1) - (b.also ? 0 : 1); }).forEach(function (u) {
+        var p = GEO.pts[u.id];
+        if (!p) return;
+        var g = svgEl("g", { class: "gl-dot-g" + (u.key ? " is-key" : "") + (u.also ? " is-also" : ""),
+                             "data-id": u.id, tabindex: "0", role: "button" });
+        g.setAttribute("aria-label", u.n + ", " + u.y);
+        var ring = svgEl("circle", { cx: p[0], cy: p[1], class: "gl-ring", "vector-effect": "non-scaling-stroke" });
+        var dot = svgEl("circle", { cx: p[0], cy: p[1], class: "gl-dot", "vector-effect": "non-scaling-stroke" });
+        var t = svgEl("text", { class: "gl-map-label", "paint-order": "stroke" });
+        var main = svgEl("tspan"); main.textContent = u.m || u.n;
+        var sub = svgEl("tspan", { class: "gl-map-sub" }); sub.textContent = String(u.y);
+        t.appendChild(main); t.appendChild(sub);
+        g.appendChild(ring); g.appendChild(dot); g.appendChild(t);
+        svg.appendChild(g);
+        groups[u.id] = { g: g, dot: dot, ring: ring, t: t, main: main, sub: sub, p: p, u: u };
+        g.addEventListener("click", function () { select(u.id); });
+        g.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(u.id); }
+        });
+      });
+
+      host.innerHTML = "";
+      host.appendChild(svg);
+
+      var lens = "run", scholar = null, year = 1420;
+
+      /* Everything sized in pixels is set from the width the map actually got. */
+      function tune() {
+        var box = svg.getBoundingClientRect();
+        if (!box.width) return;
+        var u = FW / box.width;
+        // On a phone the map is a third the width of a projector; shrink the
+        // type with it, down to a floor, or the labels bury the coastline.
+        var k = Math.max(0.7, Math.min(1, box.width / 720));
+        land.setAttribute("stroke-width", (0.9 * u).toFixed(2));
+        for (var id in groups) {
+          var s = groups[id], off = OFF[id] || [10, 4];
+          var fs = (s.u.key ? 15 : s.u.also ? 11.5 : 13) * u * k;
+          var r = (s.u.key ? 7 : s.u.also ? 4 : 5.4) * u * k;
+          s.dot.setAttribute("r", r.toFixed(2));
+          s.ring.setAttribute("r", (r + 4 * u).toFixed(2));
+          s.ring.setAttribute("stroke-width", (2 * u).toFixed(2));
+          var anchor = off[0] > 3 ? "start" : off[0] < -3 ? "end" : "middle";
+          var tx = s.p[0] + off[0] * u * k, ty = s.p[1] + off[1] * u * k;
+          s.t.setAttribute("font-size", fs.toFixed(2));
+          s.t.setAttribute("stroke-width", (3 * u).toFixed(2));
+          s.t.setAttribute("text-anchor", anchor);
+          s.t.setAttribute("x", tx.toFixed(1)); s.t.setAttribute("y", ty.toFixed(1));
+          s.main.setAttribute("x", tx.toFixed(1));
+          s.sub.setAttribute("x", tx.toFixed(1));
+          s.sub.setAttribute("dy", (fs * 1.05).toFixed(2));
+          s.sub.setAttribute("font-size", (fs * 0.86).toFixed(2));
+        }
+      }
+
+      function colorOf(u) {
+        if (lens === "run") return RUN[u.run].c;
+        if (lens === "field") return FIELD[u.field].c;
+        return "#b45309";
+      }
+      function subOf(u) {
+        if (lens === "field") return FIELD[u.field].t;
+        if (lens === "lang") return u.lang;
+        return String(u.y);
+      }
+
+      function curve(pts) {
+        if (pts.length < 2) return "";
+        var d = "M" + pts[0][0] + " " + pts[0][1];
+        if (pts.length === 2) return d + "L" + pts[1][0] + " " + pts[1][1];
+        for (var i = 0; i < pts.length - 1; i++) {
+          var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || pts[i + 1];
+          d += "C" + (p1[0] + (p2[0] - p0[0]) / 6).toFixed(1) + " " + (p1[1] + (p2[1] - p0[1]) / 6).toFixed(1) + "," +
+               (p2[0] - (p3[0] - p1[0]) / 6).toFixed(1) + " " + (p2[1] - (p3[1] - p1[1]) / 6).toFixed(1) + "," +
+               p2[0] + " " + p2[1];
+        }
+        return d;
+      }
+
+      function paint() {
+        var sch = null;
+        if (lens === "who" && scholar) {
+          sch = SCHOLARS.filter(function (s) { return s.id === scholar; })[0];
+        }
+        var at = {};
+        if (sch) sch.at.forEach(function (a) { at[a.p] = true; });
+
+        for (var id in groups) {
+          var s = groups[id];
+          s.dot.style.fill = colorOf(s.u);
+          s.sub.textContent = subOf(s.u);
+          s.g.classList.toggle("is-future", s.u.y > year);
+          s.g.classList.toggle("is-dim", !!sch && !at[id]);
+          s.g.classList.toggle("is-sel", selected === id);
+        }
+        if (sch && sch.at.length > 1) {
+          var pts = sch.at.map(function (a) { return GEO.pts[a.p]; }).filter(Boolean);
+          // A return to the same place is drawn as a small loop out over the sea of the page.
+          route.setAttribute("d", curve(pts));
+          route.style.display = "";
+        } else {
+          route.style.display = "none";
+        }
+      }
+
+      tune(); paint();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(tune);
+      if ("ResizeObserver" in window) { new ResizeObserver(tune).observe(svg); }
+      else { window.addEventListener("resize", tune); }
+
+      return {
+        setLens: function (l) { lens = l; paint(); },
+        setScholar: function (id) { scholar = id; paint(); },
+        setYear: function (y) {
+          var prev = year; year = y;
+          paint();
+          // Pop the ones that just appeared.
+          for (var id in groups) {
+            var s = groups[id];
+            if (s.u.y > prev && s.u.y <= y) {
+              s.g.classList.remove("pop"); void s.g.getBoundingClientRect(); s.g.classList.add("pop");
+            }
+          }
+        },
+        select: function () { paint(); }
+      };
+    }
+
+    /* ---- legend ---- */
+    var legend = $("#gl-maplegend");
+    function drawLegend(lens) {
+      if (!legend) return;
+      var items = [];
+      if (lens === "run") {
+        for (var k in RUN) items.push('<span><i style="background:' + RUN[k].c + '"></i>' + RUN[k].t + ", " + RUN[k].x + "</span>");
+      } else if (lens === "field") {
+        for (var f in FIELD) items.push('<span><i style="background:' + FIELD[f].c + '"></i>' + FIELD[f].t + "</span>");
+      } else if (lens === "lang") {
+        items.push('<span><i></i>Latin in the lecture hall, everywhere</span>');
+      } else {
+        items.push('<span><i></i>Where he was</span>');
+        items.push('<span><i style="opacity:0.28"></i>Everywhere else</span>');
+      }
+      items.push('<span><i class="also"></i>Not on our list</span>');
+      items.push('<span class="gl-legend-note">' + LENS_NOTE[lens] + "</span>");
+      legend.innerHTML = items.join("");
+    }
+
+    /* ---- lenses ---- */
+    var lensWrap = $("#gl-lens"), schWrap = $("#gl-scholars"), schLine = $("#gl-scholar-line");
+    var curLens = "run", curScholar = null;
+
+    if (schWrap) {
+      schWrap.innerHTML = SCHOLARS.map(function (s) {
+        return '<button class="gl-scholar" type="button" aria-pressed="false" data-s="' + s.id + '">' +
+               s.n + '<span class="gl-scholar-o">' + s.tag.split(",")[1].trim() + "</span></button>";
+      }).join("");
+      $$(".gl-scholar", schWrap).forEach(function (btn) {
+        btn.addEventListener("click", function () { setScholar(btn.getAttribute("data-s")); });
+      });
+    }
+
+    function setScholar(id) {
+      curScholar = curScholar === id ? null : id;
+      $$(".gl-scholar", schWrap).forEach(function (o) {
+        o.setAttribute("aria-pressed", o.getAttribute("data-s") === curScholar ? "true" : "false");
+      });
+      if (map) map.setScholar(curScholar);
+      var s = SCHOLARS.filter(function (x) { return x.id === curScholar; })[0];
+      if (!s) { shut(schLine); return; }
+      schLine.innerHTML = "<p><b>" + s.n + "</b>, " + s.dates + ". " + s.tag + ". " + s.line + "</p>" +
+        '<p class="gl-route">' + s.at.map(function (a, i) {
+          return (i ? " &rarr; " : "") + "<b>" + byId[a.p].n + "</b>, " + a.w;
+        }).join("") + ".</p>";
+      open(schLine);
+    }
+
+    function setLens(l) {
+      curLens = l;
+      $$(".gl-lens-btn", lensWrap).forEach(function (o) {
+        o.setAttribute("aria-pressed", o.getAttribute("data-lens") === l ? "true" : "false");
+      });
+      if (l === "who") { open(schWrap); if (curScholar) open(schLine); }
+      else { shut(schWrap); shut(schLine); }
+      if (map) map.setLens(l);
+      drawLegend(l);
+    }
+
+    if (lensWrap) {
+      $$(".gl-lens-btn", lensWrap).forEach(function (btn) {
+        btn.addEventListener("click", function () { setLens(btn.getAttribute("data-lens")); });
+      });
+    }
+    setLens("run");
+
+    /* ---- the wave ---- */
+    var slider = $("#gl-wave"), yearOut = $("#gl-wave-year"), countOut = $("#gl-wave-count"), play = $("#gl-wave-play");
+    var raf = null;
+
+    function setYear(y) {
+      y = Math.round(y);
+      if (slider && Number(slider.value) !== y) slider.value = y;
+      if (yearOut) yearOut.value = String(y);
+      var n = listed.filter(function (u) { return u.y <= y; }).length;
+      if (countOut) countOut.textContent = n === 0 ? "none yet" : n === 1 ? "1 school" : n + " schools";
+      if (map) map.setYear(y);
+    }
+
+    function stop() {
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
+      if (play) play.textContent = "Play the wave";
+    }
+
+    if (slider) {
+      slider.addEventListener("input", function () { stop(); setYear(Number(slider.value)); });
+      setYear(Number(slider.value));
+    }
+
+    if (play) {
+      play.addEventListener("click", function () {
+        if (raf) { stop(); return; }
+        var Y0 = 1080, Y1 = 1420, RATE = 32;         // years per second
+        var t0 = null;
+        play.textContent = "Stop";
+        setYear(Y0);
+        function step(ts) {
+          if (t0 === null) t0 = ts;
+          var y = Y0 + (ts - t0) / 1000 * RATE;
+          if (y >= Y1) { setYear(Y1); stop(); return; }
+          setYear(y);
+          raf = requestAnimationFrame(step);
+        }
+        raf = requestAnimationFrame(step);
+      });
+    }
   })();
 
   /* ------------------------------------------------------ 8. comparison */

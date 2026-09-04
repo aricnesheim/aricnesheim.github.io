@@ -159,6 +159,44 @@ The closing questions are CSN's own discussion prompts from the Week 1 lesson
 plans, put into student-facing wording. Keep both halves when editing: cutting
 the hard facts breaks the curriculum guideline, and so does cutting the gains.
 
+## The Guilds page (History)
+
+`history-guilds.html` is the Unit 1 click-through on the guilds, linked from
+the History page. Four files:
+
+- `history-guilds.html` — the shell and all of the prose
+- `history-guilds.css` — scoped `.gl-*` styling
+- `history-guilds.js` — the widgets (blacksmith scene, four-types quiz, the
+  ladder, the rules toggle, the universities map, the union comparison, the
+  discussion cards). All the content those widgets show lives at the top of
+  the section that draws it.
+- `history-guilds-geo.js` — **generated**, do not hand-edit
+
+**The universities map** (section 7) puts CSN's proliferation list on one
+Lambert frame of Latin Christendom: the fifteen schools from Bologna 1088 to
+St Andrews 1413, in CSN's order and with CSN's dates (Lecture Notes 3.0,
+"Medieval Universities"). Naples and Cologne are drawn hollow and labelled
+"not on our list"; they are there because Aquinas started at Naples and
+Albertus Magnus taught at Cologne. The `UNIS` table carries, per school, who
+ran it (a guild of scholars, a guild of masters, or a chartered foundation),
+the street language beside the Latin of the hall, what it was known for, and
+which of the scholar-saints were there. The `SCHOLARS` table is CSN's roster
+of nine, with CSN's dates and tags, and each one's road in order. Four
+lenses recolor the same dots; the year slider hides every school founded
+after the year shown, so the wave can be drawn by hand on a projector.
+
+**Regenerating the geometry.** Same builder directory as the Map Trainer,
+`2026-27/History 11/05 Sources & Handouts/Map Trainer/_build/`, script
+`build_universities_map.py`. Coastlines are Natural Earth (public domain).
+
+**Cache busting.** Bump the `?v=` query on the CSS, JS, and geo tags when any
+of them changes.
+
+**Content standard.** The seven liberal arts are named with CSN's own
+one-line framing for each half, and the music question is asked, not
+answered. The page carries dates, places, and names; the argument is for the
+room.
+
 ## Provenance note
 
 `files/history/shared-era-timeline.html` is Codex/GPT work product (from
