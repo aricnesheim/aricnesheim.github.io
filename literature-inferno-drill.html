@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inferno Drill · Literature 11 · Mr. Nesheim</title>
+<meta name="description" content="Practice for the Literature 11 reading quizzes on Dante's Inferno: for each place in Hell, the sin, the contrapasso, the souls Dante names, the guardian, and the cantos.">
+<meta property="og:title" content="Inferno Drill · Literature 11">
+<meta property="og:description" content="Practice for the Inferno reading quizzes: the sin, the contrapasso, the sinners, circle by circle.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aricnesheim.com/literature-inferno-drill.html">
+<meta property="og:image" content="https://aricnesheim.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2315803d'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20260903">
+<link rel="stylesheet" href="literature-inferno-drill.css?v=20260904-1">
+</head>
+<body data-page="literature" class="tool-page drill-page">
+<a class="skip-link" href="#drill">Skip to the drill</a>
+
+<header class="dr-header">
+  <div class="dr-header-inner">
+    <a class="dr-back" href="literature.html" aria-label="Back to Literature 11">← Literature 11</a>
+    <div class="dr-ident">
+      <p class="dr-eyebrow">Literature 11 · Dante, <em>Inferno</em></p>
+      <h1>Inferno Drill</h1>
+      <p class="dr-status" id="dr-status">Nine circles, thirty-four cantos.</p>
+    </div>
+    <div class="dr-toolbar" aria-label="Controls">
+      <button class="dr-btn" id="present-toggle" type="button" aria-pressed="false">Present</button>
+      <button class="dr-btn dr-btn-quiet" id="help-toggle" type="button" aria-expanded="false" aria-controls="keyboard-help">Keys</button>
+    </div>
+  </div>
+</header>
+
+<nav class="dr-rail-wrap" aria-label="Choose a set">
+  <div class="dr-rail" id="scope-rail"></div>
+</nav>
+
+<main class="dr-main">
+
+  <section class="dr-stage" id="drill" tabindex="-1" aria-label="The drill">
+    <div class="dr-stage-top">
+      <div class="dr-kinds" id="kinds" role="group" aria-label="What to drill"></div>
+      <button class="dr-btn dr-btn-quiet dr-present-exit" id="present-exit" type="button">Leave presentation</button>
+    </div>
+
+    <p class="dr-kicker" id="prompt-kicker"></p>
+    <p class="dr-prompt" id="prompt-text">Choose a set to begin.</p>
+    <p class="dr-prompt-sub" id="prompt-sub"></p>
+    <div class="dr-choices" id="choices" hidden></div>
+    <p class="dr-feedback" id="feedback" role="status" aria-live="polite"></p>
+    <div class="dr-actions">
+      <button class="dr-btn dr-btn-quiet" id="show-btn" type="button">Show me</button>
+      <button class="dr-btn dr-btn-primary" id="next-btn" type="button" hidden>Next</button>
+    </div>
+  </section>
+
+  <section class="dr-side" aria-label="Progress">
+    <div class="dr-progress-card">
+      <div class="dr-progress-head">
+        <p class="dr-mini-label">Progress</p>
+        <p class="dr-progress-count" id="progress-count">0 of 0 learned</p>
+      </div>
+      <div class="dr-bar" aria-hidden="true"><span id="progress-fill"></span></div>
+      <p class="dr-progress-note" id="progress-note"></p>
+      <button class="dr-btn dr-btn-quiet" id="reset-btn" type="button">Start this set over</button>
+    </div>
+
+    <div class="dr-about-card">
+      <p class="dr-mini-label">About this set</p>
+      <p class="dr-about-unit" id="about-unit"></p>
+      <p class="dr-about-note" id="about-note"></p>
+    </div>
+  </section>
+
+  <section class="dr-table-wrap" aria-labelledby="table-title">
+    <h2 id="table-title">The places in this set</h2>
+    <p class="dr-table-lead">The same facts as a table, for checking yourself after a round. It is not a substitute for the cantos.</p>
+    <div class="dr-table-scroll">
+      <table class="dr-table">
+        <thead>
+          <tr>
+            <th scope="col">Where</th>
+            <th scope="col">The sin</th>
+            <th scope="col">Cantos</th>
+            <th scope="col">Guardian</th>
+            <th scope="col">The punishment, in one line</th>
+            <th scope="col">Souls Dante names</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+    <p class="dr-table-note" id="table-note"></p>
+  </section>
+
+  <section class="dr-colophon">
+    <h2>What this drill asks</h2>
+    <p>Only what the poem supplies: for each place in Hell, the sin, the punishment as Dante describes it, the souls he names, the guardian, and the cantos. The facts are the ones on <a href="literature-inferno.html">the Map of Hell</a>. There are no summaries and no interpretations here. A wrong answer tells you the right one and which canto to reread.</p>
+    <p>Progress is saved in this browser only. Nothing is sent anywhere.</p>
+  </section>
+
+</main>
+
+<div class="dr-help" id="keyboard-help" role="dialog" aria-modal="false" aria-labelledby="help-title" hidden>
+  <div class="dr-help-card">
+    <div class="dr-help-heading">
+      <h2 id="help-title">Keyboard controls</h2>
+      <button class="dr-btn dr-btn-quiet" id="help-close" type="button">Close</button>
+    </div>
+    <dl class="dr-key-list">
+      <div><dt><kbd>1</kbd>–<kbd>4</kbd></dt><dd>Pick an answer</dd></div>
+      <div><dt><kbd>Enter</kbd></dt><dd>Next item</dd></div>
+      <div><dt><kbd>S</kbd></dt><dd>Show me the answer</dd></div>
+      <div><dt><kbd>P</kbd></dt><dd>Enter or leave presentation view</dd></div>
+      <div><dt><kbd>?</kbd></dt><dd>Open this help</dd></div>
+      <div><dt><kbd>Esc</kbd></dt><dd>Close help or leave presentation view</dd></div>
+    </dl>
+  </div>
+</div>
+
+<footer class="dr-footer">
+  <div class="footer-inner">
+    <span>Mr. Nesheim · aricnesheim.com</span>
+    <span><a href="literature.html">Back to Literature 11</a></span>
+  </div>
+</footer>
+
+<script src="literature-inferno-data.js?v=20260904-1" defer></script>
+<script src="literature-inferno-drill.js?v=20260904-1" defer></script>
+</body>
+</html>

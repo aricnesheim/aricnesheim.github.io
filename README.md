@@ -6,6 +6,14 @@ This folder IS the website. The main pages are:
 - `history.html`, `theology.html`, `literature.html`, `choir.html` — one page per class
 - `year.html` — interactive four-course calendar for students and families
 - `contact.html`, `contact.js` — the Contact page and its email composer
+- `404.html` — the branded not-found page
+- History tools: `history-maps.html` (Map Trainer), `history-crusades.html`,
+  `history-clari.html` (Clari & the 4th Crusade), `history-ab.html` (Before &
+  After), `history-guilds.html` (Guilds); each is described below
+- Literature tools: `literature-inferno.html` (the Map of Hell),
+  `literature-inferno-drill.html` (the Inferno Drill),
+  `literature-simile-essay.html` (the Super Simile Essay assignment page)
+- Theology: `theology-reading-companion.html` (Source: Codex/GPT, see below)
 - `style.css` — all the design (Fraunces + Inter, one accent color per class)
 - `year.css`, `year.js` — layout and interaction for the year map
 - `player.js` — the choir practice player and score viewer
@@ -59,6 +67,35 @@ superseded; do not take dates from it.
 
 **Cache busting.** The `?v=` query on the CSS and JS tags must be bumped when
 either file changes, or browsers will keep the old copy.
+
+## The Inferno Drill (Literature)
+
+`literature-inferno-drill.html` is the quiz-prep drill for the *Inferno*
+reading quizzes, linked from the Literature page beside the Map of Hell.
+Three files:
+
+- `literature-inferno-drill.html` — the shell
+- `literature-inferno-drill.css` — scoped `.dr-*` styling, including the
+  presentation view
+- `literature-inferno-drill.js` — builds the question pool and runs the drill
+
+It has **no content file of its own**: every question is generated from
+`literature-inferno-data.js`, the Map of Hell's data, so the two can never
+disagree and the drill never says more than the poem supplies. The places are
+the neutrals at the gate, Circles I to VI, Circle VII and its three rings,
+Circle VIII and its ten ditches, Circle IX and its four rounds. Six kinds of
+question: the sin, the contrapasso (first sentence of the punishment), the
+sinners (each named soul), the guardian, which circle, and the cantos. A wrong
+answer shows the right one and names the canto to reread; there is no
+explanation.
+
+The sets are the three reading quizzes (dates in the `QUIZZES` table at the top
+of the JS: update them when a quiz moves), "Read so far" (from the Map of
+Hell's `schedule` array), and all of Hell. The drill is the Map Trainer's
+Leitner box; progress is per set in `localStorage` under `l11inferno:v1:`.
+
+**Cache busting.** Bump the `?v=` query on the CSS, JS, and data tags when
+any of them changes.
 
 ## The Map Trainer (History)
 
@@ -285,10 +322,14 @@ Avoid WAV for real pieces; the files are about ten times larger.
 `audio/demo/` and `scores/demo/` are placeholders for testing the player.
 Delete the demo card from `choir.html` once real pieces exist.
 
-## Going live (one-time setup, not done yet)
+## How publishing works
 
-The domain aricnesheim.com is registered at Squarespace. Plan: host these files
-free on GitHub Pages and point the domain at it from Squarespace's DNS settings.
-Claude walks Aric through this when ready. After that, "publishing" means
-Claude pushes this folder to GitHub; changes appear on the site in about a
-minute.
+The site has been live at https://aricnesheim.com since August 18, 2026:
+GitHub Pages serves this repo (`aricnesheim/aricnesheim.github.io`, branch
+`main`), `CNAME` holds the domain, and the Squarespace DNS points at GitHub
+(four A records plus the `www` CNAME; HTTPS enforced). "Publishing" means
+committing in this folder and pushing; the site updates in about a minute.
+
+Stage files by name, never `git add -A`: the working tree also holds
+Codex/GPT work in progress that is not meant to be published yet (see the
+provenance note above).

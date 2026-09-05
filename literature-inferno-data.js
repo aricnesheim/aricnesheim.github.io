@@ -532,7 +532,8 @@ window.INFERNO_DATA = (function () {
    * Which cantos are in hand by which class day, taken from the adopted
    * Rhythm B Scope and Sequence (reading days Tue/Thu, discussion Mon/Wed/Fri).
    * `through` is the highest canto the class has read by the end of that date.
-   * Update this when the schedule re-flows.
+   * Update this when the schedule re-flows. Re-laid Sep 4, 2026 after the
+   * Sep 2 one-week shift (quiz on I–XIII moved to Mon Sep 14).
    */
   var schedule = [
     { date: '2026-08-26', through: 0 },
@@ -541,20 +542,25 @@ window.INFERNO_DATA = (function () {
     { date: '2026-09-01', through: 6 },
     { date: '2026-09-02', through: 8 },
     { date: '2026-09-03', through: 9 },
-    { date: '2026-09-04', through: 11 },
-    { date: '2026-09-08', through: 13 },
-    { date: '2026-09-09', through: 15 },
-    { date: '2026-09-10', through: 15 },
-    { date: '2026-09-11', through: 17 },
-    { date: '2026-09-14', through: 20 },
-    { date: '2026-09-15', through: 20 },
-    { date: '2026-09-16', through: 23 },
-    { date: '2026-09-17', through: 23 },
-    { date: '2026-09-18', through: 25 },
-    { date: '2026-09-21', through: 29 },
-    { date: '2026-09-22', through: 29 },
-    { date: '2026-09-23', through: 33 },
-    { date: '2026-09-24', through: 34 }
+    { date: '2026-09-04', through: 9 },
+    { date: '2026-09-08', through: 11 },
+    { date: '2026-09-09', through: 11 },
+    { date: '2026-09-10', through: 13 },
+    { date: '2026-09-11', through: 13 },
+    { date: '2026-09-14', through: 13 },
+    { date: '2026-09-15', through: 15 },
+    { date: '2026-09-16', through: 15 },
+    { date: '2026-09-17', through: 16 },
+    { date: '2026-09-18', through: 17 },
+    { date: '2026-09-21', through: 20 },
+    { date: '2026-09-22', through: 21 },
+    { date: '2026-09-23', through: 23 },
+    { date: '2026-09-24', through: 24 },
+    { date: '2026-09-25', through: 25 },
+    { date: '2026-09-28', through: 29 },
+    { date: '2026-09-29', through: 30 },
+    { date: '2026-09-30', through: 33 },
+    { date: '2026-10-01', through: 34 }
   ];
 
   return {
