@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · Mr. Nesheim</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=20260905">
+<link rel="stylesheet" href="admin.css?v=20260905">
+</head>
+<body data-page="admin">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="../index.html" aria-label="Mr. Nesheim, home"><img src="../files/an-logo.png" alt="Mr. Nesheim" width="515" height="308"></a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../history.html">History<span class="nav-tail"> 11</span></a>
+      <a href="../theology.html">Theology<span class="nav-tail"> 10</span></a>
+      <a href="../literature.html"><span class="nav-long">Literature 11</span><span class="nav-short">Lit</span></a>
+      <a href="../choir.html">Choir</a>
+      <a href="../year.html">Calendar</a>
+      <a href="./" aria-current="page">Admin</a>
+    </div>
+  </nav>
+</header>
+
+<main class="adm">
+
+  <section id="lock" class="card lock">
+    <p class="eyebrow">Mr. Nesheim · private</p>
+    <h1>Admin</h1>
+    <p class="lead">Lesson plans, the day's bells, visitor stats, and teacher tools. Everything here is stored encrypted and decrypted in your browser. Nothing is sent anywhere.</p>
+    <form id="lockForm" autocomplete="off">
+      <label for="pass">Passphrase</label>
+      <input id="pass" type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" required>
+      <label class="remember"><input id="remember" type="checkbox" checked> Remember on this device</label>
+      <button id="unlockBtn" class="btn primary" type="submit">Unlock</button>
+      <p id="lockMsg" class="lock-msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <div class="adm-top">
+      <div>
+        <p class="eyebrow">Mr. Nesheim · private</p>
+        <h1>Admin</h1>
+        <p id="builtLine" class="adm-built"></p>
+      </div>
+      <button id="lockBtn" class="btn" type="button">Lock</button>
+    </div>
+
+    <nav class="adm-tabs" role="tablist" aria-label="Admin sections">
+      <button role="tab" data-view="today" aria-selected="true">Today</button>
+      <button role="tab" data-view="plans" aria-selected="false">Plans</button>
+      <button role="tab" data-view="stats" aria-selected="false">Stats</button>
+      <button role="tab" data-view="tools" aria-selected="false">Tools</button>
+    </nav>
+
+    <section id="v-today" class="adm-view" role="tabpanel"></section>
+    <section id="v-plans" class="adm-view" role="tabpanel" hidden></section>
+    <section id="v-stats" class="adm-view" role="tabpanel" hidden></section>
+    <section id="v-tools" class="adm-view" role="tabpanel" hidden></section>
+  </div>
+
+  <noscript><p class="card">This page needs JavaScript: it decrypts everything locally.</p></noscript>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Mr. Nesheim · aricnesheim.com · <a href="/admin/">Admin</a></span>
+    <span>Private page. Not indexed.</span>
+  </div>
+</footer>
+
+<script src="admin.js?v=20260905" defer></script>
+</body>
+</html>

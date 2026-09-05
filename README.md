@@ -333,3 +333,46 @@ committing in this folder and pushing; the site updates in about a minute.
 Stage files by name, never `git add -A`: the working tree also holds
 Codex/GPT work in progress that is not meant to be published yet (see the
 provenance note above).
+
+## The Admin page (private)
+
+`admin/` is Aric's own corner: the daily play-by-play lesson plans with an
+archive of every day that has one, the week sheets and choir bundles, his
+notes, the bells and duties for the day, visitor stats, and a few teacher
+tools (late-work calculator, school-day counter, key dates, Educate
+categories, quick links, site health). Footer link on every page, or
+aricnesheim.com/admin/ directly. `robots.txt` and a `noindex` meta keep it out
+of search engines.
+
+**How it is private on a public, static site.** There is no server to check a
+password, so everything private is encrypted before it is committed.
+`admin/vault/` holds only ciphertext: `index.json` (config, the list of days,
+calendar facts) plus one file per day, week, and reference document. Each file
+is AES-256-GCM with a key derived from the passphrase by PBKDF2-SHA256
+(600,000 iterations). `admin.js` derives the key in the browser (Web Crypto)
+and decrypts on demand. "Remember on this device" keeps the derived key, never
+the passphrase, in localStorage; Lock forgets it. Nothing is sent anywhere.
+
+**Sources and the build live outside this repo**, in
+`Planning/_tools/website-admin-build.py` (finds every dated plan under each
+course's `03 Lesson Prep`, the week sheets, the archived closed weeks, and
+`Planning/Admin Notes/*.md`; converts docx and Markdown to HTML) and
+`website-admin-crypt.js` (the encryption; passphrase in the macOS Keychain,
+service `aricnesheim-admin`). The private config, `admin-config.json`, carries
+the links, bells, duties, key dates, grading rules, and the GoatCounter code
+and token. Only changed days are re-encrypted on each build, so commits stay
+small. Never copy any of those files into this repo.
+
+**Publishing:** build, then stage `admin/` by name, commit, push. The vault
+files are opaque, so diffs are meaningless; the commit message says what
+changed.
+
+**Visitor stats** use GoatCounter (`analytics.js` on every page; a no-op until
+the site code is filled in). No cookies, no personal data, no consent banner.
+The dashboard is embedded on the Admin page with a secret token, and the
+Stats tab has a switch that stops Aric's own visits from counting.
+
+**Never in the vault:** gradebook data, rosters, behavior notes, the Daily Log.
+Encryption keeps outsiders out of a public repo; it is not a FERPA-grade
+system, so student records stay off the site entirely. The build prints a
+warning when a plan mentions a student by name.

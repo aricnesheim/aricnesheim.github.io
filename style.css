@@ -637,6 +637,9 @@ footer {
   background: var(--bg-soft);
 }
 
+.footer-inner .admin-link { color: var(--muted); text-decoration: none; }
+.footer-inner .admin-link:hover { color: var(--accent); text-decoration: underline; }
+
 .footer-inner {
   max-width: 860px;
   margin: 0 auto;
