@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04",
+  "updated": "2026-09-08",
   "classes": {
     "history": {
       "name": "History 11",
@@ -63,12 +63,8 @@
       "name": "Literature 11",
       "page": [
         {
-          "label": "Due Tuesday, September 8",
-          "text": "Finish Canto IX and read Cantos X and XI, annotated (the sin, the contrapasso, the sinners). Tuesday is a reading day: the comprehension questions on X and XI are done in class, open book."
-        },
-        {
           "label": "Due Wednesday, September 9",
-          "text": "One discussion question on Cantos IX to XI."
+          "text": "Read through Canto XI. Annotate X and XI: the sin, the contrapasso, the sinners. Wednesday is a written period: the comprehension questions on X and XI are done in class, open book, and then we start Canto XII. Bring one written discussion question on Cantos IX to XI."
         },
         {
           "label": "Thursday and Friday, September 10 and 11",
@@ -79,18 +75,14 @@
           "text": "Quiz on Cantos I to XIII: for every circle, the sin, the contrapasso, the sinners. Look back over your annotations this weekend."
         },
         {
-          "label": "Super Simile paragraph 1",
-          "text": "Collected Friday, September 4. If you were absent Thursday, you write it at the start of class Tuesday."
+          "label": "Super Simile",
+          "text": "Paragraph 1 is in your folder. Paragraph 2, the Harpies, is written in class Friday, September 11."
         }
       ],
       "glance": [
         {
-          "strong": "Due Tue, Sep 8",
-          "text": "finish Canto IX; read X and XI, annotated. Questions on X and XI in class."
-        },
-        {
           "strong": "Due Wed, Sep 9",
-          "text": "one discussion question on Cantos IX to XI."
+          "text": "read through Canto XI; the questions on X and XI in class, open book; one discussion question on IX to XI."
         },
         {
           "strong": "Mon, Sep 14",
@@ -104,7 +96,7 @@
       "glance": [
         {
           "strong": "",
-          "text": "No school Monday. Next rehearsal Tuesday, September 8; sections are announced then. Friday, September 11 is the first all-school Friday sing; the choir leads it."
+          "text": "Sections are announced at Tuesday's rehearsal. Next rehearsal Thursday, September 10 at 2:03. Friday, September 11 is the first all-school Friday sing; the choir leads it."
         }
       ]
     }

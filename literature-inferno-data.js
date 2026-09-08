@@ -533,7 +533,8 @@ window.INFERNO_DATA = (function () {
    * Rhythm B Scope and Sequence (reading days Tue/Thu, discussion Mon/Wed/Fri).
    * `through` is the highest canto the class has read by the end of that date.
    * Update this when the schedule re-flows. Re-laid Sep 4, 2026 after the
-   * Sep 2 one-week shift (quiz on I–XIII moved to Mon Sep 14).
+   * Sep 2 one-week shift (quiz on I–XIII moved to Mon Sep 14); Sep 8 = through IX
+   * (video day; X–XI read for Wed Sep 9).
    */
   var schedule = [
     { date: '2026-08-26', through: 0 },
@@ -543,7 +544,7 @@ window.INFERNO_DATA = (function () {
     { date: '2026-09-02', through: 8 },
     { date: '2026-09-03', through: 9 },
     { date: '2026-09-04', through: 9 },
-    { date: '2026-09-08', through: 11 },
+    { date: '2026-09-08', through: 9 },
     { date: '2026-09-09', through: 11 },
     { date: '2026-09-10', through: 13 },
     { date: '2026-09-11', through: 13 },
