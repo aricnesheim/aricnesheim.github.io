@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08",
+  "updated": "2026-09-09",
   "classes": {
     "history": {
       "name": "History 11",
@@ -64,7 +64,11 @@
       "page": [
         {
           "label": "Due Wednesday, September 9",
-          "text": "Read through Canto XI. Annotate X and XI: the sin, the contrapasso, the sinners. Wednesday is a written period: the comprehension questions on X and XI are done in class, open book, and then we start Canto XII. Bring one written discussion question on Cantos IX to XI."
+          "text": "Read through Canto XI. Annotate X and XI: the sin, the contrapasso, the sinners. Wednesday is the quiz through Canto XI: the comprehension questions on X and XI, in class, open book, then we start Canto XII."
+        },
+        {
+          "label": "Due Thursday, September 10",
+          "text": "One written discussion question on Cantos IX to XI, assigned Wednesday, at the door Thursday."
         },
         {
           "label": "Thursday and Friday, September 10 and 11",
@@ -82,7 +86,11 @@
       "glance": [
         {
           "strong": "Due Wed, Sep 9",
-          "text": "read through Canto XI; the questions on X and XI in class, open book; one discussion question on IX to XI."
+          "text": "read through Canto XI; the quiz through XI (the questions on X and XI, open book) in class."
+        },
+        {
+          "strong": "Due Thu, Sep 10",
+          "text": "one discussion question on Cantos IX to XI."
         },
         {
           "strong": "Mon, Sep 14",
@@ -96,7 +104,7 @@
       "glance": [
         {
           "strong": "",
-          "text": "Sections are announced at Tuesday's rehearsal. Next rehearsal Thursday, September 10 at 2:03. Friday, September 11 is the first all-school Friday sing; the choir leads it."
+          "text": "Sections were announced Tuesday. Next rehearsal Thursday, September 10, last period. Friday, September 11 is the first all-school Friday sing; the choir leads it."
         }
       ]
     }
