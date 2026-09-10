@@ -133,7 +133,7 @@
     { y: 722, t: "Covadonga", base: "and",
       set: [["ast", u("astcan")], ["bas", u("basq")]],
       lab: { and: "al-Andalus: the Umayyad conquest", ast: "Asturias under Pelayo" },
-      sites: [["covadonga", "Covadonga, c. 722"]],
+      sites: [["covadonga", "Covadonga, c. 722", 46]],
       note: "Pelayo, captured once and escaped, is elected war chief by the men who fled into the mountains. About 722 he beats a punitive column at Covadonga. The traditional first day of the Reconquista." },
     { y: 750, t: "Alfonso I, and the empty frontier", base: "and",
       set: [["ast", u("astcan", "galicia", "es-leon")], ["bas", u("basq")]],
@@ -232,6 +232,42 @@
     });
     svg.appendChild(gUnits);
 
+
+    /* ---- mountain ranges: a soft band plus a chain of peaks ---- */
+    var gRanges = el("g", { class: "sp-ranges" });
+    svg.appendChild(gRanges);
+    var rangeEls = [];
+    function curveThrough(pts) {
+      if (pts.length < 2) return "";
+      var d = "M" + pts[0][0] + " " + pts[0][1];
+      for (var i = 0; i < pts.length - 1; i++) {
+        var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || pts[i + 1];
+        d += "C" + (p1[0] + (p2[0] - p0[0]) / 6).toFixed(1) + " " + (p1[1] + (p2[1] - p0[1]) / 6).toFixed(1) + "," +
+             (p2[0] - (p3[0] - p1[0]) / 6).toFixed(1) + " " + (p2[1] - (p3[1] - p1[1]) / 6).toFixed(1) + "," + p2[0] + " " + p2[1];
+      }
+      return d;
+    }
+    Object.keys(GEO.ranges || {}).forEach(function (k) {
+      var pts = GEO.ranges[k];
+      var band = el("path", { d: curveThrough(pts), class: "sp-range-band", "vector-effect": "non-scaling-stroke" });
+      gRanges.appendChild(band);
+      // peaks: one at each vertex and each midpoint
+      var peaks = [];
+      for (var i = 0; i < pts.length; i++) {
+        peaks.push(pts[i]);
+        if (i < pts.length - 1) peaks.push([(pts[i][0] + pts[i + 1][0]) / 2, (pts[i][1] + pts[i + 1][1]) / 2]);
+      }
+      var pk = el("path", { class: "sp-range-peaks", "vector-effect": "non-scaling-stroke" });
+      pk._peaks = peaks;
+      gRanges.appendChild(pk);
+      rangeEls.push(pk);
+    });
+    function peakPath(peaks, s) {
+      return peaks.map(function (p) {
+        return "M" + (p[0] - s).toFixed(1) + " " + (p[1] + s * 0.7).toFixed(1) + "L" + p[0].toFixed(1) + " " + (p[1] - s).toFixed(1) + "L" + (p[0] + s).toFixed(1) + " " + (p[1] + s * 0.7).toFixed(1);
+      }).join("");
+    }
+
     var gSites = el("g", { class: "sp-sites" });
     svg.appendChild(gSites);
 
@@ -270,7 +306,7 @@
       [["Spain", "es-toledo", 0, -20, "big"], ["Portugal", "pt-viseu"], ["Navarre", "es-navarra", 0, 18]]
     ];
     var GLAB = [
-      ["Asturias", "es-asturias", "reg", 0, -14], ["Galicia", "es-lugo", "reg", 0, 14], ["Pyrenees", "lbl-pyrenees", "reg", 0, 0],
+      ["Asturias", "es-asturias", "reg", 0, -14], ["Galicia", "es-lugo", "reg", 0, 14], ["Pyrenees", "lbl-pyrenees", "reg", 0, -9], ["Cantabrian Mountains", "lbl-cantabrian", "reg", 0, 0],
       ["Bay of Biscay", "lbl-biscay", "sea", 0, 0], ["Atlantic Ocean", "lbl-atlantic", "sea", 0, 0], ["Mediterranean Sea", "lbl-med", "sea", 0, 0],
       ["Strait of Gibraltar", "lbl-strait", "sea", 0, 0], ["France", "lbl-france", "land", 0, 0], ["Africa", "lbl-africa", "land", 0, 0]
     ];
@@ -322,7 +358,7 @@
       if (legend) legend.innerHTML = order.filter(function (k) { return present[k]; }).map(function (k) {
         var name = (st.lab && st.lab[k]) || OWN[k].n;
         return '<span><i style="background:' + OWN[k].c + '"></i>' + name + "</span>";
-      }).join("") + '<span class="gl-legend-note">Colours are a teaching approximation, drawn on today’s provinces. Frontiers were wide empty zones, not lines.</span>';
+      }).join("") + '<span><i class="sp-legend-mtn"></i>Mountains: the Pyrenees, and the Cantabrian range above Covadonga</span><span class="gl-legend-note">Colours are a teaching approximation, drawn on today’s provinces. Frontiers were wide empty zones, not lines.</span>';
 
       // sites
       siteEls.forEach(function (s) { if (s.parentNode) s.parentNode.removeChild(s); });
@@ -336,7 +372,7 @@
         g.appendChild(star); g.appendChild(t);
         gSites.appendChild(g);
         siteEls.push(g);
-        g._p = p; g._t = t; g._star = star;
+        g._p = p; g._t = t; g._star = star; g._dx = s[2] || 0;
       });
       drawLabels();
       tune();
@@ -371,6 +407,7 @@
         s.t.setAttribute("x", (s.p[0] + off[0] * uu * k).toFixed(1));
         s.t.setAttribute("y", (s.p[1] + off[1] * uu * k).toFixed(1));
       }
+      rangeEls.forEach(function (pk) { pk.setAttribute("d", peakPath(pk._peaks, 5.5 * uu * k)); });
       labelEls.forEach(function (t) {
         var fs = (t._big ? 17 : t._k ? 13 : 11.5) * uu * k;
         t.setAttribute("font-size", fs.toFixed(2));
@@ -385,7 +422,7 @@
         g._t.setAttribute("font-size", fs.toFixed(2));
         g._t.setAttribute("stroke-width", (3.2 * uu).toFixed(2));
         g._t.setAttribute("text-anchor", "middle");
-        g._t.setAttribute("x", g._p[0].toFixed(1));
+        g._t.setAttribute("x", (g._p[0] + g._dx * uu * k).toFixed(1));
         g._t.setAttribute("y", (g._p[1] - r - 4 * uu * k).toFixed(1));
       });
     }

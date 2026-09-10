@@ -244,3 +244,8 @@
 .sp-glab { font-style: italic; font-weight: 500; fill: #4b5563; }
 .sp-glab.sea { fill: #3b5b7a; }
 .sp-glab.land { font-style: normal; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; fill: #8b8f98; }
+
+/* ---------- mountain ranges ---------- */
+.sp-range-band { fill: none; stroke: #5b3a1e; stroke-width: 9; stroke-opacity: 0.28; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.sp-range-peaks { fill: none; stroke: #3f2a17; stroke-width: 1.3; stroke-linejoin: round; stroke-linecap: round; opacity: 0.85; pointer-events: none; }
+.gl-maplegend i.sp-legend-mtn { background: #8b6a4d; border-color: #3f2a17; box-shadow: none; border-radius: 2px; }
