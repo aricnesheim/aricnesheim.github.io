@@ -133,7 +133,7 @@
     { y: 722, t: "Covadonga", base: "and",
       set: [["ast", u("astcan")], ["bas", u("basq")]],
       lab: { and: "al-Andalus: the Umayyad conquest", ast: "Asturias under Pelayo" },
-      sites: [["covadonga", "Covadonga, c. 722", 46]],
+      sites: [["covadonga", "Covadonga, c. 722", 0, 34]],
       note: "Pelayo, captured once and escaped, is elected war chief by the men who fled into the mountains. About 722 he beats a punitive column at Covadonga. The traditional first day of the Reconquista." },
     { y: 750, t: "Alfonso I, and the empty frontier", base: "and",
       set: [["ast", u("astcan", "galicia", "es-leon")], ["bas", u("basq")]],
@@ -372,7 +372,7 @@
         g.appendChild(star); g.appendChild(t);
         gSites.appendChild(g);
         siteEls.push(g);
-        g._p = p; g._t = t; g._star = star; g._dx = s[2] || 0;
+        g._p = p; g._t = t; g._star = star; g._dx = s[2] || 0; g._dy = s[3] || 0;
       });
       drawLabels();
       tune();
@@ -423,7 +423,7 @@
         g._t.setAttribute("stroke-width", (3.2 * uu).toFixed(2));
         g._t.setAttribute("text-anchor", "middle");
         g._t.setAttribute("x", (g._p[0] + g._dx * uu * k).toFixed(1));
-        g._t.setAttribute("y", (g._p[1] - r - 4 * uu * k).toFixed(1));
+        g._t.setAttribute("y", (g._dy ? g._p[1] + g._dy * uu * k : g._p[1] - r - 4 * uu * k).toFixed(1));
       });
     }
 
