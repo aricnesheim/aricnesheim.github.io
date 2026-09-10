@@ -403,10 +403,10 @@
       street: "Czech and German, both. The town spoke both.",
       lang: "Czech, German",
       known: "All four faculties. It was built as a complete copy of Paris, by an emperor who had studied there.",
-      names: "Jan Hus was its rector in 1409. His burning in 1415 set off the Hussite wars. Remember his name when we reach the Reformation." },
+      names: "Jan Hus was its rector in 1409. His burning in 1415 set off the Hussite wars. His name comes back in the Reformation." },
     { id: "krakow", n: "Jagiellonian", m: "Krak\u00f3w", y: 1364, run: "charter", field: "law",
       first: "First in Eastern Europe",
-      d: "In Krak&oacute;w. We count it as the first university in Eastern Europe. Copernicus studied here.",
+      d: "In Krak&oacute;w. It counts as the first university in Eastern Europe. Copernicus studied here.",
       who: "Founded by King Casimir III the Great in 1364 with chairs of law, medicine, and the arts, and no theology. Refounded in 1400 by King W&#322;adys&#322;aw Jagie&#322;&#322;o with the jewels Queen Jadwiga left it, which is why it carries the Jagiellonian name.",
       street: "Polish, with German in the merchant town.",
       lang: "Polish",
@@ -430,7 +430,7 @@
       names: "Luther defended his theses here, in the Heidelberg Disputation of 1518." },
     { id: "standrews", n: "St Andrews", y: 1413, run: "charter", field: "arts",
       first: "First university in Scotland",
-      d: "In Scotland, and the last stop on our list. Three hundred and twenty-five years after Bologna, the model has crossed the whole of Europe.",
+      d: "In Scotland, and the last stop on the list. Three hundred and twenty-five years after Bologna, the model has crossed the whole of Europe.",
       who: "Founded by Bishop Henry Wardlaw between 1411 and 1413, with bulls from Benedict XIII, the pope at Avignon whom Scotland still obeyed. Scots had been studying at Oxford and Paris; the wars with England had made Oxford impossible.",
       street: "Scots, the northern English of the Lowlands. Gaelic in the Highlands.",
       lang: "Scots",
@@ -438,14 +438,14 @@
       names: "" },
     /* not on CSN's list */
     { id: "naples", n: "Naples", y: 1224, also: true, run: "charter", field: "law",
-      d: "Not on our list, but on the map because Aquinas started here.",
+      d: "Not on the list, but on the map because Aquinas started here.",
       who: "Founded by Emperor Frederick II by decree, with no pope and no guild, to train officials for his kingdom. The first state university.",
       street: "Italian, in the Neapolitan speech of the south.",
       lang: "Italian",
       known: "Law, for the emperor's civil service.",
       names: "Thomas Aquinas was sent here at about fourteen, in 1239, and met the Dominicans here. His family locked him in a castle for a year to stop him joining them." },
     { id: "cologne", n: "Cologne", y: 1248, also: true, run: "charter", field: "theo",
-      d: "Not a university until 1388, and not on our list. On the map because Albertus Magnus taught here with Aquinas beside him.",
+      d: "Not a university until 1388, and not on the list. On the map because Albertus Magnus taught here with Aquinas beside him.",
       who: "From 1248 the Dominicans ran a <i>studium generale</i> here, a school of the order open to friars from everywhere. The city got a university of its own in 1388.",
       street: "German.",
       lang: "German",
@@ -746,7 +746,7 @@
         items.push('<span><i></i>Where he was</span>');
         items.push('<span><i style="opacity:0.28"></i>Everywhere else</span>');
       }
-      items.push('<span><i class="also"></i>Not on our list</span>');
+      items.push('<span><i class="also"></i>Not on the list</span>');
       items.push('<span class="gl-legend-note">' + LENS_NOTE[lens] + "</span>");
       legend.innerHTML = items.join("");
     }
@@ -919,7 +919,7 @@
       q: "Should the people already doing a job get to decide who else may do it?",
       p: "You probably said yes for surgeons. Barbers and hair braiders need a license in most states too. Where exactly is the line, and what makes it the line? Notice that you are now having a live argument about American law, using a thirteenth-century institution as the test case." },
     { star: false,
-      q: "Our blacksmith could not get paid. Who protects a worker today when someone with more power refuses to pay them?",
+      q: "The blacksmith in section 1 could not get paid. Who protects a worker today when someone with more power refuses to pay them?",
       p: "Name the actual institution, not the idea. Then name what it costs to use it, how long it takes, and what you need in writing beforehand. Would a man with four children and an empty purse use it?" },
     { star: false,
       q: "The guild set the price of bread. Who sets it now, and is that better?",

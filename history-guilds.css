@@ -550,7 +550,7 @@ h2 .gl-num {
 }
 .gl-dq-card.starred { border-left: 4px solid var(--accent); }
 .gl-dq-card.starred > p::before {
-  content: "Bring an answer to this one";
+  content: "Start with this one";
   display: block;
   font-size: 0.7rem;
   font-weight: 700;

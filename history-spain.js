@@ -148,7 +148,7 @@
     { y: 900, t: "The push to the Duero", base: "and",
       set: [["ast", u("astcan", "galicia", "es-leon", "es-zamora", "es-palencia", "es-burgos", "es-alava", "ptN")], ["bas", u("basq")], ["nav", ["es-navarra"]], ["ara", ["es-huesca"]], ["cat", u("cat")]],
       lab: { and: "Emirate of Córdoba (a caliphate from 929)", ast: "Asturias, soon León; Castile is its frontier county" },
-      sites: [["burgos", "Burgos founded, 884"], ["porto", "Porto, 868"]],
+      sites: [["porto", "Porto, 868"]],
       note: "Alfonso III the Great (866–910) pushes the frontier to the Duero: Porto (868), Burgos (884), Zamora (893). Castile begins as the county of castles on the eastern frontier; Portugal as the county of Portucale in the west (founded by Vímara Peres in the 860s). After Alfonso's death the kingdom is re-centred on the city of León (924)." },
     { y: 1000, t: "The Caliphate at its height", base: "and",
       set: [["leon", u("astcan", "galicia", "es-leon", "es-zamora", "es-palencia", "es-valladolid", "ptN")], ["cas", ["es-burgos"]], ["nav", u("es-navarra", "es-la-rioja", "basq", "es-alava")], ["ara", ["es-huesca"]], ["cat", u("cat")]],
@@ -195,7 +195,7 @@
     ["lisbon", "Lisbon"], ["porto", "Porto"], ["coimbra", "Coimbra"]
   ];
   var OFF = {
-    oviedo: [9, 5], leon: [9, 4], burgos: [9, 4], santiago: [0, -9], pamplona: [9, -3],
+    oviedo: [9, -4], leon: [9, 4], burgos: [9, 4], santiago: [0, 15], pamplona: [9, -3],
     zaragoza: [9, 4], barcelona: [9, 4], toledo: [9, 4], valencia: [9, 4], denia: [9, 4],
     murcia: [9, 4], almeria: [9, 9], granada: [9, 4], cordoba: [9, 4], sevilla: [-9, 4],
     badajoz: [-9, -6], lisbon: [-9, 4], porto: [-9, 4], coimbra: [9, 4]
@@ -256,13 +256,13 @@
 
     /* ---- names on the map: kingdom labels per era, fixed geography always ---- */
     var KLAB = [
-      [["Asturias", "es-asturias"], ["al-Andalus", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
-      [["Asturias", "es-asturias"], ["al-Andalus", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
-      [["Asturias", "es-asturias"], ["al-Andalus", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
-      [["Asturias", "es-asturias"], ["Pamplona", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Spanish March", "es-barcelona", 0, -14], ["Emirate of Córdoba", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
-      [["Asturias-León", "es-leon", 0, 10], ["Castile", "es-burgos", 0, 10], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Emirate of Córdoba", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
-      [["León", "es-leon", 0, 10], ["Castile", "es-burgos", 0, 10], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Caliphate of Córdoba", "es-ciudad-real", 0, 0, "big"]],
-      [["León", "es-leon", 0, 10], ["Castile", "es-burgos", 0, 10], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Taifa kingdoms", "es-ciudad-real", 0, 0, "big"]],
+      [["Asturias", "es-asturias", 0, 17], ["al-Andalus", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
+      [["Asturias", "es-asturias", 0, 17], ["al-Andalus", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
+      [["Asturias", "es-asturias", 0, 17], ["al-Andalus", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
+      [["Asturias", "es-asturias", 0, 17], ["Pamplona", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Spanish March", "es-barcelona", 0, -14], ["Emirate of Córdoba", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
+      [["Asturias-León", "es-zamora", 0, 0], ["Castile", "es-burgos", 0, -16], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Emirate of Córdoba", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
+      [["León", "es-leon", 0, 10], ["Castile", "es-burgos", 0, -16], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Caliphate of Córdoba", "es-ciudad-real", 0, 0, "big"]],
+      [["León", "es-leon", 0, 10], ["Castile", "es-burgos", 0, -16], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Taifa kingdoms", "es-ciudad-real", 0, 0, "big"]],
       [["León-Castile", "es-valladolid"], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Zaragoza (taifa)", "es-zaragoza", 0, -14], ["Almoravids", "es-albacete", 0, 0, "big"]],
       [["León-Castile", "es-valladolid"], ["Portugal", "pt-viseu"], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-zaragoza", 0, -14], ["Almohads", "es-albacete", 0, 0, "big"]],
       [["León", "es-leon", 0, 10], ["Castile", "es-valladolid", 0, 20], ["Portugal", "pt-viseu"], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-zaragoza", 0, -14], ["Almohads", "es-albacete", 0, 0, "big"]],
