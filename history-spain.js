@@ -149,7 +149,7 @@
       set: [["ast", u("astcan", "galicia", "es-leon", "es-zamora", "es-palencia", "es-burgos", "es-alava", "ptN")], ["bas", u("basq")], ["nav", ["es-navarra"]], ["ara", ["es-huesca"]], ["cat", u("cat")]],
       lab: { and: "Emirate of Córdoba (a caliphate from 929)", ast: "Asturias, soon León; Castile is its frontier county" },
       sites: [["burgos", "Burgos founded, 884"], ["porto", "Porto, 868"]],
-      note: "Alfonso III the Great (866–910) pushes the frontier to the Duero: Porto (868), Burgos (884), Zamora (893). Castile begins as the county of castles on the eastern frontier; Portugal as the county of Portucale in the west (CSN: founded by Vímara Peres in the 860s). After Alfonso's death the kingdom is re-centred on the city of León (924)." },
+      note: "Alfonso III the Great (866–910) pushes the frontier to the Duero: Porto (868), Burgos (884), Zamora (893). Castile begins as the county of castles on the eastern frontier; Portugal as the county of Portucale in the west (founded by Vímara Peres in the 860s). After Alfonso's death the kingdom is re-centred on the city of León (924)." },
     { y: 1000, t: "The Caliphate at its height", base: "and",
       set: [["leon", u("astcan", "galicia", "es-leon", "es-zamora", "es-palencia", "es-valladolid", "ptN")], ["cas", ["es-burgos"]], ["nav", u("es-navarra", "es-la-rioja", "basq", "es-alava")], ["ara", ["es-huesca"]], ["cat", u("cat")]],
       lab: { and: "Caliphate of Córdoba (929–1031)", cas: "County of Castile", ara: "County of Aragon", nav: "Navarre under Sancho III the Great" },
@@ -159,7 +159,7 @@
       set: [["leon", u("astcan", "galicia", "es-leon", "es-zamora", "ptN")], ["cas", u("es-burgos", "es-palencia", "es-valladolid", "es-soria")], ["nav", u("es-navarra", "es-la-rioja", "basq", "es-alava")], ["ara", ["es-huesca"]], ["cat", u("cat")]],
       lab: { tai: "Taifa kingdoms: Zaragoza, Toledo, Badajoz, Valencia, Denia, Murcia, Almería, Granada, Córdoba, Sevilla", cas: "Castile, a kingdom from 1035", ara: "Aragon, a kingdom from 1035" },
       sites: [["cordoba", "Caliphate collapses, 1031"]],
-      note: "In 1031 the Caliphate collapses into taifas, small rival emirates that hire Christian swords and pay Christian kings for protection. Sancho the Great's sons make Castile (Ferdinand I) and Aragon (Ramiro I) kingdoms in 1035. This is CSN's map of the two lists, and the Iberia El Cid is born into, about 1043." },
+      note: "In 1031 the Caliphate collapses into taifas, small rival emirates that hire Christian swords and pay Christian kings for protection. Sancho the Great's sons make Castile (Ferdinand I) and Aragon (Ramiro I) kingdoms in 1035. This is the Iberia of the two lists, and the one El Cid is born into, about 1043." },
     { y: 1090, t: "El Cid's world: Toledo falls, the Almoravids land", base: "alm",
       set: [["lc", u("astcan", "galicia", "es-leon", "duero", "meseta", "es-la-rioja", "es-alava", "ptN", "ptC")], ["nav", u("es-navarra", "basq")], ["ara", ["es-huesca"]], ["cat", u("cat")], ["tai", u("es-zaragoza", "es-teruel", "catS", "es-baleares")], ["cid", u("val")]],
       lab: { lc: "León and Castile under Alfonso VI", alm: "Almoravid al-Andalus (from 1086)", tai: "Taifa of Zaragoza, still independent; Dénia-Mallorca" },
@@ -195,7 +195,7 @@
     ["lisbon", "Lisbon"], ["porto", "Porto"], ["coimbra", "Coimbra"]
   ];
   var OFF = {
-    oviedo: [0, -9], leon: [9, 4], burgos: [9, 4], santiago: [0, -9], pamplona: [9, -3],
+    oviedo: [9, 5], leon: [9, 4], burgos: [9, 4], santiago: [0, -9], pamplona: [9, -3],
     zaragoza: [9, 4], barcelona: [9, 4], toledo: [9, 4], valencia: [9, 4], denia: [9, 4],
     murcia: [9, 4], almeria: [9, 9], granada: [9, 4], cordoba: [9, 4], sevilla: [-9, 4],
     badajoz: [-9, -6], lisbon: [-9, 4], porto: [-9, 4], coimbra: [9, 4]
@@ -253,6 +253,44 @@
     host.innerHTML = "";
     host.appendChild(svg);
 
+
+    /* ---- names on the map: kingdom labels per era, fixed geography always ---- */
+    var KLAB = [
+      [["Asturias", "es-asturias"], ["al-Andalus", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
+      [["Asturias", "es-asturias"], ["al-Andalus", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
+      [["Asturias", "es-asturias"], ["al-Andalus", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
+      [["Asturias", "es-asturias"], ["Pamplona", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Spanish March", "es-barcelona", 0, -14], ["Emirate of Córdoba", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
+      [["Asturias-León", "es-leon", 0, 10], ["Castile", "es-burgos", 0, 10], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Emirate of Córdoba", "es-ciudad-real", 0, 0, "big"], ["Basques", "es-bizkaia", 0, -14]],
+      [["León", "es-leon", 0, 10], ["Castile", "es-burgos", 0, 10], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Caliphate of Córdoba", "es-ciudad-real", 0, 0, "big"]],
+      [["León", "es-leon", 0, 10], ["Castile", "es-burgos", 0, 10], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Taifa kingdoms", "es-ciudad-real", 0, 0, "big"]],
+      [["León-Castile", "es-valladolid"], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-huesca", 0, -12], ["Barcelona", "es-barcelona", 0, -14], ["Zaragoza (taifa)", "es-zaragoza", 0, -14], ["Almoravids", "es-albacete", 0, 0, "big"]],
+      [["León-Castile", "es-valladolid"], ["Portugal", "pt-viseu"], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-zaragoza", 0, -14], ["Almohads", "es-albacete", 0, 0, "big"]],
+      [["León", "es-leon", 0, 10], ["Castile", "es-valladolid", 0, 20], ["Portugal", "pt-viseu"], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-zaragoza", 0, -14], ["Almohads", "es-albacete", 0, 0, "big"]],
+      [["Castile-León", "es-toledo", 0, -20], ["Portugal", "pt-viseu"], ["Navarre", "es-navarra", 0, 18], ["Aragon", "es-zaragoza", 0, -14], ["Granada", "es-granada", 0, 14]],
+      [["Spain", "es-toledo", 0, -20, "big"], ["Portugal", "pt-viseu"], ["Navarre", "es-navarra", 0, 18]]
+    ];
+    var GLAB = [
+      ["Asturias", "es-asturias", "reg", 0, -14], ["Galicia", "es-lugo", "reg", 0, 14], ["Pyrenees", "lbl-pyrenees", "reg", 0, 0],
+      ["Bay of Biscay", "lbl-biscay", "sea", 0, 0], ["Atlantic Ocean", "lbl-atlantic", "sea", 0, 0], ["Mediterranean Sea", "lbl-med", "sea", 0, 0],
+      ["Strait of Gibraltar", "lbl-strait", "sea", 0, 0], ["France", "lbl-france", "land", 0, 0], ["Africa", "lbl-africa", "land", 0, 0]
+    ];
+    var gLabels = el("g", { class: "sp-labels" });
+    svg.insertBefore(gLabels, gSites);
+    var labelEls = [];
+    function anchorXY(id) { if (GEO.pts[id]) return GEO.pts[id]; if (GEO.meta[id]) return GEO.meta[id].c; return null; }
+    function makeLabel(text, id, dx, dy, cls) {
+      var p = anchorXY(id); if (!p) return;
+      var t = el("text", { class: "gl-map-label " + cls, "paint-order": "stroke", "text-anchor": "middle" });
+      t.textContent = text; t._p = p; t._dx = dx || 0; t._dy = dy || 0; t._big = /big/.test(cls); t._k = /sp-klab/.test(cls);
+      gLabels.appendChild(t); labelEls.push(t);
+    }
+    function drawLabels() {
+      labelEls.forEach(function (t) { if (t.parentNode) t.parentNode.removeChild(t); }); labelEls = [];
+      var used = {};
+      (KLAB[cur] || []).forEach(function (l) { used[l[1]] = true; makeLabel(l[0], l[1], l[2], l[3], "sp-klab" + (l[4] === "big" ? " big" : "")); });
+      GLAB.forEach(function (l) { if (used[l[1]]) return; makeLabel(l[0], l[1], l[3], l[4], "sp-glab " + l[2]); });
+    }
+
     var cur = 0, ownerOf = {};
     var yearOut = $("#sp-year"), titleOut = $("#sp-stage-title"), noteOut = $("#sp-stage-note"),
         legend = $("#sp-legend"), slider = $("#sp-slider"), play = $("#sp-play"), tellOut = $("#sp-tell"),
@@ -300,6 +338,7 @@
         siteEls.push(g);
         g._p = p; g._t = t; g._star = star;
       });
+      drawLabels();
       tune();
       if (tellOut && tellOut._id) tell(tellOut._id, true);
     }
@@ -332,6 +371,13 @@
         s.t.setAttribute("x", (s.p[0] + off[0] * uu * k).toFixed(1));
         s.t.setAttribute("y", (s.p[1] + off[1] * uu * k).toFixed(1));
       }
+      labelEls.forEach(function (t) {
+        var fs = (t._big ? 17 : t._k ? 13 : 11.5) * uu * k;
+        t.setAttribute("font-size", fs.toFixed(2));
+        t.setAttribute("stroke-width", (3 * uu).toFixed(2));
+        t.setAttribute("x", (t._p[0] + t._dx * uu * k).toFixed(1));
+        t.setAttribute("y", (t._p[1] + t._dy * uu * k).toFixed(1));
+      });
       siteEls.forEach(function (g) {
         var fs = 13.5 * uu * k, r = 9 * uu * k;
         g._star.setAttribute("d", starPath(g._p[0], g._p[1], r));
@@ -385,7 +431,7 @@
       paint = function () { _paint(); $$(".sp-ychip", chips).forEach(function (b) { b.setAttribute("aria-pressed", Number(b.getAttribute("data-n")) === cur ? "true" : "false"); }); };
     }
 
-    // CSN's two lists
+    // the two lists
     var cBtn = $("#sp-list-c"), iBtn = $("#sp-list-i"), listOut = $("#sp-list-out");
     function clearPulse() {
       for (var k in units) units[k].classList.remove("pulse");
@@ -394,12 +440,12 @@
     if (cBtn) cBtn.addEventListener("click", function () {
       stop(); go(6); clearPulse();
       Object.keys(CHRISTIAN_SIX).forEach(function (n) { CHRISTIAN_SIX[n].forEach(function (id) { if (units[id]) units[id].classList.add("pulse"); }); });
-      if (listOut) { listOut.innerHTML = "<b>Christian states, c. 1030s (CSN):</b> Galicia, Portugal, León, Castile, Navarre, Aragon. Regions, not cities: find each one on your practice map."; open(listOut); }
+      if (listOut) { listOut.innerHTML = "<b>Christian states, c. 1030s:</b> Galicia, Portugal, León, Castile, Navarre, Aragon. Regions, not cities: find each one on a blank map."; open(listOut); }
     });
     if (iBtn) iBtn.addEventListener("click", function () {
       stop(); go(6); clearPulse();
       ISLAMIC_TEN.forEach(function (id) { if (dots[id]) dots[id].g.classList.add("pulse"); });
-      if (listOut) { listOut.innerHTML = "<b>Islamic states, c. 1030s (CSN):</b> Zaragoza, Valencia, Toledo, Badajoz, Dénia, Murcia, Almería, Granada, Córdoba, Sevilla. Each taifa took the name of its city. Nine of the ten are on the map quiz."; open(listOut); }
+      if (listOut) { listOut.innerHTML = "<b>Islamic states, c. 1030s:</b> Zaragoza, Valencia, Toledo, Badajoz, Dénia, Murcia, Almería, Granada, Córdoba, Sevilla. Each taifa took the name of its city, so this list is also a list of cities to find."; open(listOut); }
     });
 
     paint();
@@ -410,14 +456,14 @@
   /* ------------------------------------------------- 4. fact or legend */
 
   var SORT = [
-    { s: "Asturias was overrun by the invaders in 714.", v: "fact", w: "The earliest accounts agree, and CSN prints it. The mountains were taken; the people who would not submit went higher." },
-    { s: "Pelayo had been captured by the Muslims, and escaped.", v: "fact", w: "This is how every account tells it, and CSN prints it as history. Notice that it is also exactly how a legend would begin. Both things can be true." },
-    { s: "The men in the mountains elected Pelayo their war chief.", v: "fact", w: "CSN: he was elected war chief of Asturias. That is the sober version." },
+    { s: "Asturias was overrun by the invaders in 714.", v: "fact", w: "The earliest accounts agree. The mountains were taken; the people who would not submit went higher." },
+    { s: "Pelayo had been captured by the Muslims, and escaped.", v: "fact", w: "This is how every account tells it. Notice that it is also exactly how a legend would begin. Both things can be true." },
+    { s: "The men in the mountains elected Pelayo their war chief.", v: "fact", w: "He was elected war chief of Asturias. That is the sober version." },
     { s: "Pelayo was a king.", v: "legend", w: "Later sources call him king, and his descendants were kings, so the title travelled backwards onto him. In 722 he was a war chief by election. This is the seam where the telling starts to dress the man." },
     { s: "At Covadonga the arrows shot at the cave turned back in the air and struck the men who had shot them.", v: "legend", w: "From the Chronicle of Alfonso III, written about 150 years after the battle at the court of Pelayo's descendants. It tells you what those kings needed the story to mean." },
     { s: "A mountainside collapsed on the retreating army and buried it.", v: "legend", w: "Same chronicle, same century-and-a-half gap. Geology does not confirm it. The story does not need it to." },
     { s: "Covadonga was fought in 722.", v: "unsure", w: "The sources give 718 and 722 and a few years between. The date is traditional, not certain. Hold it as 'about 722' and say so when you write it." },
-    { s: "Every later Iberian royal dynasty descends from Pelayo.", v: "fact", w: "His daughter Ermesinda married Alfonso I; the kings of Asturias, then León, then Castile trace to that line, and the other kingdoms married into it. CSN states it flatly. It is also the kind of fact a dynasty is careful to keep true." }
+    { s: "Every later Iberian royal dynasty descends from Pelayo.", v: "fact", w: "His daughter Ermesinda married Alfonso I; the kings of Asturias, then León, then Castile trace to that line, and the other kingdoms married into it. It is also the kind of fact a dynasty is careful to keep true." }
   ];
   (function () {
     var wrap = $("#sp-sort"); if (!wrap) return;
@@ -430,7 +476,7 @@
       btns.forEach(function (b) { b.disabled = false; b.classList.remove("right", "wrong"); });
       if (scoreEl) scoreEl.textContent = right + " of " + i + " sorted right";
       if (i >= SORT.length) {
-        sEl.innerHTML = "<b>Done.</b> " + right + " of " + SORT.length + ". The lesson is not the score. It is that the true parts and the told parts sit in the same sentence, and you have to pull them apart yourself. Friday's source will do this to you for five pages.";
+        sEl.innerHTML = "<b>Done.</b> " + right + " of " + SORT.length + ". The lesson is not the score. It is that the true parts and the told parts sit in the same sentence, and you have to pull them apart yourself. The source in section 6 will do this to you for five pages.";
         btns.forEach(function (b) { b.disabled = true; });
         return;
       }
@@ -460,12 +506,12 @@
     { y: "c. 1043", side: "C", h: "Born at Vivar, near Burgos", t: "Rodrigo Díaz, a minor noble's son in the kingdom of León and Castile. Raised in the household of King Ferdinand the Great. His nickname comes later: <i>as-Sayyid</i>, Arabic for lord, said by the men he led and the men he fought." },
     { y: "before 1066", side: "C", h: "Banner-bearer for Sancho II of Castile", t: "Champion of the king: he carries the standard and fights the single combats. In 1067 he leads the army that defeats the emir of Zaragoza and makes him a vassal of León. He will never lose a battle in his life." },
     { y: "1072", side: "C", h: "The wrong brother wins", t: "He fights Sancho's war against the king's brother Alfonso of León, and wins. Then Sancho is assassinated and Alfonso becomes king of both León and Castile. The Cid keeps a command but is demoted; García Ordóñez replaces him at the king's side. He marries Jimena, a nobleman's daughter." },
-    { y: "1070s", side: "I", h: "Commander for the Islamic king of Sevilla", t: "Blocked at court, he takes service with Sevilla, which is at war with Islamic Granada. Alfonso, his own king, sends Ordóñez to help Granada. The Cid beats Granada, captures Ordóñez, and ransoms him back. CSN: this mercenary service was normal in Reconquista Iberia." },
+    { y: "1070s", side: "I", h: "Commander for the Islamic king of Sevilla", t: "Blocked at court, he takes service with Sevilla, which is at war with Islamic Granada. Alfonso, his own king, sends Ordóñez to help Granada. The Cid beats Granada, captures Ordóñez, and ransoms him back. This mercenary service was normal in Reconquista Iberia." },
     { y: "1081", side: "I", h: "Exiled; commander for Zaragoza", t: "An unauthorized raid on Toledo gets him exiled. He takes his sword to the Islamic ruler of Zaragoza, breaks Zaragoza away from Castile's grip, and beats every neighbour who comes at it, Muslim or Christian, Barcelona and Aragon included." },
     { y: "1086", side: "C", h: "Recalled against the Almoravids", t: "The Almoravids land from Morocco and crush Alfonso at Sagrajas. Alfonso begs the Cid to come back. He does, and beats the army nobody else could beat." },
     { y: "1090–1094", side: "S", h: "Prince of Valencia", t: "He captures the Count of Barcelona, then carves out Valencia, the richest territory in Iberia, for himself. Three wars to hold it. In 1094 he is Prince of Valencia and answers to no king." },
     { y: "1094–1097", side: "S", h: "Holding it", t: "Two Islamic invasions defeated. His son dies in battle in 1097. His daughters marry into royal houses; the present monarchs of Spain and England descend from them." },
-    { y: "1099", side: "S", h: "The siege, and the ride", t: "The Almoravids besiege Valencia. The Cid dies (CSN: of dysentery; the Chronicle you are reading tells it as a holy death with the sacraments). Jimena has his body armed and set on Babieca to lead the last charge out of the city. Valencia is lost in 1102 and stays Moorish for 170 years, until James of Aragon." }
+    { y: "1099", side: "S", h: "The siege, and the ride", t: "The Almoravids besiege Valencia. The Cid dies (of dysentery, in the histories; the Chronicle tells it as a holy death with the sacraments). Jimena has his body armed and set on Babieca to lead the last charge out of the city. Valencia is lost in 1102 and stays Moorish for 170 years, until James of Aragon." }
   ];
   (function () {
     var wrap = $("#sp-cid"); if (!wrap) return;
@@ -497,10 +543,10 @@
   var DQ = [
     { star: true,
       q: "What is Divine Providence doing in a story like this, and what is man doing?",
-      p: "Pick one moment: Covadonga, Toledo in 1085, Las Navas in 1212, Granada in 1492. Say what a believer sees in it and what a skeptic sees in it. Then say which reading you find more honest, and why. CSN asks this question on the first day of the unit on purpose." },
+      p: "Pick one moment: Covadonga, Toledo in 1085, Las Navas in 1212, Granada in 1492. Say what a believer sees in it and what a skeptic sees in it. Then say which reading you find more honest, and why." },
     { star: true,
       q: "Where does fact end and legend begin in the Pelayo story, and why does the telling want it that way?",
-      p: "Who wrote the legend down, when, and what did they need it to do? A story told a hundred and fifty years later at the court of the hero's descendants is evidence of something. Of what? Bring this question to Friday's reading, where a man wins a battle after he is dead." },
+      p: "Who wrote the legend down, when, and what did they need it to do? A story told a hundred and fifty years later at the court of the hero's descendants is evidence of something. Of what? Carry this question into section 6, where a man wins a battle after he is dead." },
     { star: false,
       q: "How do you think religious houses, convents, and monasteries fared during the Reconquista?",
       p: "Be specific about the frontier. A monastery on the Duero in 900 sits in a no-man's-land raided every summer. One in Galicia in 997 gets Almanzor at the door. One in Toledo after 1085 has Muslim and Jewish neighbours and a new Christian king. Which of those would you enter, and what would you expect your life to be?" },
@@ -512,9 +558,9 @@
       p: "Argue both sides. Seven hundred and seventy years, hundreds of truces, Christian kings at war with each other more often than with Granada, a Christian hero commanding for Zaragoza, Muslim soldiers in Christian pay. What makes a war one war? Who benefits from calling it one, in 1492 and today?" },
     { star: false,
       q: "El Cid served Christian kings, Islamic rulers, and finally himself. Why do the Christian sources love him anyway?",
-      p: "CSN's frame: in Reconquista Iberia, morality was often discarded for ambition, on both sides. So is the Cid admired despite that, or because the sources share the ambition? Read the death scene on p. 20 again: he receives the Body of Christ, prays, and dies 'pure and without spot.' Who needed him to die like that?" },
+      p: "In Reconquista Iberia, morality was often discarded for ambition, on both sides. So is the Cid admired despite that, or because the sources share the ambition? Read the death scene on p. 20 again: he receives the Body of Christ, prays, and dies 'pure and without spot.' Who needed him to die like that?" },
     { star: false,
-      q: "CSN: God 'draws straight with crooked lines.' Where, in this story?",
+      q: "God 'draws straight with crooked lines,' the old saying goes. Where, in this story?",
       p: "Aristotle reaching Aquinas by way of Córdoba and Toledo. The Alhambra built by the last Islamic state in Iberia. Name the crooked line and the straight line in each case. Then find one crooked line in this story that you do not think drew anything straight, and say why." }
   ];
   (function () {
@@ -537,7 +583,7 @@
   var QUIZ = [
     { q: "What did the Romans call the peninsula?", a: ["Hispania", "Iberia", "al-Andalus", "Lusitania"], k: 0, w: "Hispania. Iberia is the Greek name we use for the land itself; al-Andalus is the Arabic name for the Islamic part; Lusitania was one Roman province inside it." },
     { q: "Who defeated King Roderic at the Guadalete in 711?", a: ["Abd al-Rahman", "Tariq ibn Ziyad", "Almanzor", "Charles Martel"], k: 1, w: "Tariq ibn Ziyad. Gibraltar is Jabal Tariq, Tariq's mountain, where he landed." },
-    { q: "By 718, what part of Iberia was still unconquered?", a: ["Catalonia", "Portugal", "A few hundred square miles of mountain in Asturias", "The kingdom of León"], k: 2, w: "CSN's phrase: a couple hundred square miles in the mountains of Asturias. León does not exist yet; Catalonia is taken by the Franks decades later." },
+    { q: "By 718, what part of Iberia was still unconquered?", a: ["Catalonia", "Portugal", "A few hundred square miles of mountain in Asturias", "The kingdom of León"], k: 2, w: "A couple hundred square miles in the mountains of Asturias. León does not exist yet; Catalonia is taken by the Franks decades later." },
     { q: "According to the earliest account, the men in the mountains made Pelayo their what?", a: ["King", "Bishop", "Elected war chief", "Emir"], k: 2, w: "Elected war chief. Later sources call him king; that is the legend layer starting." },
     { q: "The first victory of the Reconquista, about 722:", a: ["Covadonga", "Tours", "Las Navas de Tolosa", "Roncevaux"], k: 0, w: "Covadonga, in the Asturian mountains. Tours (732) is Charles Martel in France; Las Navas is 1212; Roncevaux is the Basques against the Franks." },
     { q: "Which kingdom grew directly out of Asturias and took its name in 924?", a: ["Navarre", "León", "Portugal", "Aragon"], k: 1, w: "León. Castile begins as León's frontier county and becomes a kingdom in 1035." },
@@ -548,8 +594,8 @@
     { q: "Who landed from Morocco in 1086 and stopped the Christian advance cold?", a: ["The Almohads", "The Almoravids", "The Nasrids", "The Umayyads"], k: 1, w: "The Almoravids. The Almohads replace them in 1147; the Nasrids are the rulers of Granada from 1238." },
     { q: "Las Navas de Tolosa, 16 July 1212: who anchored the Christian alliance?", a: ["Alfonso VIII of Castile", "James I of Aragon", "Afonso Henriques of Portugal", "El Cid"], k: 0, w: "Alfonso VIII of Castile, with Aragon, Navarre, and Portugal. León stayed home. James I is a boy of four that year; El Cid has been dead a century." },
     { q: "The last Islamic state in Iberia, surrendered in 1492:", a: ["Córdoba", "Valencia", "Granada", "Sevilla"], k: 2, w: "Granada. Córdoba fell in 1236, Valencia in 1238, Sevilla in 1248." },
-    { q: "Which of these was a Christian state about 1030?", a: ["Badajoz", "Dénia", "Navarre", "Murcia"], k: 2, w: "Navarre. The other three are taifas on CSN's Islamic list." },
-    { q: "Which of these was an Islamic state about 1030?", a: ["Galicia", "Zaragoza", "León", "Aragon"], k: 1, w: "Zaragoza, the taifa El Cid later served. The other three are on CSN's Christian list." }
+    { q: "Which of these was a Christian state about 1030?", a: ["Badajoz", "Dénia", "Navarre", "Murcia"], k: 2, w: "Navarre. The other three are taifas on the Islamic list." },
+    { q: "Which of these was an Islamic state about 1030?", a: ["Galicia", "Zaragoza", "León", "Aragon"], k: 1, w: "Zaragoza, the taifa El Cid later served. The other three are on the Christian list." }
   ];
   (function () {
     var box = $("#sp-quiz"); if (!box) return;

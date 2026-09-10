@@ -237,3 +237,10 @@
 
 /* inline emphasis inside the three-column cards stays inline */
 .gl-built div p strong { display: inline; font-weight: 600; font-family: inherit; font-size: inherit; }
+
+/* ---------- names on the map ---------- */
+.sp-klab { font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; fill: #1f2937; stroke: rgba(255,255,255,0.88); }
+.sp-klab.big { letter-spacing: 0.14em; fill: #0f3d22; }
+.sp-glab { font-style: italic; font-weight: 500; fill: #4b5563; }
+.sp-glab.sea { fill: #3b5b7a; }
+.sp-glab.land { font-style: normal; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; fill: #8b8f98; }
