@@ -1,0 +1,239 @@
+/* history-spain.css — The Reconquista, History 11 Unit 2.
+   Sits on top of style.css and history-guilds.css (which supplies the
+   click-through chassis: gl-scene, gl-opt, gl-panel, gl-type, gl-quiz, gl-dq,
+   gl-gloss, the map box and label styles). This file adds what is new here:
+   the era map, the year chips, the kingdom colours, the El Cid stepper. */
+
+:root {
+  --k-leon: #b45309;
+  --k-cas:  #b91c1c;
+  --k-nav:  #7c3aed;
+  --k-ara:  #ca8a04;
+  --k-por:  #1d4ed8;
+  --k-cat:  #0f766e;
+}
+
+/* ---------- on this page ---------- */
+
+.sp-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  padding: 0.75rem 1rem;
+}
+.sp-toc a {
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--muted);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.22rem 0.7rem;
+}
+.sp-toc a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* the "God" option is neither right nor wrong */
+.gl-opt.tried.ask .gl-opt-l::before { content: "? "; color: var(--accent); }
+.gl-opt.tried.ask { background: var(--accent-soft); border-color: var(--accent); }
+.gl-opt.tried.ask .gl-opt-out { color: var(--text); }
+
+/* ---------- 2. layers ---------- */
+
+.sp-layers { display: grid; gap: 0.55rem; margin-bottom: 1.1rem; }
+.sp-step {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 1.05rem;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+.sp-step:hover, .sp-step[aria-expanded="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.sp-step-y { font-size: 0.86rem; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+.sp-step-t { font-family: "Fraunces", Georgia, serif; font-size: 1.12rem; font-weight: 600; }
+.sp-step-body {
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 0.9rem 1.15rem;
+  background: #fff;
+  font-size: 0.97rem;
+}
+.sp-step-body p:last-child { margin-bottom: 0; }
+
+/* ---------- 3. the map ---------- */
+
+.sp-mapkit { margin-top: 0.4rem; }
+.sp-stagehead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.sp-stagehead .gl-wave-year { font-size: 1.7rem; text-align: left; min-width: 0; }
+.sp-stage-title { font-family: "Fraunces", Georgia, serif; font-size: 1.15rem; font-weight: 600; }
+
+.sp-unit {
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 0.9;
+  cursor: pointer;
+  transition: fill 380ms ease, opacity 200ms ease;
+}
+.sp-unit:hover { opacity: 0.82; }
+.sp-unit.is-sel { stroke: #111; stroke-width: 1.8; }
+.sp-unit.pulse { animation: spPulse 1.1s ease-in-out infinite; }
+@keyframes spPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+.sp-dot { fill: #23262c; stroke: #fff; stroke-width: 1.4; }
+.sp-ring { display: none; fill: none; stroke: #fff; }
+.sp-city.pulse .sp-ring { display: block; animation: spRing 1.1s ease-in-out infinite; }
+@keyframes spRing { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: 0.2; } }
+.sp-city.pulse .gl-map-label { font-weight: 800; }
+
+.sp-star { fill: #fbbf24; stroke: #7c2d12; }
+.sp-site-label { fill: #7c2d12; font-weight: 800; }
+
+.sp-wave { align-items: center; }
+.sp-arrow { padding-left: 0.7rem; padding-right: 0.7rem; }
+
+.sp-stagechips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.6rem 0 0; }
+.sp-ychip {
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.18rem 0.62rem;
+  cursor: pointer;
+}
+.sp-ychip:hover, .sp-ychip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+
+.sp-stage-note {
+  margin: 0.8rem 0 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.97rem;
+}
+.sp-tell { margin: 0.6rem 0 0; font-size: 0.94rem; color: var(--muted); }
+
+.sp-lists { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.3rem 0 0.4rem; }
+.sp-list-out { font-size: 0.96rem; margin: 0.5rem 0 0.9rem; }
+
+/* ---------- 4. Pelayo ---------- */
+
+.sp-story {
+  background: var(--bg-soft);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.1rem;
+}
+.sp-story p:last-child { margin-bottom: 0; }
+.sp-sort-answers { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 640px) { .sp-sort-answers { grid-template-columns: 1fr; } }
+
+/* ---------- 5. kingdoms ---------- */
+
+.sp-king[data-ty="leon"] { --ty: var(--k-leon); }
+.sp-king[data-ty="cas"]  { --ty: var(--k-cas); }
+.sp-king[data-ty="nav"]  { --ty: var(--k-nav); }
+.sp-king[data-ty="ara"]  { --ty: var(--k-ara); }
+.sp-king[data-ty="por"]  { --ty: var(--k-por); }
+.sp-king[data-ty="cat"]  { --ty: var(--k-cat); }
+.sp-kings .gl-type-body.gl-panel { display: none; }
+.sp-kings .gl-type-body.gl-panel.open { display: block; }
+
+/* ---------- 6. El Cid ---------- */
+
+.sp-cid {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.2rem 1.1rem;
+  background: #fff;
+}
+.sp-cid-track { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+.sp-track-dot {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid var(--border); background: #fff; cursor: pointer;
+  transition: transform 120ms ease;
+}
+.sp-track-dot.done.side-c { background: var(--k-cas); border-color: var(--k-cas); }
+.sp-track-dot.done.side-i { background: #15803d; border-color: #15803d; }
+.sp-track-dot.done.side-s { background: #db2777; border-color: #db2777; }
+.sp-track-dot.now { transform: scale(1.35); box-shadow: 0 0 0 3px var(--accent-soft); }
+.sp-cid-card h3 { margin: 0.1rem 0 0.3rem; font-size: 1.35rem; }
+.sp-cid-y { font-size: 0.86rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.sp-cid-side {
+  display: inline-block;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 0.15rem 0.6rem; border-radius: 999px; color: #fff; margin-bottom: 0.5rem;
+}
+.sp-cid-side.side-c { background: var(--k-cas); }
+.sp-cid-side.side-i { background: #15803d; }
+.sp-cid-side.side-s { background: #db2777; }
+.sp-cid-card p { margin: 0.2rem 0 0; }
+.sp-cid-tally { margin: 0.9rem 0 0.6rem; font-size: 0.94rem; color: var(--muted); }
+.sp-cid-ask { display: inline-block; margin-left: 0.5rem; font-family: "Fraunces", Georgia, serif; font-size: 1.1rem; color: var(--accent); font-weight: 600; }
+.sp-cid-nav { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.sp-cidfacts { margin-top: 1.1rem; }
+
+.sp-seam { padding-left: 1.2rem; }
+.sp-seam li { margin: 0.5rem 0; }
+
+/* ---------- 8. dates ---------- */
+
+.sp-dates { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.55rem; }
+.sp-date {
+  font: inherit;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.7rem 0.8rem;
+  cursor: pointer;
+  text-align: left;
+  display: grid;
+  gap: 0.1rem;
+}
+.sp-date b { font-family: "Fraunces", Georgia, serif; font-size: 1.35rem; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+.sp-date span { font-size: 0.86rem; color: var(--muted); }
+.sp-date:hover, .sp-date[aria-expanded="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.sp-date-body {
+  grid-column: 1 / -1;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 0.8rem 1.05rem;
+  background: #fff;
+  font-size: 0.97rem;
+}
+
+/* ---------- 10. quiz answers: four in a row ---------- */
+
+.sp-answers { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 640px) { .sp-answers { grid-template-columns: 1fr; } }
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 640px) {
+  .sp-step { grid-template-columns: 1fr; gap: 0.1rem; }
+  .sp-stagehead .gl-wave-year { font-size: 1.4rem; }
+}
+
+/* ---------- print ---------- */
+
+@media print {
+  .sp-toc, .sp-wave, .sp-stagechips, .sp-lists, .sp-cid-nav, .sp-cid-track { display: none !important; }
+  .sp-step-body, .sp-date-body { display: block !important; }
+}
+
+/* inline emphasis inside the three-column cards stays inline */
+.gl-built div p strong { display: inline; font-weight: 600; font-family: inherit; font-size: inherit; }
