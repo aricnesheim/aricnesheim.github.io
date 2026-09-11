@@ -1,116 +1,80 @@
 {
- "updated": "2026-09-09",
- "classes": {
-  "history": {
-   "name": "History 11",
-   "page": [
-    {
-     "label": "Due Thursday, September 10",
-     "text": "History does not meet Tuesday this week (schedule change: Thursday runs Tuesday's lineup). Reread Aquinas' Prayer Before Study, the handout from the first day. Unit 2 opens Thursday at 7:20 in Faustina: Spain."
+  "updated": "2026-09-11",
+  "classes": {
+    "history": {
+      "name": "History 11",
+      "page": [
+        {
+          "label": "Due Monday, September 14",
+          "text": "Read the Reconquista page on this site, sections 1 through 5: Iberia, 711, Pelayo at Covadonga, and how the five kingdoms grew out of Asturias. We did not get to it in class this week. Keep at the Spain practice blank: ten minutes, three times this weekend."
+        },
+        {
+          "label": "Monday, September 21",
+          "text": "Map quiz on Spain: regions, cities, waters. The blank map is the whole plan."
+        }
+      ],
+      "glance": [
+        {
+          "strong": "Due Mon, Sep 14",
+          "text": "the Reconquista page, sections 1 to 5, plus the Spain blank."
+        },
+        {
+          "strong": "Mon, Sep 21",
+          "text": "map quiz on Spain."
+        }
+      ]
     },
-    {
-     "label": "Due Friday, September 11",
-     "text": "Read and annotate The Death of El Cid (binder p. 19): the Five Ws plus at least two of your own margin questions. Friday is a source seminar; your annotations are the ticket."
+    "theology": {
+      "name": "Theology 10",
+      "page": [
+        {
+          "label": "Due Tuesday, September 15",
+          "text": "Read Matthew 13:54 to 16:12. Annotate 15:21 to 28 with your honest reaction to how Jesus speaks to the Canaanite woman, even if the reaction is that it bothers you. Write one discussion question on 15:21 to 28, on paper, for the door Tuesday. No class Monday."
+        }
+      ],
+      "glance": [
+        {
+          "strong": "Due Tue, Sep 15",
+          "text": "Matthew 13:54 to 16:12; annotate 15:21 to 28 honestly; one written discussion question."
+        }
+      ]
     },
-    {
-     "label": "Monday, September 21",
-     "text": "Map quiz on Spain. Start the blank map this week; ten minutes with it a few nights a week is the whole plan."
+    "literature": {
+      "name": "Literature 11",
+      "page": [
+        {
+          "label": "Monday, September 14",
+          "text": "Quiz on Cantos I to XIII, closed book, right after the Mass pause: for every circle, the sin, the contrapasso, the sinners. No new reading this weekend. Review with your annotations, the Map of Hell, and the Inferno Drill (Quiz 1 set)."
+        },
+        {
+          "label": "Thursday, September 17",
+          "text": "Bring a Dante-themed poem to present, about three minutes: sin, desire, freedom, courage, mentorship, or love of place. Start looking this weekend."
+        },
+        {
+          "label": "Super Simile",
+          "text": "Paragraphs 1 and 2 (the Charon birds, the Harpies) are in your folder. The folder stays in the room."
+        }
+      ],
+      "glance": [
+        {
+          "strong": "Mon, Sep 14",
+          "text": "quiz on Cantos I to XIII after the Mass pause; no new reading."
+        },
+        {
+          "strong": "Thu, Sep 17",
+          "text": "bring a Dante-themed poem to present."
+        }
+      ]
+    },
+    "choir": {
+      "name": "Choir",
+      "page": [],
+      "glance": [
+        {
+          "strong": "",
+          "text": "The first all-school Friday sing was September 11. Next rehearsal Monday, September 14, last period."
+        }
+      ]
     }
-   ],
-   "glance": [
-    {
-     "strong": "Due Thu, Sep 10",
-     "text": "reread the Aquinas prayer. No History Tuesday; Unit 2 opens Thursday at 7:20."
-    },
-    {
-     "strong": "Due Fri, Sep 11",
-     "text": "The Death of El Cid (binder p. 19), annotated, with two of your own questions."
-    },
-    {
-     "strong": "Mon, Sep 21",
-     "text": "map quiz on Spain."
-    }
-   ]
-  },
-  "theology": {
-   "name": "Theology 10",
-   "page": [
-    {
-     "label": "Due Wednesday, September 9",
-     "text": "Read Matthew 8:1 to 12:50. Annotate 9:9 to 13 and bring one written question. There is no Theology class Tuesday this week; Wednesday is our first meeting, then Thursday and Friday."
-    },
-    {
-     "label": "Thursday, September 10",
-     "text": "Quiz on Matthew 1 to 12 at the start of class (Period 3). No new reading Wednesday night: study your notes and your annotated Bible. After the quiz we finish Matthew 8 to 12 together."
-    },
-    {
-     "label": "Due Friday, September 11",
-     "text": "Read Matthew 13:1 to 53, annotated. Count the parables as you read. Assigned Thursday after the quiz."
-    },
-    {
-     "label": "Due Tuesday, September 15",
-     "text": "Read Matthew 13:54 to 16:12. Annotate 15:21 to 28 with your honest reaction. Assigned Friday; you have the weekend."
-    }
-   ],
-   "glance": [
-    {
-     "strong": "Thu, Sep 10",
-     "text": "quiz on Matthew 1 to 12. No new reading Wednesday night."
-    },
-    {
-     "strong": "Due Fri, Sep 11",
-     "text": "Matthew 13:1 to 53, annotated; count the parables."
-    }
-   ]
-  },
-  "literature": {
-   "name": "Literature 11",
-   "page": [
-    {
-     "label": "Due Wednesday, September 9",
-     "text": "Read through Canto XI. Annotate X and XI: the sin, the contrapasso, the sinners. Wednesday is the quiz through Canto XI: the comprehension questions on X and XI, in class, open book, then we start Canto XII."
-    },
-    {
-     "label": "Due Thursday, September 10",
-     "text": "One written discussion question on Cantos IX to XI, assigned Wednesday, at the door Thursday."
-    },
-    {
-     "label": "Thursday and Friday, September 10 and 11",
-     "text": "Thursday is a reading day: Cantos XII and XIII in class, finished at home, with a discussion question for Friday. Friday: discussion, then the second Super Simile paragraph (the Harpies) in class."
-    },
-    {
-     "label": "Monday, September 14",
-     "text": "Quiz on Cantos I to XIII: for every circle, the sin, the contrapasso, the sinners. Look back over your annotations this weekend."
-    },
-    {
-     "label": "Super Simile",
-     "text": "Paragraph 1 is in your folder. Paragraph 2, the Harpies, is written in class Friday, September 11."
-    }
-   ],
-   "glance": [
-    {
-     "strong": "Due Wed, Sep 9",
-     "text": "read through Canto XI; the quiz through XI (the questions on X and XI, open book) in class."
-    },
-    {
-     "strong": "Due Thu, Sep 10",
-     "text": "one discussion question on Cantos IX to XI."
-    },
-    {
-     "strong": "Mon, Sep 14",
-     "text": "quiz on Cantos I to XIII."
-    }
-   ]
-  },
-  "choir": {
-   "name": "Choir",
-   "page": [],
-   "glance": [
-    {
-     "strong": "",
-     "text": "Sections were announced Tuesday. Next rehearsal Thursday, September 10, last period. Friday, September 11 is the first all-school Friday sing; the choir leads it."
-    }
-   ]
   }
- }
 }
