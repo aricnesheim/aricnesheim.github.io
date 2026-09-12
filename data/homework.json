@@ -6,21 +6,29 @@
       "page": [
         {
           "label": "Due Monday, September 14",
-          "text": "Read the Reconquista page on this site, sections 1 through 5: Iberia, 711, Pelayo at Covadonga, and how the five kingdoms grew out of Asturias. We did not get to it in class this week. Keep at the Spain practice blank: ten minutes, three times this weekend."
+          "text": "Study the map of Spain: regions, cities, waters. The blank map and the Map Trainer on this site are the tools. Ten minutes, three times this weekend. The Reconquista page on this site, sections 1 to 5, tells the story we opened Friday: Iberia, 711, Pelayo at Covadonga, and the five kingdoms that grew out of Asturias."
         },
         {
           "label": "Monday, September 21",
           "text": "Map quiz on Spain: regions, cities, waters. The blank map is the whole plan."
+        },
+        {
+          "label": "Build a Guild",
+          "text": "Three guilds formed Thursday: fishmongers, blacksmiths, and bakers. Keep your charter answers from class. Each guild will write out a full charter in its best calligraphy and bring in a masterwork of its trade. The dates will be posted here and in Educate."
         }
       ],
       "glance": [
         {
           "strong": "Due Mon, Sep 14",
-          "text": "the Reconquista page, sections 1 to 5, plus the Spain blank."
+          "text": "study the Spain map (blank + Map Trainer)."
         },
         {
           "strong": "Mon, Sep 21",
           "text": "map quiz on Spain."
+        },
+        {
+          "strong": "Build a Guild:",
+          "text": "charter and masterwork dates to come."
         }
       ]
     },
@@ -43,8 +51,12 @@
       "name": "Literature 11",
       "page": [
         {
-          "label": "Monday, September 14",
-          "text": "Quiz on Cantos I to XIII, closed book, right after the Mass pause: for every circle, the sin, the contrapasso, the sinners. No new reading this weekend. Review with your annotations, the Map of Hell, and the Inferno Drill (Quiz 1 set)."
+          "label": "Monday, September 14 (study day)",
+          "text": "No new reading. Bring your annotated Inferno. After the Mass pause we review all thirteen cantos together: each of you walks the class through one piece of Hell on the Map of Hell, then the Inferno Drill on the projector. What the room misses goes on the board and becomes the study list for Monday night."
+        },
+        {
+          "label": "Tuesday, September 15",
+          "text": "Quiz on Cantos I to XIII, closed book, at the start of the period: for every circle, the sin, the contrapasso, the sinners. Then we start Cantos XIV and XV in class. Review with your annotations, the Map of Hell, and the Inferno Drill (Quiz 1 set)."
         },
         {
           "label": "Thursday, September 17",
@@ -58,7 +70,11 @@
       "glance": [
         {
           "strong": "Mon, Sep 14",
-          "text": "quiz on Cantos I to XIII after the Mass pause; no new reading."
+          "text": "study day; no new reading; bring your book."
+        },
+        {
+          "strong": "Tue, Sep 15",
+          "text": "quiz on Cantos I to XIII at the start of class."
         },
         {
           "strong": "Thu, Sep 17",
@@ -72,7 +88,7 @@
       "glance": [
         {
           "strong": "",
-          "text": "The first all-school Friday sing was September 11. Next rehearsal Monday, September 14, last period."
+          "text": "Rehearsals Monday, Tuesday, and Thursday, last period; the Friday sing at 1:23. The first all-school Friday sing was September 11."
         }
       ]
     }
