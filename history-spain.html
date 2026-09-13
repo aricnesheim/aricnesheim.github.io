@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20260905">
 <link rel="stylesheet" href="history-guilds.css?v=20260910">
-<link rel="stylesheet" href="history-spain.css?v=20260910h">
+<link rel="stylesheet" href="history-spain.css?v=20260913">
 </head>
 <body data-page="history">
 
@@ -142,7 +142,7 @@
   <!-- ================================================ 3. the map -->
   <section class="card" id="s3">
     <h2><span class="gl-num">3</span>The map: 711 to 1492</h2>
-    <p class="gl-sub">Drag the year, press the arrows, or press Play. Green is Islamic rule; every other colour is a Christian kingdom. Click any region to see who held it that year. The regions are today's provinces, the same ones used on the practice maps.</p>
+    <p class="gl-sub">Drag the year, press the arrows, or press Play. Green is Islamic rule; every other color is a Christian kingdom. Click any region to see who held it that year. The regions are today's provinces, the same ones used on the practice maps.</p>
 
     <div class="sp-mapkit">
       <div class="sp-stagehead">
@@ -209,57 +209,152 @@
 
   <!-- ================================================ 5. kingdoms -->
   <section class="card" id="s5">
-    <h2><span class="gl-num">5</span>From the seed: the five kingdoms</h2>
-    <p class="gl-sub">Click a card.</p>
+    <h2><span class="gl-num">5</span>From the seed: the five kingdoms, and the one that was not</h2>
+    <p class="gl-sub">Six cards, one per kingdom, each with its own map. Open a card below, or click a kingdom on the big map.</p>
+    <div class="sp-kintro">
+      <p>The cards run in the order the kingdoms were founded: <b>Asturias</b> (about 722), <b>Navarre</b> (824), <b>Castile</b> and <b>Aragon</b> (both 1035, from one father's will), <b>Portugal</b> (1139). Portugal and Catalonia began earlier as counties, in the 860s and in 801, but Portugal became a kingdom late and <b>Catalonia</b> never did. Every place a card names is on that card's map, and every person it names is introduced on the card. The phrases in <b class="sp-say">red</b> are the ones to know by heart: the founder, the founding year, one story, and how the kingdom joined the others or ended. The chart at the end of this section holds one row per kingdom; say each answer before you show it.</p>
+    </div>
+    <div class="sp-kmapwrap">
+      <div class="gl-map sp-kmap sp-kmap-big" id="sp-kmap-all"><p class="gl-map-fallback">The map needs the geometry file to draw. The cards below carry the same story.</p></div>
+      <p class="sp-kcap"><b>How to read these maps.</b> The shapes are the provinces of Spain and Portugal as they are today, the same shapes as the practice map; there are no medieval borders on them. The strong color shows where each kingdom began in the Middle Ages, drawn onto those modern shapes. The pale color shows land that kingdom's kings conquered later in the Middle Ages. Rivers and mountains are drawn simply. The dots are the places named on the cards. On the big map, click a kingdom to open its card.</p>
+    </div>
 
-    <div class="gl-four sp-kings" id="sp-kings">
-      <article class="gl-type sp-king" data-ty="leon">
-        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="leon"><span class="gl-type-name">Asturias, then Le&oacute;n</span><span class="gl-type-tag">722&ndash;924 as Asturias &middot; Le&oacute;n after</span><span class="gl-type-more">Open</span></button>
-        <div class="gl-type-body gl-panel" data-body="leon"><dl>
-          <dt>Founder</dt><dd>Don Pelayo, elected war chief about 722. The Asturian progenitor of all the rest.</dd>
-          <dt>What happened</dt><dd>Grew under Alfonso I (Galicia) and Alfonso III the Great (the Duero frontier: Porto, Burgos, Zamora). After Alfonso III, the last king before the name changed, a three-way civil war among his sons ended with the kingdom re-centred on the city of Le&oacute;n (924).</dd>
-          <dt>Then</dt><dd>Le&oacute;n and Castile were joined and split repeatedly until 1230, when they were united for good.</dd>
-        </dl></div>
+    <div class="sp-kcards" id="sp-kings">
+      <article class="gl-type sp-king" data-ty="leon" id="sp-k-leon">
+        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="leon"><span class="gl-type-name"><span class="sp-knum">1</span>Asturias, then León</span><span class="gl-type-tag">a kingdom from about 722 · called León from 924</span><span class="gl-type-more">Open</span></button>
+        <div class="gl-type-body gl-panel" data-body="leon">
+          <div class="sp-kgrid">
+            <dl class="sp-ktext">
+              <dt>Where it is</dt><dd>The north coast of Spain: a strip of mountains between the sea and the high plain. Oviedo, in the mountains, was its first capital. Galicia is the rainy corner of Spain in the far north-west, above Portugal; its city is Santiago. León is a city on the plain south of the mountains; the kingdom later took its name.</dd>
+              <dt>Founder</dt><dd><b class="sp-say">Don Pelayo</b>. The men who refused to submit to the Muslim conquerors went up into these mountains, and <b class="sp-say">about 722 they elected Pelayo their war chief</b>. <b class="sp-say">His first victory was at the cave of Covadonga</b>. Every Christian kingdom that pushed back against al-Andalus grew out of his.</dd>
+              <dt>What happened</dt><dd>Pelayo's son-in-law Alfonso I (king 739–757) added Galicia, the north-west corner, to the kingdom. South of the mountains it was a different story. The Muslim soldiers posted there, mostly Berbers from North Africa, marched away south in the 740s during a revolt and a famine; Alfonso raided the plain they left and carried its Christians north into his mountains; and for a hundred years the high plain south of the mountains, all the way to the river Duero, was a no-man's land, too far from Córdoba for the Muslims to settle and too big for the Christians to hold. Then <b class="sp-say">Alfonso III the Great (king 866–910) pushed the border south to the Duero</b> and settled new towns along the river: Porto at its mouth (in today's Portugal), Zamora on its bank, and Burgos, El Cid's town, near it. When Alfonso III died, his three sons fought each other for the crown. The winner moved the capital out of the mountains, from Oviedo down to the city of León, and <b class="sp-say">from 924 the kingdom is called the Kingdom of León</b>.</dd>
+              <dt>Then</dt><dd>So Asturias did not disappear: it was the same kingdom and the same royal family, with a new capital and a new name. Asturias stayed a region inside it, and to this day the heir to the Spanish throne is called the Prince of Asturias. León and its eastern frontier, Castile (<a class="sp-kref" href="#sp-k-cas" data-open="cas">card 3</a>), sometimes had one king and sometimes two, <b class="sp-say">until 1230, when they were joined for good</b>.</dd>
+            </dl>
+            <figure class="sp-kfig"><div class="gl-map sp-kmap" data-kmap="leon"><p class="gl-map-fallback">The map needs the geometry file to draw.</p></div><figcaption>Strong color: where the kingdom of Asturias, later León, began. Pale color: Galicia, which Alfonso I took in the 700s. The shapes are today's provinces.</figcaption></figure>
+          </div>
+          <p class="sp-kwords"><b>Words on this card.</b> <b>The river Duero</b> runs west across the north of Spain and through northern Portugal to the sea at Porto. For two hundred years it was the border between Christian and Muslim land. <b>Galicia</b>: the north-west corner of Spain.</p>
+          <div class="sp-kbrief"><b>The short version</b><ul><li>Where: the north coast, the mountains between the sea and the plain.</li><li>Founder: Don Pelayo, elected war chief about 722, after the victory at Covadonga.</li><li>One story: the empty plain, the towns settled along the Duero, or the capital moving down to León (924).</li><li>On the map: find Oviedo, then León.</li></ul></div>
+        </div>
       </article>
-      <article class="gl-type sp-king" data-ty="cas">
-        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="cas"><span class="gl-type-name">Castile</span><span class="gl-type-tag">a county of Asturias &middot; a kingdom 1035&ndash;1715</span><span class="gl-type-more">Open</span></button>
-        <div class="gl-type-body gl-panel" data-body="cas"><dl>
-          <dt>The name</dt><dd>The land of castles: the fortified eastern frontier of Asturias-Le&oacute;n, facing the Muslim raids up the Duero.</dd>
-          <dt>Founder as a kingdom</dt><dd>Ferdinand I, 1035. A kingdom proper by the time of his son Sancho II, El Cid's first king.</dd>
-          <dt>Then</dt><dd>United with Le&oacute;n in 1230. Its dialect, Castilian, is the basis of modern Spanish, with the famous lisp on certain c and z sounds.</dd>
-        </dl></div>
+      <article class="gl-type sp-king" data-ty="nav" id="sp-k-nav">
+        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="nav"><span class="gl-type-name"><span class="sp-knum">2</span>Navarre</span><span class="gl-type-tag">a kingdom from about 824</span><span class="gl-type-more">Open</span></button>
+        <div class="gl-type-body gl-panel" data-body="nav">
+          <div class="sp-kgrid">
+            <dl class="sp-ktext">
+              <dt>Where it is</dt><dd>The western Pyrenees mountains, on the French border, around the city of Pamplona. This is Basque country. The Basques are the people of that corner, the mountains and the coast around Bilbao. They were there before the Romans came, and their language is older than Latin and related to no other language in Europe. The people are ancient; the kingdom is not. It was founded in 824, when a Basque chief first made himself a ruler.</dd>
+              <dt>Founder</dt><dd><b class="sp-say">Íñigo Arista, a Basque chief, about 824</b>. The Franks were Charlemagne's people, north of the Pyrenees in today's France, and they kept crossing the mountains to take land on the Spanish side. In 778 the Basques had ambushed the rear of Charlemagne's own army at the pass of Roncevaux (the battle in the Song of Roland). In 824 <b class="sp-say">another Frankish army was beaten at the same pass</b>, and Íñigo Arista, who beat it, made himself ruler of Pamplona. Later the kingdom took the name of the whole region, Navarre.</dd>
+              <dt>Greatest ruler</dt><dd><b class="sp-say">Sancho III the Great (king 1004–1035)</b>. Navarre was a small kingdom, but Sancho, through marriage, war, and luck, came to control most of Christian Spain for a few years: Navarre itself, Castile, much of León, and the county of Aragon in the mountains (<a class="sp-kref" href="#sp-k-ara" data-open="ara">card 4</a>). When he died in 1035 he split it all among his sons. <b class="sp-say">García got Navarre. Ferdinand got Castile (<a class="sp-kref" href="#sp-k-cas" data-open="cas">card 3</a>). Ramiro got Aragon (<a class="sp-kref" href="#sp-k-ara" data-open="ara">card 4</a>).</b> So one king made two new kingdoms.</dd>
+              <dt>Then</dt><dd>In 1212 King <b class="sp-say">Sancho VII the Strong of Navarre led the charge at Las Navas de Tolosa</b> (a battlefield in the mountains of the south, on the road from Toledo to Córdoba; the name means “the upland plains of Tolosa”) that broke through the chain of slaves guarding the Muslim camp; the chains are on Navarre's coat of arms to this day. The kingdom sat on both sides of the Pyrenees. In 1512 Spain conquered the larger part, south of the mountains (the part on this map). The small part north of the mountains, in France, stayed a kingdom of its own, conquered by nobody, until its king inherited the French throne as Henry IV in 1589; after that the kings of France called themselves “King of France and Navarre,” into the 1800s.</dd>
+            </dl>
+            <figure class="sp-kfig"><div class="gl-map sp-kmap" data-kmap="nav"><p class="gl-map-fallback">The map needs the geometry file to draw.</p></div><figcaption>Strong color: Navarre, on today's provinces, shown closer up. Pale color: the rest of Basque country. Roncevaux is the pass on the road to France.</figcaption></figure>
+          </div>
+          <p class="sp-kwords"><b>Words on this card.</b> <b>The Basques</b>: the people of the western Pyrenees and the coast around Bilbao. <b>The Franks</b>: Charlemagne's people, from today's France. <b>Roncevaux</b>: the mountain pass on the road from France to Pamplona. <b>The Pyrenees</b>: the mountain wall between Spain and France.</p>
+          <div class="sp-kbrief"><b>The short version</b><ul><li>Where: the western Pyrenees on the French border, around Pamplona.</li><li>Who: the Basques (the people there) and the Franks (Charlemagne's people, from France).</li><li>Founder: Íñigo Arista, about 824, after beating the Franks at the pass of Roncevaux.</li><li>One story: the pass of Roncevaux, or Sancho the Great splitting his lands among his sons (1035).</li><li>On the map: find Pamplona and at the Pyrenees.</li></ul></div>
+        </div>
       </article>
-      <article class="gl-type sp-king" data-ty="nav">
-        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="nav"><span class="gl-type-name">Navarre</span><span class="gl-type-tag">824&ndash;1610</span><span class="gl-type-more">Open</span></button>
-        <div class="gl-type-body gl-panel" data-body="nav"><dl>
-          <dt>Founder</dt><dd>&Iacute;&ntilde;igo Arista, a Basque chieftain, after a victory over the Franks at the second battle of Roncevaux (824). The kingdom of Pamplona first; Navarre later.</dd>
-          <dt>Greatest ruler</dt><dd>Sancho III Garc&eacute;s, the Great (r. 1004&ndash;1035): small Navarre briefly dominated both Iberia and the Pyrenees (992&ndash;1035), and he founded the kingdom of Aragon for his son.</dd>
-          <dt>Then</dt><dd>Precariously perched between Iberia and France. Absorbed into French rule in 1610 when the king of Navarre became king of France, keeping a half-autonomy into the 1800s.</dd>
-        </dl></div>
+      <article class="gl-type sp-king" data-ty="cas" id="sp-k-cas">
+        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="cas"><span class="gl-type-name"><span class="sp-knum">3</span>Castile</span><span class="gl-type-tag">a county of León from the 800s · a kingdom from 1035</span><span class="gl-type-more">Open</span></button>
+        <div class="gl-type-body gl-panel" data-body="cas">
+          <div class="sp-kgrid">
+            <dl class="sp-ktext">
+              <dt>Where it is</dt><dd>The north-center of Spain: the high plain around Burgos, between the river Duero and the river Ebro. This was the eastern edge of the Kingdom of León (<a class="sp-kref" href="#sp-k-leon" data-open="leon">card 1</a>), the side that faced the Muslim raids coming up the two rivers every summer.</dd>
+              <dt>The name</dt><dd><b class="sp-say">Castile means the land of castles</b>. The settlers on this frontier built castles against the raids, and the castles gave the country its name. At first it was a county, land ruled by a count (a lord who serves a king), under the king of León.</dd>
+              <dt>Founder as a kingdom</dt><dd><b class="sp-say">Ferdinand I, in 1035</b>. He was <b class="sp-say">a son of Sancho the Great, king of Navarre</b> (<a class="sp-kref" href="#sp-k-nav" data-open="nav">card 2</a>), who had taken control of Castile. When Sancho died in 1035 he left Castile to Ferdinand as a kingdom of its own. Ferdinand then married the sister of the king of León, beat and killed that king in battle in 1037, and so <b class="sp-say">became king of León as well</b>. El Cid grew up in Ferdinand's household, and <b class="sp-say">Ferdinand's son, Sancho II, was El Cid's first king</b>.</dd>
+              <dt>Then</dt><dd>Castile and León were <b class="sp-say">joined for good in 1230 under Ferdinand III</b>, the king who went on to take Córdoba (1236) and Seville (1248) from the Muslims. Castile became the biggest kingdom in Spain, and its way of speaking, <b class="sp-say">Castilian, is the Spanish people speak today</b>, with its famous lisp on certain c and z sounds.</dd>
+            </dl>
+            <figure class="sp-kfig"><div class="gl-map sp-kmap" data-kmap="cas"><p class="gl-map-fallback">The map needs the geometry file to draw.</p></div><figcaption>Strong color: old Castile, the land of castles, on today's provinces. Toledo, to the south, stayed Muslim until 1085.</figcaption></figure>
+          </div>
+          <p class="sp-kwords"><b>Words on this card.</b> <b>County, count</b>: a piece of land and the lord who rules it under a king. <b>The river Ebro</b> runs from the mountains near the north coast south-east past Zaragoza to the Mediterranean Sea. <b>Frontier</b>: the border land where two enemies meet.</p>
+          <div class="sp-kbrief"><b>The short version</b><ul><li>Where: the high plain around Burgos, El Cid's town, between the Duero and the Ebro.</li><li>The name: the land of castles.</li><li>Founder: Ferdinand I, 1035, a son of the king of Navarre; king of León too by marriage and the battle of 1037.</li><li>One story: how Ferdinand got two crowns, or Castile and León joined for good in 1230.</li><li>On the map: find Burgos.</li></ul></div>
+        </div>
       </article>
-      <article class="gl-type sp-king" data-ty="ara">
-        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="ara"><span class="gl-type-name">Aragon</span><span class="gl-type-tag">1035&ndash;1707</span><span class="gl-type-more">Open</span></button>
-        <div class="gl-type-body gl-panel" data-body="ara"><dl>
-          <dt>Origins</dt><dd>A county of the Frankish empire in the high Pyrenees, then conquered by Sancho the Great of Navarre, who gave it to his son <b>Ramiro I</b> as a new kingdom in 1035.</dd>
-          <dt>Growth</dt><dd>Alfonso I the Battler took Zaragoza (1118). Alfonso II the Chaste added Catalonia and Barcelona (the union of 1137). The Crown of Aragon then looked east, to the sea.</dd>
-          <dt>Greatest ruler</dt><dd>James I the Conqueror (r. 1213&ndash;1276): Mallorca, Valencia, and a Mediterranean empire. He closes the story of the early kingdoms.</dd>
-        </dl></div>
+      <article class="gl-type sp-king" data-ty="ara" id="sp-k-ara">
+        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="ara"><span class="gl-type-name"><span class="sp-knum">4</span>Aragon</span><span class="gl-type-tag">a kingdom from 1035</span><span class="gl-type-more">Open</span></button>
+        <div class="gl-type-body gl-panel" data-body="ara">
+          <div class="sp-kgrid">
+            <dl class="sp-ktext">
+              <dt>Where it is</dt><dd>The north-east of Spain, south of the middle of the Pyrenees mountains, along the river Ebro. Zaragoza, on the Ebro, is its great city. In El Cid's day Zaragoza was still a Muslim kingdom, and El Cid served its ruler for years.</dd>
+              <dt>Origins</dt><dd>Aragon began as a small county (land ruled by a count) high in the Pyrenees, <b class="sp-say">named after the little river Aragón</b>. Sancho the Great of Navarre (<a class="sp-kref" href="#sp-k-nav" data-open="nav">card 2</a>) took it over, and when he died in 1035 he <b class="sp-say">left it to his son Ramiro I as a kingdom of its own</b>. That is why Aragon and Navarre are two kingdoms and not one: a father with several sons divided his lands (the father: <b>Sancho the Great of Navarre</b>; the sons: <b class="sp-son sp-son-nav">García, who got Navarre</b>; <b class="sp-son sp-son-cas">Ferdinand, who got Castile</b>; <b class="sp-son sp-son-ara">Ramiro, who got Aragon</b>).</dd>
+              <dt>Growth</dt><dd>Aragon grew two ways. By war: King <b class="sp-say">Alfonso I the Battler took the Muslim city of Zaragoza in 1118</b>, and the kingdom came down out of the mountains onto the Ebro. And by marriage: <b class="sp-say">in 1137 the heiress of Aragon, Petronilla, aged one, was promised to the count of Barcelona</b> (card 6; Catalonia is the pale land on the map). Their son Alfonso II ruled both lands, and from then on the king of Aragon also ruled Catalonia and its coast. People call the joined lands <b class="sp-say">“the Crown of Aragon.”</b> With a coast came ships.</dd>
+              <dt>Greatest ruler</dt><dd><b class="sp-say">James I the Conqueror (king 1213–1276)</b>. With Catalonia's ships <b class="sp-say">he took Mallorca (1229), the big island</b> off Spain's east coast, then ruled by Muslims, and then <b class="sp-say">the city of Valencia (1238), El Cid's old city</b>, which the Muslims had held again since 1102. Later kings of Aragon took Sicily and Sardinia too, so Aragon ruled islands and coasts all round the western Mediterranean Sea. James is the last king in this story: by the end of his reign the Christian kingdoms held all of Spain except Granada in the south. He did not unite Spain. That took the marriage of Ferdinand of Aragon and Isabella of Castile in 1469, and the fall of Granada in 1492, two hundred years after him.</dd>
+            </dl>
+            <figure class="sp-kfig"><div class="gl-map sp-kmap" data-kmap="ara"><p class="gl-map-fallback">The map needs the geometry file to draw.</p></div><figcaption>Strong color: Aragon, on today's provinces. Pale color: Catalonia, joined to it by the marriage of 1137. James I took Mallorca and Valencia in the 1200s.</figcaption></figure>
+          </div>
+          <p class="sp-kwords"><b>Words on this card.</b> <b>Zaragoza</b>: the big city on the Ebro. <b>Catalonia, Barcelona</b>: the north-east corner and its chief city (<a class="sp-kref" href="#sp-k-cat" data-open="cat">card 6</a>). <b>Mallorca</b>: the largest of the islands off the east coast. <b>The Crown of Aragon</b>: Aragon and Catalonia under one ruler, from 1137.</p>
+          <div class="sp-kbrief"><b>The short version</b><ul><li>Where: the north-east, along the river Ebro; Zaragoza is its city.</li><li>How it began: Sancho the Great's son Ramiro I, 1035.</li><li>One story: taking Zaragoza (1118), the baby heiress and the count of Barcelona (1137), or James I taking Mallorca (1229) and Valencia (1238).</li><li>On the map: find Zaragoza, then Valencia.</li></ul></div>
+        </div>
       </article>
-      <article class="gl-type sp-king" data-ty="por">
-        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="por"><span class="gl-type-name">Portugal</span><span class="gl-type-tag">a county in the 860s &middot; a kingdom 1139&ndash;1910</span><span class="gl-type-more">Open</span></button>
-        <div class="gl-type-body gl-panel" data-body="por"><dl>
-          <dt>The name</dt><dd>From Portus Cale, the harbour at the mouth of the Douro, today's Porto. Founded by V&iacute;mara Peres in the 860s as a county of Asturias.</dd>
-          <dt>Founder as a kingdom</dt><dd>Afonso Henriques, who defeated his own mother's forces at S&atilde;o Mamede (1128) for autonomy from Le&oacute;n, won at Ourique (1139) and was proclaimed king, and took Lisbon (1147) with the help of crusaders sailing to the Holy Land.</dd>
-          <dt>Then</dt><dd>Complete to the Algarve by 1249. The first of the Iberian kingdoms to finish its Reconquista, and the one that then turned to the Atlantic.</dd>
-        </dl></div>
+      <article class="gl-type sp-king" data-ty="por" id="sp-k-por">
+        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="por"><span class="gl-type-name"><span class="sp-knum">5</span>Portugal</span><span class="gl-type-tag">a county from the 860s · a kingdom from 1139</span><span class="gl-type-more">Open</span></button>
+        <div class="gl-type-body gl-panel" data-body="por">
+          <div class="sp-kgrid">
+            <dl class="sp-ktext">
+              <dt>Where it is</dt><dd>The strip of land along the Atlantic coast, west of León and Castile. Porto is the city at the mouth of the river Duero. Lisbon is the city at the mouth of the river Tagus, further south.</dd>
+              <dt>The name</dt><dd>The Romans called the harbor at the mouth of the Duero <b class="sp-say">Portus Cale</b>. Porto is that harbor today (porto means harbor). The land around it was called Portucale, and that became Portugal. In the 860s the king of León sent a nobleman, <b class="sp-say">Vímara Peres</b>, to take the land around Porto back from the Muslims, and he ruled it as a county (land ruled by a count) under the king of León.</dd>
+              <dt>Founder as a kingdom</dt><dd><b class="sp-say">Afonso Henriques</b>. <b class="sp-say">In 1128 he beat her army at São Mamede</b>, near Guimarães in the north of Portugal, and took the county for himself. Why a son fought his mother: Teresa was a daughter of Alfonso VI, El Cid's king. When her husband, the count, died in 1112, she ruled the county for their small son. As Afonso grew up she kept ruling, with a nobleman from Galicia at her side, and the Portuguese barons feared the county would be folded back into León. They took the young Afonso's side; after São Mamede she was sent into exile in Galicia. Then he fought the Muslims to the south for nineteen years. <b class="sp-say">After his victory at Ourique, in the south, in 1139, his men called him king</b>. <b class="sp-say">In 1147 a fleet of crusaders</b> from England, Germany, and Flanders, sailing round Spain to reach the Holy Land for the Second Crusade, stopped at Porto. Afonso hired them, and together they <b class="sp-say">besieged Lisbon for four months and took it</b>.</dd>
+              <dt>Then</dt><dd>Portugal's kings kept pushing south. <b class="sp-say">In 1249 they took the Algarve</b>, the southern strip of coast, and after that no Muslim ruler ever held land in Portugal again. So Portugal finished its Reconquista more than two hundred years before Spain did. It then turned to the ocean: Portuguese ships were the first from Europe to sail round Africa.</dd>
+            </dl>
+            <figure class="sp-kfig"><div class="gl-map sp-kmap" data-kmap="por"><p class="gl-map-fallback">The map needs the geometry file to draw.</p></div><figcaption>Strong color: the county of the 860s, around Porto, on today's provinces. Pale color: the land Portugal's kings conquered between 1128 and 1249.</figcaption></figure>
+          </div>
+          <p class="sp-kwords"><b>Words on this card.</b> <b>The river Tagus</b> runs west from the middle of Spain, past Toledo, to the sea at Lisbon. <b>Crusaders</b>: the armies of the Second Crusade (1147), on their way to the Holy Land. <b>The Algarve</b>: the far south of Portugal. <b>Reconquista</b>: the Christian kingdoms taking the peninsula back, 722 to 1492.</p>
+          <div class="sp-kbrief"><b>The short version</b><ul><li>Where: the Atlantic coast; Porto at the mouth of the Duero, Lisbon at the mouth of the Tagus.</li><li>The name: Portus Cale, the harbor at Porto.</li><li>Founder: Afonso Henriques, called king after Ourique in 1139.</li><li>One story: the son who beat his mother's army (1128), or the crusaders hired at Porto to take Lisbon (1147).</li><li>On the map: find Porto, then Lisbon.</li></ul></div>
+        </div>
       </article>
-      <article class="gl-type sp-king" data-ty="cat">
-        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="cat"><span class="gl-type-name">And Catalonia</span><span class="gl-type-tag">the Frankish March &middot; counts of Barcelona</span><span class="gl-type-more">Open</span></button>
-        <div class="gl-type-body gl-panel" data-body="cat"><dl>
-          <dt>Not one of the five kingdoms</dt><dd>Because it was never a kingdom. Charlemagne's Franks took Girona (785) and Barcelona (801) and ruled the Pyrenean counties as the Spanish March. The counts of Barcelona slipped free of the French kings and in 1137 joined their lands to Aragon by marriage.</dd>
-          <dt>Why it matters</dt><dd>It is where the Crown of Aragon got its coast, its fleet, and its second language, Catalan, which James I wrote his memoirs in.</dd>
-        </dl></div>
+      <article class="gl-type sp-king" data-ty="cat" id="sp-k-cat">
+        <button class="gl-type-btn" type="button" aria-expanded="false" data-k="cat"><span class="gl-type-name"><span class="sp-knum">6</span>Catalonia</span><span class="gl-type-tag">a county under the Franks from 801 · never a kingdom</span><span class="gl-type-more">Open</span></button>
+        <div class="gl-type-body gl-panel" data-body="cat">
+          <div class="sp-kgrid">
+            <dl class="sp-ktext">
+              <dt>Where it is</dt><dd>The north-east corner of Spain, on the Mediterranean coast, just south of the eastern Pyrenees mountains. Barcelona is its chief city; Girona is a town to the north of it.</dd>
+              <dt>Not a kingdom</dt><dd><b class="sp-say">Catalonia never had a king of its own</b>. About 800 the Franks (Charlemagne's people, from today's France) crossed the Pyrenees and <b class="sp-say">took Girona (785) and Barcelona (801) from the Muslims</b>, to make a strip of border land between their empire and the Muslim south. The Franks called it <b class="sp-say">the Spanish March</b> (a march is a border district) and put counts in charge of it. Over the next two hundred years <b class="sp-say">the counts of Barcelona stopped obeying the kings of France</b> and ruled for themselves, though they never called themselves kings.</dd>
+              <dt>Why it matters</dt><dd><b class="sp-say">In 1137 the count of Barcelona, Ramon Berenguer IV, was promised to Petronilla</b>, the baby heiress of Aragon (<a class="sp-kref" href="#sp-k-ara" data-open="ara">card 4</a>). From their son onward, one ruler was both king of Aragon and count of Barcelona. Catalonia gave that ruler what Aragon did not have: a long coast, ports, ships, and a second language, <b class="sp-say">Catalan (a Latin language like Spanish, but different)</b>. King James I wrote the story of his own life in Catalan.</dd>
+              <dt>Then</dt><dd>With Catalonia's ships the Crown of Aragon took Mallorca (1229), Valencia (1238), and later Sicily and Sardinia. Barcelona became one of the great trading cities of the Mediterranean Sea.</dd>
+            </dl>
+            <figure class="sp-kfig"><div class="gl-map sp-kmap" data-kmap="cat"><p class="gl-map-fallback">The map needs the geometry file to draw.</p></div><figcaption>Strong color: Catalonia, on today's provinces. Pale color: Aragon, joined to it by the marriage of 1137.</figcaption></figure>
+          </div>
+          <p class="sp-kwords"><b>Words on this card.</b> <b>March</b>: a border district. <b>Count</b>: a lord who rules a piece of land under a king. <b>Catalan</b>: the language of Catalonia, still spoken there. <b>Girona</b>: the town north of Barcelona, the first the Franks took.</p>
+          <div class="sp-kbrief"><b>The short version</b><ul><li>Where: the north-east corner on the Mediterranean; Barcelona is its city.</li><li>Why it is on a card: never a kingdom; the Franks' border district (Girona 785, Barcelona 801), ruled by counts.</li><li>For the chart: founded 801, as a county under the Franks, never a kingdom; founder: Charlemagne's Franks, then the counts of Barcelona.</li><li>One story: the counts who stopped obeying France, or the marriage of 1137 that joined it to Aragon.</li><li>On the map: find Barcelona and at the Pyrenees.</li></ul></div>
+        </div>
       </article>
+    </div>
+
+    <h3 class="gl-h3">The chart</h3>
+    <p class="gl-sub">One row per kingdom: when it was founded, who founded it, the story in one line, and where it is (the letter on the map). Say the answer first, then show it.</p>
+    <div class="sp-chartwrap">
+      <div class="gl-map sp-kmap" id="sp-kmap-letters"><p class="gl-map-fallback">The map needs the geometry file to draw.</p></div>
+      <div class="sp-chart-scroll"><table class="sp-chart" id="sp-chart">
+        <thead><tr><th>Kingdom</th><th>Founded</th><th>Founder</th><th>One line</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Asturias, then León<small>card 1</small></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">c. 722 as Asturias; called León from 924</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">Don Pelayo, elected war chief of the men in the mountains after Covadonga</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">The seed of the rest. Grew to the river Duero under Alfonso III (866–910); after his sons' war the capital moved from Oviedo to León; joined to Castile for good in 1230.</span></td><td class="c w"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">A</span></td></tr>
+          <tr><td class="k">Navarre<small>card 2</small></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">c. 824</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">Íñigo Arista, a Basque chief, after beating the Franks at the pass of Roncevaux</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">Sancho III the Great (1004–1035) controlled most of Christian Spain and split it among his sons: Navarre, Castile, Aragon. Sancho VII's charge at Las Navas (1212). Southern part to Spain 1512; the northern part's king became Henry IV of France in 1589.</span></td><td class="c w"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">B</span></td></tr>
+          <tr><td class="k">Castile<small>card 3</small></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">1035 (a county of León before that)</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">Ferdinand I, son of Sancho the Great of Navarre; king of León too by marriage and the battle of 1037</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">The land of castles, León's eastern frontier. El Cid's kingdom (Sancho II). Joined to León for good in 1230 under Ferdinand III, who took Córdoba (1236) and Seville (1248). Castilian became Spanish.</span></td><td class="c w"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">C</span></td></tr>
+          <tr><td class="k">Aragon<small>card 4</small></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">1035 (a Frankish county in the Pyrenees before that)</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">Ramiro I, son of Sancho the Great of Navarre</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">Alfonso I the Battler took Zaragoza (1118); joined to Catalonia by the marriage of 1137 (the Crown of Aragon); James I the Conqueror (1213–1276) took Mallorca (1229) and Valencia (1238). He did not unite Spain: that was 1469 and 1492.</span></td><td class="c w"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">D</span></td></tr>
+          <tr><td class="k">Portugal<small>card 5</small></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">a county from the 860s; a kingdom from 1139</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">Afonso Henriques, called king after Ourique (1139); the county's first count was Vímara Peres (860s)</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">Beat his mother's army at São Mamede (1128); took Lisbon (1147) with Second Crusade crusaders; the Algarve taken 1249, the first Reconquista finished.</span></td><td class="c w"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">E</span></td></tr>
+          <tr><td class="k">Catalonia<small>card 6</small></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">801 as a county under the Franks; never a kingdom</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">Charlemagne's Franks (Girona 785, Barcelona 801); then the counts of Barcelona</span></td><td class="c"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">The Spanish March. The counts stopped obeying the kings of France; the marriage of 1137 joined Catalonia to Aragon and gave the Crown of Aragon its coast, its ships, and Catalan.</span></td><td class="c w"><button class="sp-cell" type="button" aria-expanded="false">Show</button><span class="sp-cell-txt">F</span></td></tr>
+        </tbody></table></div>
+    </div>
+    <p class="sp-chart-foot"><button type="button" class="score-btn" id="sp-chart-all">Show the whole chart</button></p>
+
+    <h3 class="gl-h3">Places and words on these cards</h3>
+    <p class="gl-sub">The rivers, the regions, the peoples, and the words for how land was held.</p>
+    <p><button type="button" class="score-btn" id="sp-kgloss-btn" aria-expanded="false">Open the word list</button></p>
+    <div class="gl-gloss sp-kgloss gl-panel" id="sp-kgloss">
+      <div><b>Iberia</b><i>The whole peninsula, Spain and Portugal together. There was no country called Spain until 1492.</i></div>
+      <div><b>al-Andalus</b><i>The Arabic name for the Muslim-ruled part of the peninsula, whatever its size at the time: nearly all of it in 718, only Granada by 1250.</i></div>
+      <div><b>The Pyrenees</b><i>The mountain wall between Spain and France. Roncevaux is a pass through it.</i></div>
+      <div><b>The Cantabrian mountains</b><i>The mountains along the north coast, where Asturias began.</i></div>
+      <div><b>The river Duero</b><i>Runs west across the north of Spain and through northern Portugal to the sea at Porto. For two hundred years it was the border between Christian and Muslim land.</i></div>
+      <div><b>The river Ebro</b><i>Runs south-east past Logroño and Zaragoza to the Mediterranean.</i></div>
+      <div><b>The river Tagus</b><i>Runs west from the middle of Spain past Toledo to the sea at Lisbon.</i></div>
+      <div><b>Galicia</b><i>The north-west corner of Spain, above Portugal. Its city is Santiago.</i></div>
+      <div><b>The Basques</b><i>The people of the western Pyrenees and the coast around Bilbao, with a language older than Latin.</i></div>
+      <div><b>The Franks</b><i>Charlemagne's people, from today's France. They crossed the Pyrenees to take land in the north-east (Catalonia) and were beaten in the north-west of the mountains (Navarre).</i></div>
+      <div><b>County, count</b><i>A piece of land, and the lord who rules it under a king. Castile, Aragon, Portugal, and Catalonia all began as counties.</i></div>
+      <div><b>March</b><i>A border district. The Franks' Spanish March became Catalonia.</i></div>
+      <div><b>Taifa</b><i>One of the small Muslim kingdoms the south broke into after 1031: Zaragoza, Toledo, Valencia, Seville, Granada, and more.</i></div>
+      <div><b>Crusaders</b><i>Here, the armies of the Second Crusade (1147) sailing to the Holy Land, some of whom stopped to help take Lisbon.</i></div>
+      <div><b>The Crown of Aragon</b><i>Aragon and Catalonia under one ruler, from the marriage of 1137.</i></div>
+      <div><b>Reconquista</b><i>The Christian kingdoms taking the peninsula back from Muslim rule, 722 to 1492. Portugal finished in 1249; Castile and Aragon took Córdoba, Valencia, and Seville in 1236–1248 and left only Granada, which fell in 1492.</i></div>
     </div>
   </section>
 
@@ -309,7 +404,7 @@
     <h2><span class="gl-num">7</span>Splintered light</h2>
     <p class="gl-def">In Reconquista Iberia, morality was often discarded for ambition, on both sides of the religious divide. It was also a place of intense scholarship and art. Both have to be held at once.</p>
     <div class="gl-built">
-      <div><b>The road back to Aristotle</b><p>Most of Aristotle was lost to the Latin West for centuries. It survived in Arabic, was argued over by Muslim and Jewish philosophers in C&oacute;rdoba (<strong>Averroes</strong>, <strong>Maimonides</strong>) and the East (<strong>Avicenna</strong>), and came back into Latin largely through the translators of <strong>Toledo</strong> after 1085. The Aristotle St. Thomas Aquinas argued with at Paris travelled that road. Aquinas's Prayer Before Study has an Iberian back story.</p></div>
+      <div><b>The road back to Aristotle</b><p>Most of Aristotle was lost to the Latin West for centuries. It survived in Arabic, was argued over by Muslim and Jewish philosophers in C&oacute;rdoba (<strong>Averroes</strong>, <strong>Maimonides</strong>) and the East (<strong>Avicenna</strong>), and came back into Latin largely through the translators of <strong>Toledo</strong> after 1085. The Aristotle St. Thomas Aquinas argued with at Paris traveled that road. Aquinas's Prayer Before Study has an Iberian back story.</p></div>
       <div><b>The Alhambra</b><p>The palace of the emirs of Granada, built mostly in the 1300s by the last Islamic state in Iberia, and the most beautiful building on the peninsula. Ferdinand and Isabella took it in 1492 and, to their credit, did not pull it down.</p></div>
       <div><b>Living together</b><p>How Muslims, Christians, and Jews actually lived together under Islamic law, and what changed when the Almoravids and Almohads arrived: the <i>dhimmi</i> code, sparingly used for three centuries and then enforced hard. An old saying for the whole picture: God draws straight with crooked lines.</p></div>
     </div>
@@ -401,12 +496,12 @@
 <footer>
   <div class="footer-inner">
     <span>Mr. Nesheim &middot; aricnesheim.com &middot; <a class="admin-link" href="/admin/">Admin</a></span>
-    <span>Updated September 10, 2026</span>
+    <span>Updated September 13, 2026</span>
   </div>
 </footer>
 
-<script src="history-spain-geo.js?v=20260910h" defer></script>
-<script src="history-spain.js?v=20260910h" defer></script>
+<script src="history-spain-geo.js?v=20260913" defer></script>
+<script src="history-spain.js?v=20260913" defer></script>
 <script src="analytics.js" defer></script>
 </body>
 </html>

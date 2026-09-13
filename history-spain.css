@@ -249,3 +249,129 @@
 .sp-range-band { fill: none; stroke: #5b3a1e; stroke-width: 9; stroke-opacity: 0.28; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
 .sp-range-peaks { fill: none; stroke: #3f2a17; stroke-width: 1.3; stroke-linejoin: round; stroke-linecap: round; opacity: 0.85; pointer-events: none; }
 .gl-maplegend i.sp-legend-mtn { background: #8b6a4d; border-color: #3f2a17; box-shadow: none; border-radius: 2px; }
+
+/* ---------- 5. the six kingdom cards (from the printed set, Sep 13) ---------- */
+
+.sp-say { color: #b00000; font-weight: 700; }
+.sp-son { font-weight: 700; }
+.sp-son-nav { color: var(--k-nav); }
+.sp-son-cas { color: var(--k-cas); }
+.sp-son-ara { color: var(--k-ara); }
+.sp-kintro p { margin: 0 0 0.9rem; }
+.sp-kmapwrap { margin: 0 0 1.1rem; }
+.sp-kcap { margin: 0.5rem 0 0; font-size: 0.86rem; color: var(--muted); line-height: 1.45; }
+.sp-kcap b { color: var(--text); }
+
+.sp-kcards { display: grid; gap: 0.8rem; grid-template-columns: 1fr; }
+.sp-kcards .gl-type-body.gl-panel { display: none; }
+.sp-kcards .gl-type-body.gl-panel.open { display: block; }
+.sp-knum {
+  display: inline-block;
+  min-width: 1.5em;
+  margin-right: 0.45rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.5em;
+  color: #fff;
+  background: var(--ty);
+  border-radius: 999px;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+}
+.sp-kgrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 330px); gap: 0.6rem 1.2rem; align-items: start; }
+.sp-ktext { margin: 0; }
+.sp-ktext dt {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+.sp-ktext dt:first-child { margin-top: 0; }
+.sp-ktext dd { margin: 0.15rem 0 0; }
+.sp-kfig { margin: 0; }
+.sp-kfig figcaption { font-size: 0.8rem; color: var(--muted); line-height: 1.4; margin-top: 0.4rem; }
+.sp-kwords { margin: 0.9rem 0 0; padding-top: 0.6rem; border-top: 1px solid var(--border); font-size: 0.92rem; }
+.sp-kwords > b:first-child { color: var(--ty); }
+.sp-kbrief { margin-top: 0.8rem; padding: 0.6rem 0.9rem; border-radius: 8px; background: var(--bg-soft); font-size: 0.92rem; }
+.sp-kbrief > b { color: var(--ty); }
+.sp-kbrief ul { margin: 0.3rem 0 0 1.1rem; padding: 0; }
+.sp-kbrief li { margin: 0.15rem 0; }
+.sp-kref { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+.sp-kref:hover { border-bottom-style: solid; }
+@media (max-width: 720px) {
+  .sp-kgrid { grid-template-columns: 1fr; }
+  .sp-kgrid .sp-kfig { order: -1; }
+}
+
+/* the maps drawn from the geometry file */
+.sp-kland { stroke-width: 0.8px; }
+.sp-kprov-u { fill: none; stroke: #d8d3c6; stroke-width: 0.6px; }
+.sp-kfill.dark { fill-opacity: 0.9; stroke: #2b2b2b; stroke-width: 1px; }
+.sp-kfill.light { fill-opacity: 0.26; stroke: #7a7a72; stroke-width: 0.8px; }
+.sp-kfill.outline { fill: #f0ede4; stroke: #222; stroke-width: 1.6px; }
+.sp-kclick { cursor: pointer; transition: fill-opacity 150ms ease; }
+.sp-kclick.dark:hover { fill-opacity: 0.7; }
+.sp-kclick.light:hover { fill-opacity: 0.42; }
+.sp-kclick.outline:hover { fill: var(--accent-soft); }
+.sp-kriver { fill: none; stroke: #2f6bb0; stroke-width: 2px; stroke-linejoin: round; stroke-linecap: round; pointer-events: none; }
+.sp-kriv-l { font-style: italic; font-weight: 500; fill: #2a5a94; }
+.sp-kmtn-l { font-style: italic; font-weight: 500; fill: #5a4a3a; }
+.sp-kx { font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; fill: #55595f; }
+.sp-kletter-c { fill: #fff; stroke: #111; stroke-width: 1.6px; }
+.sp-kletter { font-weight: 800; fill: #111; }
+.sp-klabels text { pointer-events: none; }
+
+/* the chart: say it, then show it */
+.sp-chartwrap { display: grid; grid-template-columns: minmax(220px, 300px) minmax(0, 1fr); gap: 1rem; align-items: start; margin-top: 0.4rem; }
+.sp-chart th:nth-child(1) { width: 16%; } .sp-chart th:nth-child(2) { width: 16%; } .sp-chart th:nth-child(3) { width: 22%; } .sp-chart th:nth-child(4) { width: 40%; } .sp-chart th:nth-child(5) { width: 6%; }
+.sp-chart-scroll { overflow-x: auto; }
+.sp-chart { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 0.9rem; }
+.sp-chart th {
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.35rem 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+.sp-chart td { padding: 0.5rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.sp-chart td.k { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1rem; white-space: nowrap; }
+.sp-chart td.k small { display: block; font-family: "Inter", system-ui, sans-serif; font-weight: 500; font-size: 0.76rem; color: var(--muted); }
+.sp-chart td.c { cursor: pointer; }
+.sp-chart td.w { text-align: center; font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.1rem; }
+.sp-cell {
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px dashed var(--accent);
+  border-radius: 6px;
+  padding: 0.18rem 0.5rem;
+  cursor: pointer;
+}
+.sp-chart:not(.js) .sp-cell { display: none; }
+.sp-chart.js td.c:not(.on) .sp-cell-txt { display: none; }
+.sp-chart.js td.c.on .sp-cell { display: none; }
+.sp-chart-foot { margin: 0.7rem 0 0; }
+.sp-kgloss.gl-panel:not(.open) { display: none; }
+.sp-kgloss.gl-panel.open { display: grid; }
+@media (max-width: 1000px) {
+  .sp-chartwrap { grid-template-columns: 1fr; }
+  #sp-kmap-letters { max-width: 380px; }
+}
+@media print {
+  .sp-kcards .gl-type-body.gl-panel { display: block !important; }
+  .sp-chart .sp-cell, .sp-chart-foot, #sp-kgloss-btn { display: none !important; }
+  .sp-chart td.c .sp-cell-txt { display: inline !important; }
+  .sp-kgloss.gl-panel { display: grid !important; }
+}

@@ -234,6 +234,49 @@ one-line framing for each half, and the music question is asked, not
 answered. The page carries dates, places, and names; the argument is for the
 room.
 
+## The Reconquista page (History)
+
+`history-spain.html` is the Unit 2 chapter, linked from the History page:
+Spain before it was Spain, 711–1492. Four files:
+
+- `history-spain.html` — the shell and all of the prose, in textbook voice
+  (no teacher, no class dates; sections cross-refer to each other)
+- `history-spain.css` — scoped `.sp-*` styling on top of `history-guilds.css`,
+  which supplies the click-through chassis (`.gl-*`)
+- `history-spain.js` — the widgets: the era map with its slider (twelve stages
+  711–1492 as owner assignments on today's provinces), the two lists, the
+  Pelayo fact-or-legend sorter, the six kingdom cards and their maps, the El
+  Cid stepper, the dates, the discussion cards, the fifteen-question quiz
+- `history-spain-geo.js` — **generated**, do not hand-edit: the land
+  silhouette, every Spanish province and Portuguese district as its own path,
+  the named points, the two mountain ranges, and the three rivers (Duero,
+  Ebro, Tagus) as polylines
+
+**Section 5, the six kingdom cards.** The text of the cards, the chart, and
+the word list is the printed student set from September 13 (`2026-27/History
+11/05 Sources & Handouts/History 11 - Six kingdom cards with maps + chart
+(student set, 9 pp, Mon Sep 14)…html`, built by `_build/make_kingdom_cards.py`
+in that folder). `_build/make_site_section5.py` beside it reads that approved
+HTML plus the filled-in chart key and rewrites everything between the
+`5. kingdoms` and `6. El Cid` comments in `history-spain.html`, so the site
+never drifts from the paper. Re-run it after the cards change, then bump the
+`?v=` tags. The site version differs from the paper only in what the page
+needs: each card's locator map is drawn from the geometry file in the page's
+kingdom colours (strong = where the kingdom began, pale = land taken later),
+"(card n)" references are links that open that card, the chart hides its
+answers until clicked, and the teaching prompts on the cards become "The short
+version". The red phrases are the ones students must know by heart.
+
+**Regenerating the geometry.** Same builder directory as the Map Trainer,
+`2026-27/History 11/05 Sources & Handouts/Map Trainer/_build/`, script
+`build_reconquista_map.py` (run with that folder's `venv/bin/python`).
+Coastlines and provinces are Natural Earth (public domain). The kingdom-card
+builder for print reads the same geometry file, so the printed maps and the
+site maps share one projection.
+
+**Cache busting.** Bump the `?v=` query on the CSS, JS, and geo tags when any
+of them changes.
+
 ## Provenance note
 
 `files/history/shared-era-timeline.html` is Codex/GPT work product (from

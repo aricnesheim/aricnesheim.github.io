@@ -79,7 +79,7 @@
     });
   }
   accordion("#sp-layers", ".sp-step", "data-body");
-  accordion("#sp-kings", ".gl-type-btn", "data-body");
+  /* #sp-kings, the kingdom cards, have their own handler in section 5 below. */
   accordion("#sp-dates", ".sp-date", "data-body");
 
   /* --------------------------------------------------------- 3. the map */
@@ -149,7 +149,7 @@
       set: [["ast", u("astcan", "galicia", "es-leon", "es-zamora", "es-palencia", "es-burgos", "es-alava", "ptN")], ["bas", u("basq")], ["nav", ["es-navarra"]], ["ara", ["es-huesca"]], ["cat", u("cat")]],
       lab: { and: "Emirate of Córdoba (a caliphate from 929)", ast: "Asturias, soon León; Castile is its frontier county" },
       sites: [["porto", "Porto, 868"]],
-      note: "Alfonso III the Great (866–910) pushes the frontier to the Duero: Porto (868), Burgos (884), Zamora (893). Castile begins as the county of castles on the eastern frontier; Portugal as the county of Portucale in the west (founded by Vímara Peres in the 860s). After Alfonso's death the kingdom is re-centred on the city of León (924)." },
+      note: "Alfonso III the Great (866–910) pushes the frontier to the Duero: Porto (868), Burgos (884), Zamora (893). Castile begins as the county of castles on the eastern frontier; Portugal as the county of Portucale in the west (founded by Vímara Peres in the 860s). After Alfonso's death the kingdom is re-centered on the city of León (924)." },
     { y: 1000, t: "The Caliphate at its height", base: "and",
       set: [["leon", u("astcan", "galicia", "es-leon", "es-zamora", "es-palencia", "es-valladolid", "ptN")], ["cas", ["es-burgos"]], ["nav", u("es-navarra", "es-la-rioja", "basq", "es-alava")], ["ara", ["es-huesca"]], ["cat", u("cat")]],
       lab: { and: "Caliphate of Córdoba (929–1031)", cas: "County of Castile", ara: "County of Aragon", nav: "Navarre under Sancho III the Great" },
@@ -214,7 +214,7 @@
     var FRAME = [30, 40, 975, 735];
     var FW = FRAME[2] - FRAME[0], FH = FRAME[3] - FRAME[1];
 
-    var svg = el("svg", { class: "gl-map-svg", role: "img", "aria-label": "Map of the Iberian peninsula coloured by who held each region, by year" });
+    var svg = el("svg", { class: "gl-map-svg", role: "img", "aria-label": "Map of the Iberian peninsula colored by who held each region, by year" });
     svg.setAttribute("viewBox", FRAME[0] + " " + FRAME[1] + " " + FW + " " + FH);
     svg.appendChild(el("rect", { x: 0, y: 0, width: GW, height: GH, class: "gl-map-sea" }));
     var land = el("path", { d: GEO.land, class: "gl-map-land" });
@@ -358,7 +358,7 @@
       if (legend) legend.innerHTML = order.filter(function (k) { return present[k]; }).map(function (k) {
         var name = (st.lab && st.lab[k]) || OWN[k].n;
         return '<span><i style="background:' + OWN[k].c + '"></i>' + name + "</span>";
-      }).join("") + '<span><i class="sp-legend-mtn"></i>Mountains: the Pyrenees, and the Cantabrian range above Covadonga</span><span class="gl-legend-note">Colours are a teaching approximation, drawn on today’s provinces. Frontiers were wide empty zones, not lines.</span>';
+      }).join("") + '<span><i class="sp-legend-mtn"></i>Mountains: the Pyrenees, and the Cantabrian range above Covadonga</span><span class="gl-legend-note">Colors are a teaching approximation, drawn on today’s provinces. Frontiers were wide empty zones, not lines.</span>';
 
       // sites
       siteEls.forEach(function (s) { if (s.parentNode) s.parentNode.removeChild(s); });
@@ -496,7 +496,7 @@
     { s: "Asturias was overrun by the invaders in 714.", v: "fact", w: "The earliest accounts agree. The mountains were taken; the people who would not submit went higher." },
     { s: "Pelayo had been captured by the Muslims, and escaped.", v: "fact", w: "This is how every account tells it. Notice that it is also exactly how a legend would begin. Both things can be true." },
     { s: "The men in the mountains elected Pelayo their war chief.", v: "fact", w: "He was elected war chief of Asturias. That is the sober version." },
-    { s: "Pelayo was a king.", v: "legend", w: "Later sources call him king, and his descendants were kings, so the title travelled backwards onto him. In 722 he was a war chief by election. This is the seam where the telling starts to dress the man." },
+    { s: "Pelayo was a king.", v: "legend", w: "Later sources call him king, and his descendants were kings, so the title traveled backwards onto him. In 722 he was a war chief by election. This is the seam where the telling starts to dress the man." },
     { s: "At Covadonga the arrows shot at the cave turned back in the air and struck the men who had shot them.", v: "legend", w: "From the Chronicle of Alfonso III, written about 150 years after the battle at the court of Pelayo's descendants. It tells you what those kings needed the story to mean." },
     { s: "A mountainside collapsed on the retreating army and buried it.", v: "legend", w: "Same chronicle, same century-and-a-half gap. Geology does not confirm it. The story does not need it to." },
     { s: "Covadonga was fought in 722.", v: "unsure", w: "The sources give 718 and 722 and a few years between. The date is traditional, not certain. Hold it as 'about 722' and say so when you write it." },
@@ -537,6 +537,266 @@
     render();
   })();
 
+  /* --------------------------------------------- 5. the six kingdom cards */
+
+  (function () {
+    var root = $("#sp-kings"); if (!root) return;
+    var GEO = window.SPAIN_GEO;
+    var SVGNS = "http://www.w3.org/2000/svg";
+    function el(tag, attrs) { var n = document.createElementNS(SVGNS, tag); for (var k in attrs) n.setAttribute(k, attrs[k]); return n; }
+    var maps = [];
+
+    /* ---- the cards: one open at a time, from its button, the big map, or a "(card n)" link ---- */
+    var btns = $$(".gl-type-btn", root);
+    function bodyOf(key) { return root.querySelector('[data-body="' + key + '"]'); }
+    function openKing(key, scroll) {
+      btns.forEach(function (b) {
+        var k = b.getAttribute("data-k"), on = k === key;
+        b.setAttribute("aria-expanded", on ? "true" : "false");
+        if (on) open(bodyOf(k)); else shut(bodyOf(k));
+      });
+      fitAll();
+      if (scroll) {
+        var art = $("#sp-k-" + key);
+        if (art && art.scrollIntoView) art.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-k");
+        if (b.getAttribute("aria-expanded") === "true") { b.setAttribute("aria-expanded", "false"); shut(bodyOf(key)); }
+        else openKing(key, false);
+      });
+    });
+    $$(".sp-kref").forEach(function (a) {
+      a.addEventListener("click", function (e) { e.preventDefault(); openKing(a.getAttribute("data-open"), true); });
+    });
+
+    /* ---- the chart: say it, then show it ---- */
+    var table = $("#sp-chart"), allBtn = $("#sp-chart-all");
+    if (table) {
+      table.classList.add("js");
+      var cells = $$("td.c", table);
+      var syncAll = function () {
+        if (!allBtn) return;
+        var n = cells.filter(function (td) { return td.classList.contains("on"); }).length;
+        allBtn.textContent = n === cells.length ? "Hide the chart again" : "Show the whole chart";
+      };
+      cells.forEach(function (td) {
+        td.addEventListener("click", function () {
+          td.classList.toggle("on");
+          var b = td.querySelector(".sp-cell"); if (b) b.setAttribute("aria-expanded", td.classList.contains("on") ? "true" : "false");
+          syncAll();
+        });
+      });
+      if (allBtn) allBtn.addEventListener("click", function () {
+        var all = cells.every(function (td) { return td.classList.contains("on"); });
+        cells.forEach(function (td) {
+          td.classList.toggle("on", !all);
+          var b = td.querySelector(".sp-cell"); if (b) b.setAttribute("aria-expanded", all ? "false" : "true");
+        });
+        syncAll();
+      });
+    }
+
+    /* ---- the word list ---- */
+    var gBtn = $("#sp-kgloss-btn"), gList = $("#sp-kgloss");
+    if (gBtn && gList) gBtn.addEventListener("click", function () {
+      var isOpen = gList.classList.contains("open");
+      if (isOpen) shut(gList); else open(gList);
+      gBtn.setAttribute("aria-expanded", isOpen ? "false" : "true");
+      gBtn.textContent = isOpen ? "Open the word list" : "Close the word list";
+    });
+
+    /* ---- the maps: each card's locator map, the big map, the lettered map ---- */
+    function fitAll() { maps.forEach(fit); }
+    if (!GEO || !GEO.land) return;
+
+    var GAL  = ["es-la-coruna", "es-lugo", "es-orense", "es-pontevedra"];
+    var CAT  = ["es-barcelona", "es-gerona", "es-lerida", "es-tarragona"];
+    var ARA  = ["es-huesca", "es-zaragoza", "es-teruel"];
+    var BASQ = ["es-gipuzkoa", "es-bizkaia", "es-alava"];
+    var PT_N = ["pt-braga", "pt-porto", "pt-viana-do-castelo", "pt-vila-real", "pt-braganca"];
+    var PT_S = ["pt-aveiro", "pt-viseu", "pt-guarda", "pt-coimbra", "pt-leiria", "pt-castelo-branco", "pt-santarem", "pt-lisboa", "pt-portalegre", "pt-setubal", "pt-evora", "pt-beja", "pt-faro"];
+    /* dark = where the kingdom began; light = land its kings took later in the Middle Ages (the printed set's shading) */
+    var KING = {
+      leon: { n: "Asturias, then León", card: 1, dark: ["es-asturias", "es-leon", "es-zamora", "es-salamanca", "es-palencia"], light: GAL,
+              cities: ["oviedo", "covadonga", "leon", "zamora", "burgos", "porto", "santiago"], region: ["ASTURIAS", 330, 60], extra: [["GALICIA", 150, 175], ["LEÓN", 300, 220]] },
+      nav:  { n: "Navarre", card: 2, dark: ["es-navarra"], light: BASQ,
+              cities: ["pamplona", "roncevaux", "bilbao", "zaragoza", "burgos"], region: ["NAVARRE", 560, 225], extra: [["BASQUE COUNTRY", 560, 80]], crop: [200, 0, 750, 470] },
+      cas:  { n: "Castile", card: 3, dark: ["es-burgos", "es-palencia", "es-valladolid", "es-soria", "es-segovia", "es-avila", "es-cantabria", "es-la-rioja"], light: [],
+              cities: ["burgos", "leon", "zamora", "logrono", "soria", "toledo"], region: ["CASTILE", 440, 250], extra: [] },
+      ara:  { n: "Aragon", card: 4, dark: ARA, light: CAT,
+              cities: ["zaragoza", "jaca", "barcelona", "valencia", "mallorca", "tortosa"], region: ["ARAGON", 560, 350], extra: [["CATALONIA", 770, 300]] },
+      por:  { n: "Portugal", card: 5, dark: PT_N, light: PT_S,
+              cities: ["porto", "guimaraes", "lisbon", "ourique", "faro", "leon", "santiago"], region: ["PORTUGAL", 170, 430], extra: [["LEÓN", 300, 220]] },
+      cat:  { n: "Catalonia", card: 6, dark: CAT, light: ARA,
+              cities: ["barcelona", "girona", "zaragoza", "tortosa", "mallorca", "valencia"], region: ["CATALONIA", 770, 300], extra: [["ARAGON", 560, 350]] }
+    };
+    var ORDER = ["leon", "nav", "cas", "ara", "por", "cat"];
+    var NAME = { covadonga: "Covadonga", oviedo: "Oviedo", leon: "León", burgos: "Burgos", santiago: "Santiago", pamplona: "Pamplona", zaragoza: "Zaragoza",
+      barcelona: "Barcelona", toledo: "Toledo", valencia: "Valencia", granada: "Granada", cordoba: "Córdoba", sevilla: "Seville", lisbon: "Lisbon", porto: "Porto",
+      roncevaux: "Roncevaux", mallorca: "Mallorca", girona: "Girona", navas: "Las Navas de Tolosa", ourique: "Ourique", guimaraes: "Guimarães", bilbao: "Bilbao",
+      zamora: "Zamora", faro: "the Algarve", jaca: "Jaca", logrono: "Logroño", soria: "Soria", tortosa: "Tortosa" };
+    /* label offsets in map units at a 30-unit font (dx, dy, anchor), as on the printed cards */
+    var OFFK = { oviedo: [-8, -16, "end"], covadonga: [10, -14, "start"], leon: [-10, 10, "end"], burgos: [-10, 8, "end"], santiago: [0, -14, "middle"],
+      pamplona: [10, 16, "start"], roncevaux: [10, -6, "start"], zaragoza: [10, -8, "start"], barcelona: [10, 12, "start"], girona: [10, -8, "start"],
+      toledo: [10, -8, "start"], valencia: [10, -8, "start"], granada: [10, 14, "start"], cordoba: [-10, -10, "end"], sevilla: [-10, 14, "end"],
+      lisbon: [10, 6, "start"], porto: [-10, -10, "end"], mallorca: [0, -14, "middle"], navas: [12, 4, "start"], ourique: [12, 4, "start"],
+      guimaraes: [12, -8, "start"], bilbao: [0, -14, "middle"], zamora: [-10, 14, "end"], faro: [0, 20, "middle"], jaca: [8, -10, "start"],
+      logrono: [10, -8, "start"], soria: [10, 12, "start"], tortosa: [10, 10, "start"] };
+    var SEAS = [["Bay of Biscay", 140, 45, "sea"], ["Atlantic Ocean", 100, 520, "sea"], ["Mediterranean Sea", 800, 520, "sea"], ["FRANCE", 800, 40, "land"], ["AFRICA", 470, 735, "land"]];
+    var RIVL = { duero: ["river Duero", 215, 250, "middle"], ebro: ["river Ebro", 700, 320, "end"], tagus: ["river Tagus", 300, 400, "middle"] };
+    var SIZE = { city: 12, region: 15, extra: 12, river: 11, mtn: 11, sea: 11, land: 11, letter: 15 };
+
+    function curveThrough(pts) {
+      if (pts.length < 2) return "";
+      var d = "M" + pts[0][0] + " " + pts[0][1];
+      for (var i = 0; i < pts.length - 1; i++) {
+        var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || pts[i + 1];
+        d += "C" + (p1[0] + (p2[0] - p0[0]) / 6).toFixed(1) + " " + (p1[1] + (p2[1] - p0[1]) / 6).toFixed(1) + "," +
+             (p2[0] - (p3[0] - p1[0]) / 6).toFixed(1) + " " + (p2[1] - (p3[1] - p1[1]) / 6).toFixed(1) + "," + p2[0] + " " + p2[1];
+      }
+      return d;
+    }
+    function peakPath(peaks, s) {
+      return peaks.map(function (p) {
+        return "M" + (p[0] - s).toFixed(1) + " " + (p[1] + s * 0.7).toFixed(1) + "L" + p[0].toFixed(1) + " " + (p[1] - s).toFixed(1) + "L" + (p[0] + s).toFixed(1) + " " + (p[1] + s * 0.7).toFixed(1);
+      }).join("");
+    }
+    function addText(m, text, x, y, kind, anchor, dx, dy, cls) {
+      var t = el("text", { class: cls, "paint-order": "stroke", "text-anchor": anchor || "middle" });
+      t.textContent = text;
+      m.g.appendChild(t);
+      m.texts.push({ el: t, x: x, y: y, dx: dx || 0, dy: dy || 0, kind: kind });
+      return t;
+    }
+    function baseMap(host, crop, label) {
+      var vb = crop || [0, 0, 1000, 753];
+      var svg = el("svg", { class: "sp-kmap-svg", role: "img", "aria-label": label });
+      svg.setAttribute("viewBox", vb.join(" "));
+      svg.appendChild(el("rect", { x: 0, y: 0, width: 1000, height: 753, class: "gl-map-sea" }));
+      svg.appendChild(el("path", { d: GEO.land, class: "gl-map-land sp-kland", "vector-effect": "non-scaling-stroke" }));
+      var gp = el("g", { class: "sp-kprov" });
+      Object.keys(GEO.units).forEach(function (id) { gp.appendChild(el("path", { d: GEO.units[id], class: "sp-kprov-u", "vector-effect": "non-scaling-stroke" })); });
+      svg.appendChild(gp);
+      var m = { svg: svg, vbw: vb[2], texts: [], dots: [], peaks: [], letters: [], fills: el("g", { class: "sp-kfills" }), g: el("g", { class: "sp-klabels" }) };
+      svg.appendChild(m.fills);
+      var gr = el("g", { class: "sp-ranges" });
+      Object.keys(GEO.ranges || {}).forEach(function (k) {
+        var pts = GEO.ranges[k];
+        gr.appendChild(el("path", { d: curveThrough(pts), class: "sp-range-band", "vector-effect": "non-scaling-stroke" }));
+        var peaks = [];
+        for (var i = 0; i < pts.length; i++) { peaks.push(pts[i]); if (i < pts.length - 1) peaks.push([(pts[i][0] + pts[i + 1][0]) / 2, (pts[i][1] + pts[i + 1][1]) / 2]); }
+        var pk = el("path", { class: "sp-range-peaks", "vector-effect": "non-scaling-stroke" });
+        gr.appendChild(pk); m.peaks.push({ el: pk, pts: peaks });
+      });
+      svg.appendChild(gr);
+      var gw = el("g", { class: "sp-krivers" });
+      Object.keys(GEO.rivers || {}).forEach(function (k) {
+        gw.appendChild(el("path", { d: curveThrough(GEO.rivers[k]), class: "sp-kriver", "vector-effect": "non-scaling-stroke" }));
+      });
+      svg.appendChild(gw);
+      svg.appendChild(m.g);
+      host.innerHTML = "";
+      host.appendChild(svg);
+      maps.push(m);
+      return m;
+    }
+    function geoLabels(m, cropped) {
+      SEAS.forEach(function (s) { addText(m, s[0], s[1], s[2], s[3], "middle", 0, 0, "gl-map-label sp-glab " + s[3]); });
+      addText(m, "Pyrenees", 665, 112, "mtn", "middle", 0, 0, "gl-map-label sp-kmtn-l");
+      addText(m, "Cantabrian Mountains", cropped ? 370 : 330, 150, "mtn", "middle", 0, 0, "gl-map-label sp-kmtn-l");
+      if (GEO.rivers) Object.keys(RIVL).forEach(function (k) {
+        if (!GEO.rivers[k]) return;
+        var r = RIVL[k]; addText(m, r[0], r[1], r[2], "river", r[3], 0, 0, "gl-map-label sp-kriv-l");
+      });
+    }
+    function fillUnits(m, ids, cls, style, key) {
+      ids.forEach(function (id) {
+        if (!GEO.units[id]) return;
+        var p = el("path", { d: GEO.units[id], class: cls, "vector-effect": "non-scaling-stroke" });
+        if (style) p.setAttribute("style", style);
+        if (key) {
+          p.setAttribute("data-k", key); p.classList.add("sp-kclick");
+          var tt = el("title", {}); tt.textContent = KING[key].n + " (card " + KING[key].card + ")"; p.appendChild(tt);
+          p.addEventListener("click", function () { openKing(key, true); });
+        }
+        m.fills.appendChild(p);
+      });
+    }
+    function cityDots(m, ids) {
+      ids.forEach(function (id) {
+        var p = GEO.pts[id]; if (!p || !NAME[id]) return;
+        var o = OFFK[id] || [10, 0, "start"];
+        var c = el("circle", { cx: p[0], cy: p[1], class: "sp-dot", "vector-effect": "non-scaling-stroke" });
+        m.g.appendChild(c); m.dots.push({ el: c });
+        addText(m, NAME[id], p[0], p[1], "city", o[2], o[0], o[1], "gl-map-label sp-kcity");
+      });
+    }
+    function fit(m) {
+      var box = m.svg.getBoundingClientRect(); if (!box.width) return;
+      var uu = m.vbw / box.width, k = Math.max(0.85, Math.min(1, box.width / 720));
+      m.texts.forEach(function (t) {
+        var fs = SIZE[t.kind] * uu * k, s = fs / 30;
+        t.el.setAttribute("font-size", fs.toFixed(2));
+        t.el.setAttribute("stroke-width", (3 * uu).toFixed(2));
+        t.el.setAttribute("x", (t.x + t.dx * s).toFixed(1));
+        t.el.setAttribute("y", (t.y + t.dy * s + ((t.kind === "city" || t.kind === "letter") ? fs * 0.35 : 0)).toFixed(1));
+      });
+      m.dots.forEach(function (d) { d.el.setAttribute("r", (4 * uu * k).toFixed(2)); });
+      m.letters.forEach(function (d) { d.el.setAttribute("r", (SIZE.letter * uu * k * 0.85).toFixed(2)); });
+      m.peaks.forEach(function (p) { p.el.setAttribute("d", peakPath(p.pts, 5 * uu * k)); });
+    }
+
+    /* one locator map per card */
+    ORDER.forEach(function (key) {
+      var host = root.querySelector('[data-kmap="' + key + '"]'); if (!host) return;
+      var K = KING[key];
+      var m = baseMap(host, K.crop, "Map of where " + K.n + " began, drawn on today's provinces");
+      fillUnits(m, K.light, "sp-kfill light", "fill:var(--k-" + key + ")");
+      fillUnits(m, K.dark, "sp-kfill dark", "fill:var(--k-" + key + ")");
+      geoLabels(m, !!K.crop);
+      addText(m, K.region[0], K.region[1], K.region[2], "region", "middle", 0, 0, "gl-map-label sp-klab");
+      K.extra.forEach(function (x) { addText(m, x[0], x[1], x[2], "extra", "middle", 0, 0, "gl-map-label sp-kx"); });
+      cityDots(m, K.cities);
+    });
+
+    /* the big map: every kingdom at once; click one to open its card */
+    var big = $("#sp-kmap-all");
+    if (big) {
+      var mb = baseMap(big, null, "Map of the six Christian states drawn on today's provinces: where each began, and the land it took later");
+      fillUnits(mb, GAL, "sp-kfill light", "fill:var(--k-leon)", "leon");
+      fillUnits(mb, PT_S, "sp-kfill light", "fill:var(--k-por)", "por");
+      fillUnits(mb, BASQ, "sp-kfill light", "fill:var(--k-nav)", "nav");
+      ORDER.forEach(function (key) { fillUnits(mb, KING[key].dark, "sp-kfill dark", "fill:var(--k-" + key + ")", key); });
+      geoLabels(mb, false);
+      ORDER.forEach(function (key) { var r = KING[key].region; addText(mb, r[0], r[1], r[2], "region", "middle", 0, 0, "gl-map-label sp-klab"); });
+      addText(mb, "GALICIA", 150, 175, "extra", "middle", 0, 0, "gl-map-label sp-kx");
+      addText(mb, "BASQUE COUNTRY", 560, 80, "extra", "middle", 0, 0, "gl-map-label sp-kx");
+      addText(mb, "MUSLIM SOUTH (al-Andalus)", 290, 470, "extra", "middle", 0, 0, "gl-map-label sp-kx");
+      cityDots(mb, ["oviedo", "covadonga", "leon", "burgos", "santiago", "pamplona", "roncevaux", "zaragoza", "barcelona", "girona", "porto", "lisbon", "toledo", "valencia", "mallorca", "cordoba", "sevilla", "granada", "navas", "zamora", "faro"]);
+    }
+
+    /* the lettered outline map beside the chart */
+    var lm = $("#sp-kmap-letters");
+    if (lm) {
+      var LET = [["A", "leon", 330, 60], ["B", "nav", 560, 200], ["C", "cas", 440, 250], ["D", "ara", 560, 350], ["E", "por", 170, 430], ["F", "cat", 770, 300]];
+      var ml = baseMap(lm, null, "Outline map with the six kingdoms lettered A to F");
+      LET.forEach(function (L) { fillUnits(ml, KING[L[1]].dark, "sp-kfill outline", null, L[1]); });
+      LET.forEach(function (L) {
+        var c = el("circle", { cx: L[2], cy: L[3] - 12, class: "sp-kletter-c", "vector-effect": "non-scaling-stroke" });
+        ml.g.appendChild(c); ml.letters.push({ el: c });
+        addText(ml, L[0], L[2], L[3] - 12, "letter", "middle", 0, 0, "gl-map-label sp-kletter");
+      });
+    }
+
+    fitAll();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+    if ("ResizeObserver" in window) { var ro = new ResizeObserver(fitAll); maps.forEach(function (m) { ro.observe(m.svg); }); }
+    else { window.addEventListener("resize", fitAll); }
+  })();
+
   /* -------------------------------------------------- 6. whose side? */
 
   var CID = [
@@ -544,7 +804,7 @@
     { y: "before 1066", side: "C", h: "Banner-bearer for Sancho II of Castile", t: "Champion of the king: he carries the standard and fights the single combats. In 1067 he leads the army that defeats the emir of Zaragoza and makes him a vassal of León. He will never lose a battle in his life." },
     { y: "1072", side: "C", h: "The wrong brother wins", t: "He fights Sancho's war against the king's brother Alfonso of León, and wins. Then Sancho is assassinated and Alfonso becomes king of both León and Castile. The Cid keeps a command but is demoted; García Ordóñez replaces him at the king's side. He marries Jimena, a nobleman's daughter." },
     { y: "1070s", side: "I", h: "Commander for the Islamic king of Sevilla", t: "Blocked at court, he takes service with Sevilla, which is at war with Islamic Granada. Alfonso, his own king, sends Ordóñez to help Granada. The Cid beats Granada, captures Ordóñez, and ransoms him back. This mercenary service was normal in Reconquista Iberia." },
-    { y: "1081", side: "I", h: "Exiled; commander for Zaragoza", t: "An unauthorized raid on Toledo gets him exiled. He takes his sword to the Islamic ruler of Zaragoza, breaks Zaragoza away from Castile's grip, and beats every neighbour who comes at it, Muslim or Christian, Barcelona and Aragon included." },
+    { y: "1081", side: "I", h: "Exiled; commander for Zaragoza", t: "An unauthorized raid on Toledo gets him exiled. He takes his sword to the Islamic ruler of Zaragoza, breaks Zaragoza away from Castile's grip, and beats every neighbor who comes at it, Muslim or Christian, Barcelona and Aragon included." },
     { y: "1086", side: "C", h: "Recalled against the Almoravids", t: "The Almoravids land from Morocco and crush Alfonso at Sagrajas. Alfonso begs the Cid to come back. He does, and beats the army nobody else could beat." },
     { y: "1090–1094", side: "S", h: "Prince of Valencia", t: "He captures the Count of Barcelona, then carves out Valencia, the richest territory in Iberia, for himself. Three wars to hold it. In 1094 he is Prince of Valencia and answers to no king." },
     { y: "1094–1097", side: "S", h: "Holding it", t: "Two Islamic invasions defeated. His son dies in battle in 1097. His daughters marry into royal houses; the present monarchs of Spain and England descend from them." },
@@ -586,7 +846,7 @@
       p: "Who wrote the legend down, when, and what did they need it to do? A story told a hundred and fifty years later at the court of the hero's descendants is evidence of something. Of what? Carry this question into section 6, where a man wins a battle after he is dead." },
     { star: false,
       q: "How do you think religious houses, convents, and monasteries fared during the Reconquista?",
-      p: "Be specific about the frontier. A monastery on the Duero in 900 sits in a no-man's-land raided every summer. One in Galicia in 997 gets Almanzor at the door. One in Toledo after 1085 has Muslim and Jewish neighbours and a new Christian king. Which of those would you enter, and what would you expect your life to be?" },
+      p: "Be specific about the frontier. A monastery on the Duero in 900 sits in a no-man's-land raided every summer. One in Galicia in 997 gets Almanzor at the door. One in Toledo after 1085 has Muslim and Jewish neighbors and a new Christian king. Which of those would you enter, and what would you expect your life to be?" },
     { star: false,
       q: "What would it be like to come of age in a world that had been at war for centuries and would be at war for centuries after your death?",
       p: "Now compare. Has anyone in this room lived a year in which the country was at war nowhere? How is that the same, and how is it different? El Cid's answer to the question was to make the war work for him. Was that wrong?" },
