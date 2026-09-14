@@ -384,7 +384,7 @@ window.INFERNO_DATA = (function () {
       icon: 'ditches',
       image: 'fraud-demons',
       place:
-        'A wide floor of grey stone, cut into ten concentric ditches with ' +
+        'A wide floor of gray stone, cut into ten concentric ditches with ' +
         'stone bridges running over them, sloping down toward the well at ' +
         'the center.',
       punishmentLabel: 'The punishment',

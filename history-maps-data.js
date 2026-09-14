@@ -43,7 +43,7 @@ window.HISTORY_MAPS = (function () {
       source: 'Built for this course. CSN supplies a blank Spain map but no word bank.',
       note:
         'The regions here are the present-day ones. The kingdoms we read about ' +
-        'sit on top of them: León and Castile in the north and centre, Aragon ' +
+        'sit on top of them: León and Castile in the north and center, Aragon ' +
         'and Catalonia in the east, Navarre in the Pyrenees, and al-Andalus in ' +
         'the south until the Reconquista closes on Granada.',
       groups: [
