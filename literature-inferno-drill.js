@@ -27,11 +27,11 @@
     'XXX', 'XXXI', 'XXXII', 'XXXIII', 'XXXIV'];
 
   /* The reading quizzes, from the adopted Rhythm B Scope and Sequence
-     (re-laid Sep 2, 2026). Update here when a quiz moves. */
+     (re-laid Sep 2, 2026; slid one day Sep 22 when Wed Sep 23 was lost). Update here when a quiz moves. */
   var QUIZZES = [
     { id: 'quiz1', title: 'Quiz 1', date: '2026-09-15', from: 1, through: 13, cantos: 'Cantos I–XIII' },
-    { id: 'quiz2', title: 'Quiz 2', date: '2026-09-24', from: 14, through: 23, cantos: 'Cantos XIV–XXIII' },
-    { id: 'quiz3', title: 'Quiz 3', date: '2026-10-01', from: 24, through: 33, cantos: 'Cantos XXIV–XXXIII' }
+    { id: 'quiz2', title: 'Quiz 2', date: '2026-09-25', from: 14, through: 23, cantos: 'Cantos XIV–XXIII' },
+    { id: 'quiz3', title: 'Quiz 3', date: '2026-10-02', from: 24, through: 33, cantos: 'Cantos XXIV–XXXIII' }
   ];
 
   var KINDS = [

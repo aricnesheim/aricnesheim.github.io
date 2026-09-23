@@ -555,13 +555,13 @@ window.INFERNO_DATA = (function () {
     { date: '2026-09-18', through: 17 },
     { date: '2026-09-21', through: 20 },
     { date: '2026-09-22', through: 21 },
-    { date: '2026-09-23', through: 23 },
-    { date: '2026-09-24', through: 24 },
-    { date: '2026-09-25', through: 25 },
-    { date: '2026-09-28', through: 29 },
-    { date: '2026-09-29', through: 30 },
-    { date: '2026-09-30', through: 33 },
-    { date: '2026-10-01', through: 34 }
+    { date: '2026-09-24', through: 22 },
+    { date: '2026-09-25', through: 24 },
+    { date: '2026-09-28', through: 25 },
+    { date: '2026-09-29', through: 29 },
+    { date: '2026-09-30', through: 30 },
+    { date: '2026-10-01', through: 33 },
+    { date: '2026-10-02', through: 34 }
   ];
 
   return {

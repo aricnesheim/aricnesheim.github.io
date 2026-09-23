@@ -1,88 +1,96 @@
 {
-  "updated": "2026-09-22",
-  "classes": {
-    "history": {
-      "name": "History 11",
-      "page": [
-        {
-          "label": "Friday, September 25",
-          "text": "The two teams present, ten minutes in all: Alex and Santino make the best case for the Cathars, and Angela, Kieran, and Louisa answer for the Inquisition. Sharpen your arguments; bring your notes. Then the crusade against the Cathars, fast, and King St. Louis IX. Keep the list you wrote Monday, three things that made James I a great king. It comes back Friday."
-        },
-        {
-          "label": "This week",
-          "text": "Nothing to read. Monday, September 28, is the Later Capetians."
-        },
-        {
-          "label": "Build a Guild",
-          "text": "Three guilds formed Thursday, September 10: fishmongers, blacksmiths, and bakers. Keep your charter answers from class. Each guild will write out a full charter in its best calligraphy and bring in a masterwork of its trade. The dates will be posted here and in Educate."
-        }
-      ],
-      "glance": [
-        {
-          "strong": "Fri, Sep 25",
-          "text": "Cathar and Inquisition teams present (10 min); James I list on the desk."
-        },
-        {
-          "strong": "Build a Guild",
-          "text": "charter and masterwork dates to come."
-        }
-      ]
+ "updated": "2026-09-22",
+ "classes": {
+  "history": {
+   "name": "History 11",
+   "page": [
+    {
+     "label": "Friday, September 25",
+     "text": "The two teams present, ten minutes in all: Alex and Santino make the best case for the Cathars, and Angela, Kieran, and Louisa answer for the Inquisition. Sharpen your arguments; bring your notes. Then the crusade against the Cathars, fast, and King St. Louis IX. Keep the list you wrote Monday, three things that made James I a great king. It comes back Friday."
     },
-    "theology": {
-      "name": "Theology 10",
-      "page": [
-        {
-          "label": "Due Tuesday, September 22",
-          "text": "Read Matthew 19:1 to 20:34. Annotate 20:17 to 34. Bring the page you wrote on Matthew 18: what each saying means by the number key. We open class by sharing them."
-        },
-        {
-          "label": "Coming this week",
-          "text": "Wednesday: Matthew 21:1 to 23:39. Friday: Matthew 24 to 28, the end of the Gospel."
-        }
-      ],
-      "glance": [
-        {
-          "strong": "Due Tue, Sep 22",
-          "text": "Matthew 19:1 to 20:34, read; 20:17 to 34 annotated; bring your Matthew 18 page."
-        }
-      ]
+    {
+     "label": "This week",
+     "text": "Nothing to read. Monday, September 28, is the Later Capetians."
     },
-    "literature": {
-      "name": "Literature 11",
-      "page": [
-        {
-          "label": "Due Wednesday, September 23",
-          "text": "Cantos XXI and XXII, read and annotated. First thing Wednesday, each of you presents your poem in about two minutes: what it says, one trope, and the link to Dante. Bring the sheet finished."
-        },
-        {
-          "label": "Thursday, September 24",
-          "text": "Quiz 2 on Cantos XIV to XXIII. Short answers in complete sentences. Know each ring and ditch: the sin, the punishment and why it fits, and the people Dante meets there."
-        },
-        {
-          "label": "Super Simile",
-          "text": "Paragraphs 1 and 2 (the Charon birds, the Harpies) are in your folder. The folder stays in the room."
-        }
-      ],
-      "glance": [
-        {
-          "strong": "Due Wed, Sep 23",
-          "text": "Cantos XXI to XXII, read and annotated; poem presentations first thing."
-        },
-        {
-          "strong": "Thu, Sep 24",
-          "text": "Quiz 2, Cantos XIV to XXIII."
-        }
-      ]
-    },
-    "choir": {
-      "name": "Choir",
-      "page": [],
-      "glance": [
-        {
-          "strong": "",
-          "text": "Rehearsals Monday, Tuesday, and Thursday, last period; the Friday sing at 1:23. The first all-school Friday sing was September 11."
-        }
-      ]
+    {
+     "label": "Build a Guild",
+     "text": "Three guilds formed Thursday, September 10: fishmongers, blacksmiths, and bakers. Keep your charter answers from class. Each guild will write out a full charter in its best calligraphy and bring in a masterwork of its trade. The dates will be posted here and in Educate."
     }
+   ],
+   "glance": [
+    {
+     "strong": "Fri, Sep 25",
+     "text": "Cathar and Inquisition teams present (10 min); James I list on the desk."
+    },
+    {
+     "strong": "Build a Guild",
+     "text": "charter and masterwork dates to come."
+    }
+   ]
+  },
+  "theology": {
+   "name": "Theology 10",
+   "page": [
+    {
+     "label": "Due Wednesday, September 23",
+     "text": "Read Matthew 21:1 to 23:39."
+    },
+    {
+     "label": "Friday, September 25",
+     "text": "Matthew 24 to 28, the end of the Gospel."
+    }
+   ],
+   "glance": [
+    {
+     "strong": "Due Wed, Sep 23",
+     "text": "Matthew 21:1 to 23:39, read."
+    }
+   ]
+  },
+  "literature": {
+   "name": "Literature 11",
+   "page": [
+    {
+     "label": "Wednesday, September 23",
+     "text": "No Lit class on Wednesday (special schedule for the day). Everything in Lit moves back one day."
+    },
+    {
+     "label": "Due Thursday, September 24",
+     "text": "Cantos XXI and XXII, read and annotated. First thing Thursday, each of you presents your poem in about two minutes: what it says, one trope, and the link to Dante. Bring the sheet finished."
+    },
+    {
+     "label": "Friday, September 25",
+     "text": "Quiz 2 on Cantos XIV to XXIII. Short answers in complete sentences. Know each ring and ditch: the sin, the punishment and why it fits, and the people Dante meets there."
+    },
+    {
+     "label": "Super Simile",
+     "text": "Paragraphs 1 and 2 (the Charon birds, the Harpies) are in your folder. The folder stays in the room."
+    }
+   ],
+   "glance": [
+    {
+     "strong": "Wed, Sep 23",
+     "text": "no Lit class; everything moves back one day."
+    },
+    {
+     "strong": "Due Thu, Sep 24",
+     "text": "Cantos XXI to XXII, read and annotated; poem presentations first thing."
+    },
+    {
+     "strong": "Fri, Sep 25",
+     "text": "Quiz 2, Cantos XIV to XXIII."
+    }
+   ]
+  },
+  "choir": {
+   "name": "Choir",
+   "page": [],
+   "glance": [
+    {
+     "strong": "",
+     "text": "Rehearsals Monday, Tuesday, and Thursday, last period; the Friday sing at 1:23. The first all-school Friday sing was September 11."
+    }
+   ]
   }
+ }
 }
