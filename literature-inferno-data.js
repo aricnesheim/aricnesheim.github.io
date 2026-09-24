@@ -534,7 +534,8 @@ window.INFERNO_DATA = (function () {
    * `through` is the highest canto the class has read by the end of that date.
    * Update this when the schedule re-flows. Re-laid Sep 4, 2026 after the
    * Sep 2 one-week shift (quiz on I–XIII moved to Mon Sep 14); Sep 8 = through IX
-   * (video day; X–XI read for Wed Sep 9).
+   * (video day; X–XI read for Wed Sep 9). Sep 24: Quiz 2 moved to Mon Sep 28,
+   * XXIII read in class Fri Sep 25, the rest slid one class (XXXIV on Mon Oct 5).
    */
   var schedule = [
     { date: '2026-08-26', through: 0 },
@@ -556,12 +557,13 @@ window.INFERNO_DATA = (function () {
     { date: '2026-09-21', through: 20 },
     { date: '2026-09-22', through: 21 },
     { date: '2026-09-24', through: 22 },
-    { date: '2026-09-25', through: 24 },
-    { date: '2026-09-28', through: 25 },
-    { date: '2026-09-29', through: 29 },
-    { date: '2026-09-30', through: 30 },
-    { date: '2026-10-01', through: 33 },
-    { date: '2026-10-02', through: 34 }
+    { date: '2026-09-25', through: 23 },
+    { date: '2026-09-28', through: 23 },
+    { date: '2026-09-29', through: 25 },
+    { date: '2026-09-30', through: 29 },
+    { date: '2026-10-01', through: 30 },
+    { date: '2026-10-02', through: 33 },
+    { date: '2026-10-05', through: 34 }
   ];
 
   return {
